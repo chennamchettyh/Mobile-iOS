@@ -43,21 +43,6 @@
     self.swiper = [[WorldpayAPI instance] swiperWithDelegate:self];
 }
 
-- (void) authorizeTransaction: (WPYPaymentAuthorize *) authorize
-{
-    [[WorldpayAPI instance] paymentAuthorize:authorize withCompletion:^(WPYPaymentResponse * response, NSError * error)
-     {
-         if(error)
-         {
-             NSLog(@"%@: %@", @"Authorize Error", error);
-         }
-         else
-         {
-             NSLog(@"%@: %@", @"Authorize Response", response);
-         }
-     }];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -65,31 +50,41 @@
 
 - (IBAction) startTransaction
 {
-    [self.swiper connectSwiperWithInputType:WPYSwiperInputTypeBluetooth];
+    // TODO: Create request dynamically based on selected index
     
-    if([_cardPresentDropDown selectedIndex] == YESINDEX)
+    // TODO: Set amount / other required fields for all transaction types here
+    
+    if([self.cardPresentDropDown selectedIndex] != YESINDEX)
     {
-        switch([self.cardPresentDropDown selectedIndex])
-        {
-            case AUTHORIZEINDEX:
-            {
-                WPYPaymentAuthorize * authorize = [WPYPaymentAuthorize new];
-                
-                authorize.amount = [NSDecimalNumber decimalNumberWithString:self.amountTextField.text];
-                
-                //[self authorizeTransaction:authorize];
-                
-                [self.swiper beginEMVTransactionWithRequest:authorize transactionType:WPYEMVTransactionTypeGoods];
-                
-                break;
-            }
-        }
+        // TODO: Populate request manually for card not present
     }
     else
     {
-        
+        [self.swiper connectSwiperWithInputType:WPYSwiperInputTypeBluetooth];
     }
     
+    switch([self.transactionTypeDropDown selectedIndex])
+    {
+        case AUTHORIZEINDEX:
+        {
+            WPYPaymentAuthorize * authorize = [WPYPaymentAuthorize new];
+            
+            authorize.amount = [NSDecimalNumber decimalNumberWithString:self.amountTextField.text];
+            
+            [self.swiper beginEMVTransactionWithRequest:authorize transactionType:WPYEMVTransactionTypeGoods];
+            
+            break;
+        }
+    }
+    
+    if([self.cardPresentDropDown selectedIndex] == YESINDEX)
+    {
+        // TODO: When requests are dynamic, begin EMV transaction here
+    }
+    else
+    {
+        // TODO: When requests are dynamic, begin API call here
+    }
 }
 
 #pragma mark - WPYSwiperDelegate
