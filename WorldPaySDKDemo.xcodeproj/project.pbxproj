@@ -1,0 +1,644 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		811A0D621BB2F20100B73C09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 811A0D611BB2F20100B73C09 /* main.m */; };
+		811A0D651BB2F20100B73C09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 811A0D641BB2F20100B73C09 /* AppDelegate.m */; };
+		811A0D681BB2F20100B73C09 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 811A0D671BB2F20100B73C09 /* MasterViewController.m */; };
+		811A0D6B1BB2F20100B73C09 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 811A0D6A1BB2F20100B73C09 /* DetailViewController.m */; };
+		811A0D701BB2F20100B73C09 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 811A0D6F1BB2F20100B73C09 /* Images.xcassets */; };
+		811A0D731BB2F20100B73C09 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 811A0D711BB2F20100B73C09 /* LaunchScreen.xib */; };
+		811A0D7F1BB2F20100B73C09 /* WorldPaySDKDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 811A0D7E1BB2F20100B73C09 /* WorldPaySDKDemoTests.m */; };
+		813F2AEF1D8896BA003F6716 /* WorldPaySDK_AC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813F2AEE1D8896BA003F6716 /* WorldPaySDK_AC.framework */; };
+		813F2AF11D8896C7003F6716 /* WorldPaySDK_AC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 813F2AEE1D8896BA003F6716 /* WorldPaySDK_AC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		813F2AF41D88970F003F6716 /* WorldPaySDK_Miura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813F2AF21D889708003F6716 /* WorldPaySDK_Miura.framework */; };
+		813F2AF51D88970F003F6716 /* WorldPaySDK_Miura.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 813F2AF21D889708003F6716 /* WorldPaySDK_Miura.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		814EDBF61C69636E0010877C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 811A0D641BB2F20100B73C09 /* AppDelegate.m */; };
+		814EDBF71C69636E0010877C /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 811A0D671BB2F20100B73C09 /* MasterViewController.m */; };
+		814EDBF81C69636E0010877C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 811A0D611BB2F20100B73C09 /* main.m */; };
+		814EDBF91C69636E0010877C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 811A0D6A1BB2F20100B73C09 /* DetailViewController.m */; };
+		814EDBFF1C69636E0010877C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 811A0D711BB2F20100B73C09 /* LaunchScreen.xib */; };
+		814EDC001C69636E0010877C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 811A0D6F1BB2F20100B73C09 /* Images.xcassets */; };
+		8C068D011DA4146E00578C9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C068D001DA4146E00578C9D /* Main.storyboard */; };
+		8C068D021DA4147F00578C9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C068D001DA4146E00578C9D /* Main.storyboard */; };
+		8C2B20B21DA3F23500643EEB /* TransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2B20B01DA3F23500643EEB /* TransactionViewController.m */; };
+		8C2B20B31DA3F23500643EEB /* TransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2B20B01DA3F23500643EEB /* TransactionViewController.m */; };
+		8C2B20B41DA3F23500643EEB /* TransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2B20B11DA3F23500643EEB /* TransactionViewController.xib */; };
+		8C2B20B51DA3F23500643EEB /* TransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2B20B11DA3F23500643EEB /* TransactionViewController.xib */; };
+		8C2B20B81DA3F2EA00643EEB /* DropDownTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2B20B71DA3F2EA00643EEB /* DropDownTextField.m */; };
+		8C2B20B91DA3F2EA00643EEB /* DropDownTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2B20B71DA3F2EA00643EEB /* DropDownTextField.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		811A0D791BB2F20100B73C09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 811A0D541BB2F20100B73C09 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 811A0D5B1BB2F20100B73C09;
+			remoteInfo = WorldPaySDKDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		811A0DA31BB2F75C00B73C09 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				813F2AF11D8896C7003F6716 /* WorldPaySDK_AC.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		814EDC011C69636E0010877C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				813F2AF51D88970F003F6716 /* WorldPaySDK_Miura.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		811A0D5C1BB2F20100B73C09 /* WorldPaySDKDemo_AC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldPaySDKDemo_AC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		811A0D601BB2F20100B73C09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		811A0D611BB2F20100B73C09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		811A0D631BB2F20100B73C09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		811A0D641BB2F20100B73C09 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		811A0D661BB2F20100B73C09 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		811A0D671BB2F20100B73C09 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		811A0D691BB2F20100B73C09 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		811A0D6A1BB2F20100B73C09 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		811A0D6F1BB2F20100B73C09 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		811A0D721BB2F20100B73C09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		811A0D781BB2F20100B73C09 /* WorldPaySDKDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldPaySDKDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		811A0D7D1BB2F20100B73C09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		811A0D7E1BB2F20100B73C09 /* WorldPaySDKDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorldPaySDKDemoTests.m; sourceTree = "<group>"; };
+		813F2AEE1D8896BA003F6716 /* WorldPaySDK_AC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WorldPaySDK_AC.framework; path = ../WorldPaySDK_AC.framework; sourceTree = "<group>"; };
+		813F2AF21D889708003F6716 /* WorldPaySDK_Miura.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WorldPaySDK_Miura.framework; path = ../WorldPaySDK_Miura.framework; sourceTree = "<group>"; };
+		814EDC051C69636E0010877C /* WorldPaySDKDemo_Miura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldPaySDKDemo_Miura.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		814EDC061C69636E0010877C /* WorldPaySDKDemo copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WorldPaySDKDemo copy-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8C068D001DA4146E00578C9D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
+		8C2B20AF1DA3F23500643EEB /* TransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionViewController.h; sourceTree = "<group>"; };
+		8C2B20B01DA3F23500643EEB /* TransactionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionViewController.m; sourceTree = "<group>"; };
+		8C2B20B11DA3F23500643EEB /* TransactionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionViewController.xib; sourceTree = "<group>"; };
+		8C2B20B61DA3F2EA00643EEB /* DropDownTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownTextField.h; sourceTree = "<group>"; };
+		8C2B20B71DA3F2EA00643EEB /* DropDownTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownTextField.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		811A0D591BB2F20100B73C09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				813F2AEF1D8896BA003F6716 /* WorldPaySDK_AC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		811A0D751BB2F20100B73C09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		814EDBFA1C69636E0010877C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				813F2AF41D88970F003F6716 /* WorldPaySDK_Miura.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		811A0D531BB2F20100B73C09 = {
+			isa = PBXGroup;
+			children = (
+				811A0D5E1BB2F20100B73C09 /* WorldPaySDKDemo */,
+				811A0D7B1BB2F20100B73C09 /* WorldPaySDKDemoTests */,
+				811A0D5D1BB2F20100B73C09 /* Products */,
+				814EDC061C69636E0010877C /* WorldPaySDKDemo copy-Info.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		811A0D5D1BB2F20100B73C09 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				811A0D5C1BB2F20100B73C09 /* WorldPaySDKDemo_AC.app */,
+				811A0D781BB2F20100B73C09 /* WorldPaySDKDemoTests.xctest */,
+				814EDC051C69636E0010877C /* WorldPaySDKDemo_Miura.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		811A0D5E1BB2F20100B73C09 /* WorldPaySDKDemo */ = {
+			isa = PBXGroup;
+			children = (
+				811A0D631BB2F20100B73C09 /* AppDelegate.h */,
+				811A0D641BB2F20100B73C09 /* AppDelegate.m */,
+				811A0D661BB2F20100B73C09 /* MasterViewController.h */,
+				811A0D671BB2F20100B73C09 /* MasterViewController.m */,
+				811A0D691BB2F20100B73C09 /* DetailViewController.h */,
+				811A0D6A1BB2F20100B73C09 /* DetailViewController.m */,
+				8C2B20BA1DA3F2F800643EEB /* Controls */,
+				8C2B20AF1DA3F23500643EEB /* TransactionViewController.h */,
+				8C2B20B01DA3F23500643EEB /* TransactionViewController.m */,
+				8C2B20B11DA3F23500643EEB /* TransactionViewController.xib */,
+				811A0D6F1BB2F20100B73C09 /* Images.xcassets */,
+				8C068D001DA4146E00578C9D /* Main.storyboard */,
+				811A0D711BB2F20100B73C09 /* LaunchScreen.xib */,
+				811A0D5F1BB2F20100B73C09 /* Supporting Files */,
+			);
+			path = WorldPaySDKDemo;
+			sourceTree = "<group>";
+		};
+		811A0D5F1BB2F20100B73C09 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				811A0DA01BB2F57800B73C09 /* Frameworks */,
+				811A0D601BB2F20100B73C09 /* Info.plist */,
+				811A0D611BB2F20100B73C09 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		811A0D7B1BB2F20100B73C09 /* WorldPaySDKDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				811A0D7E1BB2F20100B73C09 /* WorldPaySDKDemoTests.m */,
+				811A0D7C1BB2F20100B73C09 /* Supporting Files */,
+			);
+			path = WorldPaySDKDemoTests;
+			sourceTree = "<group>";
+		};
+		811A0D7C1BB2F20100B73C09 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				811A0D7D1BB2F20100B73C09 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		811A0DA01BB2F57800B73C09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				813F2AF21D889708003F6716 /* WorldPaySDK_Miura.framework */,
+				813F2AEE1D8896BA003F6716 /* WorldPaySDK_AC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C2B20BA1DA3F2F800643EEB /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				8C2B20B61DA3F2EA00643EEB /* DropDownTextField.h */,
+				8C2B20B71DA3F2EA00643EEB /* DropDownTextField.m */,
+			);
+			name = Controls;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		811A0D5B1BB2F20100B73C09 /* WorldPaySDKDemo_AC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 811A0D821BB2F20100B73C09 /* Build configuration list for PBXNativeTarget "WorldPaySDKDemo_AC" */;
+			buildPhases = (
+				811A0D581BB2F20100B73C09 /* Sources */,
+				811A0D591BB2F20100B73C09 /* Frameworks */,
+				811A0D5A1BB2F20100B73C09 /* Resources */,
+				811A0DA31BB2F75C00B73C09 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WorldPaySDKDemo_AC;
+			productName = WorldPaySDKDemo;
+			productReference = 811A0D5C1BB2F20100B73C09 /* WorldPaySDKDemo_AC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		811A0D771BB2F20100B73C09 /* WorldPaySDKDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 811A0D851BB2F20100B73C09 /* Build configuration list for PBXNativeTarget "WorldPaySDKDemoTests" */;
+			buildPhases = (
+				811A0D741BB2F20100B73C09 /* Sources */,
+				811A0D751BB2F20100B73C09 /* Frameworks */,
+				811A0D761BB2F20100B73C09 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				811A0D7A1BB2F20100B73C09 /* PBXTargetDependency */,
+			);
+			name = WorldPaySDKDemoTests;
+			productName = WorldPaySDKDemoTests;
+			productReference = 811A0D781BB2F20100B73C09 /* WorldPaySDKDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		814EDBF41C69636E0010877C /* WorldPaySDKDemo_Miura */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 814EDC021C69636E0010877C /* Build configuration list for PBXNativeTarget "WorldPaySDKDemo_Miura" */;
+			buildPhases = (
+				814EDBF51C69636E0010877C /* Sources */,
+				814EDBFA1C69636E0010877C /* Frameworks */,
+				814EDBFD1C69636E0010877C /* Resources */,
+				814EDC011C69636E0010877C /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WorldPaySDKDemo_Miura;
+			productName = WorldPaySDKDemo;
+			productReference = 814EDC051C69636E0010877C /* WorldPaySDKDemo_Miura.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		811A0D541BB2F20100B73C09 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = WorldPay;
+				TargetAttributes = {
+					811A0D5B1BB2F20100B73C09 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					811A0D771BB2F20100B73C09 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 811A0D5B1BB2F20100B73C09;
+					};
+					814EDBF41C69636E0010877C = {
+						DevelopmentTeam = 6S3F523KPF;
+					};
+				};
+			};
+			buildConfigurationList = 811A0D571BB2F20100B73C09 /* Build configuration list for PBXProject "WorldPaySDKDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 811A0D531BB2F20100B73C09;
+			productRefGroup = 811A0D5D1BB2F20100B73C09 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				811A0D5B1BB2F20100B73C09 /* WorldPaySDKDemo_AC */,
+				811A0D771BB2F20100B73C09 /* WorldPaySDKDemoTests */,
+				814EDBF41C69636E0010877C /* WorldPaySDKDemo_Miura */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		811A0D5A1BB2F20100B73C09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				811A0D731BB2F20100B73C09 /* LaunchScreen.xib in Resources */,
+				811A0D701BB2F20100B73C09 /* Images.xcassets in Resources */,
+				8C2B20B41DA3F23500643EEB /* TransactionViewController.xib in Resources */,
+				8C068D011DA4146E00578C9D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		811A0D761BB2F20100B73C09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		814EDBFD1C69636E0010877C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				814EDBFF1C69636E0010877C /* LaunchScreen.xib in Resources */,
+				814EDC001C69636E0010877C /* Images.xcassets in Resources */,
+				8C2B20B51DA3F23500643EEB /* TransactionViewController.xib in Resources */,
+				8C068D021DA4147F00578C9D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		811A0D581BB2F20100B73C09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C2B20B81DA3F2EA00643EEB /* DropDownTextField.m in Sources */,
+				811A0D651BB2F20100B73C09 /* AppDelegate.m in Sources */,
+				811A0D681BB2F20100B73C09 /* MasterViewController.m in Sources */,
+				811A0D621BB2F20100B73C09 /* main.m in Sources */,
+				8C2B20B21DA3F23500643EEB /* TransactionViewController.m in Sources */,
+				811A0D6B1BB2F20100B73C09 /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		811A0D741BB2F20100B73C09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				811A0D7F1BB2F20100B73C09 /* WorldPaySDKDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		814EDBF51C69636E0010877C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C2B20B91DA3F2EA00643EEB /* DropDownTextField.m in Sources */,
+				814EDBF61C69636E0010877C /* AppDelegate.m in Sources */,
+				814EDBF71C69636E0010877C /* MasterViewController.m in Sources */,
+				814EDBF81C69636E0010877C /* main.m in Sources */,
+				8C2B20B31DA3F23500643EEB /* TransactionViewController.m in Sources */,
+				814EDBF91C69636E0010877C /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		811A0D7A1BB2F20100B73C09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 811A0D5B1BB2F20100B73C09 /* WorldPaySDKDemo_AC */;
+			targetProxy = 811A0D791BB2F20100B73C09 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		811A0D711BB2F20100B73C09 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				811A0D721BB2F20100B73C09 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		811A0D801BB2F20100B73C09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Fra‌​meworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		811A0D811BB2F20100B73C09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Fra‌​meworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		811A0D831BB2F20100B73C09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					ANYWHERE_NOMAD,
+				);
+				INFOPLIST_FILE = WorldPaySDKDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.imobile3.WorldPaySDKDemo-AC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		811A0D841BB2F20100B73C09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = ANYWHERE_NOMAD;
+				INFOPLIST_FILE = WorldPaySDKDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.imobile3.WorldPaySDKDemo-AC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		811A0D861BB2F20100B73C09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WorldPaySDKDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.worldpay.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorldPaySDKDemo.app/WorldPaySDKDemo";
+			};
+			name = Debug;
+		};
+		811A0D871BB2F20100B73C09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = WorldPaySDKDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.worldpay.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorldPaySDKDemo.app/WorldPaySDKDemo";
+			};
+			name = Release;
+		};
+		814EDC031C69636E0010877C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "WorldPaySDKDemo copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.imobile3.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		814EDC041C69636E0010877C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "WorldPaySDKDemo copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.imobile3.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		811A0D571BB2F20100B73C09 /* Build configuration list for PBXProject "WorldPaySDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				811A0D801BB2F20100B73C09 /* Debug */,
+				811A0D811BB2F20100B73C09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		811A0D821BB2F20100B73C09 /* Build configuration list for PBXNativeTarget "WorldPaySDKDemo_AC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				811A0D831BB2F20100B73C09 /* Debug */,
+				811A0D841BB2F20100B73C09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		811A0D851BB2F20100B73C09 /* Build configuration list for PBXNativeTarget "WorldPaySDKDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				811A0D861BB2F20100B73C09 /* Debug */,
+				811A0D871BB2F20100B73C09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		814EDC021C69636E0010877C /* Build configuration list for PBXNativeTarget "WorldPaySDKDemo_Miura" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				814EDC031C69636E0010877C /* Debug */,
+				814EDC041C69636E0010877C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 811A0D541BB2F20100B73C09 /* Project object */;
+}
