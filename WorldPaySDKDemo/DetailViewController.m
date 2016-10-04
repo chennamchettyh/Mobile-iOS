@@ -319,7 +319,7 @@
 
     NSString *transactionStatus = nil;
 
-    switch (response.result)
+    switch ((NSInteger)response.result)
     {
         case WPYTransactionResultApproved:
             transactionStatus = @"Approved";

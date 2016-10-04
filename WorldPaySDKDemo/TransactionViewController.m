@@ -9,10 +9,17 @@
 #import "TransactionViewController.h"
 #import "DropDownTextField.h"
 
+#define YESINDEX 0
+
+#define AUTHORIZEINDEX 0
+#define CHARGEINDEX 1
+#define CAPTUREINDEX 2
+
 @interface TransactionViewController ()
 
 @property (weak, nonatomic) IBOutlet DropDownTextField *transactionTypeDropDown;
 @property (weak, nonatomic) IBOutlet DropDownTextField *cardPresentDropDown;
+@property (weak, nonatomic) IBOutlet UITextField *amountTextField;
 @property (strong, nonatomic) WPYSwiper * swiper;
 
 @end
@@ -28,7 +35,7 @@
         NSAssert(FALSE, @"%@", @"Drop down failed to initialized properly");
     }
     
-    if(![self.transactionTypeDropDown sharedInitWithOptionList:@[@"Authorize", @"Charge", @"Capture", @"Credit"] initialIndex:0 parentViewController:self title:@"Transaction Type"])
+    if(![self.transactionTypeDropDown sharedInitWithOptionList:@[@"Authorize", @"Charge", @"Capture"] initialIndex:0 parentViewController:self title:@"Transaction Type"])
     {
         NSAssert(FALSE, @"%@", @"Drop down failed to initialized properly");
     }
@@ -36,12 +43,52 @@
     self.swiper = [[WorldpayAPI instance] swiperWithDelegate:self];
 }
 
+- (void) authorizeTransaction: (WPYPaymentAuthorize *) authorize
+{
+    [[WorldpayAPI instance] paymentAuthorize:authorize withCompletion:^(WPYPaymentResponse * response, NSError * error)
+     {
+         if(error)
+         {
+             NSLog(@"%@: %@", @"Authorize Error", error);
+         }
+         else
+         {
+             NSLog(@"%@: %@", @"Authorize Response", response);
+         }
+     }];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
+- (IBAction) startTransaction
+{
+    if([_cardPresentDropDown selectedIndex] == YESINDEX)
+    {
+        switch([self.cardPresentDropDown selectedIndex])
+        {
+            case AUTHORIZEINDEX:
+            {
+                WPYPaymentAuthorize * authorize = [WPYPaymentAuthorize new];
+                
+                authorize.amount = [NSDecimalNumber decimalNumberWithString:self.amountTextField.text];
+                
+                //[self authorizeTransaction:authorize];
+                
+                [self.swiper beginEMVTransactionWithRequest:authorize transactionType:WPYEMVTransactionTypeGoods];
+                
+                break;
+            }
+        }
+    }
+    else
+    {
+        
+    }
+    
+}
 
 #pragma mark - WPYSwiperDelegate
 
