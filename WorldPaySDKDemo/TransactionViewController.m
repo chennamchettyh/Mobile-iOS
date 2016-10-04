@@ -65,6 +65,8 @@
 
 - (IBAction) startTransaction
 {
+    [self.swiper connectSwiperWithInputType:WPYSwiperInputTypeBluetooth];
+    
     if([_cardPresentDropDown selectedIndex] == YESINDEX)
     {
         switch([self.cardPresentDropDown selectedIndex])
