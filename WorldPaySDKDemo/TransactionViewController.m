@@ -10,16 +10,18 @@
 #import "DropDownTextField.h"
 
 #define YESINDEX 0
+#define NOINDEX 1
 
 #define AUTHORIZEINDEX 0
 #define CHARGEINDEX 1
-#define CAPTUREINDEX 2
+#define CREDITINDEX 2
 
 @interface TransactionViewController ()
 
 @property (weak, nonatomic) IBOutlet DropDownTextField *transactionTypeDropDown;
 @property (weak, nonatomic) IBOutlet DropDownTextField *cardPresentDropDown;
 @property (weak, nonatomic) IBOutlet UITextField *amountTextField;
+@property (weak, nonatomic) IBOutlet UITextField *cashbackTextField;
 @property (strong, nonatomic) WPYSwiper * swiper;
 
 @end
@@ -35,7 +37,7 @@
         NSAssert(FALSE, @"%@", @"Drop down failed to initialized properly");
     }
     
-    if(![self.transactionTypeDropDown sharedInitWithOptionList:@[@"Authorize", @"Charge", @"Capture"] initialIndex:0 parentViewController:self title:@"Transaction Type"])
+    if(![self.transactionTypeDropDown sharedInitWithOptionList:@[@"Authorize", @"Charge", @"Credit"] initialIndex:0 parentViewController:self title:@"Transaction Type"])
     {
         NSAssert(FALSE, @"%@", @"Drop down failed to initialized properly");
     }
@@ -50,11 +52,37 @@
 
 - (IBAction) startTransaction
 {
-    // TODO: Create request dynamically based on selected index
+    WPYPaymentRequest * request;
+    WPYEMVTransactionType transactionType = WPYEMVTransactionTypeGoods;
     
-    // TODO: Set amount / other required fields for all transaction types here
+    // TODO: Any customization needed here?
     
-    if([self.cardPresentDropDown selectedIndex] != YESINDEX)
+    switch([self.transactionTypeDropDown selectedIndex])
+    {
+        case AUTHORIZEINDEX:
+            request = [WPYPaymentAuthorize new];
+            break;
+        case CHARGEINDEX:
+            request = [WPYPaymentCharge new];
+            break;
+        case CREDITINDEX:
+            request = [WPYPaymentCredit new];
+            break;
+        default:
+            request = [WPYPaymentAuthorize new];
+    }
+    
+    // TODO: Set amount / other fields for all transaction types here
+    
+    request.amount = [NSDecimalNumber decimalNumberWithString:self.amountTextField.text];
+    
+    if([self cashbackAllowed] && self.cashbackTextField.text.doubleValue > 0)
+    {
+        request.amountOther = [NSDecimalNumber decimalNumberWithString:self.cashbackTextField.text];
+        transactionType = WPYEMVTransactionTypeCashback;
+    }
+    
+    if([self.cardPresentDropDown selectedIndex] == NOINDEX)
     {
         // TODO: Populate request manually for card not present
     }
@@ -63,28 +91,32 @@
         [self.swiper connectSwiperWithInputType:WPYSwiperInputTypeBluetooth];
     }
     
-    switch([self.transactionTypeDropDown selectedIndex])
-    {
-        case AUTHORIZEINDEX:
-        {
-            WPYPaymentAuthorize * authorize = [WPYPaymentAuthorize new];
-            
-            authorize.amount = [NSDecimalNumber decimalNumberWithString:self.amountTextField.text];
-            
-            [self.swiper beginEMVTransactionWithRequest:authorize transactionType:WPYEMVTransactionTypeGoods];
-            
-            break;
-        }
-    }
-    
-    if([self.cardPresentDropDown selectedIndex] == YESINDEX)
-    {
-        // TODO: When requests are dynamic, begin EMV transaction here
-    }
-    else
+    if([self.cardPresentDropDown selectedIndex] == NOINDEX)
     {
         // TODO: When requests are dynamic, begin API call here
     }
+    else
+    {
+        [self.swiper beginEMVTransactionWithRequest:request transactionType:WPYEMVTransactionTypeGoods];
+    }
+}
+
+- (BOOL) cashbackAllowed
+{
+#ifdef ANYWHERE_NOMAD
+    switch([self.transactionTypeDropDown selectedIndex])
+    {
+        case AUTHORIZEINDEX:
+        case CHARGEINDEX:
+            return YES;
+        case CREDITINDEX:
+            return NO;
+        default:
+            return YES;
+    }
+#else
+    return NO;
+#endif
 }
 
 #pragma mark - WPYSwiperDelegate
@@ -124,5 +156,6 @@
     NSLog(@"%@: %@", @"Swiper failed request with error", error);
 }
 
+- didrecieve
 
 @end

@@ -29,6 +29,8 @@
 
 extern NSString *const WorldpaySDKErrorDomain;
 
+@protocol WPYDebugDelegate;
+
 /**
  * This is the error code returned when an NSError is generated due to a missing authentication token.
  * No web service calls can complete (except for the token request) without a valid authorization token
@@ -48,6 +50,16 @@ typedef NS_ENUM(NSInteger, WorldpaySDKError)
  */
 @property (nonatomic) BOOL enableTestHost;
 
+/**
+ * When enabled, and TestHost is enabled, the debugDelegate will be sent HTTP request and response bodies for logging purposes.
+ * These bodies may contain PCI or PII data and may only be used with test cards on a test environment
+ */
+@property (nonatomic) BOOL enableTestHostDebug;
+
+/**
+ * The delegate that would like to receive debug messages containing HTTP request and response bodies
+ */
+@property (nonatomic, weak) id<WPYDebugDelegate> debugDelegate;
 /**
  *  The terminal ID set when the auth token request was made
  */
@@ -276,6 +288,22 @@ extern NSString *const WorldpayServerErrorDomain;
 - (void)getTransactionsInBatch:(NSString *)batchId withCompletion:(void(^)(NSArray<WPYTransactionResponse *> *, NSError *))completion;
 @end
 
+@protocol WPYDebugDelegate <NSObject>
+/**
+ * This method is used to convey the request headers and body to be sent to the server
+ *
+ * @param request string containing the pertinent information
+ */
+- (void)willSendRequest:(NSString *)request;
+
+/**
+ * This method is used to convey the response body that was sent from the server
+ *
+ * @param response string containing the pertinent response info
+ */
+- (void)didReceiveResponse:(NSString *)response;
+
+@end
 
 @interface WPYLogger : NSObject
 + (void)logMessage:(NSString *)message, ...;

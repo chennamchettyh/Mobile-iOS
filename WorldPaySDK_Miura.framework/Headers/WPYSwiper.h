@@ -373,8 +373,6 @@ typedef NS_ENUM(NSInteger, WPYTransactionResult)
  * and no more online requests are pending.
  *
  * @param a reference to the object that generated and processed the EMV request
- * @param a reference to the card information that was used in the request
- * @param an enumeration indicating the result of the request (approval, denial, reversal, etc).
  * @param the authorization response from the online processor, if any.  If there was a reversal, this will be the result of the payment reversal
  */
 - (void) swiper:(WPYSwiper *)swiper didFinishTransactionWithResponse:(WPYPaymentResponse *)response;
