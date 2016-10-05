@@ -19,7 +19,7 @@
 @interface TransactionViewController ()
 
 @property (weak, nonatomic) IBOutlet DropDownTextField *transactionTypeDropDown;
-@property (weak, nonatomic) IBOutlet DropDownTextField *cardPresentDropDown;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *cardPresentSegmented;
 @property (weak, nonatomic) IBOutlet UITextField *amountTextField;
 @property (weak, nonatomic) IBOutlet UITextField *cashbackTextField;
 @property (strong, nonatomic) WPYSwiper * swiper;
@@ -32,10 +32,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    if(![self.cardPresentDropDown sharedInitWithOptionList:@[@"Yes", @"No"] initialIndex:0 parentViewController:self title:@"Card Present"])
-    {
-        NSAssert(FALSE, @"%@", @"Drop down failed to initialized properly");
-    }
+    [self.swiper connectSwiperWithInputType:WPYSwiperInputTypeBluetooth];
     
     if(![self.transactionTypeDropDown sharedInitWithOptionList:@[@"Authorize", @"Charge", @"Credit"] initialIndex:0 parentViewController:self title:@"Transaction Type"])
     {
@@ -52,6 +49,12 @@
 
 - (IBAction) startTransaction
 {
+    if([self.cardPresentSegmented selectedSegmentIndex] == YESINDEX && [self.swiper connectionState] != WPYSwiperConnected)
+    {
+        // TODO: Let user know swiper not connected
+        return;
+    }
+    
     WPYPaymentRequest * request;
     WPYEMVTransactionType transactionType = WPYEMVTransactionTypeGoods;
     
@@ -78,7 +81,7 @@
         transactionType = WPYEMVTransactionTypeCashback;
     }
     
-    if([self.cardPresentDropDown selectedIndex] == NOINDEX)
+    if([self.cardPresentSegmented selectedSegmentIndex] == NOINDEX)
     {
         WPYManualTenderEntryViewController *tenderViewController = [[WPYManualTenderEntryViewController alloc] initWithDelegate:self tenderType:WPYManualTenderTypeCredit request:request];
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tenderViewController];
@@ -90,7 +93,6 @@
     }
     else
     {
-        [self.swiper connectSwiperWithInputType:WPYSwiperInputTypeBluetooth];
         [self.swiper beginEMVTransactionWithRequest:request transactionType:WPYEMVTransactionTypeGoods];
     }
 }

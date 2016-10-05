@@ -8,7 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransactionViewController">
             <connections>
                 <outlet property="amountTextField" destination="DzM-aw-n5A" id="QtJ-9k-jZC"/>
-                <outlet property="cardPresentDropDown" destination="sal-6O-2MM" id="toH-XQ-AM7"/>
+                <outlet property="cardPresentSegmented" destination="D3I-ew-RtV" id="4hG-y5-QTM"/>
                 <outlet property="transactionTypeDropDown" destination="E7d-s4-Lz4" id="mwD-cg-PxP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -29,11 +29,6 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sal-6O-2MM" customClass="DropDownTextField">
-                    <rect key="frame" x="164" y="40" width="428" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transaction Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBD-Vs-ngQ">
                     <rect key="frame" x="20" y="82" width="132" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -58,25 +53,32 @@
                         <action selector="startTransaction" destination="-1" eventType="touchUpInside" id="8sf-0c-OFH"/>
                     </connections>
                 </button>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="D3I-ew-RtV">
+                    <rect key="frame" x="164" y="41" width="428" height="29"/>
+                    <segments>
+                        <segment title="Yes"/>
+                        <segment title="No"/>
+                    </segments>
+                </segmentedControl>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="E7d-s4-Lz4" firstAttribute="trailing" secondItem="sal-6O-2MM" secondAttribute="trailing" id="2o9-xY-dTV"/>
                 <constraint firstItem="mgR-AO-Odz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2pi-bP-WED"/>
                 <constraint firstItem="KNk-Zk-xnw" firstAttribute="top" secondItem="uBD-Vs-ngQ" secondAttribute="bottom" constant="17" id="73J-3O-AcA"/>
+                <constraint firstAttribute="trailing" secondItem="D3I-ew-RtV" secondAttribute="trailing" constant="8" id="C6o-T6-zQo"/>
+                <constraint firstItem="D3I-ew-RtV" firstAttribute="leading" secondItem="fa9-3Y-sYl" secondAttribute="trailing" constant="44" id="DMc-wj-Jbg"/>
                 <constraint firstItem="DzM-aw-n5A" firstAttribute="trailing" secondItem="E7d-s4-Lz4" secondAttribute="trailing" id="Kke-O5-hpY"/>
                 <constraint firstItem="DzM-aw-n5A" firstAttribute="centerY" secondItem="KNk-Zk-xnw" secondAttribute="centerY" id="LYN-Pf-dze"/>
                 <constraint firstItem="uBD-Vs-ngQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="LZZ-hA-0Ht"/>
                 <constraint firstItem="mgR-AO-Odz" firstAttribute="top" secondItem="DzM-aw-n5A" secondAttribute="bottom" constant="71" id="O8W-l1-Vvo"/>
-                <constraint firstAttribute="trailing" secondItem="sal-6O-2MM" secondAttribute="trailing" constant="8" id="Q3v-Aj-xH6"/>
                 <constraint firstItem="fa9-3Y-sYl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="fat-gb-rsL"/>
                 <constraint firstItem="uBD-Vs-ngQ" firstAttribute="top" secondItem="fa9-3Y-sYl" secondAttribute="bottom" constant="17" id="gFF-dr-9CI"/>
                 <constraint firstItem="E7d-s4-Lz4" firstAttribute="centerY" secondItem="uBD-Vs-ngQ" secondAttribute="centerY" id="imo-8T-OMU"/>
-                <constraint firstItem="sal-6O-2MM" firstAttribute="centerY" secondItem="fa9-3Y-sYl" secondAttribute="centerY" id="sOZ-CY-jjR"/>
+                <constraint firstItem="D3I-ew-RtV" firstAttribute="centerY" secondItem="fa9-3Y-sYl" secondAttribute="centerY" id="scK-IR-rY7"/>
+                <constraint firstItem="E7d-s4-Lz4" firstAttribute="trailing" secondItem="D3I-ew-RtV" secondAttribute="trailing" id="sqh-Vb-SHq"/>
                 <constraint firstItem="KNk-Zk-xnw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="uhf-Az-6Ix"/>
-                <constraint firstItem="sal-6O-2MM" firstAttribute="leading" secondItem="fa9-3Y-sYl" secondAttribute="trailing" constant="44" id="xL0-GZ-EAb"/>
+                <constraint firstItem="E7d-s4-Lz4" firstAttribute="leading" secondItem="D3I-ew-RtV" secondAttribute="leading" id="uyg-FH-iIX"/>
                 <constraint firstItem="fa9-3Y-sYl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="xd5-vx-sQv"/>
-                <constraint firstItem="E7d-s4-Lz4" firstAttribute="leading" secondItem="sal-6O-2MM" secondAttribute="leading" id="xdL-PW-axA"/>
                 <constraint firstItem="DzM-aw-n5A" firstAttribute="leading" secondItem="E7d-s4-Lz4" secondAttribute="leading" id="y7R-HW-BKx"/>
             </constraints>
             <point key="canvasLocation" x="307" y="611"/>
