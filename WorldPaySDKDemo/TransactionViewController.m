@@ -55,8 +55,6 @@
     WPYPaymentRequest * request;
     WPYEMVTransactionType transactionType = WPYEMVTransactionTypeGoods;
     
-    // TODO: Any customization needed here?
-    
     switch([self.transactionTypeDropDown selectedIndex])
     {
         case AUTHORIZEINDEX:
@@ -72,8 +70,6 @@
             request = [WPYPaymentAuthorize new];
     }
     
-    // TODO: Set amount / other fields for all transaction types here
-    
     request.amount = [NSDecimalNumber decimalNumberWithString:self.amountTextField.text];
     
     if([self cashbackAllowed] && self.cashbackTextField.text.doubleValue > 0)
@@ -84,19 +80,17 @@
     
     if([self.cardPresentDropDown selectedIndex] == NOINDEX)
     {
-        // TODO: Populate request manually for card not present
+        WPYManualTenderEntryViewController *tenderViewController = [[WPYManualTenderEntryViewController alloc] initWithDelegate:self tenderType:WPYManualTenderTypeCredit request:request];
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tenderViewController];
+        
+        navigationController.modalPresentationStyle = tenderViewController.modalPresentationStyle;
+        navigationController.navigationBar.translucent = NO;
+        navigationController.navigationBar.barStyle = UIBarStyleDefault;
+        [self presentViewController:navigationController animated:YES completion:nil];
     }
     else
     {
         [self.swiper connectSwiperWithInputType:WPYSwiperInputTypeBluetooth];
-    }
-    
-    if([self.cardPresentDropDown selectedIndex] == NOINDEX)
-    {
-        // TODO: When requests are dynamic, begin API call here
-    }
-    else
-    {
         [self.swiper beginEMVTransactionWithRequest:request transactionType:WPYEMVTransactionTypeGoods];
     }
 }
@@ -156,6 +150,26 @@
     NSLog(@"%@: %@", @"Swiper failed request with error", error);
 }
 
-- didrecieve
+#pragma mark - WPYManualTenderEntryDelegate
+
+- (void)manualTenderEntryControllerDidCancelRequest:(WPYManualTenderEntryViewController *)controller
+{
+    NSLog(@"%@", @"Manual entry cancelled");
+}
+
+- (void)manualTenderEntryController:(WPYManualTenderEntryViewController *)controller didFailWithError:(NSError *)error
+{
+    NSLog(@"%@: %@", @"Manual entry failed with error", error);
+}
+
+- (void)manualTenderEntryControllerIsProcessingRequest:(WPYManualTenderEntryViewController *)controller
+{
+    NSLog(@"%@", @"Manual entry request is being processed");
+}
+
+- (void)manualTenderEntryController:(WPYManualTenderEntryViewController *)controller didFinishWithResponse:(WPYPaymentResponse *)tender
+{
+    NSLog(@"%@: %@", @"Manual entry request finished", tender);
+}
 
 @end
