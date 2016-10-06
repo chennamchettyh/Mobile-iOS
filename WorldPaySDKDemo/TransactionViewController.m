@@ -8,6 +8,7 @@
 
 #import "TransactionViewController.h"
 #import "DropDownTextField.h"
+#import "ExtendableView.h"
 
 #define YESINDEX 0
 #define NOINDEX 1
@@ -23,6 +24,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *amountTextField;
 @property (weak, nonatomic) IBOutlet UITextField *cashbackTextField;
 @property (strong, nonatomic) WPYSwiper * swiper;
+@property (weak, nonatomic) IBOutlet ExtendableView *extendedInfoView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *extendableViewHeightConstraint;
 
 @end
 
@@ -40,6 +43,15 @@
     }
     
     self.swiper = [[WorldpayAPI instance] swiperWithDelegate:self];
+    
+    [self.extendedInfoView setTitle:@"Extended Information"];
+    UILabel * testLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 31)];
+    testLabel.text = @"Test";
+    [self.extendedInfoView setSecondaryViewInContainer:testLabel];
+    [self.extendedInfoView setHeightCallback:^(CGFloat height)
+    {
+        self.extendableViewHeightConstraint.constant += height;
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

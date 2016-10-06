@@ -34,6 +34,10 @@
 		8CAE8A7F1DA69ED0006DBC36 /* UIColor+Worldpay.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE8A7D1DA69ED0006DBC36 /* UIColor+Worldpay.m */; };
 		8CAE8A821DA6A26A006DBC36 /* UIFont+Worldpay.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE8A811DA6A26A006DBC36 /* UIFont+Worldpay.m */; };
 		8CAE8A831DA6A26A006DBC36 /* UIFont+Worldpay.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE8A811DA6A26A006DBC36 /* UIFont+Worldpay.m */; };
+		8CAE8A8A1DA6B5EE006DBC36 /* ExtendableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE8A891DA6B5EE006DBC36 /* ExtendableView.m */; };
+		8CAE8A8B1DA6B5EE006DBC36 /* ExtendableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE8A891DA6B5EE006DBC36 /* ExtendableView.m */; };
+		8CAE8A8D1DA6B605006DBC36 /* ExtendableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CAE8A8C1DA6B605006DBC36 /* ExtendableView.xib */; };
+		8CAE8A8E1DA6B605006DBC36 /* ExtendableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CAE8A8C1DA6B605006DBC36 /* ExtendableView.xib */; };
 		8CCE416C1DA4491900233268 /* WorldPaySDK_Miura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813F2AF21D889708003F6716 /* WorldPaySDK_Miura.framework */; };
 		8CCE416D1DA4491900233268 /* WorldPaySDK_Miura.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 813F2AF21D889708003F6716 /* WorldPaySDK_Miura.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -102,6 +106,9 @@
 		8CAE8A7D1DA69ED0006DBC36 /* UIColor+Worldpay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Worldpay.m"; sourceTree = "<group>"; };
 		8CAE8A801DA6A26A006DBC36 /* UIFont+Worldpay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Worldpay.h"; sourceTree = "<group>"; };
 		8CAE8A811DA6A26A006DBC36 /* UIFont+Worldpay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Worldpay.m"; sourceTree = "<group>"; };
+		8CAE8A881DA6B5EE006DBC36 /* ExtendableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendableView.h; sourceTree = "<group>"; };
+		8CAE8A891DA6B5EE006DBC36 /* ExtendableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendableView.m; sourceTree = "<group>"; };
+		8CAE8A8C1DA6B605006DBC36 /* ExtendableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExtendableView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +221,9 @@
 			children = (
 				8C2B20B61DA3F2EA00643EEB /* DropDownTextField.h */,
 				8C2B20B71DA3F2EA00643EEB /* DropDownTextField.m */,
+				8CAE8A881DA6B5EE006DBC36 /* ExtendableView.h */,
+				8CAE8A891DA6B5EE006DBC36 /* ExtendableView.m */,
+				8CAE8A8C1DA6B605006DBC36 /* ExtendableView.xib */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -331,6 +341,7 @@
 			files = (
 				811A0D731BB2F20100B73C09 /* LaunchScreen.xib in Resources */,
 				811A0D701BB2F20100B73C09 /* Images.xcassets in Resources */,
+				8CAE8A8D1DA6B605006DBC36 /* ExtendableView.xib in Resources */,
 				8C2B20B41DA3F23500643EEB /* TransactionViewController.xib in Resources */,
 				8C068D011DA4146E00578C9D /* Main.storyboard in Resources */,
 			);
@@ -349,6 +360,7 @@
 			files = (
 				814EDBFF1C69636E0010877C /* LaunchScreen.xib in Resources */,
 				814EDC001C69636E0010877C /* Images.xcassets in Resources */,
+				8CAE8A8E1DA6B605006DBC36 /* ExtendableView.xib in Resources */,
 				8C2B20B51DA3F23500643EEB /* TransactionViewController.xib in Resources */,
 				8C068D021DA4147F00578C9D /* Main.storyboard in Resources */,
 			);
@@ -365,6 +377,7 @@
 				811A0D651BB2F20100B73C09 /* AppDelegate.m in Sources */,
 				811A0D681BB2F20100B73C09 /* MasterViewController.m in Sources */,
 				811A0D621BB2F20100B73C09 /* main.m in Sources */,
+				8CAE8A8A1DA6B5EE006DBC36 /* ExtendableView.m in Sources */,
 				8CAE8A7E1DA69ED0006DBC36 /* UIColor+Worldpay.m in Sources */,
 				8C2B20B21DA3F23500643EEB /* TransactionViewController.m in Sources */,
 				8CAE8A821DA6A26A006DBC36 /* UIFont+Worldpay.m in Sources */,
@@ -388,6 +401,7 @@
 				814EDBF61C69636E0010877C /* AppDelegate.m in Sources */,
 				814EDBF71C69636E0010877C /* MasterViewController.m in Sources */,
 				814EDBF81C69636E0010877C /* main.m in Sources */,
+				8CAE8A8B1DA6B5EE006DBC36 /* ExtendableView.m in Sources */,
 				8CAE8A7F1DA69ED0006DBC36 /* UIColor+Worldpay.m in Sources */,
 				8C2B20B31DA3F23500643EEB /* TransactionViewController.m in Sources */,
 				8CAE8A831DA6A26A006DBC36 /* UIFont+Worldpay.m in Sources */,
