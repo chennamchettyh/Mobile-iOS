@@ -7,6 +7,9 @@
 //
 
 #import "ExtendableView.h"
+#import "UIFont+Worldpay.h"
+
+#define TITLESIZE 17
 
 @interface ExtendableView ()
 
@@ -27,6 +30,7 @@
     self.extended = false;
     [[NSBundle mainBundle] loadNibNamed:@"ExtendableView" owner:self options:nil];
     [self addSubview: self.view];
+    [self.titleLabel setFont:[UIFont worldpayPrimaryWithSize: TITLESIZE]];
 }
 
 - (instancetype) initWithFrame:(CGRect)frame

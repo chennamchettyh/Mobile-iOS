@@ -7,12 +7,15 @@
 
 #import "AppDelegate.h"
 #import "TransactionViewController.h"
+#import "UIFont+Worldpay.h"
 
 #ifdef ANYWHERE_NOMAD
 #import <WorldPaySDK_AC/WorldPaySDK.h>
 #else
 #import <WorldPaySDK_Miura/WorldPaySDK.h>
 #endif
+
+#define TABSIZE 10
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -40,6 +43,8 @@
              exit(0);
          }
      }];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes: [UIFont worldpayPrimaryAttributesWithSize: TABSIZE] forState:UIControlStateNormal];
     
     UITabBarController * tabController = (UITabBarController *) self.window.rootViewController;
     

@@ -38,6 +38,10 @@
 		8CAE8A8B1DA6B5EE006DBC36 /* ExtendableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE8A891DA6B5EE006DBC36 /* ExtendableView.m */; };
 		8CAE8A8D1DA6B605006DBC36 /* ExtendableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CAE8A8C1DA6B605006DBC36 /* ExtendableView.xib */; };
 		8CAE8A8E1DA6B605006DBC36 /* ExtendableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CAE8A8C1DA6B605006DBC36 /* ExtendableView.xib */; };
+		8CAE8A9E1DA6F7A4006DBC36 /* AdelleSans_Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8CAE8A9C1DA6F7A4006DBC36 /* AdelleSans_Bold.otf */; };
+		8CAE8A9F1DA6F7A4006DBC36 /* AdelleSans_Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8CAE8A9C1DA6F7A4006DBC36 /* AdelleSans_Bold.otf */; };
+		8CAE8AA01DA6F7A4006DBC36 /* AdelleSans_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8CAE8A9D1DA6F7A4006DBC36 /* AdelleSans_Regular.otf */; };
+		8CAE8AA11DA6F7A4006DBC36 /* AdelleSans_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8CAE8A9D1DA6F7A4006DBC36 /* AdelleSans_Regular.otf */; };
 		8CCE416C1DA4491900233268 /* WorldPaySDK_Miura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813F2AF21D889708003F6716 /* WorldPaySDK_Miura.framework */; };
 		8CCE416D1DA4491900233268 /* WorldPaySDK_Miura.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 813F2AF21D889708003F6716 /* WorldPaySDK_Miura.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -79,7 +83,6 @@
 
 /* Begin PBXFileReference section */
 		811A0D5C1BB2F20100B73C09 /* WorldPaySDKDemo_AC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldPaySDKDemo_AC.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		811A0D601BB2F20100B73C09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		811A0D611BB2F20100B73C09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		811A0D631BB2F20100B73C09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		811A0D641BB2F20100B73C09 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -95,7 +98,7 @@
 		813F2AEE1D8896BA003F6716 /* WorldPaySDK_AC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WorldPaySDK_AC.framework; path = ../WorldPaySDK_AC.framework; sourceTree = "<group>"; };
 		813F2AF21D889708003F6716 /* WorldPaySDK_Miura.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WorldPaySDK_Miura.framework; path = ../WorldPaySDK_Miura.framework; sourceTree = "<group>"; };
 		814EDC051C69636E0010877C /* WorldPaySDKDemo_Miura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldPaySDKDemo_Miura.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		814EDC061C69636E0010877C /* WorldPaySDKDemo copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WorldPaySDKDemo copy-Info.plist"; sourceTree = SOURCE_ROOT; };
+		814EDC061C69636E0010877C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		8C068D001DA4146E00578C9D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		8C2B20AF1DA3F23500643EEB /* TransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionViewController.h; sourceTree = "<group>"; };
 		8C2B20B01DA3F23500643EEB /* TransactionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionViewController.m; sourceTree = "<group>"; };
@@ -109,6 +112,8 @@
 		8CAE8A881DA6B5EE006DBC36 /* ExtendableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendableView.h; sourceTree = "<group>"; };
 		8CAE8A891DA6B5EE006DBC36 /* ExtendableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendableView.m; sourceTree = "<group>"; };
 		8CAE8A8C1DA6B605006DBC36 /* ExtendableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExtendableView.xib; sourceTree = "<group>"; };
+		8CAE8A9C1DA6F7A4006DBC36 /* AdelleSans_Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AdelleSans_Bold.otf; sourceTree = "<group>"; };
+		8CAE8A9D1DA6F7A4006DBC36 /* AdelleSans_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AdelleSans_Regular.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +149,7 @@
 				811A0D5E1BB2F20100B73C09 /* WorldPaySDKDemo */,
 				811A0D7B1BB2F20100B73C09 /* WorldPaySDKDemoTests */,
 				811A0D5D1BB2F20100B73C09 /* Products */,
-				814EDC061C69636E0010877C /* WorldPaySDKDemo copy-Info.plist */,
+				814EDC061C69636E0010877C /* Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,8 +188,8 @@
 		811A0D5F1BB2F20100B73C09 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8CAE8A8F1DA6F3C4006DBC36 /* Fonts */,
 				811A0DA01BB2F57800B73C09 /* Frameworks */,
-				811A0D601BB2F20100B73C09 /* Info.plist */,
 				811A0D611BB2F20100B73C09 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -237,6 +242,15 @@
 				8CAE8A811DA6A26A006DBC36 /* UIFont+Worldpay.m */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		8CAE8A8F1DA6F3C4006DBC36 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8CAE8A9C1DA6F7A4006DBC36 /* AdelleSans_Bold.otf */,
+				8CAE8A9D1DA6F7A4006DBC36 /* AdelleSans_Regular.otf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +357,8 @@
 				811A0D701BB2F20100B73C09 /* Images.xcassets in Resources */,
 				8CAE8A8D1DA6B605006DBC36 /* ExtendableView.xib in Resources */,
 				8C2B20B41DA3F23500643EEB /* TransactionViewController.xib in Resources */,
+				8CAE8AA01DA6F7A4006DBC36 /* AdelleSans_Regular.otf in Resources */,
+				8CAE8A9E1DA6F7A4006DBC36 /* AdelleSans_Bold.otf in Resources */,
 				8C068D011DA4146E00578C9D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +378,8 @@
 				814EDC001C69636E0010877C /* Images.xcassets in Resources */,
 				8CAE8A8E1DA6B605006DBC36 /* ExtendableView.xib in Resources */,
 				8C2B20B51DA3F23500643EEB /* TransactionViewController.xib in Resources */,
+				8CAE8AA11DA6F7A4006DBC36 /* AdelleSans_Regular.otf in Resources */,
+				8CAE8A9F1DA6F7A4006DBC36 /* AdelleSans_Bold.otf in Resources */,
 				8C068D021DA4147F00578C9D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -608,7 +626,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "WorldPaySDKDemo copy-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.imobile3.$(PRODUCT_NAME:rfc1034identifier)";
@@ -626,7 +644,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "WorldPaySDKDemo copy-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.imobile3.$(PRODUCT_NAME:rfc1034identifier)";

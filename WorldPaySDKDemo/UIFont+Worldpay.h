@@ -14,4 +14,16 @@
 
 + (NSDictionary *) worldpayPrimaryAttributesWithSize: (CGFloat) size;
 
++ (UIFont *) worldpayBoldPrimaryWithSize: (CGFloat) size;
+
++ (NSDictionary *) worldpayBoldPrimaryAttributesWithSize: (CGFloat) size;
+
++ (UIFont *) worldpayTertiaryWithSize: (CGFloat) size;
+
++ (NSDictionary *) worldpayTertiaryAttributesWithSize: (CGFloat) size;
+
++ (UIFont *) worldpayBoldTertiaryWithSize: (CGFloat) size;
+
++ (NSDictionary *) worldpayBoldTertiaryAttributesWithSize: (CGFloat) size;
+
 @end
