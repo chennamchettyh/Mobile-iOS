@@ -9,6 +9,7 @@
 #import "TransactionViewController.h"
 #import "DropDownTextField.h"
 #import "ExtendableView.h"
+#import "UIFont+Worldpay.h"
 
 #define YESINDEX 0
 #define NOINDEX 1
@@ -16,6 +17,10 @@
 #define AUTHORIZEINDEX 0
 #define CHARGEINDEX 1
 #define CREDITINDEX 2
+
+#define LABELTEXTSIZE 17
+#define TEXTFIELDSIZE 14
+#define BUTTONTEXTSIZE 15
 
 @interface TransactionViewController ()
 
@@ -26,6 +31,8 @@
 @property (strong, nonatomic) WPYSwiper * swiper;
 @property (weak, nonatomic) IBOutlet ExtendableView *extendedInfoView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *extendableViewHeightConstraint;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *formLabels;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
 
 @end
 
@@ -52,6 +59,15 @@
     {
         self.extendableViewHeightConstraint.constant += height;
     }];
+    
+    [self.amountTextField setFont:[UIFont worldpayPrimaryWithSize: TEXTFIELDSIZE]];
+    [self.cardPresentSegmented setTitleTextAttributes:[UIFont worldpayPrimaryAttributesWithSize: TEXTFIELDSIZE] forState:UIControlStateNormal];
+    [self.startButton.titleLabel setFont:[UIFont worldpayPrimaryWithSize: BUTTONTEXTSIZE]];
+    
+    for(UILabel * label in self.formLabels)
+    {
+        [label setFont:[UIFont worldpayPrimaryWithSize: LABELTEXTSIZE]];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

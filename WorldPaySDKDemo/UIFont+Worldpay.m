@@ -8,15 +8,22 @@
 
 #import "UIFont+Worldpay.h"
 
+#define PRIMARYFONTNAME @"ArialMT"
+
 @implementation UIFont (Worldpay)
 
 + (UIFont *) worldpayPrimaryWithSize: (CGFloat) size
 {
-    return [UIFont fontWithName: @"ArialMT" size: size];
+    return [self fontWithName: PRIMARYFONTNAME size: size];
     
     // Primary should be Adelle Sans, but we don't have the font files at the moment
     // Secondary should be Calibri, but it's a Microsoft font
     // Tertiary should be Arial, but it's our only option
+}
+
++ (NSDictionary *) worldpayPrimaryAttributesWithSize: (CGFloat) size
+{
+    return @{NSFontAttributeName : [self worldpayPrimaryWithSize: size]};
 }
 
 @end

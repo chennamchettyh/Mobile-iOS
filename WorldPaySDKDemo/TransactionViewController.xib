@@ -11,8 +11,12 @@
                 <outlet property="cardPresentSegmented" destination="D3I-ew-RtV" id="4hG-y5-QTM"/>
                 <outlet property="extendableViewHeightConstraint" destination="htF-im-zy8" id="1Qp-NX-K01"/>
                 <outlet property="extendedInfoView" destination="J58-rS-ZbV" id="tHU-Gn-iSM"/>
+                <outlet property="startButton" destination="mgR-AO-Odz" id="fAw-q1-3ZI"/>
                 <outlet property="transactionTypeDropDown" destination="E7d-s4-Lz4" id="mwD-cg-PxP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="formLabels" destination="fa9-3Y-sYl" id="Lki-so-rXZ"/>
+                <outletCollection property="formLabels" destination="uBD-Vs-ngQ" id="kNi-ni-gbr"/>
+                <outletCollection property="formLabels" destination="KNk-Zk-xnw" id="ROy-ct-xoZ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

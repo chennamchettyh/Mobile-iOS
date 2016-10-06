@@ -10,4 +10,8 @@
 
 @interface UIFont (Worldpay)
 
++ (UIFont *) worldpayPrimaryWithSize: (CGFloat) size;
+
++ (NSDictionary *) worldpayPrimaryAttributesWithSize: (CGFloat) size;
+
 @end

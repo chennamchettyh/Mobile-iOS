@@ -7,6 +7,9 @@
 //
 
 #import "DropDownTextField.h"
+#import "UIFont+Worldpay.h"
+
+#define TEXTFIELDSIZE 14
 
 @interface DropDownTextField ()
 
@@ -59,6 +62,8 @@
             [self._actionSheet dismissViewControllerAnimated:YES completion:nil];
         }]];
     }
+    
+    [self setFont:[UIFont worldpayPrimaryWithSize: TEXTFIELDSIZE]];
     
     return YES;
 }
