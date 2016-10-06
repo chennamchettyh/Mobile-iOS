@@ -30,6 +30,10 @@
 		8C2B20B51DA3F23500643EEB /* TransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2B20B11DA3F23500643EEB /* TransactionViewController.xib */; };
 		8C2B20B81DA3F2EA00643EEB /* DropDownTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2B20B71DA3F2EA00643EEB /* DropDownTextField.m */; };
 		8C2B20B91DA3F2EA00643EEB /* DropDownTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2B20B71DA3F2EA00643EEB /* DropDownTextField.m */; };
+		8CAE8A7E1DA69ED0006DBC36 /* UIColor+Worldpay.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE8A7D1DA69ED0006DBC36 /* UIColor+Worldpay.m */; };
+		8CAE8A7F1DA69ED0006DBC36 /* UIColor+Worldpay.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE8A7D1DA69ED0006DBC36 /* UIColor+Worldpay.m */; };
+		8CAE8A821DA6A26A006DBC36 /* UIFont+Worldpay.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE8A811DA6A26A006DBC36 /* UIFont+Worldpay.m */; };
+		8CAE8A831DA6A26A006DBC36 /* UIFont+Worldpay.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE8A811DA6A26A006DBC36 /* UIFont+Worldpay.m */; };
 		8CCE416C1DA4491900233268 /* WorldPaySDK_Miura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813F2AF21D889708003F6716 /* WorldPaySDK_Miura.framework */; };
 		8CCE416D1DA4491900233268 /* WorldPaySDK_Miura.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 813F2AF21D889708003F6716 /* WorldPaySDK_Miura.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -94,6 +98,10 @@
 		8C2B20B11DA3F23500643EEB /* TransactionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionViewController.xib; sourceTree = "<group>"; };
 		8C2B20B61DA3F2EA00643EEB /* DropDownTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownTextField.h; sourceTree = "<group>"; };
 		8C2B20B71DA3F2EA00643EEB /* DropDownTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownTextField.m; sourceTree = "<group>"; };
+		8CAE8A7C1DA69ED0006DBC36 /* UIColor+Worldpay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Worldpay.h"; sourceTree = "<group>"; };
+		8CAE8A7D1DA69ED0006DBC36 /* UIColor+Worldpay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Worldpay.m"; sourceTree = "<group>"; };
+		8CAE8A801DA6A26A006DBC36 /* UIFont+Worldpay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Worldpay.h"; sourceTree = "<group>"; };
+		8CAE8A811DA6A26A006DBC36 /* UIFont+Worldpay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Worldpay.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +160,7 @@
 				811A0D671BB2F20100B73C09 /* MasterViewController.m */,
 				811A0D691BB2F20100B73C09 /* DetailViewController.h */,
 				811A0D6A1BB2F20100B73C09 /* DetailViewController.m */,
+				8CAE8A7B1DA69E8F006DBC36 /* Extensions */,
 				8C2B20BA1DA3F2F800643EEB /* Controls */,
 				8C2B20AF1DA3F23500643EEB /* TransactionViewController.h */,
 				8C2B20B01DA3F23500643EEB /* TransactionViewController.m */,
@@ -207,6 +216,17 @@
 				8C2B20B71DA3F2EA00643EEB /* DropDownTextField.m */,
 			);
 			name = Controls;
+			sourceTree = "<group>";
+		};
+		8CAE8A7B1DA69E8F006DBC36 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8CAE8A7C1DA69ED0006DBC36 /* UIColor+Worldpay.h */,
+				8CAE8A7D1DA69ED0006DBC36 /* UIColor+Worldpay.m */,
+				8CAE8A801DA6A26A006DBC36 /* UIFont+Worldpay.h */,
+				8CAE8A811DA6A26A006DBC36 /* UIFont+Worldpay.m */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,7 +365,9 @@
 				811A0D651BB2F20100B73C09 /* AppDelegate.m in Sources */,
 				811A0D681BB2F20100B73C09 /* MasterViewController.m in Sources */,
 				811A0D621BB2F20100B73C09 /* main.m in Sources */,
+				8CAE8A7E1DA69ED0006DBC36 /* UIColor+Worldpay.m in Sources */,
 				8C2B20B21DA3F23500643EEB /* TransactionViewController.m in Sources */,
+				8CAE8A821DA6A26A006DBC36 /* UIFont+Worldpay.m in Sources */,
 				811A0D6B1BB2F20100B73C09 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,7 +388,9 @@
 				814EDBF61C69636E0010877C /* AppDelegate.m in Sources */,
 				814EDBF71C69636E0010877C /* MasterViewController.m in Sources */,
 				814EDBF81C69636E0010877C /* main.m in Sources */,
+				8CAE8A7F1DA69ED0006DBC36 /* UIColor+Worldpay.m in Sources */,
 				8C2B20B31DA3F23500643EEB /* TransactionViewController.m in Sources */,
+				8CAE8A831DA6A26A006DBC36 /* UIFont+Worldpay.m in Sources */,
 				814EDBF91C69636E0010877C /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
