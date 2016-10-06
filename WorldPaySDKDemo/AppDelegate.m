@@ -7,6 +7,7 @@
 
 #import "AppDelegate.h"
 #import "TransactionViewController.h"
+#import "UIColor+Worldpay.h"
 #import "UIFont+Worldpay.h"
 
 #ifdef ANYWHERE_NOMAD
@@ -44,14 +45,25 @@
          }
      }];
     
-    [[UITabBarItem appearance] setTitleTextAttributes: [UIFont worldpayPrimaryAttributesWithSize: TABSIZE] forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes: @{NSFontAttributeName : [UIFont worldpayPrimaryWithSize:TABSIZE], NSForegroundColorAttributeName : [UIColor worldpayWhite]} forState:UIControlStateNormal];
+    [[UINavigationBar appearance] setBarTintColor: [UIColor worldpayRed]];
+    [[UITabBar appearance] setBarTintColor: [UIColor worldpayGrey]];
+    [[UINavigationBar appearance] setTintColor: [UIColor worldpayWhite]];
+    [[UINavigationBar appearance] setTitleTextAttributes: @{NSForegroundColorAttributeName : [UIColor worldpayWhite]}];
+    [[UIButton appearance] setBackgroundColor: [UIColor worldpayMist]];
+    [[UIButton appearance] setTitleColor: [UIColor worldpayBlack] forState: UIControlStateNormal];
+    
+    [[UISegmentedControl appearance] setTintColor: [UIColor worldpayRed]];
+    [self.window setTintColor: [UIColor worldpayRed]];
     
     UITabBarController * tabController = (UITabBarController *) self.window.rootViewController;
     
     TransactionViewController * transactionViewController = [[TransactionViewController alloc] initWithNibName:nil bundle:nil];
-    transactionViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Transactions" image:nil tag:0];
+    [transactionViewController setTitle:@"Transactions"];
+    UINavigationController * transactionNav = [[UINavigationController alloc] initWithRootViewController: transactionViewController];
+    transactionNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Transactions" image:nil tag:0];
     
-    tabController.viewControllers = @[transactionViewController];
+    tabController.viewControllers = @[transactionNav];
     
     return YES;
 }
