@@ -39,6 +39,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthConstraint;
+@property (strong, nonnull) UIAlertController * swiperAlert;
 
 @end
 
@@ -149,7 +150,7 @@
     
     request.amount = [NSDecimalNumber decimalNumberWithString:self.amountTextField.text];
     
-    if(self.extendedInfoView.orderDate.text || self.extendedInfoView.purchaseOrder.text || self.extendedInfoView.gratuityAmount.text || self.extendedInfoView.serverName.text || self.extendedInfoView.notes.text)
+    if(![self.extendedInfoView.orderDate.text  isEqual: @""] || ![self.extendedInfoView.purchaseOrder.text  isEqual: @""] || ![self.extendedInfoView.gratuityAmount.text  isEqual: @""] || ![self.extendedInfoView.serverName.text  isEqual: @""] || ![self.extendedInfoView.notes.text  isEqual: @""])
     {
         WPYExtendedCardData * extendedData = [[WPYExtendedCardData alloc] init];
         
@@ -168,7 +169,7 @@
             extendedData.levelTwoData = level2;
         }
         
-        if(self.extendedInfoView.gratuityAmount || self.extendedInfoView.serverName)
+        if(self.extendedInfoView.gratuityAmount.text.doubleValue > 0 || ![self.extendedInfoView.serverName.text  isEqual: @""])
         {
             WPYTenderServiceData * serviceData = [[WPYTenderServiceData alloc] init];
             
@@ -256,6 +257,154 @@
 - (void)swiper:(WPYSwiper *)swiper didFailRequest:(WPYPaymentRequest *)request withError:(NSError *)error
 {
     NSLog(@"%@: %@", @"Swiper failed request with error", error);
+}
+
+- (void)swiper:(WPYSwiper *)swiper didRequestDevicePromptText:(WPYDevicePrompt)prompt completion:(void (^)(NSString *))completion
+{
+    NSString *defaultPrompt = nil;
+    
+    switch (prompt)
+    {
+        case WPYDevicePromptInsertCard:
+            defaultPrompt = @"Insert Card";
+            break;
+        case WPYDevicePromptInsertOrSwipe:
+            defaultPrompt = @"Insert or Swipe Card";
+            break;
+        case WPYDevicePromptChipCardSwiped:
+            defaultPrompt = @"Chip Card Detected\nPlease Insert Card";
+            break;
+        case WPYDevicePromptSwipeError:
+#ifdef ANYWHERE_NOMAD
+            defaultPrompt = @"Card Swipe Error Please Try Again";
+#else
+            defaultPrompt = @"Card Swipe Error\nPlease Try Again";
+#endif
+            break;
+        case WPYDevicePromptConfirmAmount:
+#ifdef ANYWHERE_NOMAD
+            defaultPrompt = [NSString stringWithFormat:@"Confirm Total: %@", self.amountTextField.text];
+#else
+        {
+            NSNumberFormatter *currencyFormatter = [NSNumberFormatter new];
+            currencyFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+            NSNumber *number = [currencyFormatter numberFromString:self.amountTextField.text];
+            currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+            defaultPrompt = [NSString stringWithFormat:@"Confirm Total: \n%@", [currencyFormatter stringFromNumber:number]];
+        }
+#endif
+            break;
+        case WPYDevicePromptNonICCard:
+            defaultPrompt = @"Non IC Card Inserted";
+            break;
+        case WPYDevicePromptApproved:
+            defaultPrompt = @"Transaction Approved\nPlease Remove Card";
+            break;
+        case WPYDevicePromptDeclined:
+            defaultPrompt = @"Transaction Declined\nPlease Remove Card";
+            break;
+        case WPYDevicePromptCanceled:
+            defaultPrompt = @"Transaction Canceled\nPlease Remove Card";
+            break;
+        case WPYDevicePromptRetry:
+#ifdef ANYWHERE_NOMAD
+            defaultPrompt = @"Please remove and reinsert card";
+#else
+            defaultPrompt = @"Please remove and \nreinsert card";
+#endif
+            break;
+        case WPYDevicePromptTransactionTimedOut:
+            defaultPrompt = @"Transaction Timed Out";
+            break;
+        case WPYDevicePromptNfcErrorCardInserted:
+            defaultPrompt = @"Error. Card Inserted";
+            break;
+        case WPYDevicePromptNfcErrorCardSwiped:
+            defaultPrompt = @"Error. Card Swipe Detected";
+            break;
+        case WPYDevicePromptNfcErrorUseICCard:
+            defaultPrompt = @"Please Insert Card Instead";
+            break;
+        case WPYDevicePromptNfcErrorUseICCOrMSR:
+            defaultPrompt = @"Please Swipe or Insert Card";
+            break;
+        case WPYDevicePromptNfcHardwareError:
+            defaultPrompt = @"Contactless Hardware Error";
+            break;
+        case WPYDevicePromptEmvReaderError:
+            defaultPrompt = @"IC Card Reader Error";
+            break;
+        case WPYDevicePromptEmvMSRFallback:
+#ifdef ANYWHERE_NOMAD
+            defaultPrompt = @"Card Not Supported Please swipe instead";
+#else
+            defaultPrompt = @"Card Not Supported\nPlease swipe instead";
+#endif
+            break;
+        case WPYDevicePromptEmvInvalidCard:
+#ifdef ANYWHERE_NOMAD
+            defaultPrompt = @"Card Blocked. Use another card.";
+#else
+            defaultPrompt = @"Card Blocked\nUse another card";
+#endif
+            break;
+        case WPYDevicePromptProcessing:
+#ifdef ANYWHERE_NOMAD
+            defaultPrompt = @"Processing. Do Not Remove Card.";
+#else
+            defaultPrompt = @"Processing. \nDo Not Remove Card.";
+#endif
+            break;
+        case WPYDevicePromptEmvRemoveCard:
+            defaultPrompt = @"Please Remove Card";
+            break;
+        case WPYDevicePromptTapCardAgain:
+            defaultPrompt = @"Please Tap Card Again";
+            break;
+        case WPYDevicePromptReversal:
+            defaultPrompt = @"Transaction Declined - Reversal";
+            break;
+        case WPYDevicePromptCallBank:
+            defaultPrompt = @"Declined - Please Call Bank";
+            break;
+        case WPYDevicePromptNotAccepted:
+            defaultPrompt = @"Not Accepted";
+            break;
+        case WPYDevicePromptRemoveCard:
+            defaultPrompt = @"Remove Card";
+            break;
+        case WPYDevicePromptMultipleCardsDetected:
+            defaultPrompt = @"Multiple Cards Detected";
+            break;
+        case WPYDevicePromptTapCard:
+            defaultPrompt = @"Tap Card";
+            break;
+        default:
+            defaultPrompt = nil;
+            break;
+    }
+    
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Prompt" message:defaultPrompt preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
+    
+    if(self.swiperAlert.viewIfLoaded != nil)
+    {
+        [self dismissViewControllerAnimated:true completion:^
+        {
+            [self presentViewController:alert animated:true completion:nil];
+        }];
+    }
+    else
+    {
+        [self presentViewController:alert animated:true completion:nil];
+    }
+    
+    self.swiperAlert = alert;
+
+    if(completion != nil)
+    {
+        completion(defaultPrompt);
+    }
 }
 
 #pragma mark - WPYManualTenderEntryDelegate
