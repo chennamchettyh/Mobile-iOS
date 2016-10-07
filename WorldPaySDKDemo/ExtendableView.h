@@ -13,5 +13,6 @@
 - (void) setTitle: (NSString *) title;
 - (void) setSecondaryViewInContainer: (UIView *) view;
 - (void) setHeightCallback: (void (^)(CGFloat)) callback;
+- (void) setHeightConstraint: (NSLayoutConstraint *) constraint;
 
 @end

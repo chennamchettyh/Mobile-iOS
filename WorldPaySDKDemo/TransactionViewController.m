@@ -55,12 +55,10 @@
     UILabel * testLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 31)];
     testLabel.text = @"Test";
     [self.extendedInfoView setSecondaryViewInContainer:testLabel];
-    [self.extendedInfoView setHeightCallback:^(CGFloat height)
-    {
-        self.extendableViewHeightConstraint.constant += height;
-    }];
+    [self.extendedInfoView setHeightConstraint:self.extendableViewHeightConstraint];
     
     [self.amountTextField setFont:[UIFont worldpayPrimaryWithSize: TEXTFIELDSIZE]];
+    [self.cashbackTextField setFont:[UIFont worldpayPrimaryWithSize: TEXTFIELDSIZE]];
     [self.cardPresentSegmented setTitleTextAttributes:[UIFont worldpayPrimaryAttributesWithSize: TEXTFIELDSIZE] forState:UIControlStateNormal];
     [self.startButton.titleLabel setFont:[UIFont worldpayPrimaryWithSize: BUTTONTEXTSIZE]];
     
@@ -68,6 +66,18 @@
     {
         [label setFont:[UIFont worldpayPrimaryWithSize: LABELTEXTSIZE]];
     }
+    
+    [self validateCashbackAllowed];
+    
+    [self.transactionTypeDropDown setSelectionCallback:^(NSUInteger __unused index)
+    {
+        [self validateCashbackAllowed];
+    }];
+}
+
+- (void) validateCashbackAllowed
+{
+    [self.cashbackTextField setEnabled: [self cashbackAllowed]];
 }
 
 - (void)didReceiveMemoryWarning {

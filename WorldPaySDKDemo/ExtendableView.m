@@ -10,6 +10,7 @@
 #import "UIFont+Worldpay.h"
 
 #define TITLESIZE 17
+#define ANIMATIONDURATION .2
 
 @interface ExtendableView ()
 
@@ -20,6 +21,7 @@
 @property (assign, nonatomic) BOOL extended;
 @property (copy, nonatomic) void (^callback)(CGFloat);
 @property (weak, nonatomic) IBOutlet UIView *secondaryContainerView;
+@property (weak, nonatomic) NSLayoutConstraint * parentHeightConstraint;
 
 @end
 
@@ -89,7 +91,12 @@
         self.callback(height);
     }
     
-    [self.view layoutIfNeeded];
+    [UIView animateWithDuration: ANIMATIONDURATION animations:^{
+        
+        self.parentHeightConstraint.constant += height;
+        
+        [self.view layoutIfNeeded];
+    }];
     
     self.extended = !self.extended;
 }
@@ -97,6 +104,11 @@
 - (void)setHeightCallback:(void (^)(CGFloat))callback
 {
     self.callback = callback;
+}
+
+- (void) setHeightConstraint: (NSLayoutConstraint *) constraint
+{
+    self.parentHeightConstraint = constraint;
 }
 
 @end

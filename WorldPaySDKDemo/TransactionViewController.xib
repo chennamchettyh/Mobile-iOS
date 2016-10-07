@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="amountTextField" destination="DzM-aw-n5A" id="QtJ-9k-jZC"/>
                 <outlet property="cardPresentSegmented" destination="D3I-ew-RtV" id="4hG-y5-QTM"/>
+                <outlet property="cashbackTextField" destination="e48-1A-3eq" id="2Qq-ps-uyv"/>
                 <outlet property="extendableViewHeightConstraint" destination="htF-im-zy8" id="1Qp-NX-K01"/>
                 <outlet property="extendedInfoView" destination="J58-rS-ZbV" id="tHU-Gn-iSM"/>
                 <outlet property="startButton" destination="mgR-AO-Odz" id="fAw-q1-3ZI"/>
@@ -17,6 +18,7 @@
                 <outletCollection property="formLabels" destination="fa9-3Y-sYl" id="Lki-so-rXZ"/>
                 <outletCollection property="formLabels" destination="uBD-Vs-ngQ" id="kNi-ni-gbr"/>
                 <outletCollection property="formLabels" destination="KNk-Zk-xnw" id="ROy-ct-xoZ"/>
+                <outletCollection property="formLabels" destination="pf6-z0-wVl" id="qFb-sW-xvc"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -60,39 +62,55 @@
                     </segments>
                 </segmentedControl>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J58-rS-ZbV" customClass="ExtendableView">
-                    <rect key="frame" x="20" y="154" width="572" height="46"/>
+                    <rect key="frame" x="20" y="192" width="572" height="46"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="htF-im-zy8"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgR-AO-Odz">
-                    <rect key="frame" x="233" y="271" width="135" height="34"/>
+                    <rect key="frame" x="233" y="309" width="135" height="34"/>
                     <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                     <state key="normal" title="Start Transaction"/>
                     <connections>
                         <action selector="startTransaction" destination="-1" eventType="touchUpInside" id="8sf-0c-OFH"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cash Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pf6-z0-wVl">
+                    <rect key="frame" x="20" y="158" width="82" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e48-1A-3eq">
+                    <rect key="frame" x="185" y="154" width="407" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="mgR-AO-Odz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2pi-bP-WED"/>
-                <constraint firstItem="J58-rS-ZbV" firstAttribute="top" secondItem="KNk-Zk-xnw" secondAttribute="bottom" constant="13" id="613-ix-geG"/>
                 <constraint firstItem="KNk-Zk-xnw" firstAttribute="top" secondItem="uBD-Vs-ngQ" secondAttribute="bottom" constant="17" id="73J-3O-AcA"/>
+                <constraint firstItem="pf6-z0-wVl" firstAttribute="leading" secondItem="KNk-Zk-xnw" secondAttribute="leading" id="9cA-BG-DSR"/>
                 <constraint firstAttribute="trailing" secondItem="D3I-ew-RtV" secondAttribute="trailing" constant="8" id="C6o-T6-zQo"/>
                 <constraint firstItem="D3I-ew-RtV" firstAttribute="leading" secondItem="fa9-3Y-sYl" secondAttribute="trailing" constant="65" id="DMc-wj-Jbg"/>
                 <constraint firstItem="DzM-aw-n5A" firstAttribute="trailing" secondItem="E7d-s4-Lz4" secondAttribute="trailing" id="Kke-O5-hpY"/>
                 <constraint firstItem="DzM-aw-n5A" firstAttribute="centerY" secondItem="KNk-Zk-xnw" secondAttribute="centerY" id="LYN-Pf-dze"/>
-                <constraint firstItem="uBD-Vs-ngQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="LZZ-hA-0Ht"/>
+                <constraint firstItem="pf6-z0-wVl" firstAttribute="centerY" secondItem="e48-1A-3eq" secondAttribute="centerY" id="VGF-tK-Rdu"/>
+                <constraint firstItem="e48-1A-3eq" firstAttribute="trailing" secondItem="DzM-aw-n5A" secondAttribute="trailing" id="YfJ-G0-H9B"/>
+                <constraint firstItem="pf6-z0-wVl" firstAttribute="top" secondItem="KNk-Zk-xnw" secondAttribute="bottom" constant="17" id="fIt-uK-lz1"/>
                 <constraint firstItem="fa9-3Y-sYl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="fat-gb-rsL"/>
                 <constraint firstItem="uBD-Vs-ngQ" firstAttribute="top" secondItem="fa9-3Y-sYl" secondAttribute="bottom" constant="17" id="gFF-dr-9CI"/>
                 <constraint firstItem="E7d-s4-Lz4" firstAttribute="centerY" secondItem="uBD-Vs-ngQ" secondAttribute="centerY" id="imo-8T-OMU"/>
+                <constraint firstItem="J58-rS-ZbV" firstAttribute="leading" secondItem="pf6-z0-wVl" secondAttribute="leading" id="jXL-DQ-wdU"/>
+                <constraint firstItem="KNk-Zk-xnw" firstAttribute="leading" secondItem="uBD-Vs-ngQ" secondAttribute="leading" id="p2b-g5-GgZ"/>
+                <constraint firstItem="J58-rS-ZbV" firstAttribute="top" secondItem="pf6-z0-wVl" secondAttribute="bottom" constant="13" id="p8C-Qf-M4O"/>
                 <constraint firstItem="mgR-AO-Odz" firstAttribute="top" secondItem="J58-rS-ZbV" secondAttribute="bottom" constant="71" id="q4N-Oz-El8"/>
+                <constraint firstItem="uBD-Vs-ngQ" firstAttribute="leading" secondItem="fa9-3Y-sYl" secondAttribute="leading" id="qnd-nW-HiQ"/>
+                <constraint firstItem="e48-1A-3eq" firstAttribute="leading" secondItem="DzM-aw-n5A" secondAttribute="leading" id="rZg-jm-Idw"/>
                 <constraint firstItem="D3I-ew-RtV" firstAttribute="centerY" secondItem="fa9-3Y-sYl" secondAttribute="centerY" id="scK-IR-rY7"/>
                 <constraint firstItem="E7d-s4-Lz4" firstAttribute="trailing" secondItem="D3I-ew-RtV" secondAttribute="trailing" id="sqh-Vb-SHq"/>
-                <constraint firstItem="J58-rS-ZbV" firstAttribute="leading" secondItem="KNk-Zk-xnw" secondAttribute="leading" id="thk-bm-waL"/>
-                <constraint firstItem="KNk-Zk-xnw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="uhf-Az-6Ix"/>
                 <constraint firstItem="E7d-s4-Lz4" firstAttribute="leading" secondItem="D3I-ew-RtV" secondAttribute="leading" id="uyg-FH-iIX"/>
                 <constraint firstAttribute="trailing" secondItem="J58-rS-ZbV" secondAttribute="trailing" constant="8" id="vcP-JF-Tiv"/>
                 <constraint firstItem="fa9-3Y-sYl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="xd5-vx-sQv"/>

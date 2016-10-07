@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSArray * _optionList;
 @property (nonatomic, strong) UIAlertController * _actionSheet;
 @property (nonatomic, weak) UIViewController * _parentViewController;
+@property (nonatomic, copy) void (^_callback)(NSUInteger);
 
 @end
 
@@ -58,7 +59,15 @@
     {
         [self._actionSheet addAction:[UIAlertAction actionWithTitle:option style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
         {
-            [self performSelectorOnMainThread:@selector(setSelectedObjectIndex:) withObject:@([[self._actionSheet actions] indexOfObject:action]) waitUntilDone:NO];
+            NSUInteger index = [[self._actionSheet actions] indexOfObject:action];
+            
+            [self performSelectorOnMainThread:@selector(setSelectedObjectIndex:) withObject:@(index) waitUntilDone:NO];
+            
+            if(self._callback)
+            {
+                self._callback(index);
+            }
+            
             [self._actionSheet dismissViewControllerAnimated:YES completion:nil];
         }]];
     }
@@ -81,6 +90,11 @@
     }
     
     return self;
+}
+
+- (void) setSelectionCallback: (void (^) (NSUInteger)) callback
+{
+    self._callback = callback;
 }
 
 - (void) setSelectedIndex: (NSUInteger) selectedIndex
