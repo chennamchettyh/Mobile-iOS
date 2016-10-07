@@ -10,7 +10,6 @@
 #import "UIFont+Worldpay.h"
 
 #define TITLESIZE 17
-#define ANIMATIONDURATION .2
 
 @interface ExtendableView ()
 
@@ -33,6 +32,7 @@
     [[NSBundle mainBundle] loadNibNamed:@"ExtendableView" owner:self options:nil];
     [self addSubview: self.view];
     [self.titleLabel setFont:[UIFont worldpayPrimaryWithSize: TITLESIZE]];
+    self.secondaryContainerView.hidden = true;
 }
 
 - (instancetype) initWithFrame:(CGRect)frame
@@ -91,14 +91,12 @@
         self.callback(height);
     }
     
-    [UIView animateWithDuration: ANIMATIONDURATION animations:^{
+    self.parentHeightConstraint.constant += height;
         
-        self.parentHeightConstraint.constant += height;
-        
-        [self.view layoutIfNeeded];
-    }];
+    [self.view layoutIfNeeded];
     
     self.extended = !self.extended;
+    self.secondaryContainerView.hidden = !self.secondaryContainerView.hidden;
 }
 
 - (void)setHeightCallback:(void (^)(CGFloat))callback

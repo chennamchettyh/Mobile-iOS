@@ -44,6 +44,10 @@
 		8CAE8AA11DA6F7A4006DBC36 /* AdelleSans_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8CAE8A9D1DA6F7A4006DBC36 /* AdelleSans_Regular.otf */; };
 		8CCE416C1DA4491900233268 /* WorldPaySDK_Miura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813F2AF21D889708003F6716 /* WorldPaySDK_Miura.framework */; };
 		8CCE416D1DA4491900233268 /* WorldPaySDK_Miura.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 813F2AF21D889708003F6716 /* WorldPaySDK_Miura.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8CDEB6C31DA8105100F81B63 /* ExtendedInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEB6C21DA8105100F81B63 /* ExtendedInformationView.m */; };
+		8CDEB6C41DA8105100F81B63 /* ExtendedInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEB6C21DA8105100F81B63 /* ExtendedInformationView.m */; };
+		8CDEB6C61DA8106600F81B63 /* ExtendedInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CDEB6C51DA8106600F81B63 /* ExtendedInformationView.xib */; };
+		8CDEB6C71DA8106600F81B63 /* ExtendedInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CDEB6C51DA8106600F81B63 /* ExtendedInformationView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +118,9 @@
 		8CAE8A8C1DA6B605006DBC36 /* ExtendableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExtendableView.xib; sourceTree = "<group>"; };
 		8CAE8A9C1DA6F7A4006DBC36 /* AdelleSans_Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AdelleSans_Bold.otf; sourceTree = "<group>"; };
 		8CAE8A9D1DA6F7A4006DBC36 /* AdelleSans_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AdelleSans_Regular.otf; sourceTree = "<group>"; };
+		8CDEB6C11DA8105100F81B63 /* ExtendedInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendedInformationView.h; sourceTree = "<group>"; };
+		8CDEB6C21DA8105100F81B63 /* ExtendedInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendedInformationView.m; sourceTree = "<group>"; };
+		8CDEB6C51DA8106600F81B63 /* ExtendedInformationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExtendedInformationView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +179,7 @@
 				811A0D671BB2F20100B73C09 /* MasterViewController.m */,
 				811A0D691BB2F20100B73C09 /* DetailViewController.h */,
 				811A0D6A1BB2F20100B73C09 /* DetailViewController.m */,
+				8CDEB6C01DA80FFF00F81B63 /* Views */,
 				8CAE8A7B1DA69E8F006DBC36 /* Extensions */,
 				8C2B20BA1DA3F2F800643EEB /* Controls */,
 				8C2B20AF1DA3F23500643EEB /* TransactionViewController.h */,
@@ -251,6 +259,16 @@
 				8CAE8A9D1DA6F7A4006DBC36 /* AdelleSans_Regular.otf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		8CDEB6C01DA80FFF00F81B63 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8CDEB6C11DA8105100F81B63 /* ExtendedInformationView.h */,
+				8CDEB6C21DA8105100F81B63 /* ExtendedInformationView.m */,
+				8CDEB6C51DA8106600F81B63 /* ExtendedInformationView.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +377,7 @@
 				8C2B20B41DA3F23500643EEB /* TransactionViewController.xib in Resources */,
 				8CAE8AA01DA6F7A4006DBC36 /* AdelleSans_Regular.otf in Resources */,
 				8CAE8A9E1DA6F7A4006DBC36 /* AdelleSans_Bold.otf in Resources */,
+				8CDEB6C61DA8106600F81B63 /* ExtendedInformationView.xib in Resources */,
 				8C068D011DA4146E00578C9D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,6 +399,7 @@
 				8C2B20B51DA3F23500643EEB /* TransactionViewController.xib in Resources */,
 				8CAE8AA11DA6F7A4006DBC36 /* AdelleSans_Regular.otf in Resources */,
 				8CAE8A9F1DA6F7A4006DBC36 /* AdelleSans_Bold.otf in Resources */,
+				8CDEB6C71DA8106600F81B63 /* ExtendedInformationView.xib in Resources */,
 				8C068D021DA4147F00578C9D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,6 +417,7 @@
 				811A0D621BB2F20100B73C09 /* main.m in Sources */,
 				8CAE8A8A1DA6B5EE006DBC36 /* ExtendableView.m in Sources */,
 				8CAE8A7E1DA69ED0006DBC36 /* UIColor+Worldpay.m in Sources */,
+				8CDEB6C31DA8105100F81B63 /* ExtendedInformationView.m in Sources */,
 				8C2B20B21DA3F23500643EEB /* TransactionViewController.m in Sources */,
 				8CAE8A821DA6A26A006DBC36 /* UIFont+Worldpay.m in Sources */,
 				811A0D6B1BB2F20100B73C09 /* DetailViewController.m in Sources */,
@@ -421,6 +442,7 @@
 				814EDBF81C69636E0010877C /* main.m in Sources */,
 				8CAE8A8B1DA6B5EE006DBC36 /* ExtendableView.m in Sources */,
 				8CAE8A7F1DA69ED0006DBC36 /* UIColor+Worldpay.m in Sources */,
+				8CDEB6C41DA8105100F81B63 /* ExtendedInformationView.m in Sources */,
 				8C2B20B31DA3F23500643EEB /* TransactionViewController.m in Sources */,
 				8CAE8A831DA6A26A006DBC36 /* UIFont+Worldpay.m in Sources */,
 				814EDBF91C69636E0010877C /* DetailViewController.m in Sources */,

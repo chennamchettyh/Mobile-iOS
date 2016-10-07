@@ -10,6 +10,7 @@
 #import "DropDownTextField.h"
 #import "ExtendableView.h"
 #import "UIFont+Worldpay.h"
+#import "ExtendedInformationView.h"
 
 #define YESINDEX 0
 #define NOINDEX 1
@@ -22,6 +23,8 @@
 #define TEXTFIELDSIZE 14
 #define BUTTONTEXTSIZE 15
 
+#define WIDTHCONSTANT 200
+
 @interface TransactionViewController ()
 
 @property (weak, nonatomic) IBOutlet DropDownTextField *transactionTypeDropDown;
@@ -29,10 +32,13 @@
 @property (weak, nonatomic) IBOutlet UITextField *amountTextField;
 @property (weak, nonatomic) IBOutlet UITextField *cashbackTextField;
 @property (strong, nonatomic) WPYSwiper * swiper;
-@property (weak, nonatomic) IBOutlet ExtendableView *extendedInfoView;
+@property (weak, nonatomic) IBOutlet ExtendableView *extendableInfoView;
+@property (weak, nonatomic) ExtendedInformationView * extendedInfoView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *extendableViewHeightConstraint;
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *formLabels;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthConstraint;
 
 @end
 
@@ -42,8 +48,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self.swiper connectSwiperWithInputType:WPYSwiperInputTypeBluetooth];
-    
     if(![self.transactionTypeDropDown sharedInitWithOptionList:@[@"Authorize", @"Charge", @"Credit"] initialIndex:0 parentViewController:self title:@"Transaction Type"])
     {
         NSAssert(FALSE, @"%@", @"Drop down failed to initialized properly");
@@ -51,11 +55,13 @@
     
     self.swiper = [[WorldpayAPI instance] swiperWithDelegate:self];
     
-    [self.extendedInfoView setTitle:@"Extended Information"];
-    UILabel * testLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 31)];
-    testLabel.text = @"Test";
-    [self.extendedInfoView setSecondaryViewInContainer:testLabel];
-    [self.extendedInfoView setHeightConstraint:self.extendableViewHeightConstraint];
+    [self.extendableInfoView setTitle:@"Extended Information"];
+    ExtendedInformationView * infoView = [[ExtendedInformationView alloc] initWithFrame:CGRectMake(0, 0, self.extendableInfoView.frame.size.width, [ExtendedInformationView expectedHeight])];
+    
+    [self.extendableInfoView setSecondaryViewInContainer:infoView];
+    [self.extendableInfoView setHeightConstraint:self.extendableViewHeightConstraint];
+    
+    self.extendedInfoView = infoView;
     
     [self.amountTextField setFont:[UIFont worldpayPrimaryWithSize: TEXTFIELDSIZE]];
     [self.cashbackTextField setFont:[UIFont worldpayPrimaryWithSize: TEXTFIELDSIZE]];
@@ -73,6 +79,22 @@
     {
         [self validateCashbackAllowed];
     }];
+    
+    self.widthConstraint.constant = WIDTHCONSTANT;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self.swiper connectSwiperWithInputType:WPYSwiperInputTypeBluetooth];
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self.swiper disconnectSwiper];
 }
 
 - (void) validateCashbackAllowed
@@ -89,6 +111,8 @@
 {
     if([self.cardPresentSegmented selectedSegmentIndex] == YESINDEX && [self.swiper connectionState] != WPYSwiperConnected)
     {
+        [self.swiper connectSwiperWithInputType:WPYSwiperInputTypeBluetooth];
+        
         UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"The swiper has not yet connected to your device, please connect device and try again." preferredStyle:UIAlertControllerStyleAlert];
         
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
@@ -115,6 +139,38 @@
     }
     
     request.amount = [NSDecimalNumber decimalNumberWithString:self.amountTextField.text];
+    
+    if(self.extendedInfoView.orderDate.text || self.extendedInfoView.purchaseOrder.text || self.extendedInfoView.gratuityAmount.text || self.extendedInfoView.serverName.text || self.extendedInfoView.notes.text)
+    {
+        WPYExtendedCardData * extendedData = [[WPYExtendedCardData alloc] init];
+        
+        extendedData.notes = self.extendedInfoView.notes.text;
+        
+        if(self.extendedInfoView.orderDate.text || self.extendedInfoView.purchaseOrder.text)
+        {
+            WPYLevelTwoData * level2 = [[WPYLevelTwoData alloc] init];
+            
+            NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
+            [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss a"];
+            
+            level2.orderDate = [formatter dateFromString:self.extendedInfoView.orderDate.text];
+            level2.purchaseOrderNumber = self.extendedInfoView.purchaseOrder.text;
+            
+            extendedData.levelTwoData = level2;
+        }
+        
+        if(self.extendedInfoView.gratuityAmount || self.extendedInfoView.serverName)
+        {
+            WPYTenderServiceData * serviceData = [[WPYTenderServiceData alloc] init];
+            
+            serviceData.gratuityAmount = [NSDecimalNumber decimalNumberWithString:self.extendedInfoView.gratuityAmount.text];
+            serviceData.server = self.extendedInfoView.serverName.text;
+            
+            extendedData.serviceData = serviceData;
+        }
+        
+        request.extendedData = extendedData;
+    }
     
     if([self cashbackAllowed] && self.cashbackTextField.text.doubleValue > 0)
     {

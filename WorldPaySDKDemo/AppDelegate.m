@@ -53,8 +53,8 @@
     [[UIButton appearance] setBackgroundColor: [UIColor worldpayMist]];
     [[UIButton appearance] setTitleColor: [UIColor worldpayBlack] forState: UIControlStateNormal];
     
-    [[UISegmentedControl appearance] setTintColor: [UIColor worldpayRed]];
-    [self.window setTintColor: [UIColor worldpayRed]];
+    [[UISegmentedControl appearance] setTintColor: [UIColor worldpayEmerald]];
+    [self.window setTintColor: [UIColor worldpayEmerald]];
     
     UITabBarController * tabController = (UITabBarController *) self.window.rootViewController;
     

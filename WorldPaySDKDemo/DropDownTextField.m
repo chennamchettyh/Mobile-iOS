@@ -130,6 +130,7 @@
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
+    self._actionSheet.popoverPresentationController.sourceView = self;
     [self showDropDown];
     
     return NO;
