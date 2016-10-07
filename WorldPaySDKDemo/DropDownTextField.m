@@ -100,7 +100,7 @@
 - (void) setSelectedIndex: (NSUInteger) selectedIndex
 {
     self._selectedIndex = selectedIndex;
-    self.text = [self selectedValue];
+    self.text = [self selectedTitle];
 }
 
 - (void) setSelectedObjectIndex: (NSNumber *) index
@@ -118,9 +118,14 @@
     return self._selectedIndex;
 }
 
-- (NSString *) selectedValue
+- (NSString *) selectedTitle
 {
     return self._optionList[self._selectedIndex];
+}
+
+- (NSDictionary *) selectedValue
+{
+    return @{@([self selectedIndex]) : [self selectedTitle]};
 }
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField

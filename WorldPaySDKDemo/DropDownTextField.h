@@ -10,8 +10,9 @@
 
 @interface DropDownTextField : UITextField <UITextFieldDelegate>
 
-- (NSString *) selectedValue;
+- (NSString *) selectedTitle;
 - (NSUInteger) selectedIndex;
+- (NSDictionary *) selectedValue;
 
 - (BOOL) sharedInitWithOptionList: (NSArray *) optionList initialIndex: (NSUInteger) initialIndex parentViewController: (UIViewController *) parentViewController title: (NSString *) title;
 
