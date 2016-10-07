@@ -22,6 +22,18 @@
 		814EDBF91C69636E0010877C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 811A0D6A1BB2F20100B73C09 /* DetailViewController.m */; };
 		814EDBFF1C69636E0010877C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 811A0D711BB2F20100B73C09 /* LaunchScreen.xib */; };
 		814EDC001C69636E0010877C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 811A0D6F1BB2F20100B73C09 /* Images.xcassets */; };
+		8908E7441DA5536A00EBF673 /* TransactionDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908E7421DA5536A00EBF673 /* TransactionDetailCell.m */; };
+		8908E7451DA5536A00EBF673 /* TransactionDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8908E7431DA5536A00EBF673 /* TransactionDetailCell.xib */; };
+		8908E7491DA6E57B00EBF673 /* CardDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908E7471DA6E57B00EBF673 /* CardDataCell.m */; };
+		8908E74A1DA6E57B00EBF673 /* CardDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8908E7481DA6E57B00EBF673 /* CardDataCell.xib */; };
+		8908E74E1DA6EBBC00EBF673 /* BillingAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908E74C1DA6EBBC00EBF673 /* BillingAddressCell.m */; };
+		8908E74F1DA6EBBC00EBF673 /* BillingAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8908E74D1DA6EBBC00EBF673 /* BillingAddressCell.xib */; };
+		8908E7531DA6FACB00EBF673 /* CustomerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908E7511DA6FACB00EBF673 /* CustomerCell.m */; };
+		8908E7541DA6FACB00EBF673 /* CustomerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8908E7521DA6FACB00EBF673 /* CustomerCell.xib */; };
+		89A4DF681DA8110E007F79D6 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A4DF671DA8110E007F79D6 /* Helper.m */; };
+		89A4DF691DA8110E007F79D6 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A4DF671DA8110E007F79D6 /* Helper.m */; };
+		89CB9EB01DA461EE00E4F7E4 /* TransactionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CB9EAE1DA461EE00E4F7E4 /* TransactionDetailViewController.m */; };
+		89CB9EB11DA461EE00E4F7E4 /* TransactionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89CB9EAF1DA461EE00E4F7E4 /* TransactionDetailViewController.xib */; };
 		8C068D011DA4146E00578C9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C068D001DA4146E00578C9D /* Main.storyboard */; };
 		8C068D021DA4147F00578C9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C068D001DA4146E00578C9D /* Main.storyboard */; };
 		8C2B20B21DA3F23500643EEB /* TransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2B20B01DA3F23500643EEB /* TransactionViewController.m */; };
@@ -103,6 +115,23 @@
 		813F2AF21D889708003F6716 /* WorldPaySDK_Miura.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WorldPaySDK_Miura.framework; path = ../WorldPaySDK_Miura.framework; sourceTree = "<group>"; };
 		814EDC051C69636E0010877C /* WorldPaySDKDemo_Miura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldPaySDKDemo_Miura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		814EDC061C69636E0010877C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		8908E7411DA5536A00EBF673 /* TransactionDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionDetailCell.h; sourceTree = "<group>"; };
+		8908E7421DA5536A00EBF673 /* TransactionDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionDetailCell.m; sourceTree = "<group>"; };
+		8908E7431DA5536A00EBF673 /* TransactionDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionDetailCell.xib; sourceTree = "<group>"; };
+		8908E7461DA6E57B00EBF673 /* CardDataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDataCell.h; sourceTree = "<group>"; };
+		8908E7471DA6E57B00EBF673 /* CardDataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDataCell.m; sourceTree = "<group>"; };
+		8908E7481DA6E57B00EBF673 /* CardDataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardDataCell.xib; sourceTree = "<group>"; };
+		8908E74B1DA6EBBC00EBF673 /* BillingAddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillingAddressCell.h; sourceTree = "<group>"; };
+		8908E74C1DA6EBBC00EBF673 /* BillingAddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillingAddressCell.m; sourceTree = "<group>"; };
+		8908E74D1DA6EBBC00EBF673 /* BillingAddressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BillingAddressCell.xib; sourceTree = "<group>"; };
+		8908E7501DA6FACB00EBF673 /* CustomerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerCell.h; sourceTree = "<group>"; };
+		8908E7511DA6FACB00EBF673 /* CustomerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerCell.m; sourceTree = "<group>"; };
+		8908E7521DA6FACB00EBF673 /* CustomerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomerCell.xib; sourceTree = "<group>"; };
+		89A4DF661DA80FAF007F79D6 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		89A4DF671DA8110E007F79D6 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		89CB9EAD1DA461EE00E4F7E4 /* TransactionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransactionDetailViewController.h; path = ../TransactionDetailViewController.h; sourceTree = "<group>"; };
+		89CB9EAE1DA461EE00E4F7E4 /* TransactionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TransactionDetailViewController.m; path = ../TransactionDetailViewController.m; sourceTree = "<group>"; };
+		89CB9EAF1DA461EE00E4F7E4 /* TransactionDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TransactionDetailViewController.xib; path = ../TransactionDetailViewController.xib; sourceTree = "<group>"; };
 		8C068D001DA4146E00578C9D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		8C2B20AF1DA3F23500643EEB /* TransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionViewController.h; sourceTree = "<group>"; };
 		8C2B20B01DA3F23500643EEB /* TransactionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionViewController.m; sourceTree = "<group>"; };
@@ -173,6 +202,7 @@
 		811A0D5E1BB2F20100B73C09 /* WorldPaySDKDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8908E7401DA5534700EBF673 /* Cells */,
 				811A0D631BB2F20100B73C09 /* AppDelegate.h */,
 				811A0D641BB2F20100B73C09 /* AppDelegate.m */,
 				811A0D661BB2F20100B73C09 /* MasterViewController.h */,
@@ -185,6 +215,9 @@
 				8C2B20AF1DA3F23500643EEB /* TransactionViewController.h */,
 				8C2B20B01DA3F23500643EEB /* TransactionViewController.m */,
 				8C2B20B11DA3F23500643EEB /* TransactionViewController.xib */,
+				89CB9EAD1DA461EE00E4F7E4 /* TransactionDetailViewController.h */,
+				89CB9EAE1DA461EE00E4F7E4 /* TransactionDetailViewController.m */,
+				89CB9EAF1DA461EE00E4F7E4 /* TransactionDetailViewController.xib */,
 				811A0D6F1BB2F20100B73C09 /* Images.xcassets */,
 				8C068D001DA4146E00578C9D /* Main.storyboard */,
 				811A0D711BB2F20100B73C09 /* LaunchScreen.xib */,
@@ -229,6 +262,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8908E7401DA5534700EBF673 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8908E7411DA5536A00EBF673 /* TransactionDetailCell.h */,
+				8908E7421DA5536A00EBF673 /* TransactionDetailCell.m */,
+				8908E7431DA5536A00EBF673 /* TransactionDetailCell.xib */,
+				8908E7461DA6E57B00EBF673 /* CardDataCell.h */,
+				8908E7471DA6E57B00EBF673 /* CardDataCell.m */,
+				8908E7481DA6E57B00EBF673 /* CardDataCell.xib */,
+				8908E74B1DA6EBBC00EBF673 /* BillingAddressCell.h */,
+				8908E74C1DA6EBBC00EBF673 /* BillingAddressCell.m */,
+				8908E74D1DA6EBBC00EBF673 /* BillingAddressCell.xib */,
+				8908E7501DA6FACB00EBF673 /* CustomerCell.h */,
+				8908E7511DA6FACB00EBF673 /* CustomerCell.m */,
+				8908E7521DA6FACB00EBF673 /* CustomerCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		8C2B20BA1DA3F2F800643EEB /* Controls */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +300,8 @@
 				8CAE8A7D1DA69ED0006DBC36 /* UIColor+Worldpay.m */,
 				8CAE8A801DA6A26A006DBC36 /* UIFont+Worldpay.h */,
 				8CAE8A811DA6A26A006DBC36 /* UIFont+Worldpay.m */,
+				89A4DF661DA80FAF007F79D6 /* Helper.h */,
+				89A4DF671DA8110E007F79D6 /* Helper.m */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -371,9 +425,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89CB9EB11DA461EE00E4F7E4 /* TransactionDetailViewController.xib in Resources */,
+				8908E7451DA5536A00EBF673 /* TransactionDetailCell.xib in Resources */,
 				811A0D731BB2F20100B73C09 /* LaunchScreen.xib in Resources */,
+				8908E7541DA6FACB00EBF673 /* CustomerCell.xib in Resources */,
 				811A0D701BB2F20100B73C09 /* Images.xcassets in Resources */,
 				8CAE8A8D1DA6B605006DBC36 /* ExtendableView.xib in Resources */,
+				8908E74F1DA6EBBC00EBF673 /* BillingAddressCell.xib in Resources */,
+				8908E74A1DA6E57B00EBF673 /* CardDataCell.xib in Resources */,
 				8C2B20B41DA3F23500643EEB /* TransactionViewController.xib in Resources */,
 				8CAE8AA01DA6F7A4006DBC36 /* AdelleSans_Regular.otf in Resources */,
 				8CAE8A9E1DA6F7A4006DBC36 /* AdelleSans_Bold.otf in Resources */,
@@ -414,13 +473,19 @@
 				8C2B20B81DA3F2EA00643EEB /* DropDownTextField.m in Sources */,
 				811A0D651BB2F20100B73C09 /* AppDelegate.m in Sources */,
 				811A0D681BB2F20100B73C09 /* MasterViewController.m in Sources */,
+				8908E7441DA5536A00EBF673 /* TransactionDetailCell.m in Sources */,
+				89A4DF681DA8110E007F79D6 /* Helper.m in Sources */,
 				811A0D621BB2F20100B73C09 /* main.m in Sources */,
+				8908E7491DA6E57B00EBF673 /* CardDataCell.m in Sources */,
 				8CAE8A8A1DA6B5EE006DBC36 /* ExtendableView.m in Sources */,
 				8CAE8A7E1DA69ED0006DBC36 /* UIColor+Worldpay.m in Sources */,
 				8CDEB6C31DA8105100F81B63 /* ExtendedInformationView.m in Sources */,
 				8C2B20B21DA3F23500643EEB /* TransactionViewController.m in Sources */,
+				8908E74E1DA6EBBC00EBF673 /* BillingAddressCell.m in Sources */,
 				8CAE8A821DA6A26A006DBC36 /* UIFont+Worldpay.m in Sources */,
+				8908E7531DA6FACB00EBF673 /* CustomerCell.m in Sources */,
 				811A0D6B1BB2F20100B73C09 /* DetailViewController.m in Sources */,
+				89CB9EB01DA461EE00E4F7E4 /* TransactionDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +511,7 @@
 				8C2B20B31DA3F23500643EEB /* TransactionViewController.m in Sources */,
 				8CAE8A831DA6A26A006DBC36 /* UIFont+Worldpay.m in Sources */,
 				814EDBF91C69636E0010877C /* DetailViewController.m in Sources */,
+				89A4DF691DA8110E007F79D6 /* Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,7 +639,7 @@
 					"$(inherited)",
 					ANYWHERE_NOMAD,
 				);
-				INFOPLIST_FILE = WorldPaySDKDemo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.imobile3.WorldPaySDKDemo-AC";
@@ -592,7 +658,7 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = ANYWHERE_NOMAD;
-				INFOPLIST_FILE = WorldPaySDKDemo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.imobile3.WorldPaySDKDemo-AC";
