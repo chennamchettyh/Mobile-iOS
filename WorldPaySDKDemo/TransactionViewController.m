@@ -311,10 +311,6 @@
 - (void)didFailToConnectSwiper:(WPYSwiper *)swiper
 {
     NSLog(@"%@", @"Swiper failed to connect");
-    
-    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Failed to connect to swiper." preferredStyle:UIAlertControllerStyleAlert];
-    
-    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
 }
 
 - (void)willConnectSwiper:(WPYSwiper *)swiper
