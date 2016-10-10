@@ -9,17 +9,13 @@
 /* Begin PBXBuildFile section */
 		811A0D621BB2F20100B73C09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 811A0D611BB2F20100B73C09 /* main.m */; };
 		811A0D651BB2F20100B73C09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 811A0D641BB2F20100B73C09 /* AppDelegate.m */; };
-		811A0D681BB2F20100B73C09 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 811A0D671BB2F20100B73C09 /* MasterViewController.m */; };
-		811A0D6B1BB2F20100B73C09 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 811A0D6A1BB2F20100B73C09 /* DetailViewController.m */; };
 		811A0D701BB2F20100B73C09 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 811A0D6F1BB2F20100B73C09 /* Images.xcassets */; };
 		811A0D731BB2F20100B73C09 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 811A0D711BB2F20100B73C09 /* LaunchScreen.xib */; };
 		811A0D7F1BB2F20100B73C09 /* WorldPaySDKDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 811A0D7E1BB2F20100B73C09 /* WorldPaySDKDemoTests.m */; };
 		813F2AEF1D8896BA003F6716 /* WorldPaySDK_AC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813F2AEE1D8896BA003F6716 /* WorldPaySDK_AC.framework */; };
 		813F2AF11D8896C7003F6716 /* WorldPaySDK_AC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 813F2AEE1D8896BA003F6716 /* WorldPaySDK_AC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		814EDBF61C69636E0010877C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 811A0D641BB2F20100B73C09 /* AppDelegate.m */; };
-		814EDBF71C69636E0010877C /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 811A0D671BB2F20100B73C09 /* MasterViewController.m */; };
 		814EDBF81C69636E0010877C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 811A0D611BB2F20100B73C09 /* main.m */; };
-		814EDBF91C69636E0010877C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 811A0D6A1BB2F20100B73C09 /* DetailViewController.m */; };
 		814EDBFF1C69636E0010877C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 811A0D711BB2F20100B73C09 /* LaunchScreen.xib */; };
 		814EDC001C69636E0010877C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 811A0D6F1BB2F20100B73C09 /* Images.xcassets */; };
 		8908E7441DA5536A00EBF673 /* TransactionDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908E7421DA5536A00EBF673 /* TransactionDetailCell.m */; };
@@ -40,6 +36,12 @@
 		896A6ED51DAC096500FD8F77 /* CustomerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908E7511DA6FACB00EBF673 /* CustomerCell.m */; };
 		896A6ED61DAC096900FD8F77 /* CustomerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8908E7521DA6FACB00EBF673 /* CustomerCell.xib */; };
 		896A6ED71DAC137600FD8F77 /* TransactionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89CB9EAF1DA461EE00E4F7E4 /* TransactionDetailViewController.xib */; };
+		896A6EDC1DAC265500FD8F77 /* SignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 896A6EDB1DAC265500FD8F77 /* SignatureViewController.m */; };
+		896A6EDD1DAC265500FD8F77 /* SignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 896A6EDB1DAC265500FD8F77 /* SignatureViewController.m */; };
+		896A6EDF1DAC267800FD8F77 /* SignatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 896A6EDE1DAC267800FD8F77 /* SignatureViewController.xib */; };
+		896A6EE01DAC267800FD8F77 /* SignatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 896A6EDE1DAC267800FD8F77 /* SignatureViewController.xib */; };
+		896A6EE31DAC321B00FD8F77 /* LandscapeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 896A6EE21DAC321B00FD8F77 /* LandscapeNavigationController.m */; };
+		896A6EE41DAC321B00FD8F77 /* LandscapeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 896A6EE21DAC321B00FD8F77 /* LandscapeNavigationController.m */; };
 		89A4DF681DA8110E007F79D6 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A4DF671DA8110E007F79D6 /* Helper.m */; };
 		89A4DF691DA8110E007F79D6 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A4DF671DA8110E007F79D6 /* Helper.m */; };
 		89CB9EB01DA461EE00E4F7E4 /* TransactionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CB9EAE1DA461EE00E4F7E4 /* TransactionDetailViewController.m */; };
@@ -137,6 +139,11 @@
 		8908E7501DA6FACB00EBF673 /* CustomerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerCell.h; sourceTree = "<group>"; };
 		8908E7511DA6FACB00EBF673 /* CustomerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerCell.m; sourceTree = "<group>"; };
 		8908E7521DA6FACB00EBF673 /* CustomerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomerCell.xib; sourceTree = "<group>"; };
+		896A6EDA1DAC265500FD8F77 /* SignatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignatureViewController.h; sourceTree = "<group>"; };
+		896A6EDB1DAC265500FD8F77 /* SignatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignatureViewController.m; sourceTree = "<group>"; };
+		896A6EDE1DAC267800FD8F77 /* SignatureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignatureViewController.xib; sourceTree = "<group>"; };
+		896A6EE11DAC321B00FD8F77 /* LandscapeNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandscapeNavigationController.h; sourceTree = "<group>"; };
+		896A6EE21DAC321B00FD8F77 /* LandscapeNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandscapeNavigationController.m; sourceTree = "<group>"; };
 		89A4DF661DA80FAF007F79D6 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
 		89A4DF671DA8110E007F79D6 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		89CB9EAD1DA461EE00E4F7E4 /* TransactionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransactionDetailViewController.h; path = ../TransactionDetailViewController.h; sourceTree = "<group>"; };
@@ -212,22 +219,14 @@
 		811A0D5E1BB2F20100B73C09 /* WorldPaySDKDemo */ = {
 			isa = PBXGroup;
 			children = (
-				8908E7401DA5534700EBF673 /* Cells */,
 				811A0D631BB2F20100B73C09 /* AppDelegate.h */,
 				811A0D641BB2F20100B73C09 /* AppDelegate.m */,
-				811A0D661BB2F20100B73C09 /* MasterViewController.h */,
-				811A0D671BB2F20100B73C09 /* MasterViewController.m */,
-				811A0D691BB2F20100B73C09 /* DetailViewController.h */,
-				811A0D6A1BB2F20100B73C09 /* DetailViewController.m */,
+				8908E7401DA5534700EBF673 /* Cells */,
+				896A6ED81DAC21C900FD8F77 /* Obsolete */,
 				8CDEB6C01DA80FFF00F81B63 /* Views */,
 				8CAE8A7B1DA69E8F006DBC36 /* Extensions */,
 				8C2B20BA1DA3F2F800643EEB /* Controls */,
-				8C2B20AF1DA3F23500643EEB /* TransactionViewController.h */,
-				8C2B20B01DA3F23500643EEB /* TransactionViewController.m */,
-				8C2B20B11DA3F23500643EEB /* TransactionViewController.xib */,
-				89CB9EAD1DA461EE00E4F7E4 /* TransactionDetailViewController.h */,
-				89CB9EAE1DA461EE00E4F7E4 /* TransactionDetailViewController.m */,
-				89CB9EAF1DA461EE00E4F7E4 /* TransactionDetailViewController.xib */,
+				896A6ED91DAC25B300FD8F77 /* Controllers */,
 				811A0D6F1BB2F20100B73C09 /* Images.xcassets */,
 				8C068D001DA4146E00578C9D /* Main.storyboard */,
 				811A0D711BB2F20100B73C09 /* LaunchScreen.xib */,
@@ -289,6 +288,35 @@
 				8908E7521DA6FACB00EBF673 /* CustomerCell.xib */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		896A6ED81DAC21C900FD8F77 /* Obsolete */ = {
+			isa = PBXGroup;
+			children = (
+				811A0D661BB2F20100B73C09 /* MasterViewController.h */,
+				811A0D671BB2F20100B73C09 /* MasterViewController.m */,
+				811A0D691BB2F20100B73C09 /* DetailViewController.h */,
+				811A0D6A1BB2F20100B73C09 /* DetailViewController.m */,
+			);
+			name = Obsolete;
+			sourceTree = "<group>";
+		};
+		896A6ED91DAC25B300FD8F77 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8C2B20AF1DA3F23500643EEB /* TransactionViewController.h */,
+				8C2B20B01DA3F23500643EEB /* TransactionViewController.m */,
+				8C2B20B11DA3F23500643EEB /* TransactionViewController.xib */,
+				89CB9EAD1DA461EE00E4F7E4 /* TransactionDetailViewController.h */,
+				89CB9EAE1DA461EE00E4F7E4 /* TransactionDetailViewController.m */,
+				89CB9EAF1DA461EE00E4F7E4 /* TransactionDetailViewController.xib */,
+				896A6EDA1DAC265500FD8F77 /* SignatureViewController.h */,
+				896A6EDB1DAC265500FD8F77 /* SignatureViewController.m */,
+				896A6EDE1DAC267800FD8F77 /* SignatureViewController.xib */,
+				896A6EE11DAC321B00FD8F77 /* LandscapeNavigationController.h */,
+				896A6EE21DAC321B00FD8F77 /* LandscapeNavigationController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		8C2B20BA1DA3F2F800643EEB /* Controls */ = {
@@ -452,6 +480,7 @@
 				8CAE8A9E1DA6F7A4006DBC36 /* AdelleSans_Bold.otf in Resources */,
 				8CDEB6C61DA8106600F81B63 /* ExtendedInformationView.xib in Resources */,
 				8C068D011DA4146E00578C9D /* Main.storyboard in Resources */,
+				896A6EDF1DAC267800FD8F77 /* SignatureViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +508,7 @@
 				8C068D021DA4147F00578C9D /* Main.storyboard in Resources */,
 				896A6ED71DAC137600FD8F77 /* TransactionDetailViewController.xib in Resources */,
 				896A6ED61DAC096900FD8F77 /* CustomerCell.xib in Resources */,
+				896A6EE01DAC267800FD8F77 /* SignatureViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,19 +521,19 @@
 			files = (
 				8C2B20B81DA3F2EA00643EEB /* DropDownTextField.m in Sources */,
 				811A0D651BB2F20100B73C09 /* AppDelegate.m in Sources */,
-				811A0D681BB2F20100B73C09 /* MasterViewController.m in Sources */,
 				8908E7441DA5536A00EBF673 /* TransactionDetailCell.m in Sources */,
 				89A4DF681DA8110E007F79D6 /* Helper.m in Sources */,
+				896A6EDC1DAC265500FD8F77 /* SignatureViewController.m in Sources */,
 				811A0D621BB2F20100B73C09 /* main.m in Sources */,
 				8908E7491DA6E57B00EBF673 /* CardDataCell.m in Sources */,
 				8CAE8A8A1DA6B5EE006DBC36 /* ExtendableView.m in Sources */,
 				8CAE8A7E1DA69ED0006DBC36 /* UIColor+Worldpay.m in Sources */,
+				896A6EE31DAC321B00FD8F77 /* LandscapeNavigationController.m in Sources */,
 				8CDEB6C31DA8105100F81B63 /* ExtendedInformationView.m in Sources */,
 				8C2B20B21DA3F23500643EEB /* TransactionViewController.m in Sources */,
 				8908E74E1DA6EBBC00EBF673 /* BillingAddressCell.m in Sources */,
 				8CAE8A821DA6A26A006DBC36 /* UIFont+Worldpay.m in Sources */,
 				8908E7531DA6FACB00EBF673 /* CustomerCell.m in Sources */,
-				811A0D6B1BB2F20100B73C09 /* DetailViewController.m in Sources */,
 				89CB9EB01DA461EE00E4F7E4 /* TransactionDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,18 +552,18 @@
 			files = (
 				8C2B20B91DA3F2EA00643EEB /* DropDownTextField.m in Sources */,
 				814EDBF61C69636E0010877C /* AppDelegate.m in Sources */,
-				814EDBF71C69636E0010877C /* MasterViewController.m in Sources */,
 				814EDBF81C69636E0010877C /* main.m in Sources */,
 				896A6ECE1DAC093100FD8F77 /* TransactionDetailViewController.m in Sources */,
+				896A6EDD1DAC265500FD8F77 /* SignatureViewController.m in Sources */,
 				8CAE8A8B1DA6B5EE006DBC36 /* ExtendableView.m in Sources */,
 				8CAE8A7F1DA69ED0006DBC36 /* UIColor+Worldpay.m in Sources */,
 				8CDEB6C41DA8105100F81B63 /* ExtendedInformationView.m in Sources */,
 				896A6ECF1DAC094600FD8F77 /* TransactionDetailCell.m in Sources */,
+				896A6EE41DAC321B00FD8F77 /* LandscapeNavigationController.m in Sources */,
 				8C2B20B31DA3F23500643EEB /* TransactionViewController.m in Sources */,
 				8CAE8A831DA6A26A006DBC36 /* UIFont+Worldpay.m in Sources */,
 				896A6ED51DAC096500FD8F77 /* CustomerCell.m in Sources */,
 				896A6ED31DAC095D00FD8F77 /* BillingAddressCell.m in Sources */,
-				814EDBF91C69636E0010877C /* DetailViewController.m in Sources */,
 				89A4DF691DA8110E007F79D6 /* Helper.m in Sources */,
 				896A6ED11DAC095200FD8F77 /* CardDataCell.m in Sources */,
 			);

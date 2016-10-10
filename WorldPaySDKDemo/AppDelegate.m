@@ -50,7 +50,6 @@
     [[UITabBar appearance] setBarTintColor: [UIColor worldpayGrey]];
     [[UINavigationBar appearance] setTintColor: [UIColor worldpayWhite]];
     [[UINavigationBar appearance] setTitleTextAttributes: @{NSForegroundColorAttributeName : [UIColor worldpayWhite]}];
-    [[UIButton appearance] setBackgroundColor: [UIColor worldpayMist]];
     [[UIButton appearance] setTitleColor: [UIColor worldpayBlack] forState: UIControlStateNormal];
     
     [[UISegmentedControl appearance] setTintColor: [UIColor worldpayEmerald]];

@@ -10,4 +10,8 @@
 
 @interface SignatureViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+- (void) reset;
+
 @end

@@ -10,8 +10,11 @@
 #import "DropDownTextField.h"
 #import "ExtendableView.h"
 #import "UIFont+Worldpay.h"
+#import "UIColor+Worldpay.h"
 #import "ExtendedInformationView.h"
 #import "TransactionDetailViewController.h"
+#import "SignatureViewController.h"
+#import "LandscapeNavigationController.h"
 
 #define YESINDEX 0
 #define NOINDEX 1
@@ -42,6 +45,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthConstraint;
 @property (strong, nonatomic) UIAlertController * swiperAlert;
 @property (weak, nonatomic) UITextField * activeTextField;
+@property (strong, nonatomic) WPYTransactionResponse * lastResponse;
 
 @end
 
@@ -104,6 +108,8 @@
     }];
     
     self.widthConstraint.constant = WIDTHCONSTANT;
+    
+    self.startButton.backgroundColor = [UIColor worldpayMist];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -268,6 +274,49 @@
     self.swiperAlert = alert;
 }
 
+- (void) dismissSignature
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) captureSignature
+{
+    // TODO: Actually capture signature
+    
+    [self dismissViewControllerAnimated:YES completion:^
+     {
+         [self showTransactionDetails];
+     }];
+}
+
+- (void) showTransactionDetails
+{
+    TransactionDetailViewController * detailController = [[TransactionDetailViewController alloc] initWithNibName:nil bundle:nil];
+    
+    detailController.transactionResponse = self.lastResponse;
+    
+    [self.navigationController pushViewController:detailController animated:YES];
+}
+
+- (void)  showSignatureScreen
+{
+    SignatureViewController * signatureVC = [[SignatureViewController alloc] initWithNibName:nil bundle:nil];
+    
+    UIBarButtonItem * cancel = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleDone target:self action:@selector(dismissSignature)];
+    
+    UIBarButtonItem * reset = [[UIBarButtonItem alloc] initWithTitle:@"Reset" style:UIBarButtonItemStyleDone target:signatureVC action:@selector(reset)];
+    
+    [signatureVC.navigationItem setLeftBarButtonItems:@[cancel,reset]];
+    
+    UIBarButtonItem * done = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(captureSignature)];
+    
+    [signatureVC.navigationItem setRightBarButtonItem: done];
+    
+    LandscapeNavigationController * nav = [[LandscapeNavigationController alloc] initWithRootViewController:signatureVC];
+    
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
 #pragma mark - UITextFieldDelegate
 
 - (void) removeFocusFromTextField: (UITextField * __unused) textField
@@ -371,13 +420,11 @@
         
         if(response.transaction != nil)
         {
+            self.lastResponse = response.transaction;
+            
             secondaryAction = [UIAlertAction actionWithTitle:@"View Details" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
             {
-                TransactionDetailViewController * detailController = [[TransactionDetailViewController alloc] initWithNibName:nil bundle:nil];
-                
-                detailController.transactionResponse = response.transaction;
-                
-                [self.navigationController pushViewController:detailController animated:YES];
+                [self showTransactionDetails];
             }];
             
             responseMessage = response.transaction.responseText;
@@ -397,8 +444,9 @@
         {
             signatureNeeded = @"This card requires a signature.";
             
-            secondaryAction = [UIAlertAction actionWithTitle:@"Sign" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                // TODO: Create signature capture screen and pass in block for displaying transaction details after capture
+            secondaryAction = [UIAlertAction actionWithTitle:@"Sign" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+            {
+                [self showSignatureScreen];
             }];
         }
     }
