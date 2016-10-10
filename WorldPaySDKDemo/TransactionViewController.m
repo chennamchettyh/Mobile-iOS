@@ -39,7 +39,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthConstraint;
-@property (strong, nonatomic UIAlertController * swiperAlert;
+@property (strong, nonatomic) UIAlertController * swiperAlert;
 
 @end
 
