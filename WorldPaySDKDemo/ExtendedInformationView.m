@@ -46,5 +46,13 @@
     return VIEWHEIGHT;
 }
 
+- (void)setTextFieldDelegate:(id<UITextFieldDelegate>)textFieldDelegate
+{
+    for(UITextField * textField in self.textFields)
+    {
+        textField.delegate = textFieldDelegate;
+    }
+}
+
 
 @end

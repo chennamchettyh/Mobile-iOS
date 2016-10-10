@@ -23,13 +23,6 @@
 #define BILLINGADDRESSSECTION 2
 #define CUSTOMERSECTION 3
 
-
-@interface TransactionDetailViewController()
-
-@property (strong, nonatomic) WPYTransactionResponse *transactionResponse;
-
-@end
-
 @implementation TransactionDetailViewController
 
 
@@ -116,8 +109,6 @@
 {
     return 4;
 }
-
-
 
 
 

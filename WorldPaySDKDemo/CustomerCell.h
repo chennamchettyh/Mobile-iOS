@@ -17,7 +17,6 @@
 
 @interface CustomerCell : UITableViewCell
 
-
 -(void)assignValues: (WPYTransactionResponse *)response;
 
 @end

@@ -11,6 +11,7 @@
 #import "ExtendableView.h"
 #import "UIFont+Worldpay.h"
 #import "ExtendedInformationView.h"
+#import "TransactionDetailViewController.h"
 
 #define YESINDEX 0
 #define NOINDEX 1
@@ -40,6 +41,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthConstraint;
 @property (strong, nonatomic) UIAlertController * swiperAlert;
+@property (weak, nonatomic) UITextField * activeTextField;
 
 @end
 
@@ -56,13 +58,32 @@
     
     self.swiper = [[WorldpayAPI instance] swiperWithDelegate:self];
     
+    self.amountTextField.delegate = self;
+    self.cashbackTextField.delegate = self;
+    
     [self.extendableInfoView setTitle:@"Extended Information"];
     ExtendedInformationView * infoView = [[ExtendedInformationView alloc] initWithFrame:CGRectMake(0, 0, self.extendableInfoView.frame.size.width, [ExtendedInformationView expectedHeight])];
     
+    [infoView setTextFieldDelegate:self];
+    
     [self.extendableInfoView setSecondaryViewInContainer:infoView];
     [self.extendableInfoView setHeightConstraint:self.extendableViewHeightConstraint];
+    [self.extendableInfoView setHeightCallback:^(CGFloat __unused height)
+    {
+        [self removeFocusFromTextField:nil];
+    }];
+    
+    UITapGestureRecognizer *recognizer1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeFocusFromTextField:)];
+    [recognizer1 setNumberOfTapsRequired:1];
+    [recognizer1 setNumberOfTouchesRequired:1];
+    [self.scrollView addGestureRecognizer:recognizer1];
     
     self.extendedInfoView = infoView;
+    
+    UITapGestureRecognizer *recognizer2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeFocusFromTextField:)];
+    [recognizer2 setNumberOfTapsRequired:1];
+    [recognizer2 setNumberOfTouchesRequired:1];
+    [self.extendedInfoView addGestureRecognizer:recognizer2];
     
     [self.amountTextField setFont:[UIFont worldpayPrimaryWithSize: TEXTFIELDSIZE]];
     [self.cashbackTextField setFont:[UIFont worldpayPrimaryWithSize: TEXTFIELDSIZE]];
@@ -78,6 +99,7 @@
     
     [self.transactionTypeDropDown setSelectionCallback:^(NSUInteger __unused index)
     {
+        [self removeFocusFromTextField:nil];
         [self validateCashbackAllowed];
     }];
     
@@ -108,8 +130,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)segmentedTouched:(id)sender
+{
+    [self removeFocusFromTextField:nil];
+}
+
 - (IBAction) startTransaction
 {
+    [self removeFocusFromTextField: nil];
+    
     if([self.cardPresentSegmented selectedSegmentIndex] == YESINDEX && [self.swiper connectionState] != WPYSwiperConnected)
     {
         [self.swiper connectSwiperWithInputType:WPYSwiperInputTypeBluetooth];
@@ -222,6 +251,51 @@
 #endif
 }
 
+- (void) displayAlert: (UIAlertController *) alert
+{
+    if(self.swiperAlert.viewIfLoaded != nil)
+    {
+        [self dismissViewControllerAnimated:true completion:^
+         {
+             [self presentViewController:alert animated:true completion:nil];
+         }];
+    }
+    else
+    {
+        [self presentViewController:alert animated:true completion:nil];
+    }
+    
+    self.swiperAlert = alert;
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (void) removeFocusFromTextField: (UITextField * __unused) textField
+{
+    if(self.activeTextField)
+    {
+        [self.activeTextField resignFirstResponder];
+        self.activeTextField = nil;
+    }
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    self.activeTextField = textField;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self removeFocusFromTextField:textField];
+    
+    return true;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [self removeFocusFromTextField:textField];
+}
+
 #pragma mark - WPYSwiperDelegate
 
 - (void)didConnectSwiper:(WPYSwiper *)swiper
@@ -237,6 +311,10 @@
 - (void)didFailToConnectSwiper:(WPYSwiper *)swiper
 {
     NSLog(@"%@", @"Swiper failed to connect");
+    
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Failed to connect to swiper." preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
 }
 
 - (void)willConnectSwiper:(WPYSwiper *)swiper
@@ -247,11 +325,97 @@
 - (void)swiper:(WPYSwiper *)swiper didFailWithError:(NSString *)error
 {
     NSLog(@"%@: %@", @"Swiper did fail with error", error);
+    
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Swiper device failed with an error." preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+    
+    [self displayAlert:alert];
 }
 
 - (void)swiper:(WPYSwiper *)swiper didFinishTransactionWithResponse:(WPYPaymentResponse *)response
 {
-    NSLog(@"%@: %@", @"Swiper finished transaction with response", response);
+    NSLog(@"%@: %@", @"Swiper finished transaction with response", [response jsonDictionary]);
+    
+    NSString * responseMessage;
+    
+    UIAlertAction * secondaryAction;
+    
+    NSString *transactionStatus = nil;
+    
+    BOOL approved = response.result == WPYTransactionResultApproved;
+    
+    NSString * signatureNeeded = @"";
+    
+    switch ((NSInteger)response.result)
+    {
+        case WPYTransactionResultApproved:
+            transactionStatus = @"Approved";
+            break;
+        case WPYTransactionResultDeclined:
+            transactionStatus = @"Declined";
+            break;
+        case WPYTransactionResultTerminated:
+            transactionStatus = @"Terminated";
+            break;
+        case WPYTransactionResultCardBlocked:
+            transactionStatus = @"Card Blocked";
+            break;
+        default:
+            transactionStatus = @"Other - see logs";
+            break;
+    }
+    
+    if(response == nil)
+    {
+        responseMessage = [NSString stringWithFormat:@"Transaction Terminated: %ld", (long)response.result];
+    }
+    else
+    {
+        
+        if(response.transaction != nil)
+        {
+            secondaryAction = [UIAlertAction actionWithTitle:@"View Details" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+            {
+                TransactionDetailViewController * detailController = [[TransactionDetailViewController alloc] initWithNibName:nil bundle:nil];
+                
+                detailController.transactionResponse = response.transaction;
+                
+                [self.navigationController pushViewController:detailController animated:YES];
+            }];
+            
+            responseMessage = response.transaction.responseText;
+        }
+        
+        if(response.result == WPYTransactionResultReversal)
+        {
+            // TODO: In demo, this result had its own message, wondering if response.transaction.responseText is fine?
+            
+            if([self.swiper swiperCanDisplayText])
+            {
+                [self.swiper displayText:@"Decline - Reversal"];
+            }
+        }
+        
+        if(approved && response.receiptData.cardHolderVerificationMethod == WPYCVMethodSignature)
+        {
+            signatureNeeded = @"This card requires a signature.";
+            
+            secondaryAction = [UIAlertAction actionWithTitle:@"Sign" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                // TODO: Create signature capture screen and pass in block for displaying transaction details after capture
+            }];
+        }
+    }
+    
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Prompt" message:[NSString stringWithFormat:@"Status: %@\r\nResponse:\r\n%@\r\n%@", transactionStatus, responseMessage, signatureNeeded] preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+    
+    if(secondaryAction)
+    {
+        [alert addAction:secondaryAction];
+    }
+    
+    [self displayAlert:alert];
 }
 
 - (void)swiper:(WPYSwiper *)swiper didFailRequest:(WPYPaymentRequest *)request withError:(NSError *)error
@@ -385,21 +549,8 @@
     }
     
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Prompt" message:defaultPrompt preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
     
-    if(self.swiperAlert.viewIfLoaded != nil)
-    {
-        [self dismissViewControllerAnimated:true completion:^
-        {
-            [self presentViewController:alert animated:true completion:nil];
-        }];
-    }
-    else
-    {
-        [self presentViewController:alert animated:true completion:nil];
-    }
-    
-    self.swiperAlert = alert;
+    [self displayAlert:alert];
 
     if(completion != nil)
     {
@@ -417,16 +568,28 @@
 - (void)manualTenderEntryController:(WPYManualTenderEntryViewController *)controller didFailWithError:(NSError *)error
 {
     NSLog(@"%@: %@", @"Manual entry failed with error", error);
+    
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Manual entry failed with an error" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+    
+    [self displayAlert:alert];
 }
 
 - (void)manualTenderEntryControllerIsProcessingRequest:(WPYManualTenderEntryViewController *)controller
 {
     NSLog(@"%@", @"Manual entry request is being processed");
+    
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Processing..." message:@"Manual entry request is being processed" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [self displayAlert:alert];
 }
 
 - (void)manualTenderEntryController:(WPYManualTenderEntryViewController *)controller didFinishWithResponse:(WPYPaymentResponse *)tender
 {
     NSLog(@"%@: %@", @"Manual entry request finished", tender);
+    
+    [self swiper:nil didFinishTransactionWithResponse:tender];
 }
 
 @end

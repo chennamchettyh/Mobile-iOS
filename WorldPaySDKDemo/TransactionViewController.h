@@ -14,6 +14,6 @@
 #import <WorldPaySDK_Miura/WorldPaySDK.h>
 #endif
 
-@interface TransactionViewController : UIViewController <WPYSwiperDelegate, WPYManualTenderEntryDelegate>
+@interface TransactionViewController : UIViewController <WPYSwiperDelegate, WPYManualTenderEntryDelegate, UITextFieldDelegate>
 
 @end
