@@ -30,6 +30,16 @@
 		8908E74F1DA6EBBC00EBF673 /* BillingAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8908E74D1DA6EBBC00EBF673 /* BillingAddressCell.xib */; };
 		8908E7531DA6FACB00EBF673 /* CustomerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908E7511DA6FACB00EBF673 /* CustomerCell.m */; };
 		8908E7541DA6FACB00EBF673 /* CustomerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8908E7521DA6FACB00EBF673 /* CustomerCell.xib */; };
+		896A6ECE1DAC093100FD8F77 /* TransactionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CB9EAE1DA461EE00E4F7E4 /* TransactionDetailViewController.m */; };
+		896A6ECF1DAC094600FD8F77 /* TransactionDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908E7421DA5536A00EBF673 /* TransactionDetailCell.m */; };
+		896A6ED01DAC094D00FD8F77 /* TransactionDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8908E7431DA5536A00EBF673 /* TransactionDetailCell.xib */; };
+		896A6ED11DAC095200FD8F77 /* CardDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908E7471DA6E57B00EBF673 /* CardDataCell.m */; };
+		896A6ED21DAC095600FD8F77 /* CardDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8908E7481DA6E57B00EBF673 /* CardDataCell.xib */; };
+		896A6ED31DAC095D00FD8F77 /* BillingAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908E74C1DA6EBBC00EBF673 /* BillingAddressCell.m */; };
+		896A6ED41DAC096100FD8F77 /* BillingAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8908E74D1DA6EBBC00EBF673 /* BillingAddressCell.xib */; };
+		896A6ED51DAC096500FD8F77 /* CustomerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908E7511DA6FACB00EBF673 /* CustomerCell.m */; };
+		896A6ED61DAC096900FD8F77 /* CustomerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8908E7521DA6FACB00EBF673 /* CustomerCell.xib */; };
+		896A6ED71DAC137600FD8F77 /* TransactionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89CB9EAF1DA461EE00E4F7E4 /* TransactionDetailViewController.xib */; };
 		89A4DF681DA8110E007F79D6 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A4DF671DA8110E007F79D6 /* Helper.m */; };
 		89A4DF691DA8110E007F79D6 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A4DF671DA8110E007F79D6 /* Helper.m */; };
 		89CB9EB01DA461EE00E4F7E4 /* TransactionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CB9EAE1DA461EE00E4F7E4 /* TransactionDetailViewController.m */; };
@@ -393,10 +403,14 @@
 				TargetAttributes = {
 					811A0D5B1BB2F20100B73C09 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = R64YW4Z37X;
 					};
 					811A0D771BB2F20100B73C09 = {
 						CreatedOnToolsVersion = 6.4;
 						TestTargetID = 811A0D5B1BB2F20100B73C09;
+					};
+					814EDBF41C69636E0010877C = {
+						DevelopmentTeam = R64YW4Z37X;
 					};
 				};
 			};
@@ -453,13 +467,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				814EDBFF1C69636E0010877C /* LaunchScreen.xib in Resources */,
+				896A6ED21DAC095600FD8F77 /* CardDataCell.xib in Resources */,
 				814EDC001C69636E0010877C /* Images.xcassets in Resources */,
 				8CAE8A8E1DA6B605006DBC36 /* ExtendableView.xib in Resources */,
 				8C2B20B51DA3F23500643EEB /* TransactionViewController.xib in Resources */,
 				8CAE8AA11DA6F7A4006DBC36 /* AdelleSans_Regular.otf in Resources */,
 				8CAE8A9F1DA6F7A4006DBC36 /* AdelleSans_Bold.otf in Resources */,
+				896A6ED41DAC096100FD8F77 /* BillingAddressCell.xib in Resources */,
 				8CDEB6C71DA8106600F81B63 /* ExtendedInformationView.xib in Resources */,
+				896A6ED01DAC094D00FD8F77 /* TransactionDetailCell.xib in Resources */,
 				8C068D021DA4147F00578C9D /* Main.storyboard in Resources */,
+				896A6ED71DAC137600FD8F77 /* TransactionDetailViewController.xib in Resources */,
+				896A6ED61DAC096900FD8F77 /* CustomerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,13 +524,18 @@
 				814EDBF61C69636E0010877C /* AppDelegate.m in Sources */,
 				814EDBF71C69636E0010877C /* MasterViewController.m in Sources */,
 				814EDBF81C69636E0010877C /* main.m in Sources */,
+				896A6ECE1DAC093100FD8F77 /* TransactionDetailViewController.m in Sources */,
 				8CAE8A8B1DA6B5EE006DBC36 /* ExtendableView.m in Sources */,
 				8CAE8A7F1DA69ED0006DBC36 /* UIColor+Worldpay.m in Sources */,
 				8CDEB6C41DA8105100F81B63 /* ExtendedInformationView.m in Sources */,
+				896A6ECF1DAC094600FD8F77 /* TransactionDetailCell.m in Sources */,
 				8C2B20B31DA3F23500643EEB /* TransactionViewController.m in Sources */,
 				8CAE8A831DA6A26A006DBC36 /* UIFont+Worldpay.m in Sources */,
+				896A6ED51DAC096500FD8F77 /* CustomerCell.m in Sources */,
+				896A6ED31DAC095D00FD8F77 /* BillingAddressCell.m in Sources */,
 				814EDBF91C69636E0010877C /* DetailViewController.m in Sources */,
 				89A4DF691DA8110E007F79D6 /* Helper.m in Sources */,
+				896A6ED11DAC095200FD8F77 /* CardDataCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,6 +668,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.imobile3.WorldPaySDKDemo-AC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -663,6 +688,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.imobile3.WorldPaySDKDemo-AC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -709,6 +735,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -717,8 +744,9 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.imobile3.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.worldpay.demo-miura";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -727,6 +755,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -735,8 +764,9 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.imobile3.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.worldpay.demo-miura";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

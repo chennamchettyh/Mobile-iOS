@@ -36,7 +36,17 @@
 
 @implementation TransactionDetailCell
 
+-(instancetype)init
+{
+    NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"TransactionDetailCell" owner:self options:nil];
 
+    if((self = (TransactionDetailCell *)[nib objectAtIndex:0]))
+    {
+        
+    }
+    
+    return self;
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -46,9 +56,6 @@
     {
         [label setFont:[UIFont worldpayPrimaryWithSize: LABELTEXTSIZE]];
     }
-    
-    
-
 }
 
 
@@ -67,7 +74,7 @@
     self.paymentTypeValue.text = [Helper getPaymentType:response.paymentType];
     self.responseTextValue.text = response.responseText;
     self.responseMessageValue.text = response.responseText;
-    
+    self.gratuityValue.text = [response.gratuityAmount stringValue];
 }
 
 

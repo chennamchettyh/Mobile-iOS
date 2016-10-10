@@ -339,7 +339,7 @@
     
     NSString *transactionStatus = nil;
     
-    BOOL approved = response.result == WPYTransactionResultApproved;
+    BOOL approved = response.resultCode;
     
     NSString * signatureNeeded = @"";
     
@@ -383,7 +383,7 @@
             responseMessage = response.transaction.responseText;
         }
         
-        if(response.result == WPYTransactionResultReversal)
+        if(response.resultCode == WPYTransactionResultReversal)
         {
             // TODO: In demo, this result had its own message, wondering if response.transaction.responseText is fine?
             
@@ -422,6 +422,7 @@
 - (void)swiper:(WPYSwiper *)swiper didRequestDevicePromptText:(WPYDevicePrompt)prompt completion:(void (^)(NSString *))completion
 {
     NSString *defaultPrompt = nil;
+    UIAlertAction * action;
     
     switch (prompt)
     {
@@ -465,6 +466,7 @@
             break;
         case WPYDevicePromptCanceled:
             defaultPrompt = @"Transaction Canceled\nPlease Remove Card";
+            action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
             break;
         case WPYDevicePromptRetry:
 #ifdef ANYWHERE_NOMAD
@@ -475,6 +477,7 @@
             break;
         case WPYDevicePromptTransactionTimedOut:
             defaultPrompt = @"Transaction Timed Out";
+            action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
             break;
         case WPYDevicePromptNfcErrorCardInserted:
             defaultPrompt = @"Error. Card Inserted";
@@ -490,9 +493,11 @@
             break;
         case WPYDevicePromptNfcHardwareError:
             defaultPrompt = @"Contactless Hardware Error";
+            action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
             break;
         case WPYDevicePromptEmvReaderError:
             defaultPrompt = @"IC Card Reader Error";
+            action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
             break;
         case WPYDevicePromptEmvMSRFallback:
 #ifdef ANYWHERE_NOMAD
@@ -523,9 +528,11 @@
             break;
         case WPYDevicePromptReversal:
             defaultPrompt = @"Transaction Declined - Reversal";
+            action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
             break;
         case WPYDevicePromptCallBank:
             defaultPrompt = @"Declined - Please Call Bank";
+            action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
             break;
         case WPYDevicePromptNotAccepted:
             defaultPrompt = @"Not Accepted";
@@ -545,6 +552,11 @@
     }
     
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Prompt" message:defaultPrompt preferredStyle:UIAlertControllerStyleAlert];
+    
+    if(action)
+    {
+        [alert addAction: action];
+    }
     
     [self displayAlert:alert];
 

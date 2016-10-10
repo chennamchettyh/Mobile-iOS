@@ -25,6 +25,18 @@
 
 @implementation CustomerCell
 
+-(instancetype)init
+{
+    NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"CustomerCell" owner:self options:nil];
+    
+    if((self = (CustomerCell *)[nib objectAtIndex:0]))
+    {
+        
+    }
+    
+    return self;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

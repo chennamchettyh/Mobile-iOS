@@ -137,7 +137,6 @@
                 <outlet property="phoneValue" destination="Se4-T3-IDh" id="HAf-qG-gNR"/>
                 <outlet property="stateValue" destination="ePm-rc-Evr" id="neX-gV-7IE"/>
                 <outlet property="zipValue" destination="ITZ-Iv-dyY" id="iN6-eH-INY"/>
-                <outletCollection property="formLabels" destination="oyP-7r-pOc" id="byh-hq-oPp"/>
                 <outletCollection property="formLabels" destination="UNh-oF-15M" id="MPH-xK-OKX"/>
                 <outletCollection property="formLabels" destination="F3c-PL-Ac6" id="KlS-UC-bgF"/>
                 <outletCollection property="formLabels" destination="e6k-e8-zxn" id="Qj7-Oc-0nJ"/>

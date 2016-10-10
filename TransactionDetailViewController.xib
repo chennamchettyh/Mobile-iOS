@@ -15,12 +15,22 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="So7-c2-A7k">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="So7-c2-A7k">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="54G-0S-hwA"/>
+                        <outlet property="delegate" destination="-1" id="DLl-Vz-Ll9"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="So7-c2-A7k" secondAttribute="trailing" id="2Gj-lp-HZf"/>
+                <constraint firstItem="So7-c2-A7k" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="IzQ-Y5-9Bx"/>
+                <constraint firstAttribute="bottom" secondItem="So7-c2-A7k" secondAttribute="bottom" id="jxd-ym-Dbv"/>
+                <constraint firstItem="So7-c2-A7k" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="w3s-Bx-tNN"/>
+            </constraints>
         </view>
     </objects>
 </document>

@@ -23,6 +23,11 @@
 #define BILLINGADDRESSSECTION 2
 #define CUSTOMERSECTION 3
 
+#define TRANSACTIONHEIGHT 306
+#define CARDHEIGHT 297
+#define BILLINGADDRESSHEIGHT 346
+#define CUSTOMERHEIGHT 137
+
 @implementation TransactionDetailViewController
 
 
@@ -55,7 +60,7 @@
             cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
             
             if (cell == nil) {
-                cell = [[TransactionDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+                cell = [[TransactionDetailCell alloc] init];
                 
             }
             
@@ -67,7 +72,7 @@
             cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
             
             if (cell == nil) {
-                cell = [[CardDataCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+                cell = [[CardDataCell alloc] init];
             }
             
             [(CardDataCell *)cell assignValues: self.transactionResponse];
@@ -78,7 +83,7 @@
             cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
             
             if (cell == nil) {
-                cell = [[BillingAddressCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+                cell = [[BillingAddressCell alloc] init];
                 
             }
             
@@ -91,7 +96,7 @@
             cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
             
             if (cell == nil) {
-                cell = [[CustomerCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+                cell = [[CustomerCell alloc] init];
             }
             
             [(CustomerCell *)cell assignValues: self.transactionResponse];
@@ -104,13 +109,37 @@
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.section)
+    {
+        case TRANSACTIONSECTION:
+            return TRANSACTIONHEIGHT;
+        case CARDSECTION:
+            return CARDHEIGHT;
+        case BILLINGADDRESSSECTION:
+            return BILLINGADDRESSHEIGHT;
+        case CUSTOMERSECTION:
+            return CUSTOMERHEIGHT;
+        default:
+            return 0;
+    }
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return false;
+}
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 4;
 }
 
-
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    return [[UIView alloc] initWithFrame:CGRectZero];
+}
 
 
 /*

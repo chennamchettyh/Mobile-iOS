@@ -29,6 +29,18 @@
 
 @implementation BillingAddressCell
 
+-(instancetype)init
+{
+    NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"BillingAddressCell" owner:self options:nil];
+    
+    if((self = (BillingAddressCell *)[nib objectAtIndex:0]))
+    {
+        
+    }
+    
+    return self;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

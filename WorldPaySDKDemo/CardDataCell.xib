@@ -120,7 +120,6 @@
                 <outlet property="expirationYearValue" destination="HtM-bO-ALb" id="G7R-6b-fw0"/>
                 <outlet property="firstNameValue" destination="del-pc-cLv" id="cf4-br-Ayh"/>
                 <outlet property="lastNameValue" destination="QwX-Le-3v7" id="818-ao-ydp"/>
-                <outletCollection property="formLabels" destination="4c6-gP-Z4b" id="R5c-5q-ZRB"/>
                 <outletCollection property="formLabels" destination="C2X-yu-eKT" id="6kg-Go-l9z"/>
                 <outletCollection property="formLabels" destination="uwI-yQ-Zuc" id="BfN-3e-l6a"/>
                 <outletCollection property="formLabels" destination="gol-QV-Ljf" id="ymi-II-CeH"/>
