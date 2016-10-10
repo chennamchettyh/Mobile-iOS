@@ -10,9 +10,12 @@
 
 @interface ExtendableView : UIView
 
+@property (weak, nonatomic) IBOutlet UIView *secondaryContainerView;
+
 - (void) setTitle: (NSString *) title;
 - (void) setSecondaryViewInContainer: (UIView *) view;
 - (void) setHeightCallback: (void (^)(CGFloat)) callback;
 - (void) setHeightConstraint: (NSLayoutConstraint *) constraint;
+- (void) setSecondaryHeight: (CGFloat) secondaryHeight;
 
 @end

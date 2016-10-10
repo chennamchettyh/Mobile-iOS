@@ -28,11 +28,14 @@
 #define BUTTONTEXTSIZE 15
 
 #define WIDTHCONSTANT 200
+#define EXTENDEDHEIGHT 272
+#define MAGICMARGIN 28
 
 @interface TransactionViewController ()
 
 @property (weak, nonatomic) IBOutlet DropDownTextField *transactionTypeDropDown;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *cardPresentSegmented;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *addToVaultSegmented;
 @property (weak, nonatomic) IBOutlet UITextField *amountTextField;
 @property (weak, nonatomic) IBOutlet UITextField *cashbackTextField;
 @property (strong, nonatomic) WPYSwiper * swiper;
@@ -66,23 +69,40 @@
     self.cashbackTextField.delegate = self;
     
     [self.extendableInfoView setTitle:@"Extended Information"];
-    ExtendedInformationView * infoView = [[ExtendedInformationView alloc] initWithFrame:CGRectMake(0, 0, self.extendableInfoView.frame.size.width, [ExtendedInformationView expectedHeight])];
+
+    ExtendedInformationView * infoView = [[ExtendedInformationView alloc] initWithFrame:CGRectMake(0, 0, self.extendableInfoView.frame.size.width+MAGICMARGIN, [ExtendedInformationView expectedHeight])];
+    
+    self.extendedInfoView = infoView;
+    
+    infoView.translatesAutoresizingMaskIntoConstraints = false;
     
     [infoView setTextFieldDelegate:self];
     
     [self.extendableInfoView setSecondaryViewInContainer:infoView];
+    [self.extendableInfoView setSecondaryHeight: EXTENDEDHEIGHT];
     [self.extendableInfoView setHeightConstraint:self.extendableViewHeightConstraint];
-    [self.extendableInfoView setHeightCallback:^(CGFloat __unused height)
+    [self.extendableInfoView setHeightCallback:^(CGFloat height)
     {
         [self removeFocusFromTextField:nil];
+        
+        if(height < 0)
+        {
+            for(UITextField * textField in self.extendedInfoView.textFields)
+            {
+                textField.text = @"";
+            }
+        }
     }];
+    
+    [self.extendableInfoView addConstraint:[NSLayoutConstraint constraintWithItem:self.extendableInfoView.secondaryContainerView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:infoView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0]];
+    [self.extendableInfoView addConstraint:[NSLayoutConstraint constraintWithItem:self.extendableInfoView.secondaryContainerView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:infoView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]];
+    [self.extendableInfoView addConstraint:[NSLayoutConstraint constraintWithItem:self.extendableInfoView.secondaryContainerView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:infoView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0]];
+    [self.extendableInfoView addConstraint:[NSLayoutConstraint constraintWithItem:self.extendableInfoView.secondaryContainerView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:infoView attribute:NSLayoutAttributeRight multiplier:1.0 constant:0]];
     
     UITapGestureRecognizer *recognizer1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeFocusFromTextField:)];
     [recognizer1 setNumberOfTapsRequired:1];
     [recognizer1 setNumberOfTouchesRequired:1];
     [self.scrollView addGestureRecognizer:recognizer1];
-    
-    self.extendedInfoView = infoView;
     
     UITapGestureRecognizer *recognizer2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeFocusFromTextField:)];
     [recognizer2 setNumberOfTapsRequired:1];
@@ -185,37 +205,36 @@
     
     request.amount = [NSDecimalNumber decimalNumberWithString:self.amountTextField.text];
     
-    if(![self.extendedInfoView.orderDate.text  isEqual: @""] || ![self.extendedInfoView.purchaseOrder.text  isEqual: @""] || ![self.extendedInfoView.gratuityAmount.text  isEqual: @""] || ![self.extendedInfoView.serverName.text  isEqual: @""] || ![self.extendedInfoView.notes.text  isEqual: @""])
+    WPYExtendedCardData * extendedData = [[WPYExtendedCardData alloc] init];
+    
+    extendedData.addToVault = self.addToVaultSegmented.selectedSegmentIndex == YESINDEX;
+    
+    extendedData.notes = self.extendedInfoView.notes.text;
+    
+    if(![self.extendedInfoView.orderDate.text isEqualToString:@""] || ![self.extendedInfoView.purchaseOrder.text isEqualToString:@""])
     {
-        WPYExtendedCardData * extendedData = [[WPYExtendedCardData alloc] init];
+        WPYLevelTwoData * level2 = [[WPYLevelTwoData alloc] init];
         
-        extendedData.notes = self.extendedInfoView.notes.text;
+        NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss a"];
         
-        if(self.extendedInfoView.orderDate.text || self.extendedInfoView.purchaseOrder.text)
-        {
-            WPYLevelTwoData * level2 = [[WPYLevelTwoData alloc] init];
-            
-            NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
-            [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss a"];
-            
-            level2.orderDate = [formatter dateFromString:self.extendedInfoView.orderDate.text];
-            level2.purchaseOrderNumber = self.extendedInfoView.purchaseOrder.text;
-            
-            extendedData.levelTwoData = level2;
-        }
+        level2.orderDate = [formatter dateFromString:self.extendedInfoView.orderDate.text];
+        level2.purchaseOrderNumber = self.extendedInfoView.purchaseOrder.text;
         
-        if(self.extendedInfoView.gratuityAmount.text.doubleValue > 0 || ![self.extendedInfoView.serverName.text  isEqual: @""])
-        {
-            WPYTenderServiceData * serviceData = [[WPYTenderServiceData alloc] init];
-            
-            serviceData.gratuityAmount = [NSDecimalNumber decimalNumberWithString:self.extendedInfoView.gratuityAmount.text];
-            serviceData.server = self.extendedInfoView.serverName.text;
-            
-            extendedData.serviceData = serviceData;
-        }
-        
-        request.extendedData = extendedData;
+        extendedData.levelTwoData = level2;
     }
+    
+    if(self.extendedInfoView.gratuityAmount.text.doubleValue > 0 || ![self.extendedInfoView.serverName.text  isEqualToString: @""])
+    {
+        WPYTenderServiceData * serviceData = [[WPYTenderServiceData alloc] init];
+        
+        serviceData.gratuityAmount = [NSDecimalNumber decimalNumberWithString:self.extendedInfoView.gratuityAmount.text];
+        serviceData.server = self.extendedInfoView.serverName.text;
+        
+        extendedData.serviceData = serviceData;
+    }
+    
+    request.extendedData = extendedData;
     
     if([self cashbackAllowed] && self.cashbackTextField.text.doubleValue > 0)
     {

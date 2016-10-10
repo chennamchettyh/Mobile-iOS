@@ -15,11 +15,12 @@
 
 @property (strong, nonatomic) IBOutlet UIView *view;
 @property (assign, nonatomic) CGFloat secondaryViewHeightConstant;
+@property (assign, nonatomic) CGFloat expectedSecondaryHeight;
 @property (weak, nonatomic) UIView * secondaryView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (assign, nonatomic) BOOL extended;
 @property (copy, nonatomic) void (^callback)(CGFloat);
-@property (weak, nonatomic) IBOutlet UIView *secondaryContainerView;
+
 @property (weak, nonatomic) NSLayoutConstraint * parentHeightConstraint;
 
 @end
@@ -81,7 +82,7 @@
     else
     {
         
-        height = self.secondaryView.frame.size.height;
+        height = self.expectedSecondaryHeight;
         
         self.secondaryViewHeightConstant = height;
     }
@@ -107,6 +108,11 @@
 - (void) setHeightConstraint: (NSLayoutConstraint *) constraint
 {
     self.parentHeightConstraint = constraint;
+}
+
+- (void)setSecondaryHeight:(CGFloat)secondaryHeight
+{
+    self.expectedSecondaryHeight = secondaryHeight;
 }
 
 @end
