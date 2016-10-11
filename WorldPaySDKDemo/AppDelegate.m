@@ -32,8 +32,8 @@
     
     WPYAuthTokenRequest *authTokenRequest = [[WPYAuthTokenRequest alloc] init];
     
-    authTokenRequest.secureNetId = @"8005860";
-    authTokenRequest.secureNetKey = @"0UvyZmcISlcj";
+    authTokenRequest.secureNetId = @"8006723";
+    authTokenRequest.secureNetKey = @"sBBtch6K9Ii9";
     authTokenRequest.applicationId = @"applicationId";
     authTokenRequest.terminalId = @"445";
     authTokenRequest.terminalVendor = @"4554";

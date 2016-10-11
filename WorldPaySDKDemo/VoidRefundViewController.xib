@@ -33,40 +33,40 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transaction Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwg-8Q-ufW">
-                    <rect key="frame" x="8" y="13" width="130" height="22"/>
+                    <rect key="frame" x="8" y="77" width="130" height="22"/>
                     <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h1P-6H-ECf" customClass="DropDownTextField">
-                    <rect key="frame" x="195" y="9" width="397" height="30"/>
+                    <rect key="frame" x="195" y="73" width="397" height="30"/>
                     <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transaction Id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8f-ia-WxP">
-                    <rect key="frame" x="8" y="48" width="109" height="22"/>
+                    <rect key="frame" x="8" y="112" width="109" height="22"/>
                     <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XqD-BV-3FO">
-                    <rect key="frame" x="195" y="44" width="397" height="30"/>
+                    <rect key="frame" x="195" y="108" width="397" height="30"/>
                     <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G9B-PZ-rPQ">
-                    <rect key="frame" x="195" y="79" width="397" height="30"/>
+                    <rect key="frame" x="195" y="143" width="397" height="30"/>
                     <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Cb-gJ-DTK">
-                    <rect key="frame" x="8" y="83" width="63" height="22"/>
+                    <rect key="frame" x="8" y="147" width="63" height="22"/>
                     <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbT-Op-vSo">
-                    <rect key="frame" x="242" y="142" width="117" height="31"/>
+                    <rect key="frame" x="242" y="206" width="117" height="31"/>
                     <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="15"/>
                     <state key="normal" title="Start Transaction"/>
                     <connections>
@@ -92,7 +92,7 @@
                 <constraint firstItem="G9B-PZ-rPQ" firstAttribute="leading" secondItem="XqD-BV-3FO" secondAttribute="leading" id="qmz-QB-mKW"/>
                 <constraint firstItem="XbT-Op-vSo" firstAttribute="top" secondItem="G9B-PZ-rPQ" secondAttribute="bottom" constant="33" id="uft-dB-wj3"/>
                 <constraint firstItem="G9B-PZ-rPQ" firstAttribute="centerY" secondItem="2Cb-gJ-DTK" secondAttribute="centerY" id="yx9-6M-dKx"/>
-                <constraint firstItem="cwg-8Q-ufW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="13" id="yya-of-ArJ"/>
+                <constraint firstItem="cwg-8Q-ufW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="77" id="yya-of-ArJ"/>
             </constraints>
         </view>
     </objects>

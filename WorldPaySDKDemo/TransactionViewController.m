@@ -49,6 +49,7 @@
 @property (strong, nonatomic) UIAlertController * swiperAlert;
 @property (weak, nonatomic) UITextField * activeTextField;
 @property (strong, nonatomic) WPYTransactionResponse * lastResponse;
+@property (assign, atomic) BOOL transition;
 
 @end
 
@@ -276,16 +277,31 @@
     if(self.swiperAlert.viewIfLoaded != nil)
     {
         [self dismissViewControllerAnimated:true completion:^
-         {
-             [self presentViewController:alert animated:true completion:nil];
-         }];
+        {
+            self.transition = YES;
+            self.swiperAlert = alert;
+            [self presentViewController:alert animated:true completion:^
+            {
+                self.transition = NO;
+            }];
+        }];
     }
     else
     {
-        [self presentViewController:alert animated:true completion:nil];
+        if(self.transition)
+        {
+            [self performSelector:@selector(displayAlert:) withObject:alert afterDelay:.1];
+        }
+        else
+        {
+            self.transition = YES;
+            self.swiperAlert = alert;
+            [self presentViewController:alert animated:true completion:^
+            {
+                self.transition = NO;
+            }];
+        }
     }
-    
-    self.swiperAlert = alert;
 }
 
 - (void) dismissSignature
@@ -298,9 +314,9 @@
     // TODO: Actually capture signature
     
     [self dismissViewControllerAnimated:YES completion:^
-     {
-         [self showTransactionDetails];
-     }];
+    {
+        [self showTransactionDetails];
+    }];
 }
 
 - (void) showTransactionDetails
@@ -402,11 +418,11 @@
     
     NSString *transactionStatus = nil;
     
-    BOOL approved = response.resultCode;
+    BOOL approved = response.resultCode == WPYTransactionResultApproved;
     
     NSString * signatureNeeded = @"";
     
-    switch ((NSInteger)response.result)
+    switch (response.resultCode)
     {
         case WPYTransactionResultApproved:
             transactionStatus = @"Approved";
@@ -465,7 +481,7 @@
         }
     }
     
-    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Prompt" message:[NSString stringWithFormat:@"Status: %@\r\nResponse:\r\n%@\r\n%@", transactionStatus, responseMessage, signatureNeeded] preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Prompt" message:[NSString stringWithFormat:@"Status: %@\r\nResponse:\r\n%@\r\n%@", transactionStatus, responseMessage ?: @"No Message", signatureNeeded] preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
     
     if(secondaryAction)

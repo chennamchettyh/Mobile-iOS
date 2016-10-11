@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VoidRefundViewController : UIViewController
+@interface VoidRefundViewController : UIViewController <UITextFieldDelegate>
 
 @end
