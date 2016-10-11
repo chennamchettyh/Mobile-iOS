@@ -26,6 +26,12 @@
 		8908E74F1DA6EBBC00EBF673 /* BillingAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8908E74D1DA6EBBC00EBF673 /* BillingAddressCell.xib */; };
 		8908E7531DA6FACB00EBF673 /* CustomerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908E7511DA6FACB00EBF673 /* CustomerCell.m */; };
 		8908E7541DA6FACB00EBF673 /* CustomerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8908E7521DA6FACB00EBF673 /* CustomerCell.xib */; };
+		894DF39C1DAD390D0043B01D /* Index.m in Sources */ = {isa = PBXBuildFile; fileRef = 894DF39B1DAD390D0043B01D /* Index.m */; };
+		894DF39D1DAD390D0043B01D /* Index.m in Sources */ = {isa = PBXBuildFile; fileRef = 894DF39B1DAD390D0043B01D /* Index.m */; };
+		894DF3A11DAD3FAE0043B01D /* VoidRefundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 894DF39F1DAD3FAE0043B01D /* VoidRefundViewController.m */; };
+		894DF3A21DAD3FAE0043B01D /* VoidRefundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 894DF39F1DAD3FAE0043B01D /* VoidRefundViewController.m */; };
+		894DF3A31DAD3FAE0043B01D /* VoidRefundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 894DF3A01DAD3FAE0043B01D /* VoidRefundViewController.xib */; };
+		894DF3A41DAD3FAE0043B01D /* VoidRefundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 894DF3A01DAD3FAE0043B01D /* VoidRefundViewController.xib */; };
 		896A6ECE1DAC093100FD8F77 /* TransactionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CB9EAE1DA461EE00E4F7E4 /* TransactionDetailViewController.m */; };
 		896A6ECF1DAC094600FD8F77 /* TransactionDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908E7421DA5536A00EBF673 /* TransactionDetailCell.m */; };
 		896A6ED01DAC094D00FD8F77 /* TransactionDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8908E7431DA5536A00EBF673 /* TransactionDetailCell.xib */; };
@@ -139,6 +145,11 @@
 		8908E7501DA6FACB00EBF673 /* CustomerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerCell.h; sourceTree = "<group>"; };
 		8908E7511DA6FACB00EBF673 /* CustomerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerCell.m; sourceTree = "<group>"; };
 		8908E7521DA6FACB00EBF673 /* CustomerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomerCell.xib; sourceTree = "<group>"; };
+		894DF39A1DAD390D0043B01D /* Index.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Index.h; sourceTree = "<group>"; };
+		894DF39B1DAD390D0043B01D /* Index.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Index.m; sourceTree = "<group>"; };
+		894DF39E1DAD3FAE0043B01D /* VoidRefundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoidRefundViewController.h; sourceTree = "<group>"; };
+		894DF39F1DAD3FAE0043B01D /* VoidRefundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoidRefundViewController.m; sourceTree = "<group>"; };
+		894DF3A01DAD3FAE0043B01D /* VoidRefundViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VoidRefundViewController.xib; sourceTree = "<group>"; };
 		896A6EDA1DAC265500FD8F77 /* SignatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignatureViewController.h; sourceTree = "<group>"; };
 		896A6EDB1DAC265500FD8F77 /* SignatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignatureViewController.m; sourceTree = "<group>"; };
 		896A6EDE1DAC267800FD8F77 /* SignatureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignatureViewController.xib; sourceTree = "<group>"; };
@@ -304,6 +315,8 @@
 		896A6ED91DAC25B300FD8F77 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				896A6EE11DAC321B00FD8F77 /* LandscapeNavigationController.h */,
+				896A6EE21DAC321B00FD8F77 /* LandscapeNavigationController.m */,
 				8C2B20AF1DA3F23500643EEB /* TransactionViewController.h */,
 				8C2B20B01DA3F23500643EEB /* TransactionViewController.m */,
 				8C2B20B11DA3F23500643EEB /* TransactionViewController.xib */,
@@ -313,8 +326,9 @@
 				896A6EDA1DAC265500FD8F77 /* SignatureViewController.h */,
 				896A6EDB1DAC265500FD8F77 /* SignatureViewController.m */,
 				896A6EDE1DAC267800FD8F77 /* SignatureViewController.xib */,
-				896A6EE11DAC321B00FD8F77 /* LandscapeNavigationController.h */,
-				896A6EE21DAC321B00FD8F77 /* LandscapeNavigationController.m */,
+				894DF39E1DAD3FAE0043B01D /* VoidRefundViewController.h */,
+				894DF39F1DAD3FAE0043B01D /* VoidRefundViewController.m */,
+				894DF3A01DAD3FAE0043B01D /* VoidRefundViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -340,6 +354,8 @@
 				8CAE8A811DA6A26A006DBC36 /* UIFont+Worldpay.m */,
 				89A4DF661DA80FAF007F79D6 /* Helper.h */,
 				89A4DF671DA8110E007F79D6 /* Helper.m */,
+				894DF39A1DAD390D0043B01D /* Index.h */,
+				894DF39B1DAD390D0043B01D /* Index.m */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -476,6 +492,7 @@
 				8908E74F1DA6EBBC00EBF673 /* BillingAddressCell.xib in Resources */,
 				8908E74A1DA6E57B00EBF673 /* CardDataCell.xib in Resources */,
 				8C2B20B41DA3F23500643EEB /* TransactionViewController.xib in Resources */,
+				894DF3A31DAD3FAE0043B01D /* VoidRefundViewController.xib in Resources */,
 				8CAE8AA01DA6F7A4006DBC36 /* AdelleSans_Regular.otf in Resources */,
 				8CAE8A9E1DA6F7A4006DBC36 /* AdelleSans_Bold.otf in Resources */,
 				8CDEB6C61DA8106600F81B63 /* ExtendedInformationView.xib in Resources */,
@@ -504,6 +521,7 @@
 				8CAE8A9F1DA6F7A4006DBC36 /* AdelleSans_Bold.otf in Resources */,
 				896A6ED41DAC096100FD8F77 /* BillingAddressCell.xib in Resources */,
 				8CDEB6C71DA8106600F81B63 /* ExtendedInformationView.xib in Resources */,
+				894DF3A41DAD3FAE0043B01D /* VoidRefundViewController.xib in Resources */,
 				896A6ED01DAC094D00FD8F77 /* TransactionDetailCell.xib in Resources */,
 				8C068D021DA4147F00578C9D /* Main.storyboard in Resources */,
 				896A6ED71DAC137600FD8F77 /* TransactionDetailViewController.xib in Resources */,
@@ -519,9 +537,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				894DF39C1DAD390D0043B01D /* Index.m in Sources */,
 				8C2B20B81DA3F2EA00643EEB /* DropDownTextField.m in Sources */,
 				811A0D651BB2F20100B73C09 /* AppDelegate.m in Sources */,
 				8908E7441DA5536A00EBF673 /* TransactionDetailCell.m in Sources */,
+				894DF3A11DAD3FAE0043B01D /* VoidRefundViewController.m in Sources */,
 				89A4DF681DA8110E007F79D6 /* Helper.m in Sources */,
 				896A6EDC1DAC265500FD8F77 /* SignatureViewController.m in Sources */,
 				811A0D621BB2F20100B73C09 /* main.m in Sources */,
@@ -550,9 +570,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				894DF39D1DAD390D0043B01D /* Index.m in Sources */,
 				8C2B20B91DA3F2EA00643EEB /* DropDownTextField.m in Sources */,
 				814EDBF61C69636E0010877C /* AppDelegate.m in Sources */,
 				814EDBF81C69636E0010877C /* main.m in Sources */,
+				894DF3A21DAD3FAE0043B01D /* VoidRefundViewController.m in Sources */,
 				896A6ECE1DAC093100FD8F77 /* TransactionDetailViewController.m in Sources */,
 				896A6EDD1DAC265500FD8F77 /* SignatureViewController.m in Sources */,
 				8CAE8A8B1DA6B5EE006DBC36 /* ExtendableView.m in Sources */,

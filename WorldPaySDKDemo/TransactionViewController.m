@@ -63,6 +63,7 @@
         NSAssert(FALSE, @"%@", @"Drop down failed to initialized properly");
     }
     
+    // Grab swiper from API
     self.swiper = [[WorldpayAPI instance] swiperWithDelegate:self];
     
     self.amountTextField.delegate = self;
@@ -73,8 +74,6 @@
     ExtendedInformationView * infoView = [[ExtendedInformationView alloc] initWithFrame:CGRectMake(0, 0, self.extendableInfoView.frame.size.width+MAGICMARGIN, [ExtendedInformationView expectedHeight])];
     
     self.extendedInfoView = infoView;
-    
-    infoView.translatesAutoresizingMaskIntoConstraints = false;
     
     [infoView setTextFieldDelegate:self];
     
@@ -93,11 +92,6 @@
             }
         }
     }];
-    
-    [self.extendableInfoView addConstraint:[NSLayoutConstraint constraintWithItem:self.extendableInfoView.secondaryContainerView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:infoView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0]];
-    [self.extendableInfoView addConstraint:[NSLayoutConstraint constraintWithItem:self.extendableInfoView.secondaryContainerView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:infoView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]];
-    [self.extendableInfoView addConstraint:[NSLayoutConstraint constraintWithItem:self.extendableInfoView.secondaryContainerView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:infoView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0]];
-    [self.extendableInfoView addConstraint:[NSLayoutConstraint constraintWithItem:self.extendableInfoView.secondaryContainerView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:infoView attribute:NSLayoutAttributeRight multiplier:1.0 constant:0]];
     
     UITapGestureRecognizer *recognizer1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeFocusFromTextField:)];
     [recognizer1 setNumberOfTapsRequired:1];

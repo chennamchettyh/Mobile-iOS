@@ -65,8 +65,15 @@
         [view removeFromSuperview];
     }
     
+    view.translatesAutoresizingMaskIntoConstraints = false;
+    
     [self.secondaryContainerView addSubview:view];
     self.secondaryView = view;
+    
+    [self.secondaryContainerView addConstraint:[NSLayoutConstraint constraintWithItem:self.secondaryView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.secondaryContainerView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0]];
+    [self.secondaryContainerView addConstraint:[NSLayoutConstraint constraintWithItem:self.secondaryView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.secondaryContainerView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]];
+    [self.secondaryContainerView addConstraint:[NSLayoutConstraint constraintWithItem:self.secondaryView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.secondaryContainerView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0]];
+    [self.secondaryContainerView addConstraint:[NSLayoutConstraint constraintWithItem:self.secondaryView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.secondaryContainerView attribute:NSLayoutAttributeRight multiplier:1.0 constant:0]];
 }
 
 - (IBAction)toggleSecondaryView:(id)sender

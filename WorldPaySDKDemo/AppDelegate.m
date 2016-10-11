@@ -9,6 +9,8 @@
 #import "TransactionViewController.h"
 #import "UIColor+Worldpay.h"
 #import "UIFont+Worldpay.h"
+#import "Index.h"
+#import "VoidRefundViewController.h"
 
 #ifdef ANYWHERE_NOMAD
 #import <WorldPaySDK_AC/WorldPaySDK.h>
@@ -26,7 +28,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    // Generate auth token necessary for API calls
     
     WPYAuthTokenRequest *authTokenRequest = [[WPYAuthTokenRequest alloc] init];
     
@@ -45,24 +47,34 @@
          }
      }];
     
+    // UIAppearance Proxy settings
+    
     [[UITabBarItem appearance] setTitleTextAttributes: @{NSFontAttributeName : [UIFont worldpayPrimaryWithSize:TABSIZE], NSForegroundColorAttributeName : [UIColor worldpayWhite]} forState:UIControlStateNormal];
     [[UINavigationBar appearance] setBarTintColor: [UIColor worldpayRed]];
     [[UITabBar appearance] setBarTintColor: [UIColor worldpayGrey]];
     [[UINavigationBar appearance] setTintColor: [UIColor worldpayWhite]];
     [[UINavigationBar appearance] setTitleTextAttributes: @{NSForegroundColorAttributeName : [UIColor worldpayWhite]}];
     [[UIButton appearance] setTitleColor: [UIColor worldpayBlack] forState: UIControlStateNormal];
-    
     [[UISegmentedControl appearance] setTintColor: [UIColor worldpayEmerald]];
     [self.window setTintColor: [UIColor worldpayEmerald]];
     
+    // Tab bar controller
     UITabBarController * tabController = (UITabBarController *) self.window.rootViewController;
     
+    Index * index = [Index new];
+    
+    // 1st tab for Transactions (Auth, Charge, Credit
     TransactionViewController * transactionViewController = [[TransactionViewController alloc] initWithNibName:nil bundle:nil];
     [transactionViewController setTitle:@"Transactions"];
     UINavigationController * transactionNav = [[UINavigationController alloc] initWithRootViewController: transactionViewController];
-    transactionNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Transactions" image:nil tag:0];
+    transactionNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Transactions" image:nil tag:[index current]];
     
-    tabController.viewControllers = @[transactionNav];
+    // 2nd tab for Transactions (Void/Refund)
+    
+    UINavigationController * voidNav = [[UINavigationController alloc] initWithRootViewController:[[VoidRefundViewController alloc] initWithNibName:nil bundle:nil]];
+    voidNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Void/Refund" image:nil tag:[index current]];
+    
+    tabController.viewControllers = @[transactionNav, voidNav];
     
     return YES;
 }
