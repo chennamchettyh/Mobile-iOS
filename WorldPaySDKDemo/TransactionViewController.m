@@ -655,27 +655,31 @@
 {
     NSLog(@"%@: %@", @"Manual entry failed with error", error);
     
-    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Manual entry failed with an error" preferredStyle:UIAlertControllerStyleAlert];
-    
-    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
-    
-    [self displayAlert:alert];
+    // Dismiss necessary to ensure manual entry controller is off screen
+    [self dismissViewControllerAnimated:true completion:^
+    {
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Manual entry failed with an error" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        
+        [self displayAlert:alert];
+    }];
 }
 
 - (void)manualTenderEntryControllerIsProcessingRequest:(WPYManualTenderEntryViewController *)controller
 {
     NSLog(@"%@", @"Manual entry request is being processed");
-    
-    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Processing..." message:@"Manual entry request is being processed" preferredStyle:UIAlertControllerStyleAlert];
-    
-    [self displayAlert:alert];
 }
 
 - (void)manualTenderEntryController:(WPYManualTenderEntryViewController *)controller didFinishWithResponse:(WPYPaymentResponse *)tender
 {
     NSLog(@"%@: %@", @"Manual entry request finished", tender);
     
-    [self swiper:nil didFinishTransactionWithResponse:tender];
+    // Dismiss necessary to ensure manual entry controller is off screen
+    [self dismissViewControllerAnimated:true completion:^
+    {
+        [self swiper:nil didFinishTransactionWithResponse:tender];
+    }];
 }
 
 @end
