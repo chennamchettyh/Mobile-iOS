@@ -9,6 +9,10 @@
 #import "VoidRefundViewController.h"
 #import "DropDownTextField.h"
 #import "UIColor+WorldPay.h"
+#import "TransactionDetailViewController.h"
+
+#define VOIDINDEX 0
+#define REFUNDINDEX 1
 
 @interface VoidRefundViewController ()
 
@@ -57,7 +61,116 @@
 
 - (IBAction)startTransaction:(id)sender
 {
-    // TODO: Verify transaction id is present, check amount > 0, create void/refund request and send to API, show pop up with results that can direct user to transaction details screen
+    // TODO: create void/refund request and send to API, show pop up with results that can direct user to transaction details screen
+    
+    if([self.transactionIdTextField.text isEqualToString:@""])
+    {
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Transaction Id is required." preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        
+        return;
+    }
+    
+    if(![self.amountTextField.text isEqualToString:@""] && !(self.amountTextField.text.doubleValue > 0))
+    {
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Amount must be a positive number." preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        
+        return;
+    }
+    
+    WPYDomainObject * request;
+    
+    if([self.transactionTypeDropDown selectedIndex] == VOIDINDEX)
+    {
+        request = [WPYPaymentVoid new];
+        
+        ((WPYPaymentVoid *)request).amount = [NSDecimalNumber decimalNumberWithString:self.amountTextField.text];
+        ((WPYPaymentVoid *)request).transactionId = self.transactionIdTextField.text;
+        
+        [[WorldpayAPI instance] paymentVoid:(WPYPaymentVoid *)request withCompletion:^(WPYPaymentResponse * response, NSError * error)
+        {
+            [self handleResponse:response withError:error];
+        }];
+    }
+    else
+    {
+        request = [WPYPaymentRefund new];
+        
+        ((WPYPaymentRefund *)request).amount = [NSDecimalNumber decimalNumberWithString:self.amountTextField.text];
+        ((WPYPaymentRefund *)request).transactionId = self.transactionIdTextField.text;
+        
+        [[WorldpayAPI instance] paymentRefund:(WPYPaymentRefund *)request withCompletion:^(WPYPaymentResponse * response, NSError * error)
+        {
+            [self handleResponse:response withError:error];
+        }];
+    }
+}
+
+- (void) handleResponse: (WPYPaymentResponse *) response withError: (NSError *) error
+{
+    if(error != nil)
+    {
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"An error occurred." preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        
+        [self presentViewController:alert animated:true completion:nil];
+    }
+    else
+    {
+        NSString *transactionStatus;
+        NSString * responseMessage;
+        UIAlertAction * secondaryAction;
+        
+        switch (response.resultCode)
+        {
+            case WPYTransactionResultApproved:
+                transactionStatus = @"Approved";
+                break;
+            case WPYTransactionResultDeclined:
+                transactionStatus = @"Declined";
+                break;
+            case WPYTransactionResultTerminated:
+                transactionStatus = @"Terminated";
+                break;
+            case WPYTransactionResultCardBlocked:
+                transactionStatus = @"Card Blocked";
+                break;
+            default:
+                transactionStatus = @"Other - see logs";
+                break;
+        }
+        
+        if(response.transaction != nil)
+        {
+            secondaryAction = [UIAlertAction actionWithTitle:@"View Details" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+            {
+                [self showTransactionDetails];
+            }];
+            
+            responseMessage = response.transaction.responseText;
+        }
+
+        
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Response" message:[NSString stringWithFormat:@"Status: %@\r\nResponse:%@\r\n", transactionStatus, responseMessage ?: @"No Message"] preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        
+        if(secondaryAction)
+        {
+            [alert addAction:secondaryAction];
+        }
+    }
+}
+
+- (void) showTransactionDetails
+{
+    TransactionDetailViewController * detailController = [[TransactionDetailViewController alloc] initWithNibName:nil bundle:nil];
+    
+    [self.navigationController pushViewController:detailController animated:YES];
 }
 
 #pragma mark - UITextFieldDelegate

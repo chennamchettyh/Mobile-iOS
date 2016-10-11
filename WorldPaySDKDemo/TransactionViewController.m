@@ -416,7 +416,7 @@
     
     UIAlertAction * secondaryAction;
     
-    NSString *transactionStatus = nil;
+    NSString *transactionStatus;
     
     BOOL approved = response.resultCode == WPYTransactionResultApproved;
     
@@ -447,7 +447,6 @@
     }
     else
     {
-        
         if(response.transaction != nil)
         {
             self.lastResponse = response.transaction;
@@ -481,7 +480,7 @@
         }
     }
     
-    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Prompt" message:[NSString stringWithFormat:@"Status: %@\r\nResponse:\r\n%@\r\n%@", transactionStatus, responseMessage ?: @"No Message", signatureNeeded] preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Response" message:[NSString stringWithFormat:@"Status: %@\r\nResponse:%@\r\n%@", transactionStatus, responseMessage ?: @"No Message", signatureNeeded] preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
     
     if(secondaryAction)
