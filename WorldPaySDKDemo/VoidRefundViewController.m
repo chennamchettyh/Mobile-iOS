@@ -61,7 +61,7 @@
 
 - (IBAction)startTransaction:(id)sender
 {
-    // TODO: create void/refund request and send to API, show pop up with results that can direct user to transaction details screen
+    BOOL includeAmount = false;
     
     if([self.transactionIdTextField.text isEqualToString:@""])
     {
@@ -80,6 +80,10 @@
         
         return;
     }
+    else if(![self.amountTextField.text isEqualToString:@""])
+    {
+        includeAmount = true;
+    }
     
     WPYDomainObject * request;
     
@@ -87,7 +91,11 @@
     {
         request = [WPYPaymentVoid new];
         
-        ((WPYPaymentVoid *)request).amount = [NSDecimalNumber decimalNumberWithString:self.amountTextField.text];
+        if(includeAmount)
+        {
+            ((WPYPaymentVoid *)request).amount = [NSDecimalNumber decimalNumberWithString:self.amountTextField.text];
+        }
+        
         ((WPYPaymentVoid *)request).transactionId = self.transactionIdTextField.text;
         
         [[WorldpayAPI instance] paymentVoid:(WPYPaymentVoid *)request withCompletion:^(WPYPaymentResponse * response, NSError * error)
@@ -99,7 +107,10 @@
     {
         request = [WPYPaymentRefund new];
         
-        ((WPYPaymentRefund *)request).amount = [NSDecimalNumber decimalNumberWithString:self.amountTextField.text];
+        if(includeAmount)
+        {
+            ((WPYPaymentRefund *)request).amount = [NSDecimalNumber decimalNumberWithString:self.amountTextField.text];
+        }
         ((WPYPaymentRefund *)request).transactionId = self.transactionIdTextField.text;
         
         [[WorldpayAPI instance] paymentRefund:(WPYPaymentRefund *)request withCompletion:^(WPYPaymentResponse * response, NSError * error)
