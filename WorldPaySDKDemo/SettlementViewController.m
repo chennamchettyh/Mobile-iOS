@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *closeBatchButton;
 @property (weak, nonatomic) UITextField * activeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *batchIdTextField;
+@property (assign, atomic) BOOL transition;
 
 @end
 
@@ -38,6 +39,11 @@
     [self.closeBatchButton setBackgroundColor: [UIColor worldpayMist]];
     
     self.batchIdTextField.delegate = self;
+    
+    UITapGestureRecognizer *recognizer1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeFocusFromTextField:)];
+    [recognizer1 setNumberOfTapsRequired:1];
+    [recognizer1 setNumberOfTouchesRequired:1];
+    [self.view addGestureRecognizer:recognizer1];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,18 +62,29 @@
             UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"An error occurred." preferredStyle:UIAlertControllerStyleAlert];
             
             [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+            self.transition = NO;
         }
         else
         {
-            BatchDetailTableViewController * batchDetailTableVC = [[BatchDetailTableViewController alloc] initWithTransactions:transactions];
+            BatchDetailTableViewController * batchDetailTableVC = [[BatchDetailTableViewController alloc] initWithTransactions:transactions batchId:batchId];
             
             [self.navigationController pushViewController:batchDetailTableVC animated:true];
+            self.transition = NO;
         }
     }];
 }
 
 - (IBAction)getBatch:(id)sender
 {
+    [self removeFocusFromTextField:nil];
+    
+    if(self.transition)
+    {
+        return;
+    }
+    
+    self.transition = YES;
+    
     if([self.batchIdTextField.text isEqualToString:@""])
     {
         [[WorldpayAPI instance] getCurrentBatchWithCompletion:^(WPYBatchResponse * response, NSError * error)
@@ -79,6 +96,7 @@
                 UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"An error occurred." preferredStyle:UIAlertControllerStyleAlert];
                 
                 [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+                self.transition = NO;
             }
             else
             {
@@ -94,6 +112,13 @@
 
 - (IBAction)closeBatch:(id)sender
 {
+    [self removeFocusFromTextField:nil];
+    
+    if(self.transition)
+    {
+        return;
+    }
+    
     [[WorldpayAPI instance] closeCurrentBatchWithCompletion:^(WPYBatchResponse * response, NSError * error)
     {
         if(error != nil)

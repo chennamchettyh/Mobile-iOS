@@ -11,6 +11,7 @@
 @interface BatchTransactionTableViewCell ()
 
 @property (strong, nonatomic) WPYTransactionResponse * transaction;
+@property (weak, nonatomic) IBOutlet UILabel *transactionIdLabel;
 
 @end
 
@@ -42,7 +43,7 @@
 
 - (void) configureCell
 {
-    // TODO: Figure out what we want to show on this cell, do the UI, then connect
+    self.transactionIdLabel.text = self.transaction.transactionId;
 }
 
 @end

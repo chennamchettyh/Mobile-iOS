@@ -10,7 +10,7 @@
 #import "BatchTransactionTableViewCell.h"
 #import "TransactionDetailViewController.h"
 
-#define ROWHEIGHT 50
+#define ROWHEIGHT 44
 
 @interface BatchDetailTableViewController ()
 
@@ -20,11 +20,12 @@
 
 @implementation BatchDetailTableViewController
 
-- (instancetype)initWithTransactions:(NSArray<WPYTransactionResponse *> *) transactions
+- (instancetype)initWithTransactions:(NSArray<WPYTransactionResponse *> *) transactions batchId: (NSString *) batchId
 {
     if((self = [super initWithStyle:UITableViewStylePlain]))
     {
         self.transactions = transactions;
+        self.title = [NSString stringWithFormat:@"Batch %@", batchId];
     }
     
     return self;
@@ -61,7 +62,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // TODO: Set constant to proper value once cell UI is done
     return ROWHEIGHT;
 }
 
