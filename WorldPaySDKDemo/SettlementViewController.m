@@ -62,6 +62,7 @@
             UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"An error occurred." preferredStyle:UIAlertControllerStyleAlert];
             
             [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alert animated:true completion:nil];
             self.transition = NO;
         }
         else
@@ -96,6 +97,7 @@
                 UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"An error occurred." preferredStyle:UIAlertControllerStyleAlert];
                 
                 [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+                [self presentViewController:alert animated:true completion:nil];
                 self.transition = NO;
             }
             else
@@ -128,16 +130,29 @@
             UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"An error occurred." preferredStyle:UIAlertControllerStyleAlert];
             
             [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+            
+            [self presentViewController:alert animated:true completion:nil];
+        }
+        else if([response.identifier isEqualToString:@"0"])
+        {
+            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Batch could not be successfully closed." preferredStyle:UIAlertControllerStyleAlert];
+            
+            [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+            
+            [self presentViewController:alert animated:true completion:nil];
         }
         else
         {
-            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Response" message:@"Batch was successfully closed." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Response" message:[NSString stringWithFormat:@"Batch %@ was successfully closed.", response.identifier] preferredStyle:UIAlertControllerStyleAlert];
             
             [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
             [alert addAction:[UIAlertAction actionWithTitle:@"View Transactions" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
             {
                 [self showTransactionsInBatch:response.identifier];
             }]];
+            
+            [self presentViewController:alert animated:true completion:nil];
+            self.transition = NO;
         }
     }];
 }
