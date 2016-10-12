@@ -86,7 +86,7 @@
     
     self.transition = YES;
     
-    if([self.batchIdTextField.text isEqualToString:@""])
+    if(sender == nil || [self.batchIdTextField.text isEqualToString:@""])
     {
         [[WorldpayAPI instance] getCurrentBatchWithCompletion:^(WPYBatchResponse * response, NSError * error)
         {
@@ -148,7 +148,7 @@
             [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
             [alert addAction:[UIAlertAction actionWithTitle:@"View Transactions" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
             {
-                [self showTransactionsInBatch:response.identifier];
+                [self getBatch:nil];
             }]];
             
             [self presentViewController:alert animated:true completion:nil];
