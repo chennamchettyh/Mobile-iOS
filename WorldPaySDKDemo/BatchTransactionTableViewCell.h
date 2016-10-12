@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+#ifdef ANYWHERE_NOMAD
+#import <WorldPaySDK_AC/WorldPaySDK.h>
+#else
+#import <WorldPaySDK_Miura/WorldPaySDK.h>
+#endif
+
 @interface BatchTransactionTableViewCell : UITableViewCell
+
+-(instancetype)initWithTransaction: (WPYTransactionResponse *) transaction;
 
 @end

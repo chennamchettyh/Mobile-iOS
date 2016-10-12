@@ -8,7 +8,26 @@
 
 #import "BatchTransactionTableViewCell.h"
 
+@interface BatchTransactionTableViewCell ()
+
+@property (strong, nonatomic) WPYTransactionResponse * transaction;
+
+@end
+
 @implementation BatchTransactionTableViewCell
+
+-(instancetype)initWithTransaction: (WPYTransactionResponse *) transaction
+{
+    NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"BatchTransactionTableViewCell" owner:self options:nil];
+    
+    if((self = (BatchTransactionTableViewCell *)[nib objectAtIndex:0]))
+    {
+        self.transaction = transaction;
+        [self configureCell];
+    }
+    
+    return self;
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -19,6 +38,11 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void) configureCell
+{
+    // TODO: Figure out what we want to show on this cell, do the UI, then connect
 }
 
 @end

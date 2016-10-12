@@ -56,6 +56,12 @@
 		89D200061DAEB6DC0090C9AE /* SettlementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D200031DAEB6DC0090C9AE /* SettlementViewController.m */; };
 		89D200071DAEB6DC0090C9AE /* SettlementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89D200041DAEB6DC0090C9AE /* SettlementViewController.xib */; };
 		89D200081DAEB6DC0090C9AE /* SettlementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89D200041DAEB6DC0090C9AE /* SettlementViewController.xib */; };
+		89D2000B1DAEC9780090C9AE /* BatchDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D2000A1DAEC9780090C9AE /* BatchDetailTableViewController.m */; };
+		89D2000C1DAEC9780090C9AE /* BatchDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D2000A1DAEC9780090C9AE /* BatchDetailTableViewController.m */; };
+		89D200101DAECB160090C9AE /* BatchTransactionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D2000E1DAECB160090C9AE /* BatchTransactionTableViewCell.m */; };
+		89D200111DAECB160090C9AE /* BatchTransactionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D2000E1DAECB160090C9AE /* BatchTransactionTableViewCell.m */; };
+		89D200121DAECB160090C9AE /* BatchTransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89D2000F1DAECB160090C9AE /* BatchTransactionTableViewCell.xib */; };
+		89D200131DAECB160090C9AE /* BatchTransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89D2000F1DAECB160090C9AE /* BatchTransactionTableViewCell.xib */; };
 		8C068D011DA4146E00578C9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C068D001DA4146E00578C9D /* Main.storyboard */; };
 		8C068D021DA4147F00578C9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C068D001DA4146E00578C9D /* Main.storyboard */; };
 		8C2B20B21DA3F23500643EEB /* TransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2B20B01DA3F23500643EEB /* TransactionViewController.m */; };
@@ -167,6 +173,11 @@
 		89D200021DAEB6DC0090C9AE /* SettlementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettlementViewController.h; sourceTree = "<group>"; };
 		89D200031DAEB6DC0090C9AE /* SettlementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettlementViewController.m; sourceTree = "<group>"; };
 		89D200041DAEB6DC0090C9AE /* SettlementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettlementViewController.xib; sourceTree = "<group>"; };
+		89D200091DAEC9780090C9AE /* BatchDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatchDetailTableViewController.h; sourceTree = "<group>"; };
+		89D2000A1DAEC9780090C9AE /* BatchDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatchDetailTableViewController.m; sourceTree = "<group>"; };
+		89D2000D1DAECB160090C9AE /* BatchTransactionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatchTransactionTableViewCell.h; sourceTree = "<group>"; };
+		89D2000E1DAECB160090C9AE /* BatchTransactionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatchTransactionTableViewCell.m; sourceTree = "<group>"; };
+		89D2000F1DAECB160090C9AE /* BatchTransactionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BatchTransactionTableViewCell.xib; sourceTree = "<group>"; };
 		8C068D001DA4146E00578C9D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		8C2B20AF1DA3F23500643EEB /* TransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionViewController.h; sourceTree = "<group>"; };
 		8C2B20B01DA3F23500643EEB /* TransactionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionViewController.m; sourceTree = "<group>"; };
@@ -304,6 +315,9 @@
 				8908E7501DA6FACB00EBF673 /* CustomerCell.h */,
 				8908E7511DA6FACB00EBF673 /* CustomerCell.m */,
 				8908E7521DA6FACB00EBF673 /* CustomerCell.xib */,
+				89D2000D1DAECB160090C9AE /* BatchTransactionTableViewCell.h */,
+				89D2000E1DAECB160090C9AE /* BatchTransactionTableViewCell.m */,
+				89D2000F1DAECB160090C9AE /* BatchTransactionTableViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -339,6 +353,8 @@
 				89D200021DAEB6DC0090C9AE /* SettlementViewController.h */,
 				89D200031DAEB6DC0090C9AE /* SettlementViewController.m */,
 				89D200041DAEB6DC0090C9AE /* SettlementViewController.xib */,
+				89D200091DAEC9780090C9AE /* BatchDetailTableViewController.h */,
+				89D2000A1DAEC9780090C9AE /* BatchDetailTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -504,6 +520,7 @@
 				8908E74A1DA6E57B00EBF673 /* CardDataCell.xib in Resources */,
 				8C2B20B41DA3F23500643EEB /* TransactionViewController.xib in Resources */,
 				894DF3A31DAD3FAE0043B01D /* VoidRefundViewController.xib in Resources */,
+				89D200121DAECB160090C9AE /* BatchTransactionTableViewCell.xib in Resources */,
 				8CAE8AA01DA6F7A4006DBC36 /* AdelleSans_Regular.otf in Resources */,
 				8CAE8A9E1DA6F7A4006DBC36 /* AdelleSans_Bold.otf in Resources */,
 				8CDEB6C61DA8106600F81B63 /* ExtendedInformationView.xib in Resources */,
@@ -534,6 +551,7 @@
 				896A6ED41DAC096100FD8F77 /* BillingAddressCell.xib in Resources */,
 				8CDEB6C71DA8106600F81B63 /* ExtendedInformationView.xib in Resources */,
 				894DF3A41DAD3FAE0043B01D /* VoidRefundViewController.xib in Resources */,
+				89D200131DAECB160090C9AE /* BatchTransactionTableViewCell.xib in Resources */,
 				896A6ED01DAC094D00FD8F77 /* TransactionDetailCell.xib in Resources */,
 				8C068D021DA4147F00578C9D /* Main.storyboard in Resources */,
 				896A6ED71DAC137600FD8F77 /* TransactionDetailViewController.xib in Resources */,
@@ -563,10 +581,12 @@
 				8CAE8A7E1DA69ED0006DBC36 /* UIColor+Worldpay.m in Sources */,
 				896A6EE31DAC321B00FD8F77 /* LandscapeNavigationController.m in Sources */,
 				8CDEB6C31DA8105100F81B63 /* ExtendedInformationView.m in Sources */,
+				89D2000B1DAEC9780090C9AE /* BatchDetailTableViewController.m in Sources */,
 				8C2B20B21DA3F23500643EEB /* TransactionViewController.m in Sources */,
 				8908E74E1DA6EBBC00EBF673 /* BillingAddressCell.m in Sources */,
 				8CAE8A821DA6A26A006DBC36 /* UIFont+Worldpay.m in Sources */,
 				8908E7531DA6FACB00EBF673 /* CustomerCell.m in Sources */,
+				89D200101DAECB160090C9AE /* BatchTransactionTableViewCell.m in Sources */,
 				89CB9EB01DA461EE00E4F7E4 /* TransactionDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -597,10 +617,12 @@
 				896A6ECF1DAC094600FD8F77 /* TransactionDetailCell.m in Sources */,
 				896A6EE41DAC321B00FD8F77 /* LandscapeNavigationController.m in Sources */,
 				8C2B20B31DA3F23500643EEB /* TransactionViewController.m in Sources */,
+				89D2000C1DAEC9780090C9AE /* BatchDetailTableViewController.m in Sources */,
 				8CAE8A831DA6A26A006DBC36 /* UIFont+Worldpay.m in Sources */,
 				896A6ED51DAC096500FD8F77 /* CustomerCell.m in Sources */,
 				896A6ED31DAC095D00FD8F77 /* BillingAddressCell.m in Sources */,
 				89A4DF691DA8110E007F79D6 /* Helper.m in Sources */,
+				89D200111DAECB160090C9AE /* BatchTransactionTableViewCell.m in Sources */,
 				896A6ED11DAC095200FD8F77 /* CardDataCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

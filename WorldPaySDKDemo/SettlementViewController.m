@@ -8,6 +8,7 @@
 
 #import "SettlementViewController.h"
 #import "UIColor+Worldpay.h"
+#import "BatchDetailTableViewController.h"
 
 @interface SettlementViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *getBatchButton;
@@ -58,7 +59,9 @@
         }
         else
         {
-            // TODO: Create and push BatchDetailViewController (table view, make a BatchDetailCell, tapping goes to transaction detail)
+            BatchDetailTableViewController * batchDetailTableVC = [[BatchDetailTableViewController alloc] initWithTransactions:transactions];
+            
+            [self.navigationController pushViewController:batchDetailTableVC animated:true];
         }
     }];
 }
