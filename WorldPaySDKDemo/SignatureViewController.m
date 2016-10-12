@@ -19,12 +19,23 @@
 
 @implementation SignatureViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    if((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
+    {
+        self.title = @"Enter Signature";
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad
 {
-    self.title = @"Enter Signature";
+    [super viewDidLoad];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
     
     self.mouseSwiped = NO;
     UITouch *touch = [touches anyObject];
@@ -32,6 +43,7 @@
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesMoved:touches withEvent:event];
     
     self.mouseSwiped = YES;
     UITouch *touch = [touches anyObject];
@@ -54,6 +66,7 @@
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesEnded:touches withEvent:event];
     
     if(!self.mouseSwiped) {
         UIGraphicsBeginImageContext(self.view.frame.size);

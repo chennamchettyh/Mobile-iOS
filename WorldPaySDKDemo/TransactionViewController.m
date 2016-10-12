@@ -55,6 +55,16 @@
 
 @implementation TransactionViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    if((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
+    {
+        self.title = @"Transactions";
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -523,7 +533,9 @@
     UIAlertController * alert;
     
     NSString *defaultPrompt = nil;
-    UIAlertAction * action;
+    UIAlertAction * action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self cleanAlert: alert userAction:YES];
+    }];;
     
     switch (prompt)
     {
@@ -566,13 +578,8 @@
             // Handled in response
             return;
         case WPYDevicePromptCanceled:
-        {
             defaultPrompt = @"Transaction Canceled\nPlease Remove Card";
-            action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [self cleanAlert: alert userAction:YES];
-            }];
             break;
-        }
         case WPYDevicePromptRetry:
 #ifdef ANYWHERE_NOMAD
             defaultPrompt = @"Please remove and reinsert card";
@@ -581,13 +588,8 @@
 #endif
             break;
         case WPYDevicePromptTransactionTimedOut:
-        {
             defaultPrompt = @"Transaction Timed Out";
-            action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [self cleanAlert: alert userAction:YES];
-            }];
             break;
-        }
         case WPYDevicePromptNfcErrorCardInserted:
             defaultPrompt = @"Error. Card Inserted";
             break;
@@ -601,22 +603,11 @@
             defaultPrompt = @"Please Swipe or Insert Card";
             break;
         case WPYDevicePromptNfcHardwareError:
-        {
             defaultPrompt = @"Contactless Hardware Error";
-            action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [self cleanAlert:alert userAction:YES];
-            }];
             break;
-        }
         case WPYDevicePromptEmvReaderError:
-        {
             defaultPrompt = @"IC Card Reader Error";
-            action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
-            {
-                [self cleanAlert:alert userAction:YES];
-            }];
             break;
-        }
         case WPYDevicePromptEmvMSRFallback:
 #ifdef ANYWHERE_NOMAD
             defaultPrompt = @"Card Not Supported Please swipe instead";
@@ -645,22 +636,11 @@
             defaultPrompt = @"Please Tap Card Again";
             break;
         case WPYDevicePromptReversal:
-        {
             defaultPrompt = @"Transaction Declined - Reversal";
-            action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
-            {
-                [self cleanAlert: alert userAction:YES];
-            }];
             break;
-        }
         case WPYDevicePromptCallBank:
-        {
             defaultPrompt = @"Declined - Please Call Bank";
-            action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [self cleanAlert: alert userAction:YES];
-            }];
             break;
-        }
         case WPYDevicePromptNotAccepted:
             defaultPrompt = @"Not Accepted";
             break;
@@ -680,10 +660,7 @@
     
     alert = [UIAlertController alertControllerWithTitle:@"Prompt" message:defaultPrompt preferredStyle:UIAlertControllerStyleAlert];
     
-    if(action)
-    {
-        [alert addAction: action];
-    }
+    [alert addAction: action];
     
     [self displayAlert:alert];
 
@@ -704,17 +681,19 @@
 {
     NSLog(@"%@: %@", @"Manual entry failed with error", error);
     
-    // Dismiss necessary to ensure manual entry controller is off screen
-    [self dismissViewControllerAnimated:true completion:^
-    {
-        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Manual entry failed with an error" preferredStyle:UIAlertControllerStyleAlert];
-        
-        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [self cleanAlert: alert userAction:YES];
-        }]];
-        
-        [self displayAlert:alert];
-    }];
+    // Delay necessary to ensure manual entry controller is off screen
+    [self performSelector:@selector(manualErrorAlert) withObject:nil afterDelay:.1];
+}
+
+- (void) manualErrorAlert
+{
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Manual entry failed with an error" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self cleanAlert: alert userAction:YES];
+    }]];
+    
+    [self displayAlert:alert];
 }
 
 - (void)manualTenderEntryControllerIsProcessingRequest:(WPYManualTenderEntryViewController *)controller
@@ -726,11 +705,13 @@
 {
     NSLog(@"%@: %@", @"Manual entry request finished", tender);
     
-    // Dismiss necessary to ensure manual entry controller is off screen
-    [self dismissViewControllerAnimated:true completion:^
-    {
-        [self swiper:nil didFinishTransactionWithResponse:tender];
-    }];
+    // Delay necessary to ensure manual entry controller is off screen
+    [self performSelector:@selector(manualResponseAlert:) withObject:tender afterDelay:.1];
+}
+
+- (void) manualResponseAlert: (WPYPaymentResponse *) tender
+{
+    [self swiper:nil didFinishTransactionWithResponse:tender];
 }
 
 @end

@@ -30,6 +30,16 @@
 
 @implementation TransactionDetailViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    if((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
+    {
+        self.title = @"Transaction Details";
+    }
+    
+    return self;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

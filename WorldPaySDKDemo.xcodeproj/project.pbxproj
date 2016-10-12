@@ -52,6 +52,10 @@
 		89A4DF691DA8110E007F79D6 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A4DF671DA8110E007F79D6 /* Helper.m */; };
 		89CB9EB01DA461EE00E4F7E4 /* TransactionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CB9EAE1DA461EE00E4F7E4 /* TransactionDetailViewController.m */; };
 		89CB9EB11DA461EE00E4F7E4 /* TransactionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89CB9EAF1DA461EE00E4F7E4 /* TransactionDetailViewController.xib */; };
+		89D200051DAEB6DC0090C9AE /* SettlementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D200031DAEB6DC0090C9AE /* SettlementViewController.m */; };
+		89D200061DAEB6DC0090C9AE /* SettlementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D200031DAEB6DC0090C9AE /* SettlementViewController.m */; };
+		89D200071DAEB6DC0090C9AE /* SettlementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89D200041DAEB6DC0090C9AE /* SettlementViewController.xib */; };
+		89D200081DAEB6DC0090C9AE /* SettlementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89D200041DAEB6DC0090C9AE /* SettlementViewController.xib */; };
 		8C068D011DA4146E00578C9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C068D001DA4146E00578C9D /* Main.storyboard */; };
 		8C068D021DA4147F00578C9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C068D001DA4146E00578C9D /* Main.storyboard */; };
 		8C2B20B21DA3F23500643EEB /* TransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2B20B01DA3F23500643EEB /* TransactionViewController.m */; };
@@ -160,6 +164,9 @@
 		89CB9EAD1DA461EE00E4F7E4 /* TransactionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransactionDetailViewController.h; path = ../TransactionDetailViewController.h; sourceTree = "<group>"; };
 		89CB9EAE1DA461EE00E4F7E4 /* TransactionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TransactionDetailViewController.m; path = ../TransactionDetailViewController.m; sourceTree = "<group>"; };
 		89CB9EAF1DA461EE00E4F7E4 /* TransactionDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TransactionDetailViewController.xib; path = ../TransactionDetailViewController.xib; sourceTree = "<group>"; };
+		89D200021DAEB6DC0090C9AE /* SettlementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettlementViewController.h; sourceTree = "<group>"; };
+		89D200031DAEB6DC0090C9AE /* SettlementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettlementViewController.m; sourceTree = "<group>"; };
+		89D200041DAEB6DC0090C9AE /* SettlementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettlementViewController.xib; sourceTree = "<group>"; };
 		8C068D001DA4146E00578C9D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		8C2B20AF1DA3F23500643EEB /* TransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionViewController.h; sourceTree = "<group>"; };
 		8C2B20B01DA3F23500643EEB /* TransactionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionViewController.m; sourceTree = "<group>"; };
@@ -329,6 +336,9 @@
 				894DF39E1DAD3FAE0043B01D /* VoidRefundViewController.h */,
 				894DF39F1DAD3FAE0043B01D /* VoidRefundViewController.m */,
 				894DF3A01DAD3FAE0043B01D /* VoidRefundViewController.xib */,
+				89D200021DAEB6DC0090C9AE /* SettlementViewController.h */,
+				89D200031DAEB6DC0090C9AE /* SettlementViewController.m */,
+				89D200041DAEB6DC0090C9AE /* SettlementViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -484,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89CB9EB11DA461EE00E4F7E4 /* TransactionDetailViewController.xib in Resources */,
+				89D200071DAEB6DC0090C9AE /* SettlementViewController.xib in Resources */,
 				8908E7451DA5536A00EBF673 /* TransactionDetailCell.xib in Resources */,
 				811A0D731BB2F20100B73C09 /* LaunchScreen.xib in Resources */,
 				8908E7541DA6FACB00EBF673 /* CustomerCell.xib in Resources */,
@@ -513,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				814EDBFF1C69636E0010877C /* LaunchScreen.xib in Resources */,
+				89D200081DAEB6DC0090C9AE /* SettlementViewController.xib in Resources */,
 				896A6ED21DAC095600FD8F77 /* CardDataCell.xib in Resources */,
 				814EDC001C69636E0010877C /* Images.xcassets in Resources */,
 				8CAE8A8E1DA6B605006DBC36 /* ExtendableView.xib in Resources */,
@@ -543,6 +555,7 @@
 				8908E7441DA5536A00EBF673 /* TransactionDetailCell.m in Sources */,
 				894DF3A11DAD3FAE0043B01D /* VoidRefundViewController.m in Sources */,
 				89A4DF681DA8110E007F79D6 /* Helper.m in Sources */,
+				89D200051DAEB6DC0090C9AE /* SettlementViewController.m in Sources */,
 				896A6EDC1DAC265500FD8F77 /* SignatureViewController.m in Sources */,
 				811A0D621BB2F20100B73C09 /* main.m in Sources */,
 				8908E7491DA6E57B00EBF673 /* CardDataCell.m in Sources */,
@@ -576,6 +589,7 @@
 				814EDBF81C69636E0010877C /* main.m in Sources */,
 				894DF3A21DAD3FAE0043B01D /* VoidRefundViewController.m in Sources */,
 				896A6ECE1DAC093100FD8F77 /* TransactionDetailViewController.m in Sources */,
+				89D200061DAEB6DC0090C9AE /* SettlementViewController.m in Sources */,
 				896A6EDD1DAC265500FD8F77 /* SignatureViewController.m in Sources */,
 				8CAE8A8B1DA6B5EE006DBC36 /* ExtendableView.m in Sources */,
 				8CAE8A7F1DA69ED0006DBC36 /* UIColor+Worldpay.m in Sources */,

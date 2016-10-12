@@ -11,6 +11,7 @@
 #import "UIFont+Worldpay.h"
 #import "Index.h"
 #import "VoidRefundViewController.h"
+#import "SettlementViewController.h"
 
 #ifdef ANYWHERE_NOMAD
 #import <WorldPaySDK_AC/WorldPaySDK.h>
@@ -65,16 +66,20 @@
     
     // 1st tab for Transactions (Auth, Charge, Credit
     TransactionViewController * transactionViewController = [[TransactionViewController alloc] initWithNibName:nil bundle:nil];
-    [transactionViewController setTitle:@"Transactions"];
     UINavigationController * transactionNav = [[UINavigationController alloc] initWithRootViewController: transactionViewController];
-    transactionNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Transactions" image:nil tag:[index current]];
+    transactionNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[transactionNav viewControllers] firstObject]) title] image:nil tag:[index current]];
     
     // 2nd tab for Transactions (Void/Refund)
+    VoidRefundViewController * voidRefundViewController = [[VoidRefundViewController alloc] initWithNibName:nil bundle:nil];
+    UINavigationController * voidRefundNav = [[UINavigationController alloc] initWithRootViewController: voidRefundViewController];
+    voidRefundNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[voidRefundNav viewControllers] firstObject]) title] image:nil tag:[index current]];
     
-    UINavigationController * voidNav = [[UINavigationController alloc] initWithRootViewController:[[VoidRefundViewController alloc] initWithNibName:nil bundle:nil]];
-    voidNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Void/Refund" image:nil tag:[index current]];
+    // 3rd tab for Settlement
+    SettlementViewController * settlementViewController = [[SettlementViewController alloc] initWithNibName:nil bundle:nil];
+    UINavigationController * settlementNav = [[UINavigationController alloc] initWithRootViewController: settlementViewController];
+    settlementNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[settlementNav viewControllers] firstObject]) title] image:nil tag:[index current]];
     
-    tabController.viewControllers = @[transactionNav, voidNav];
+    tabController.viewControllers = @[transactionNav, voidRefundNav, settlementNav];
     
     return YES;
 }
