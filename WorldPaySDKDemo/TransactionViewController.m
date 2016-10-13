@@ -288,23 +288,23 @@
 
 - (void) displayAlert: (UIAlertController *) alert
 {
-    if(self.swiperAlert.viewIfLoaded != nil)
+    if(self.transition)
     {
-        [self dismissViewControllerAnimated:true completion:^
-        {
-            self.transition = YES;
-            self.swiperAlert = alert;
-            [self presentViewController:alert animated:true completion:^
-            {
-                [self cleanAlert:alert userAction:NO];
-            }];
-        }];
+        [self performSelector:@selector(displayAlert:) withObject:alert afterDelay:.1];
     }
     else
     {
-        if(self.transition)
+        if(self.swiperAlert.viewIfLoaded != nil)
         {
-            [self performSelector:@selector(displayAlert:) withObject:alert afterDelay:.1];
+            [self dismissViewControllerAnimated:true completion:^
+            {
+                self.transition = YES;
+                self.swiperAlert = alert;
+                [self presentViewController:alert animated:true completion:^
+                {
+                    [self cleanAlertUserAction:NO];
+                }];
+            }];
         }
         else
         {
@@ -312,17 +312,17 @@
             self.swiperAlert = alert;
             [self presentViewController:alert animated:true completion:^
             {
-                [self cleanAlert:alert userAction:NO];
+                [self cleanAlertUserAction:NO];
             }];
         }
     }
 }
 
-- (void) cleanAlert: (UIAlertController *) alert userAction: (BOOL) userAction
+- (void) cleanAlertUserAction: (BOOL) userAction
 {
     self.transition = NO;
     
-    if(userAction && self.swiperAlert == alert)
+    if(userAction)
     {
         self.swiperAlert = nil;
     }
@@ -428,7 +428,7 @@
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Swiper device failed with an error." preferredStyle:UIAlertControllerStyleAlert];
     
     [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self cleanAlert: alert userAction:YES];
+        [self cleanAlertUserAction:YES];
     }]];
     
     [self displayAlert:alert];
@@ -481,7 +481,7 @@
             
             secondaryAction = [UIAlertAction actionWithTitle:@"View Details" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
             {
-                [self cleanAlert: alert userAction:YES];
+                [self cleanAlertUserAction:YES];
                 [self showTransactionDetails];
             }];
             
@@ -504,7 +504,7 @@
             
             secondaryAction = [UIAlertAction actionWithTitle:@"Sign" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
             {
-                [self cleanAlert: alert userAction:YES];
+                [self cleanAlertUserAction:YES];
                 [self showSignatureScreen];
             }];
         }
@@ -512,7 +512,7 @@
     
     alert = [UIAlertController alertControllerWithTitle:@"Response" message:[NSString stringWithFormat:@"Status: %@\r\nResponse:%@\r\n%@", transactionStatus, responseMessage ?: @"No Message", signatureNeeded] preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self cleanAlert: alert userAction:YES];
+        [self cleanAlertUserAction:YES];
     }]];
     
     if(secondaryAction)
@@ -534,7 +534,7 @@
     
     NSString *defaultPrompt = nil;
     UIAlertAction * action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self cleanAlert: alert userAction:YES];
+        [self cleanAlertUserAction:YES];
     }];;
     
     switch (prompt)
@@ -690,7 +690,7 @@
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Manual entry failed with an error" preferredStyle:UIAlertControllerStyleAlert];
     
     [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self cleanAlert: alert userAction:YES];
+        [self cleanAlertUserAction:YES];
     }]];
     
     [self displayAlert:alert];
