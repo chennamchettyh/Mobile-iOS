@@ -188,7 +188,7 @@
     
     if(!(self.amountTextField.text.doubleValue > 0))
     {
-        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Please enter a valid amount greater than 0." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Please enter a numeric amount greater than 0." preferredStyle:UIAlertControllerStyleAlert];
         
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
