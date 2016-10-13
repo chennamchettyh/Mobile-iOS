@@ -100,6 +100,14 @@
                 [self presentViewController:alert animated:true completion:nil];
                 self.transition = NO;
             }
+            else if(response.identifier == nil)
+            {
+                UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Response" message:@"No current batch." preferredStyle:UIAlertControllerStyleAlert];
+                
+                [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+                [self presentViewController:alert animated:true completion:nil];
+                self.transition = NO;
+            }
             else
             {
                 [self showTransactionsInBatch:response.identifier];
