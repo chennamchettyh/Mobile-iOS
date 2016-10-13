@@ -252,6 +252,7 @@
         WPYTenderServiceData * serviceData = [[WPYTenderServiceData alloc] init];
         
         serviceData.gratuityAmount = [NSDecimalNumber decimalNumberWithString:self.extendedInfoView.gratuityAmount.text];
+        request.amount = [request.amount decimalNumberByAdding:serviceData.gratuityAmount];
         serviceData.server = self.extendedInfoView.serverName.text;
         
         extendedData.serviceData = serviceData;
