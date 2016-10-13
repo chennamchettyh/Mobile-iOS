@@ -12,6 +12,7 @@
 #import "Index.h"
 #import "VoidRefundViewController.h"
 #import "SettlementViewController.h"
+#import "VaultViewController.h"
 
 #ifdef ANYWHERE_NOMAD
 #import <WorldPaySDK_AC/WorldPaySDK.h>
@@ -79,7 +80,12 @@
     UINavigationController * settlementNav = [[UINavigationController alloc] initWithRootViewController: settlementViewController];
     settlementNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[settlementNav viewControllers] firstObject]) title] image:nil tag:[index current]];
     
-    tabController.viewControllers = @[transactionNav, voidRefundNav, settlementNav];
+    // 4th tab for Vault
+    VaultViewController * vaultViewController = [[VaultViewController alloc] initWithNibName:nil bundle:nil];
+    UINavigationController * vaultNav = [[UINavigationController alloc] initWithRootViewController: vaultViewController];
+    vaultNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[vaultNav viewControllers] firstObject]) title] image:nil tag:[index current]];
+    
+    tabController.viewControllers = @[transactionNav, voidRefundNav, settlementNav, vaultNav];
     
     return YES;
 }
