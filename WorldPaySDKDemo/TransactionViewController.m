@@ -542,6 +542,16 @@
     NSLog(@"%@: %@", @"Swiper failed request with error", error);
 }
 
+- (void) swiper:(WPYSwiper *)swiper didRequestSignatureWithCompletion:(void(^)(NSString *))completion
+{
+    NSLog(@"%@", @"Swiper requested signature");
+    
+    if(completion)
+    {
+        completion(@"Signature required");
+    }
+}
+
 - (void)swiper:(WPYSwiper *)swiper didRequestDevicePromptText:(WPYDevicePrompt)prompt completion:(void (^)(NSString *))completion
 {
     UIAlertController * alert;
