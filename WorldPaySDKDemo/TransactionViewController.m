@@ -27,7 +27,6 @@
 #define TEXTFIELDSIZE 14
 #define BUTTONTEXTSIZE 15
 
-#define WIDTHCONSTANT 200
 #define EXTENDEDHEIGHT 272
 #define MAGICMARGIN 28
 
@@ -45,7 +44,6 @@
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *formLabels;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthConstraint;
 @property (strong, atomic) UIAlertController * swiperAlert;
 @property (weak, nonatomic) UITextField * activeTextField;
 @property (strong, nonatomic) WPYTransactionResponse * lastResponse;
@@ -145,8 +143,6 @@
         [self removeFocusFromTextField:nil];
         [self validateCashbackAllowed];
     }];
-    
-    self.widthConstraint.constant = WIDTHCONSTANT;
     
     self.startButton.backgroundColor = [UIColor worldpayMist];
 }

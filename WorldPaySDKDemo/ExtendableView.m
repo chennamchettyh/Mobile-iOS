@@ -66,6 +66,8 @@
     }
     
     view.translatesAutoresizingMaskIntoConstraints = false;
+    self.secondaryContainerView.translatesAutoresizingMaskIntoConstraints = false;
+    self.translatesAutoresizingMaskIntoConstraints = false;
     
     [self.secondaryContainerView addSubview:view];
     self.secondaryView = view;

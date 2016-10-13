@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="NO">
     <dependencies>
         <deployment identifier="iOS"/>
+        <development version="7000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="AdelleSans_Regular.otf">
@@ -23,7 +23,6 @@
                 <outlet property="startButton" destination="mgR-AO-Odz" id="fAw-q1-3ZI"/>
                 <outlet property="transactionTypeDropDown" destination="E7d-s4-Lz4" id="mwD-cg-PxP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="widthConstraint" destination="Elz-mT-Yd0" id="zlY-Yu-Cvj"/>
                 <outletCollection property="formLabels" destination="fa9-3Y-sYl" id="Lki-so-rXZ"/>
                 <outletCollection property="formLabels" destination="uBD-Vs-ngQ" id="kNi-ni-gbr"/>
                 <outletCollection property="formLabels" destination="KNk-Zk-xnw" id="ROy-ct-xoZ"/>
@@ -40,34 +39,38 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1c-TP-D5U">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
                         <textField autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E7d-s4-Lz4" customClass="DropDownTextField">
-                            <constraints>
-                                <constraint firstAttribute="width" constant="428" id="Elz-mT-Yd0"/>
-                            </constraints>
+                            <rect key="frame" x="163.5" y="43.5" width="428.5" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Present" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fa9-3Y-sYl">
+                            <rect key="frame" x="20" y="13" width="100" height="21.5"/>
                             <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="17"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transaction Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBD-Vs-ngQ">
+                            <rect key="frame" x="20" y="47.5" width="129.5" height="21.5"/>
                             <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="17"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNk-Zk-xnw">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNk-Zk-xnw">
+                            <rect key="frame" x="20" y="82" width="62.5" height="21.5"/>
                             <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="17"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10.00" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DzM-aw-n5A">
+                        <textField autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10.00" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DzM-aw-n5A">
+                            <rect key="frame" x="163.5" y="78" width="428.5" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <segmentedControl autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="D3I-ew-RtV">
+                            <rect key="frame" x="163.5" y="10" width="428.5" height="29"/>
                             <segments>
                                 <segment title="Yes"/>
                                 <segment title="No"/>
@@ -76,37 +79,43 @@
                                 <action selector="segmentedTouched:" destination="-1" eventType="valueChanged" id="xwo-Be-97h"/>
                             </connections>
                         </segmentedControl>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J58-rS-ZbV" customClass="ExtendableView">
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J58-rS-ZbV" customClass="ExtendableView">
+                            <rect key="frame" x="20" y="189" width="572" height="46"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="46" id="htF-im-zy8"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cash Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pf6-z0-wVl">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Cash Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pf6-z0-wVl">
+                            <rect key="frame" x="20" y="116.5" width="81" height="21.5"/>
                             <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="17"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e48-1A-3eq">
+                        <textField autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e48-1A-3eq">
+                            <rect key="frame" x="163.5" y="112.5" width="428.5" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgR-AO-Odz">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgR-AO-Odz">
+                            <rect key="frame" x="233" y="268" width="135" height="34"/>
                             <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                             <state key="normal" title="Start Transaction"/>
                             <connections>
                                 <action selector="startTransaction" destination="-1" eventType="touchUpInside" id="8sf-0c-OFH"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add to Vault" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgw-ln-I0Q">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Add to Vault" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgw-ln-I0Q">
+                            <rect key="frame" x="20" y="151" width="94" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="Up4-iU-14W"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="T0a-Ka-i4Y">
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="T0a-Ka-i4Y">
+                            <rect key="frame" x="163.5" y="148" width="428.5" height="29"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="28" id="udD-bO-Ara"/>
                             </constraints>
@@ -119,34 +128,34 @@
                             </connections>
                         </segmentedControl>
                     </subviews>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="DzM-aw-n5A" firstAttribute="trailing" secondItem="E7d-s4-Lz4" secondAttribute="trailing" id="1Ka-PP-Ptc"/>
                         <constraint firstItem="E7d-s4-Lz4" firstAttribute="centerY" secondItem="uBD-Vs-ngQ" secondAttribute="centerY" id="674-UK-3kY"/>
                         <constraint firstItem="J58-rS-ZbV" firstAttribute="top" secondItem="Jgw-ln-I0Q" secondAttribute="bottom" constant="17" id="6sh-9L-Gzu"/>
-                        <constraint firstAttribute="trailing" secondItem="DzM-aw-n5A" secondAttribute="trailing" constant="8" id="902-Pi-ny8"/>
                         <constraint firstItem="fa9-3Y-sYl" firstAttribute="leading" secondItem="r1c-TP-D5U" secondAttribute="leading" constant="20" id="BJw-M7-IMR"/>
                         <constraint firstItem="DzM-aw-n5A" firstAttribute="leading" secondItem="E7d-s4-Lz4" secondAttribute="leading" id="D7p-7G-z3I"/>
+                        <constraint firstAttribute="bottom" secondItem="mgR-AO-Odz" secondAttribute="bottom" constant="296" id="EgA-54-dJ9"/>
                         <constraint firstAttribute="trailing" secondItem="D3I-ew-RtV" secondAttribute="trailing" constant="8" id="FFF-ig-V5g"/>
                         <constraint firstItem="D3I-ew-RtV" firstAttribute="leading" secondItem="E7d-s4-Lz4" secondAttribute="leading" id="FZg-dF-0XQ"/>
                         <constraint firstItem="uBD-Vs-ngQ" firstAttribute="leading" secondItem="fa9-3Y-sYl" secondAttribute="leading" id="Fna-GU-bX1"/>
                         <constraint firstItem="T0a-Ka-i4Y" firstAttribute="leading" secondItem="e48-1A-3eq" secondAttribute="leading" id="H4H-8O-Aga"/>
+                        <constraint firstItem="E7d-s4-Lz4" firstAttribute="trailing" secondItem="D3I-ew-RtV" secondAttribute="trailing" id="LLe-Nm-v09"/>
+                        <constraint firstItem="J58-rS-ZbV" firstAttribute="trailing" secondItem="T0a-Ka-i4Y" secondAttribute="trailing" id="PkJ-vr-kRr"/>
                         <constraint firstItem="pf6-z0-wVl" firstAttribute="top" secondItem="KNk-Zk-xnw" secondAttribute="bottom" constant="13" id="QMu-8z-4Ec"/>
                         <constraint firstItem="J58-rS-ZbV" firstAttribute="leading" secondItem="Jgw-ln-I0Q" secondAttribute="leading" id="TLJ-9g-opF"/>
                         <constraint firstItem="e48-1A-3eq" firstAttribute="leading" secondItem="DzM-aw-n5A" secondAttribute="leading" id="UO5-X3-Rzf"/>
                         <constraint firstItem="mgR-AO-Odz" firstAttribute="top" secondItem="J58-rS-ZbV" secondAttribute="bottom" constant="33" id="UfN-SW-hI0"/>
                         <constraint firstItem="D3I-ew-RtV" firstAttribute="centerY" secondItem="fa9-3Y-sYl" secondAttribute="centerY" id="W4v-bt-Phl"/>
+                        <constraint firstItem="e48-1A-3eq" firstAttribute="trailing" secondItem="DzM-aw-n5A" secondAttribute="trailing" id="XLb-Mp-CGJ"/>
                         <constraint firstItem="T0a-Ka-i4Y" firstAttribute="trailing" secondItem="e48-1A-3eq" secondAttribute="trailing" id="apD-2s-xjK"/>
-                        <constraint firstItem="e48-1A-3eq" firstAttribute="trailing" secondItem="J58-rS-ZbV" secondAttribute="trailing" id="b1U-0b-ERk"/>
                         <constraint firstItem="KNk-Zk-xnw" firstAttribute="top" secondItem="uBD-Vs-ngQ" secondAttribute="bottom" constant="13" id="cDn-bf-cNB"/>
                         <constraint firstItem="DzM-aw-n5A" firstAttribute="centerY" secondItem="KNk-Zk-xnw" secondAttribute="centerY" id="hW3-nX-nYd"/>
                         <constraint firstItem="e48-1A-3eq" firstAttribute="centerY" secondItem="pf6-z0-wVl" secondAttribute="centerY" id="jpu-1Q-Zae"/>
                         <constraint firstItem="E7d-s4-Lz4" firstAttribute="leading" secondItem="uBD-Vs-ngQ" secondAttribute="trailing" constant="14" id="lAL-pz-aXM"/>
                         <constraint firstItem="Jgw-ln-I0Q" firstAttribute="leading" secondItem="pf6-z0-wVl" secondAttribute="leading" id="lhv-UU-baj"/>
-                        <constraint firstAttribute="bottom" secondItem="e48-1A-3eq" secondAttribute="bottom" constant="458" id="mJA-Qe-dSZ"/>
-                        <constraint firstAttribute="trailing" secondItem="e48-1A-3eq" secondAttribute="trailing" constant="8" id="orr-RA-Gfd"/>
                         <constraint firstItem="Jgw-ln-I0Q" firstAttribute="top" secondItem="pf6-z0-wVl" secondAttribute="bottom" constant="13" id="sg7-pf-Xje"/>
                         <constraint firstItem="fa9-3Y-sYl" firstAttribute="top" secondItem="r1c-TP-D5U" secondAttribute="top" constant="13" id="tmS-8G-qX1"/>
-                        <constraint firstAttribute="trailing" secondItem="E7d-s4-Lz4" secondAttribute="trailing" constant="8" id="uPO-Af-GYX"/>
                         <constraint firstItem="mgR-AO-Odz" firstAttribute="centerX" secondItem="r1c-TP-D5U" secondAttribute="centerX" id="vLe-RC-9KX"/>
                         <constraint firstItem="KNk-Zk-xnw" firstAttribute="leading" secondItem="uBD-Vs-ngQ" secondAttribute="leading" id="xOL-oe-ewC"/>
                         <constraint firstItem="T0a-Ka-i4Y" firstAttribute="centerY" secondItem="Jgw-ln-I0Q" secondAttribute="centerY" id="xZZ-WE-sa1"/>
@@ -155,11 +164,13 @@
                     </constraints>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="r1c-TP-D5U" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dmA-q6-Lfp"/>
                 <constraint firstAttribute="bottom" secondItem="r1c-TP-D5U" secondAttribute="bottom" id="dwT-1t-uIk"/>
+                <constraint firstAttribute="trailing" secondItem="D3I-ew-RtV" secondAttribute="trailing" constant="8" id="kgX-WF-mXW"/>
                 <constraint firstItem="r1c-TP-D5U" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mj4-MW-rEa"/>
+                <constraint firstItem="fa9-3Y-sYl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="u28-E1-vcb"/>
                 <constraint firstAttribute="trailing" secondItem="r1c-TP-D5U" secondAttribute="trailing" id="wOC-gw-zcr"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
