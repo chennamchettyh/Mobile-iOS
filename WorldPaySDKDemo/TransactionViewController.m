@@ -50,6 +50,7 @@
 @property (weak, nonatomic) UITextField * activeTextField;
 @property (strong, nonatomic) WPYTransactionResponse * lastResponse;
 @property (assign, atomic) BOOL transition;
+@property (strong, nonatomic) IBOutletCollection(NSLayoutConstraint) NSArray *addToVaultConstraints;
 
 @end
 
@@ -73,6 +74,18 @@
     {
         NSAssert(FALSE, @"%@", @"Drop down failed to initialized properly");
     }
+    
+    // Comment this to show add to vault
+    //----
+    [self.addToVaultSegmented setSelectedSegmentIndex:NOINDEX];
+    [self.addToVaultSegmented setHidden:true];
+    
+    for(NSLayoutConstraint * constraint in self.addToVaultConstraints)
+    {
+        constraint.constant = 0;
+        [self.addToVaultSegmented setSelectedSegmentIndex:NOINDEX];
+    }
+    //----
     
     // Grab swiper from API
     self.swiper = [[WorldpayAPI instance] swiperWithDelegate:self];
