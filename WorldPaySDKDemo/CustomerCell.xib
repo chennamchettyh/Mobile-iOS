@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="NO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <development version="7000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="AdelleSans_Bold.otf">
+        <mutableArray key="AdelleSans_Bold.otf">
             <string>AdelleSans-Bold</string>
-        </array>
-        <array key="AdelleSans_Regular.otf">
+        </mutableArray>
+        <mutableArray key="AdelleSans_Regular.otf">
             <string>AdelleSans-Regular</string>
-        </array>
+            <string>AdelleSans-Regular</string>
+            <string>AdelleSans-Regular</string>
+            <string>AdelleSans-Regular</string>
+        </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -21,7 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="553" height="137"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="553" height="136"/>
+                <rect key="frame" x="0.0" y="0.0" width="553" height="136.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqb-0z-YOM">
@@ -30,26 +33,26 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" misplaced="YES" text="Customer ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoX-Ee-hqQ">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Customer ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoX-Ee-hqQ">
                         <rect key="frame" x="16" y="58.5" width="101" height="21"/>
                         <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhV-3Z-FBH">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhV-3Z-FBH">
                         <rect key="frame" x="16" y="100" width="46.5" height="22"/>
                         <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CustomerIDValue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfI-bF-aGy">
-                        <rect key="frame" x="213" y="58.5" width="135.5" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CustomerIDValue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfI-bF-aGy">
+                        <rect key="frame" x="187" y="58.5" width="350" height="21"/>
                         <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="EmailValue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PR-sn-qjt">
-                        <rect key="frame" x="213" y="100" width="135.5" height="21.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EmailValue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PR-sn-qjt">
+                        <rect key="frame" x="187" y="100" width="350" height="21.5"/>
                         <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -58,7 +61,8 @@
                 <constraints>
                     <constraint firstItem="rqb-0z-YOM" firstAttribute="leading" secondItem="FoX-Ee-hqQ" secondAttribute="leading" id="3f9-rj-net"/>
                     <constraint firstItem="rqb-0z-YOM" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="5Ih-8Y-0n2"/>
-                    <constraint firstItem="SfI-bF-aGy" firstAttribute="leading" secondItem="FoX-Ee-hqQ" secondAttribute="trailing" constant="96" id="7dP-Vu-QGU"/>
+                    <constraint firstItem="SfI-bF-aGy" firstAttribute="leading" secondItem="FoX-Ee-hqQ" secondAttribute="trailing" constant="70" id="7dP-Vu-QGU"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="SfI-bF-aGy" secondAttribute="trailing" constant="8" id="9zM-WP-zni"/>
                     <constraint firstItem="8PR-sn-qjt" firstAttribute="trailing" secondItem="SfI-bF-aGy" secondAttribute="trailing" id="FEC-GB-lRb"/>
                     <constraint firstItem="FoX-Ee-hqQ" firstAttribute="top" secondItem="rqb-0z-YOM" secondAttribute="bottom" constant="20" id="HfC-ZS-WHJ"/>
                     <constraint firstItem="SfI-bF-aGy" firstAttribute="top" secondItem="rqb-0z-YOM" secondAttribute="bottom" constant="20" id="Kyp-Ss-0bX"/>

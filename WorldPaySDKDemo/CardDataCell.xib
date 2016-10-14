@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="NO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <development version="7000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="AdelleSans_Bold.otf">
+        <mutableArray key="AdelleSans_Bold.otf">
             <string>AdelleSans-Bold</string>
-        </array>
-        <array key="AdelleSans_Regular.otf">
+        </mutableArray>
+        <mutableArray key="AdelleSans_Regular.otf">
             <string>AdelleSans-Regular</string>
-        </array>
+            <string>AdelleSans-Regular</string>
+            <string>AdelleSans-Regular</string>
+            <string>AdelleSans-Regular</string>
+            <string>AdelleSans-Regular</string>
+            <string>AdelleSans-Regular</string>
+            <string>AdelleSans-Regular</string>
+            <string>AdelleSans-Regular</string>
+            <string>AdelleSans-Regular</string>
+            <string>AdelleSans-Regular</string>
+        </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -21,7 +30,7 @@
             <rect key="frame" x="0.0" y="0.0" width="627" height="297"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="627" height="296"/>
+                <rect key="frame" x="0.0" y="0.0" width="627" height="296.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Data:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4c6-gP-Z4b">
@@ -55,31 +64,31 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Number Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTv-gg-P0T">
-                        <rect key="frame" x="219" y="59" width="151" height="22"/>
+                        <rect key="frame" x="193" y="59" width="418" height="22"/>
                         <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="FirstName Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="del-pc-cLv">
-                        <rect key="frame" x="219" y="102" width="151" height="22"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FirstName Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="del-pc-cLv">
+                        <rect key="frame" x="193" y="101" width="418" height="22"/>
                         <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Last Name Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwX-Le-3v7">
-                        <rect key="frame" x="219" y="144" width="151" height="22"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwX-Le-3v7">
+                        <rect key="frame" x="193" y="143" width="418" height="22"/>
                         <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Expiration Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4h-6n-eSv">
-                        <rect key="frame" x="219" y="186" width="151" height="22"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiration Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4h-6n-eSv">
+                        <rect key="frame" x="193" y="185" width="418" height="22"/>
                         <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Expiration Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtM-bO-ALb">
-                        <rect key="frame" x="219" y="228" width="151" height="22"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiration Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtM-bO-ALb">
+                        <rect key="frame" x="193" y="227" width="418" height="22"/>
                         <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -100,13 +109,13 @@
                     <constraint firstItem="uwI-yQ-Zuc" firstAttribute="leading" secondItem="qw1-lP-HG0" secondAttribute="leading" id="8H8-Zw-e7v"/>
                     <constraint firstItem="del-pc-cLv" firstAttribute="leading" secondItem="TTv-gg-P0T" secondAttribute="leading" id="Bue-HG-BGX"/>
                     <constraint firstItem="gol-QV-Ljf" firstAttribute="top" secondItem="uwI-yQ-Zuc" secondAttribute="bottom" constant="20" id="Gho-5G-N98"/>
-                    <constraint firstItem="TTv-gg-P0T" firstAttribute="leading" secondItem="C2X-yu-eKT" secondAttribute="trailing" constant="96" id="HQy-iU-oxw"/>
+                    <constraint firstItem="TTv-gg-P0T" firstAttribute="leading" secondItem="C2X-yu-eKT" secondAttribute="trailing" constant="70" id="HQy-iU-oxw"/>
                     <constraint firstAttribute="trailingMargin" secondItem="4c6-gP-Z4b" secondAttribute="trailing" constant="8" id="Io8-cu-U6e"/>
                     <constraint firstItem="4c6-gP-Z4b" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="Jia-Ay-4lP"/>
                     <constraint firstItem="TTv-gg-P0T" firstAttribute="centerY" secondItem="C2X-yu-eKT" secondAttribute="centerY" id="K3P-mi-15s"/>
                     <constraint firstItem="Y3Y-PD-XyP" firstAttribute="top" secondItem="gol-QV-Ljf" secondAttribute="bottom" constant="20" id="KN3-I1-ab3"/>
                     <constraint firstItem="Y3Y-PD-XyP" firstAttribute="leading" secondItem="gol-QV-Ljf" secondAttribute="leading" id="LAf-Vf-xB9"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="TTv-gg-P0T" secondAttribute="trailing" constant="249" id="LWk-1o-8Aq"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="TTv-gg-P0T" secondAttribute="trailing" constant="8" id="LWk-1o-8Aq"/>
                     <constraint firstItem="j4h-6n-eSv" firstAttribute="leading" secondItem="QwX-Le-3v7" secondAttribute="leading" id="LbV-Zy-u4d"/>
                     <constraint firstItem="4c6-gP-Z4b" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="QKz-EA-FVe"/>
                     <constraint firstItem="QwX-Le-3v7" firstAttribute="leading" secondItem="del-pc-cLv" secondAttribute="leading" id="R8d-nn-KH5"/>
