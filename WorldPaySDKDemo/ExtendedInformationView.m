@@ -8,11 +8,21 @@
 
 #import "ExtendedInformationView.h"
 
-#define VIEWHEIGHT 272
+#define VIEWHEIGHTWITHGRATUITY 272
+#define GRATUITYHIDDEN YES
+#define GRATUITYHEIGHT 106
+
+#if GRATUITYHIDDEN
+#define VIEWHEIGHT VIEWHEIGHTWITHGRATUITY - GRATUITYHEIGHT
+#else
+#define VIEWHEIGHT VIEWHEIGHTWITHGRATUITY
+#endif
 
 @interface ExtendedInformationView ()
 
 @property (nonatomic, strong) IBOutlet UIView * view;
+@property (strong, nonatomic) IBOutletCollection(NSLayoutConstraint) NSArray *gratuityConstraints;
+@property (assign, nonatomic) CGFloat gratuityConstraintTotal;
 
 @end
 
@@ -22,6 +32,11 @@
 {
     [[NSBundle mainBundle] loadNibNamed:@"ExtendedInformationView" owner:self options:nil];
     [self addSubview: self.view];
+    
+    if(GRATUITYHIDDEN)
+    {
+        [self hideGratuity];
+    }
 }
 
 - (instancetype) initWithFrame:(CGRect)frame
@@ -39,6 +54,15 @@
     [super awakeFromNib];
     
     [self sharedInit];
+}
+
+- (void) hideGratuity
+{
+    for(NSLayoutConstraint * constraint in self.gratuityConstraints)
+    {
+        self.gratuityConstraintTotal += constraint.constant;
+        constraint.constant = 0;
+    }
 }
 
 + (CGFloat) expectedHeight
