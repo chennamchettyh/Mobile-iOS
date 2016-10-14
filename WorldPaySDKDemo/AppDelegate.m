@@ -41,13 +41,21 @@
     authTokenRequest.terminalVendor = @"4554";
     
     [[WorldpayAPI instance] generateAuthToken:authTokenRequest withCompletion:^(NSString *result, NSError *error)
-     {
-         if(error)
+    {
+         if(!result || error)
          {
              NSLog(@"Error generating AUTH Token: %@", error);
-             exit(0);
+             
+             UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Unable to generate an auth token, please validate you are connected to the internet and your SecureNet Id and Key are correct in AppDelegate." preferredStyle:UIAlertControllerStyleAlert];
+             
+             [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+             {
+                 exit(0);
+             }]];
+             
+             [self.window.rootViewController presentViewController:alert animated:true completion:nil];
          }
-     }];
+    }];
     
     // UIAppearance Proxy settings
     
