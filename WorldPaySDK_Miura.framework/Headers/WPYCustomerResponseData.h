@@ -1,5 +1,5 @@
 //
-//  WPYCustomerData.h
+//  WPYCustomerResponseData.h
 //  WorldpaySDK
 //
 //  Copyright © 2015 Worldpay. All rights reserved.
@@ -13,7 +13,7 @@
 /**
  * This object contains data pertaining to the Customer APIs
  */
-@interface WPYCustomerData : WPYDomainObject
+@interface WPYCustomerResponseData : WPYDomainObject
 /**
  * Customer First Name
  */
@@ -34,6 +34,10 @@
  * Indicator on whether to email receipts to the customer
  */
 @property BOOL sendEmailReceipts;
+/**
+ * Phone number associated with customer
+ */
+@property (nonatomic, strong) NSString *phone;
 /**
  * Name of the company the customer works for
  */

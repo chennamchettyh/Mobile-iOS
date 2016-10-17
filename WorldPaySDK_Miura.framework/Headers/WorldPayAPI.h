@@ -11,7 +11,8 @@
 @protocol WPYSwiperDelegate;
 @class WPYAuthTokenRequest;
 @class WPYTender;
-@class WPYCustomerData;
+@class WPYCustomerRequestData;
+@class WPYCustomerResponseData;
 @class WPYPaymentMethod;
 @class WPYPaymentMethodRequest;
 
@@ -135,7 +136,7 @@ extern NSString *const WorldpayServerErrorDomain;
  * @param Customer ID that reqpresents the desired customer
  * @param completion handler used to notify the caller of any server results or errors
  */
-- (void)getCustomerDataForCustomerId:(NSString *)customerId withCompletion:(void(^)(WPYCustomerData *, NSError *))completion;
+- (void)getCustomerDataForCustomerId:(NSString *)customerId withCompletion:(void(^)(WPYCustomerResponseData *, NSError *))completion;
 
 /**
  * Creates a new customer object to be stored on the server
@@ -143,15 +144,16 @@ extern NSString *const WorldpayServerErrorDomain;
  * @param the customer data that should be saved on the server
  * @param completion handler used to notify the caller of any server results or errors
  */
-- (void)createCustomer:(WPYCustomerData *)customerData withCompletion:(void(^)(WPYCustomerData *, NSError *))completion;
+- (void)createCustomer:(WPYCustomerRequestData *)customerData withCompletion:(void(^)(WPYCustomerResponseData *, NSError *))completion;
 
 /**
  * Updates an existing customer on the server
  *
+ * @param customerId corresponding to the customer being updated
  * @param the customer data that should be updated
  * @param completion handler used to notify the caller of any server results or errors
  */
-- (void)updateCustomer:(WPYCustomerData *)customerData withCompletion:(void(^)(WPYCustomerData *, NSError *))completion;
+- (void)updateCustomer:(NSString *)customerId withData:(WPYCustomerRequestData *)customerData andCompletion:(void(^)(WPYCustomerResponseData *, NSError *))completion;
 
 #pragma mark Gift Card
 /**
