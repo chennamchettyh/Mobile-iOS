@@ -16,8 +16,5 @@
  * amount, amountOther, card, extendedData (for card processing)
  */
 @interface WPYPaymentAuthorize : WPYPaymentRequest
-/**
- * If using a payment token instead of a presented card or check, this property should be set
- */
-@property (nonatomic, strong) WPYPaymentToken *token;
+
 @end

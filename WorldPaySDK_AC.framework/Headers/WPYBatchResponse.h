@@ -12,5 +12,8 @@
  * WPYDomainObjects and is therefore visible at the base class level
  */
 @interface WPYBatchResponse : WPYDomainObject
-
+/**
+ * A convenience method to get the WPYBatchResponse.identifier associated with the transaction
+ */
+@property (nonatomic, getter=getBatchId) NSString *batchId;
 @end

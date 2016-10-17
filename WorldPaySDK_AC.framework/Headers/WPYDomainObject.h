@@ -17,7 +17,7 @@ typedef NS_ENUM(NSInteger, WPYPaymentMethodDuplicateCheckType)
     WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderGroup = 3
 };
 
-@interface WPYDomainObject : NSObject
+@interface WPYDomainObject : NSObject <NSCopying>
 /**
  * The server returns object ID's as "id", which is a protected word in Objective-C.  This property 
  * contains the id returned by the server for any object returned by the server

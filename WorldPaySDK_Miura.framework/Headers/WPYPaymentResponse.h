@@ -8,6 +8,13 @@
 #import "WPYDomainObject.h"
 #import "WPYSwiper.h"
 
+typedef NS_ENUM(uint8_t, WPYResponseCode)
+{
+    WPYResponseCodeApproved,
+    WPYResponseCodeDeclined,
+    WPYResponseCodeError
+};
+
 @class WPYEMVData;
 @class WPYTransactionResponse;
 @class WPYReceiptObject;
@@ -33,7 +40,7 @@
 /**
  * Gateway response code for the payment request
  */
-@property (nonatomic) NSInteger responseCode;
+@property (nonatomic) WPYResponseCode responseCode;
 /**
  * Response Message containing a detailed message for the merchant, such as why a transaction was declined
  */

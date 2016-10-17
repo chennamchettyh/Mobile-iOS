@@ -65,10 +65,6 @@ typedef NS_ENUM(NSInteger, WPYCardSource)
  */
 @property (nonatomic, readonly) BOOL isDebit;
 /**
- * Address for the cardholder
- */
-@property (nonatomic, strong) WPYAddressInfo *address;
-/**
  * A byte string containing the captured digital signature, if applicable
  */
 @property (nonatomic, strong) NSString *signature;
@@ -76,6 +72,10 @@ typedef NS_ENUM(NSInteger, WPYCardSource)
  * Email address associated with the cardholder
  */
 @property (nonatomic, strong) NSString *email;
+/**
+ * Address for the account holder
+ */
+@property (nonatomic, strong) WPYAddressInfo *address;
 /**
  * Flag indicating whether or not a successful transaction should include a signature
  */

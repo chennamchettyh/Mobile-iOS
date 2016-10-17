@@ -7,8 +7,11 @@
 
 #import "WPYDomainObject.h"
 
-@class  WPYTenderedCard;
-@class  WPYExtendedCardData;
+@class WPYTenderedCard;
+@class WPYExtendedCardData;
+@class WPYPaymentToken;
+@class WPYTenderedCheck;
+@class WPYAddressInfo;
 
 /**
  * This base class is used to represent the common info used for various types of payment requests.  This allows a generic object to 
@@ -33,6 +36,19 @@
  * to help limit the PCI obligations on the merchant
  */
 @property (nonatomic, strong) WPYTenderedCard *card;
+/**
+ * If the purchaser is presenting a check instead of a card, this parameter should be supplied at the time of the transaction
+ */
+@property (nonatomic, strong) WPYTenderedCheck *check;
+/**
+ * If using a payment token instead of a presented card or check, this property should be set
+ */
+@property (nonatomic, strong) WPYPaymentToken *token;
+/**
+ * Address for the account holder
+ */
+@property (nonatomic, strong) WPYAddressInfo *address;
+
 /**
  * Optional extended card data to be provided by the merchant.  On card present transactions, the SDK will automatically add this object and populate 
  * card terminal information, including "Terminal ID".  If a custom terminal ID is required, this object should be included or the terminal ID should

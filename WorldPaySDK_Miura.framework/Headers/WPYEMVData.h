@@ -6,6 +6,7 @@
 //
 
 #import "WPYDomainObject.h"
+#import "WPYPaymentResponse.h"
 
 /**
  * Private object that contains information that the SDK will pass down to the credit card terminal
@@ -39,8 +40,8 @@
  * This method will take the object and, based on the auth code and response message from the gateway, will
  * create the EMV result TLV to send down to the terminal for 2nd AC generation
  *
- * @param CC Auth Code returned by the gateway
+ * @param ResponseCode returned on the Payment Response
  * @param The "Response Text" returned by the server, which may contain information about a declined transaction
  */
-- (NSString *)encodeEMVDataWithAuthCode:(NSString *)authorizationCode responseMessage:(NSString *)message;
+- (NSString *)encodeEMVDataWithAuthCode:(WPYResponseCode)responseCode;
 @end

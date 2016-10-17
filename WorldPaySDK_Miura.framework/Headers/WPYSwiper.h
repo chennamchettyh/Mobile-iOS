@@ -38,7 +38,8 @@ typedef NS_ENUM(NSUInteger, WPYCardEvent)
     WPYCardEventInserted,
     WPYCardEventRemoved,
     WPYCardEventNonICCInserted, // Card inserted backwards or a non-chip card was inserted
-    WPYCardEventBadSwipe // Partial or no track data received
+    WPYCardEventBadSwipe, // Partial or no track data received
+    WPYCardEventIccCardSwiped
 };
 
 /**
@@ -189,7 +190,7 @@ typedef NS_ENUM(NSInteger, WPYTransactionResult)
 /**
  * Indication of whether or not the card terminal allows manual card entry on the terminal
  */
-//@property (readonly, getter =isManualEntrySupported) BOOL manualEntrySupported;
+@property (readonly, getter =isManualEntrySupported) BOOL manualEntrySupported;
 /**
  * The current hardware interface used by the connected device, if any
  */
@@ -222,7 +223,7 @@ typedef NS_ENUM(NSInteger, WPYTransactionResult)
  */
 - (void) disconnectSwiper;
 
-/**
+/**x
  * Check continuously for card events - dips or swipes.  Does not return NFC tap events
  */
 - (void) checkForCard;
@@ -244,7 +245,7 @@ typedef NS_ENUM(NSInteger, WPYTransactionResult)
  * @param a pointer to the request object used to complete the payment request.  This must be populated with all required info as the transaction will begin
  *        immediately if the card entry is successful.  If the card entry is canceled then a fail message will be sent to the delegate
  */
-//- (void) beginManualTransactionWithRequest:(WPYPaymentRequest *)request;
+- (void) beginManualTransactionWithRequest:(WPYPaymentRequest *)request;
 /**
  * Start a contact EMV transaction.  If no EMV card is inserted, the swiper will request that a card be inserted or swiped. This handles swipe events.
  *
@@ -384,6 +385,14 @@ typedef NS_ENUM(NSInteger, WPYTransactionResult)
  * @param a reference to the error that caused the failure so that it can be properly handled
  */
 - (void) swiper:(WPYSwiper *)swiper didFailRequest:(WPYPaymentRequest *)request withError:(NSError *)error;
+/**
+ * This delegate function is called when a signature is required to complete the payment method requested
+ *
+ * @param swiper reference to the object that accepted the card input
+ * @param completion handler used to send signature data back to the SDK. Its parameter is a string of bytes for the
+ *        digitized image and must be called to complete the transaction
+ */
+- (void) swiper:(WPYSwiper *)swiper didRequestSignatureWithCompletion:(void(^)(NSString *))completion;
 @optional
 /**
  * This delegate method is called when the terminal is incapable of presenting the account type selection to the card holder.
@@ -420,15 +429,6 @@ typedef NS_ENUM(NSInteger, WPYTransactionResult)
  * @param indicating the battery status of the device
  */
 - (void) swiper:(WPYSwiper *)swiper onBatteryLow:(WPYSwiperBatteryStatus)batteryStatus;
-
-/**
- * This delegate method is called by Anywhere Commerce devices if an EMV transaction is started without an amount set.  
- * In general, this should only be used in testing as the EMV spec wants you to start the transaction after the final
- * amount is set
- *
- * @param a reference to the object making the request
- */
-- (void) swiperDidRequestTransactionAmount:(WPYSwiper *)swiper;
 
 /**
  * This delegate method is called when the terminal is not configured to present the application options to the card holder directly

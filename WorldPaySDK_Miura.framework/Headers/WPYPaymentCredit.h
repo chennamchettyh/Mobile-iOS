@@ -15,8 +15,5 @@
  * amount, amountOther, card, extendedData (for card processing)
  */
 @interface WPYPaymentCredit : WPYPaymentRequest
-/**
- * This parameter should be included if a check is being presented instead of a payment card
- */
-@property (nonatomic, strong) WPYTenderedCheck *check;
+
 @end
