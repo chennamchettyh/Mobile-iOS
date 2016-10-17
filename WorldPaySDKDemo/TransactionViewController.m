@@ -234,10 +234,26 @@
     {
         WPYLevelTwoData * level2 = [[WPYLevelTwoData alloc] init];
         
-        NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss a"];
+        NSDate * date = nil;
         
-        level2.orderDate = [formatter dateFromString:self.extendedInfoView.orderDate.text];
+        if(![self.extendedInfoView.orderDate.text isEqualToString:@""])
+        {
+            NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeDate error:nil];
+            NSTextCheckingResult *result = [detector firstMatchInString:self.extendedInfoView.orderDate.text options:0 range:NSMakeRange(0, [self.extendedInfoView.orderDate.text length])];
+            if (result != nil && [result resultType] == NSTextCheckingTypeDate) {
+                date = [result date];
+            }
+            else
+            {
+                UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"The order date entered could not be parsed, please use mm/dd/yyyy format." preferredStyle:UIAlertControllerStyleAlert];
+                
+                [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+                [self presentViewController:alert animated:YES completion:nil];
+                return;
+            }
+        
+            level2.orderDate = date;
+        }
         level2.purchaseOrderNumber = self.extendedInfoView.purchaseOrder.text;
         
         extendedData.levelTwoData = level2;
