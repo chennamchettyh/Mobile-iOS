@@ -88,12 +88,12 @@
     UINavigationController * settlementNav = [[UINavigationController alloc] initWithRootViewController: settlementViewController];
     settlementNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[settlementNav viewControllers] firstObject]) title] image:nil tag:[index current]];
     
-    // 4th tab for Vault
+    // 4th tab for Vault (Placeholder, not fully implemented yet)
     VaultViewController * vaultViewController = [[VaultViewController alloc] initWithNibName:nil bundle:nil];
     UINavigationController * vaultNav = [[UINavigationController alloc] initWithRootViewController: vaultViewController];
     vaultNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[vaultNav viewControllers] firstObject]) title] image:nil tag:[index current]];
     
-    tabController.viewControllers = @[transactionNav, voidRefundNav, settlementNav, vaultNav];
+    tabController.viewControllers = @[transactionNav, voidRefundNav, settlementNav];
     
     return YES;
 }
