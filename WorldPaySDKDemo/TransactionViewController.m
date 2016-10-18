@@ -18,6 +18,7 @@
 
 #define YESINDEX 0
 #define NOINDEX 1
+#define VAULTINDEX 2
 
 #define AUTHORIZEINDEX 0
 #define CHARGEINDEX 1
@@ -29,6 +30,8 @@
 
 #define EXTENDEDHEIGHT 272
 #define MAGICMARGIN 28
+#define VAULTHEIGHT 65
+#define VAULTTOPMARGIN 8
 
 @interface TransactionViewController ()
 
@@ -37,10 +40,15 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *addToVaultSegmented;
 @property (weak, nonatomic) IBOutlet UITextField *amountTextField;
 @property (weak, nonatomic) IBOutlet UITextField *cashbackTextField;
+@property (weak, nonatomic) IBOutlet UITextField *customerIdTextField;
+@property (weak, nonatomic) IBOutlet UITextField *paymentMethodTextField;
 @property (strong, nonatomic) WPYSwiper * swiper;
 @property (weak, nonatomic) IBOutlet ExtendableView *extendableInfoView;
 @property (weak, nonatomic) ExtendedInformationView * extendedInfoView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *extendableViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *vaultHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *vaultTopMarginConstraint;
+@property (weak, nonatomic) IBOutlet UIView * vaultView;
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *formLabels;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -68,6 +76,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    [self toggleVaultInfo:false];
+    
     if(![self.transactionTypeDropDown sharedInitWithOptionList:@[@"Authorize", @"Charge", @"Credit"] initialIndex:0 parentViewController:self title:@"Transaction Type"])
     {
         NSAssert(FALSE, @"%@", @"Drop down failed to initialized properly");
@@ -90,6 +100,8 @@
     
     self.amountTextField.delegate = self;
     self.cashbackTextField.delegate = self;
+    self.paymentMethodTextField.delegate = self;
+    self.customerIdTextField.delegate = self;
     
     [self.extendableInfoView setTitle:@"Extended Information"];
 
@@ -175,9 +187,38 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) toggleVaultInfo: (BOOL) visible
+{
+    if(visible && self.vaultHeightConstraint.constant == 0)
+    {
+        self.vaultHeightConstraint.constant = VAULTHEIGHT;
+        self.vaultTopMarginConstraint.constant = VAULTTOPMARGIN;
+        
+        [self.vaultView layoutIfNeeded];
+    }
+    else if(!visible && self.vaultHeightConstraint.constant == VAULTHEIGHT)
+    {
+        self.vaultHeightConstraint.constant = 0;
+        self.vaultTopMarginConstraint.constant = VAULTTOPMARGIN/2;
+        
+        [self.vaultView layoutIfNeeded];
+        self.paymentMethodTextField.text = @"";
+        self.customerIdTextField.text = @"";
+    }
+}
+
 - (IBAction)segmentedTouched:(id)sender
 {
     [self removeFocusFromTextField:nil];
+    
+    if([self.cardPresentSegmented selectedSegmentIndex] == VAULTINDEX)
+    {
+        [self toggleVaultInfo:true];
+    }
+    else
+    {
+        [self toggleVaultInfo:false];
+    }
 }
 
 - (IBAction) startTransaction
@@ -202,6 +243,31 @@
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
         return;
+    }
+    
+    if([self.cardPresentSegmented selectedSegmentIndex] == VAULTINDEX)
+    {
+        NSString * message;
+        
+        if([self.customerIdTextField.text isEqualToString:@""])
+        {
+            message = @"Must enter customer id for vault payment.";
+        }
+        else if([self.paymentMethodTextField.text isEqualToString:@""])
+        {
+            message = @"Must enter payment id for vault payment.";
+        }
+        
+        if(message != nil)
+        {
+            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:message preferredStyle:UIAlertControllerStyleAlert];
+            
+            [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+            
+            [self presentViewController:alert animated:true completion:nil];
+            
+            return;
+        }
     }
     
     WPYPaymentRequest * request;
@@ -288,9 +354,105 @@
         navigationController.navigationBar.barStyle = UIBarStyleDefault;
         [self presentViewController:navigationController animated:YES completion:nil];
     }
-    else
+    else if([self.cardPresentSegmented selectedSegmentIndex] == YESINDEX)
     {
         [self.swiper beginEMVTransactionWithRequest:request transactionType:WPYEMVTransactionTypeGoods];
+    }
+    else if([self.cardPresentSegmented selectedSegmentIndex] == VAULTINDEX)
+    {
+        WPYPaymentToken * token = [WPYPaymentToken new];
+        
+        token.customerId = self.customerIdTextField.text;
+        token.paymentToken = self.paymentMethodTextField.text;
+        
+        request.token = token;
+        
+        switch([self.transactionTypeDropDown selectedIndex])
+        {
+            case AUTHORIZEINDEX:
+            {
+                [[WorldpayAPI instance] paymentAuthorize:(WPYPaymentAuthorize *)request withCompletion:^(WPYPaymentResponse * response, NSError * error)
+                {
+                    if(error)
+                    {
+                        NSLog(@"Error: %@",error);
+                        
+                        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Transaction failed with an error." preferredStyle:UIAlertControllerStyleAlert];
+                        
+                        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+                        
+                        [self presentViewController:alert animated:true completion:nil];
+                    }
+                    else
+                    {
+                        [self swiper:self.swiper didFinishTransactionWithResponse:response];
+                    }
+                }];
+                break;
+            }
+            case CHARGEINDEX:
+            {
+                [[WorldpayAPI instance] paymentCharge:(WPYPaymentCharge *)request withCompletion:^(WPYPaymentResponse * response, NSError * error)
+                {
+                    if(error)
+                    {
+                        NSLog(@"Error: %@",error);
+                         
+                        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Transaction failed with an error." preferredStyle:UIAlertControllerStyleAlert];
+                         
+                        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+                         
+                        [self presentViewController:alert animated:true completion:nil];
+                    }
+                    else
+                    {
+                        [self swiper:self.swiper didFinishTransactionWithResponse:response];
+                    }
+                }];
+                break;
+            }
+            case CREDITINDEX:
+            {
+                [[WorldpayAPI instance] paymentCredit:(WPYPaymentCredit *)request withCompletion:^(WPYPaymentResponse * response, NSError * error)
+                {
+                    if(error)
+                    {
+                        NSLog(@"Error: %@",error);
+                         
+                        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Transaction failed with an error." preferredStyle:UIAlertControllerStyleAlert];
+                         
+                        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+                         
+                        [self presentViewController:alert animated:true completion:nil];
+                    }
+                    else
+                    {
+                        [self swiper:self.swiper didFinishTransactionWithResponse:response];
+                    }
+                }];
+                break;
+            }
+            default:
+            {
+                [[WorldpayAPI instance] paymentAuthorize:(WPYPaymentAuthorize *)request withCompletion:^(WPYPaymentResponse * response, NSError * error)
+                {
+                    if(error)
+                    {
+                        NSLog(@"Error: %@",error);
+                         
+                        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Transaction failed with an error." preferredStyle:UIAlertControllerStyleAlert];
+                         
+                        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+                         
+                        [self presentViewController:alert animated:true completion:nil];
+                    }
+                    else
+                    {
+                        [self swiper:self.swiper didFinishTransactionWithResponse:response];
+                    }
+                }];
+            }
+        }
     }
 }
 

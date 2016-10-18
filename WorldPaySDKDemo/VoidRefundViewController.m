@@ -121,6 +121,7 @@
         {
             ((WPYPaymentRefund *)request).amount = [NSDecimalNumber decimalNumberWithString:self.amountTextField.text];
         }
+        
         ((WPYPaymentRefund *)request).transactionId = self.transactionIdTextField.text;
         
         [[WorldpayAPI instance] paymentRefund:(WPYPaymentRefund *)request withCompletion:^(WPYPaymentResponse * response, NSError * error)
@@ -132,6 +133,8 @@
 
 - (void) handleResponse: (WPYPaymentResponse *) response withError: (NSError *) error
 {
+    NSLog(@"Response: %@", [response jsonDictionary]);
+    
     if(error != nil)
     {
         NSLog(@"%@", error);
@@ -171,7 +174,7 @@
         {
             secondaryAction = [UIAlertAction actionWithTitle:@"View Details" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
             {
-                [self showTransactionDetails];
+                [self showTransactionDetails:response.transaction];
             }];
             
             responseMessage = response.transaction.responseText;
@@ -186,12 +189,16 @@
         {
             [alert addAction:secondaryAction];
         }
+        
+        [self presentViewController:alert animated:true completion:nil];
     }
 }
 
-- (void) showTransactionDetails
+- (void) showTransactionDetails:(WPYTransactionResponse *) response
 {
     TransactionDetailViewController * detailController = [[TransactionDetailViewController alloc] initWithNibName:nil bundle:nil];
+    
+    [detailController setTransactionResponse:response];
     
     [self.navigationController pushViewController:detailController animated:YES];
 }

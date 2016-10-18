@@ -10,11 +10,7 @@
 #import "UIFont+Worldpay.h"
 #import "Helper.h"
 
-
-
 #define LABELTEXTSIZE 17
-
-
 
 @interface TransactionDetailCell()
 
@@ -27,12 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *responseMessageValue;
 @property (weak, nonatomic) IBOutlet UILabel *gratuityValue;
 
-
-
-
 @end
-
-
 
 @implementation TransactionDetailCell
 
@@ -58,25 +49,20 @@
     }
 }
 
-
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
 }
 
-
 -(void)assignValues: (WPYTransactionResponse *)response {
     
     self.transactionIdValue.text = response.transactionId;
-    self.amountValue.text = [NSString stringWithFormat:@"%@", response.amount];
+    self.amountValue.text = [NSString stringWithFormat:@"%@", response.amount ?: @""];
     self.paymentTypeValue.text = [Helper getPaymentType:response.paymentType];
     self.responseTextValue.text = response.responseText;
     self.responseMessageValue.text = response.responseText;
     self.gratuityValue.text = [response.gratuityAmount stringValue];
 }
-
-
 
 @end
