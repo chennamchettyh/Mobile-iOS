@@ -133,8 +133,6 @@
 
 - (void) handleResponse: (WPYPaymentResponse *) response withError: (NSError *) error
 {
-    NSLog(@"Response: %@", [response jsonDictionary]);
-    
     if(error != nil)
     {
         NSLog(@"%@", error);
@@ -150,6 +148,8 @@
         NSString *transactionStatus;
         NSString * responseMessage;
         UIAlertAction * secondaryAction;
+        
+        NSLog(@"Response: %@", [response jsonDictionary]);
         
         switch (response.resultCode)
         {
