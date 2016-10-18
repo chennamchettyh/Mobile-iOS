@@ -720,9 +720,11 @@
 {
     NSLog(@"%@", @"Swiper requested signature");
     
+    // TODO: Actually get signature
+    
     if(completion)
     {
-        completion(@"Signature required");
+        completion(nil);
     }
 }
 
