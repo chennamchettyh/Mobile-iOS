@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
 #ifdef ANYWHERE_NOMAD
 #import <WorldPaySDK_AC/WorldPaySDK.h>
 #else

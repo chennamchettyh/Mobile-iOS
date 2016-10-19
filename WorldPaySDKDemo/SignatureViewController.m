@@ -34,7 +34,8 @@
     [super viewDidLoad];
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
     [super touchesBegan:touches withEvent:event];
     
     self.mouseSwiped = NO;
@@ -42,7 +43,8 @@
     self.lastPoint = [touch locationInView:self.view];
 }
 
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
     [super touchesMoved:touches withEvent:event];
     
     self.mouseSwiped = YES;
@@ -65,7 +67,8 @@
     self.lastPoint = currentPoint;
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
     [super touchesEnded:touches withEvent:event];
     
     if(!self.mouseSwiped) {

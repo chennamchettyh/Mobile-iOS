@@ -11,14 +11,10 @@
 
 #define LABELTEXTSIZE 17
 
-
 @interface BillingAddressCell()
 
-
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *formLabels;
-
 @property (weak, nonatomic) IBOutlet UILabel *line1Value;
-
 @property (weak, nonatomic) IBOutlet UILabel *cityValue;
 @property (weak, nonatomic) IBOutlet UILabel *stateValue;
 @property (weak, nonatomic) IBOutlet UILabel *zipValue;
@@ -41,7 +37,8 @@
     return self;
 }
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     [super awakeFromNib];
     // Initialization code
     
@@ -51,27 +48,21 @@
     }
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
 }
 
-
--(void)assignValues: (WPYTransactionResponse *)response {
-    
+-(void)assignValues: (WPYTransactionResponse *)response
+{
     self.line1Value.text = response.billAddress.line1;
     self.cityValue.text = response.billAddress.city;
     self.stateValue.text = response.billAddress.state;
     self.zipValue.text = response.billAddress.zip;
     self.companyValue.text = response.billAddress.company;
     self.phoneValue.text = response.billAddress.phone;
-    
 }
-
-
-
-
-
 
 @end

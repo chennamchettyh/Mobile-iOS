@@ -40,7 +40,8 @@
     return self;
 }
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     [super awakeFromNib];
     // Initialization code
     
@@ -50,22 +51,21 @@
     }
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
 }
 
--(void)assignValues: (WPYTransactionResponse *)response {
-    
+-(void)assignValues: (WPYTransactionResponse *)response
+{
     self.cardNumberValue.text = response.card.number;
     self.firstNameValue.text = response.card.firstName;
     self.lastNameValue.text = response.card.lastName;
     self.expirationMonthValue.text = [NSString stringWithFormat:@"%ld", (long)response.card.expirationMonth];
     self.expirationYearValue.text = [NSString stringWithFormat:@"%ld", (long)response.card.expirationYear];
-    
+
 }
-
-
 
 @end

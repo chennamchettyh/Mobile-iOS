@@ -15,7 +15,6 @@
 @interface TransactionDetailCell()
 
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *formLabels;
-
 @property (weak, nonatomic) IBOutlet UILabel *transactionIdValue;
 @property (weak, nonatomic) IBOutlet UILabel *amountValue;
 @property (weak, nonatomic) IBOutlet UILabel *paymentTypeValue;
@@ -39,7 +38,8 @@
     return self;
 }
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     [super awakeFromNib];
     // Initialization code
     
@@ -49,14 +49,15 @@
     }
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
 }
 
--(void)assignValues: (WPYTransactionResponse *)response {
-    
+-(void)assignValues: (WPYTransactionResponse *)response
+{
     self.transactionIdValue.text = response.transactionId;
     self.amountValue.text = [NSString stringWithFormat:@"%@", response.amount ?: @""];
     self.paymentTypeValue.text = [Helper getPaymentType:response.paymentType];

@@ -150,10 +150,6 @@
 		811A0D611BB2F20100B73C09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		811A0D631BB2F20100B73C09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		811A0D641BB2F20100B73C09 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		811A0D661BB2F20100B73C09 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		811A0D671BB2F20100B73C09 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		811A0D691BB2F20100B73C09 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		811A0D6A1BB2F20100B73C09 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		811A0D6F1BB2F20100B73C09 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		811A0D721BB2F20100B73C09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		811A0D781BB2F20100B73C09 /* WorldPaySDKDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldPaySDKDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -286,7 +282,6 @@
 				811A0D631BB2F20100B73C09 /* AppDelegate.h */,
 				811A0D641BB2F20100B73C09 /* AppDelegate.m */,
 				8908E7401DA5534700EBF673 /* Cells */,
-				896A6ED81DAC21C900FD8F77 /* Obsolete */,
 				8CDEB6C01DA80FFF00F81B63 /* Views */,
 				8CAE8A7B1DA69E8F006DBC36 /* Extensions */,
 				8C2B20BA1DA3F2F800643EEB /* Controls */,
@@ -355,17 +350,6 @@
 				89D2000F1DAECB160090C9AE /* BatchTransactionTableViewCell.xib */,
 			);
 			name = Cells;
-			sourceTree = "<group>";
-		};
-		896A6ED81DAC21C900FD8F77 /* Obsolete */ = {
-			isa = PBXGroup;
-			children = (
-				811A0D661BB2F20100B73C09 /* MasterViewController.h */,
-				811A0D671BB2F20100B73C09 /* MasterViewController.m */,
-				811A0D691BB2F20100B73C09 /* DetailViewController.h */,
-				811A0D6A1BB2F20100B73C09 /* DetailViewController.m */,
-			);
-			name = Obsolete;
 			sourceTree = "<group>";
 		};
 		896A6ED91DAC25B300FD8F77 /* Controllers */ = {

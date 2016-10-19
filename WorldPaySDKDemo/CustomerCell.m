@@ -9,15 +9,11 @@
 #import "CustomerCell.h"
 #import "UIFont+Worldpay.h"
 
-
 #define LABELTEXTSIZE 17
-
 
 @interface CustomerCell()
 
-
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *formLabels;
-
 @property (weak, nonatomic) IBOutlet UILabel *customerIdValue;
 @property (weak, nonatomic) IBOutlet UILabel *customerEmailValue;
 
@@ -37,7 +33,8 @@
     return self;
 }
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     [super awakeFromNib];
     // Initialization code
     
@@ -47,19 +44,18 @@
     }
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
 }
 
-
--(void)assignValues: (WPYTransactionResponse *)response {
+-(void)assignValues: (WPYTransactionResponse *)response
+{
     
     self.customerIdValue.text = response.customerId;
     self.customerEmailValue.text = response.email;
-    
 }
-
 
 @end

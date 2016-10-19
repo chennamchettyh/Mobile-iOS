@@ -9,16 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "Helper.h"
 
-
 @implementation Helper
-
-
 
 +(NSString *)getPaymentType: (WPYPaymentType)paymentType {
     
     NSString * result;
     
-    switch (paymentType) {
+    switch (paymentType)
+    {
         case WPYPaymentTypeUnknown:
             result = @"Unknown Payment Type";
             break;
@@ -39,27 +37,6 @@
     }
     
     return result;
-    
 }
 
-
-
-
 @end
-
-
-
-/*
- 
- WPYPaymentType:
- 
- WPYPaymentTypeUnknown = 0,
- WPYPaymentTypeCheck = 1,
- WPYPaymentTypeDebitCard = 2,
- WPYPaymentTypeCreditCard = 3,
- WPYPaymentTypeStoredValue = 4,
- 
- 
- 
- 
- */

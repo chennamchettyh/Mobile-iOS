@@ -16,7 +16,6 @@
 
 @interface CardDataCell : UITableViewCell
 
-
 -(void)assignValues: (WPYTransactionResponse *)response;
 
 @end

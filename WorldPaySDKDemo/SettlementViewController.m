@@ -11,6 +11,7 @@
 #import "BatchDetailTableViewController.h"
 
 @interface SettlementViewController ()
+
 @property (weak, nonatomic) IBOutlet UIButton *getBatchButton;
 @property (weak, nonatomic) IBOutlet UIButton *closeBatchButton;
 @property (weak, nonatomic) UITextField * activeTextField;
@@ -31,7 +32,8 @@
     return self;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
@@ -48,7 +50,8 @@
     [self.view addGestureRecognizer:recognizer1];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
