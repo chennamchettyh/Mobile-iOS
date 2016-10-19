@@ -33,8 +33,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self.retrieveButton setBackgroundColor: [UIColor worldpayMist]];
-    [self.retrieveButton setBackgroundColor: [UIColor worldpayMist]];
+    self.retrieveButton.backgroundColor = [UIColor worldpayEmerald];
+    [self.retrieveButton setTitleColor:[UIColor worldpayWhite] forState:UIControlStateNormal];
+    self.createButton.backgroundColor = [UIColor worldpayEmerald];
+    [self.createButton setTitleColor:[UIColor worldpayWhite] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {

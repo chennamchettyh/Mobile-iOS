@@ -8,6 +8,7 @@
     <customFonts key="customFonts">
         <mutableArray key="AdelleSans_Regular.otf">
             <string>AdelleSans-Regular</string>
+            <string>AdelleSans-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -25,11 +26,14 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9t5-qu-x6e">
                     <rect key="frame" x="0.0" y="8" width="30" height="30"/>
-                    <color key="backgroundColor" red="0.2828663423984954" green="0.31376538228815842" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="f4h-VN-DD4"/>
                         <constraint firstAttribute="height" constant="30" id="h03-Yg-Oo2"/>
                     </constraints>
+                    <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="24"/>
+                    <state key="normal" title="+">
+                        <color key="titleColor" red="0.0" green="0.47058823529411764" blue="0.40392156862745099" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
                         <action selector="toggleSecondaryView:" destination="-1" eventType="touchUpInside" id="MDk-Xk-s36"/>
                     </connections>

@@ -35,8 +35,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self.getBatchButton setBackgroundColor: [UIColor worldpayMist]];
-    [self.closeBatchButton setBackgroundColor: [UIColor worldpayMist]];
+    self.getBatchButton.backgroundColor = [UIColor worldpayEmerald];
+    [self.getBatchButton setTitleColor:[UIColor worldpayWhite] forState:UIControlStateNormal];
+    self.closeBatchButton.backgroundColor = [UIColor worldpayEmerald];
+    [self.closeBatchButton setTitleColor:[UIColor worldpayWhite] forState:UIControlStateNormal];
     
     self.batchIdTextField.delegate = self;
     

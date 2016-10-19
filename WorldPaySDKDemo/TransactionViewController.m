@@ -28,7 +28,6 @@
 #define TEXTFIELDSIZE 14
 #define BUTTONTEXTSIZE 15
 
-#define EXTENDEDHEIGHT 272
 #define MAGICMARGIN 28
 #define VAULTHEIGHT 65
 #define VAULTTOPMARGIN 8
@@ -113,7 +112,7 @@
     [infoView setTextFieldDelegate:self];
     
     [self.extendableInfoView setSecondaryViewInContainer:infoView];
-    [self.extendableInfoView setSecondaryHeight: EXTENDEDHEIGHT];
+    [self.extendableInfoView setSecondaryHeight: [ExtendedInformationView expectedHeight]];
     [self.extendableInfoView setHeightConstraint:self.extendableViewHeightConstraint];
     [self.extendableInfoView setHeightCallback:^(CGFloat height)
     {
@@ -157,7 +156,8 @@
         [self validateCashbackAllowed];
     }];
     
-    self.startButton.backgroundColor = [UIColor worldpayMist];
+    self.startButton.backgroundColor = [UIColor worldpayEmerald];
+    [self.startButton setTitleColor:[UIColor worldpayWhite] forState:UIControlStateNormal];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -490,15 +490,29 @@
 
 - (void) forceDisplayAlert: (UIAlertController *) alert
 {
-    [self dismissViewControllerAnimated:true completion:^
+    if(self.swiperAlert.viewIfLoaded != nil)
+    {
+        [self dismissViewControllerAnimated:true completion:^
+        {
+            self.transition = YES;
+            self.swiperAlert = alert;
+            
+            [self presentViewController:alert animated:true completion:^
+            {
+                [self cleanAlertUserAction:YES];
+            }];
+        }];
+    }
+    else
     {
         self.transition = YES;
         self.swiperAlert = alert;
+        
         [self presentViewController:alert animated:true completion:^
         {
-            [self cleanAlertUserAction:NO];
+            [self cleanAlertUserAction:YES];
         }];
-    }];
+    }
 }
 
 - (void) displayAlert: (UIAlertController *) alert
@@ -517,12 +531,22 @@
     {
         if(self.swiperAlert.viewIfLoaded != nil)
         {
-            [self forceDisplayAlert:alert];
+            [self dismissViewControllerAnimated:true completion:^
+            {
+                self.transition = YES;
+                self.swiperAlert = alert;
+                
+                [self presentViewController:alert animated:true completion:^
+                {
+                    [self cleanAlertUserAction:NO];
+                }];
+            }];
         }
         else
         {
             self.transition = YES;
             self.swiperAlert = alert;
+            
             [self presentViewController:alert animated:true completion:^
             {
                 [self cleanAlertUserAction:NO];
@@ -686,6 +710,12 @@
             break;
     }
     
+    // Override if resultCode is wrong
+    if(!response.success)
+    {
+        transactionStatus = @"Declined";
+    }
+    
     if(response == nil)
     {
         responseMessage = [NSString stringWithFormat:@"Transaction Terminated: %ld", (long)response.result];
@@ -737,7 +767,7 @@
         [alert addAction:secondaryAction];
     }
     
-    [self displayAlert:alert];
+    [self forceDisplayAlert:alert];
 }
 
 - (void)swiper:(WPYSwiper *)swiper didFailRequest:(WPYPaymentRequest *)request withError:(NSError *)error

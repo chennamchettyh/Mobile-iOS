@@ -61,10 +61,9 @@
     
     [[UITabBarItem appearance] setTitleTextAttributes: @{NSFontAttributeName : [UIFont worldpayPrimaryWithSize:TABSIZE], NSForegroundColorAttributeName : [UIColor worldpayWhite]} forState:UIControlStateNormal];
     [[UINavigationBar appearance] setBarTintColor: [UIColor worldpayRed]];
-    [[UITabBar appearance] setBarTintColor: [UIColor worldpayGrey]];
+    [[UITabBar appearance] setBarTintColor: [UIColor worldpayEmerald]];
     [[UINavigationBar appearance] setTintColor: [UIColor worldpayWhite]];
     [[UINavigationBar appearance] setTitleTextAttributes: @{NSForegroundColorAttributeName : [UIColor worldpayWhite]}];
-    [[UIButton appearance] setTitleColor: [UIColor worldpayBlack] forState: UIControlStateNormal];
     [[UISegmentedControl appearance] setTintColor: [UIColor worldpayEmerald]];
     [self.window setTintColor: [UIColor worldpayEmerald]];
     
