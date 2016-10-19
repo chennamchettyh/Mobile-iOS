@@ -710,12 +710,6 @@
             break;
     }
     
-    // Override if resultCode is wrong
-    if(!response.success)
-    {
-        transactionStatus = @"Declined";
-    }
-    
     if(response == nil)
     {
         responseMessage = [NSString stringWithFormat:@"Transaction Terminated: %ld", (long)response.result];
