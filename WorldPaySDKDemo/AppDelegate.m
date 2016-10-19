@@ -85,7 +85,7 @@
     // 3rd tab for Settlement
     SettlementViewController * settlementViewController = [[SettlementViewController alloc] initWithNibName:nil bundle:nil];
     UINavigationController * settlementNav = [[UINavigationController alloc] initWithRootViewController: settlementViewController];
-    settlementNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[settlementNav viewControllers] firstObject]) title] image:nil tag:[index current]];
+    settlementNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[settlementNav viewControllers] firstObject]) title] image:[self imageWithImage:[UIImage imageNamed:@"settlement"]] tag:[index current]];
     
     // 4th tab for Vault (Placeholder, not fully implemented yet)
     VaultViewController * vaultViewController = [[VaultViewController alloc] initWithNibName:nil bundle:nil];
