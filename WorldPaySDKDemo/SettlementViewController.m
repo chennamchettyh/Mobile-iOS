@@ -55,24 +55,45 @@
 {
     [[WorldpayAPI instance] getTransactionsInBatch:batchId withCompletion:^(NSArray<WPYTransactionResponse *> * transactions, NSError * error)
     {
-        if(error != nil)
-        {
-            NSLog(@"%@",error);
-            
-            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"An error occurred." preferredStyle:UIAlertControllerStyleAlert];
-            
-            [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
-            [self presentViewController:alert animated:true completion:nil];
-            self.transition = NO;
-        }
-        else
-        {
-            BatchDetailTableViewController * batchDetailTableVC = [[BatchDetailTableViewController alloc] initWithTransactions:transactions batchId:batchId];
-            
-            [self.navigationController pushViewController:batchDetailTableVC animated:true];
-            self.transition = NO;
-        }
+        [self displayBatchAlertWithId:batchId transactions:transactions error:error];
     }];
+}
+
+- (void) showTransactionsInCurrentBatch
+{
+    [[WorldpayAPI instance] getCurrentBatchWithCompletion:^(WPYBatchResponse * response, NSError * error)
+    {
+        [self displayBatchAlertWithId:response.identifier transactions:response.transactions error:error];
+    }];
+}
+
+- (void) displayBatchAlertWithId: (NSString *) batchId transactions: (NSArray<WPYTransactionResponse *> *) transactions error: (NSError *) error
+{
+    if(error != nil)
+    {
+        NSLog(@"%@",error);
+        
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"An error occurred, batch not found." preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:true completion:nil];
+        self.transition = NO;
+    }
+    else if(batchId == nil)
+    {
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Response" message:@"No batch found." preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:true completion:nil];
+        self.transition = NO;
+    }
+    else
+    {
+        BatchDetailTableViewController * batchDetailTableVC = [[BatchDetailTableViewController alloc] initWithTransactions:transactions batchId:batchId];
+        
+        [self.navigationController pushViewController:batchDetailTableVC animated:true];
+        self.transition = NO;
+    }
 }
 
 - (IBAction)getBatch:(id)sender
@@ -88,31 +109,7 @@
     
     if(sender == nil || [self.batchIdTextField.text isEqualToString:@""])
     {
-        [[WorldpayAPI instance] getCurrentBatchWithCompletion:^(WPYBatchResponse * response, NSError * error)
-        {
-            if(error != nil)
-            {
-                NSLog(@"%@",error);
-                
-                UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"An error occurred." preferredStyle:UIAlertControllerStyleAlert];
-                
-                [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
-                [self presentViewController:alert animated:true completion:nil];
-                self.transition = NO;
-            }
-            else if(response.identifier == nil)
-            {
-                UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Response" message:@"No current batch." preferredStyle:UIAlertControllerStyleAlert];
-                
-                [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
-                [self presentViewController:alert animated:true completion:nil];
-                self.transition = NO;
-            }
-            else
-            {
-                [self showTransactionsInBatch:response.identifier];
-            }
-        }];
+        [self showTransactionsInCurrentBatch];
     }
     else
     {

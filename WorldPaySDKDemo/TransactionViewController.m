@@ -57,6 +57,7 @@
 @property (strong, nonatomic) WPYTransactionResponse * lastResponse;
 @property (assign, atomic) BOOL transition;
 @property (strong, nonatomic) IBOutletCollection(NSLayoutConstraint) NSArray *addToVaultConstraints;
+@property (assign, atomic) BOOL transactionInProgress;
 
 @end
 
@@ -185,6 +186,16 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) startTransactionProgress
+{
+    self.transactionInProgress = true;
+}
+
+- (void) stopTransactionProgress
+{
+    self.transactionInProgress = false;
 }
 
 - (void) toggleVaultInfo: (BOOL) visible
@@ -356,6 +367,9 @@
     }
     else if([self.cardPresentSegmented selectedSegmentIndex] == YESINDEX)
     {
+        // Swiper transaction started
+        [self startTransactionProgress];
+        
         [self.swiper beginEMVTransactionWithRequest:request transactionType:WPYEMVTransactionTypeGoods];
     }
     else if([self.cardPresentSegmented selectedSegmentIndex] == VAULTINDEX)
@@ -363,7 +377,7 @@
         WPYPaymentToken * token = [WPYPaymentToken new];
         
         token.customerId = self.customerIdTextField.text;
-        token.paymentToken = self.paymentMethodTextField.text;
+        token.token = self.paymentMethodTextField.text;
         
         request.token = token;
         
@@ -474,8 +488,27 @@
 #endif
 }
 
+- (void) forceDisplayAlert: (UIAlertController *) alert
+{
+    [self dismissViewControllerAnimated:true completion:^
+    {
+        self.transition = YES;
+        self.swiperAlert = alert;
+        [self presentViewController:alert animated:true completion:^
+        {
+            [self cleanAlertUserAction:NO];
+        }];
+    }];
+}
+
 - (void) displayAlert: (UIAlertController *) alert
 {
+    if(!self.transactionInProgress)
+    {
+        [self performSelector:@selector(forceDisplayAlert:) withObject:alert afterDelay:1];
+        return;
+    }
+    
     if(self.transition)
     {
         [self performSelector:@selector(displayAlert:) withObject:alert afterDelay:.1];
@@ -484,15 +517,7 @@
     {
         if(self.swiperAlert.viewIfLoaded != nil)
         {
-            [self dismissViewControllerAnimated:true completion:^
-            {
-                self.transition = YES;
-                self.swiperAlert = alert;
-                [self presentViewController:alert animated:true completion:^
-                {
-                    [self cleanAlertUserAction:NO];
-                }];
-            }];
+            [self forceDisplayAlert:alert];
         }
         else
         {
@@ -613,6 +638,8 @@
 {
     NSLog(@"%@: %@", @"Swiper did fail with error", error);
     
+    [self stopTransactionProgress];
+    
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Swiper device failed with an error." preferredStyle:UIAlertControllerStyleAlert];
     
     [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -625,6 +652,8 @@
 - (void)swiper:(WPYSwiper *)swiper didFinishTransactionWithResponse:(WPYPaymentResponse *)response
 {
     NSLog(@"%@: %@", @"Swiper finished transaction with response", [response jsonDictionary]);
+    
+    [self stopTransactionProgress];
     
     UIAlertController * alert;
     
@@ -730,6 +759,13 @@
 
 - (void)swiper:(WPYSwiper *)swiper didRequestDevicePromptText:(WPYDevicePrompt)prompt completion:(void (^)(NSString *))completion
 {
+    if(!self.transactionInProgress)
+    {
+        return;
+    }
+    
+    BOOL force = NO;
+    
     UIAlertController * alert;
     
     NSString *defaultPrompt = nil;
@@ -778,6 +814,8 @@
             // Handled in response
             return;
         case WPYDevicePromptCanceled:
+            [self stopTransactionProgress];
+            force = YES;
             defaultPrompt = @"Transaction Canceled\nPlease Remove Card";
             break;
         case WPYDevicePromptRetry:
@@ -788,6 +826,8 @@
 #endif
             break;
         case WPYDevicePromptTransactionTimedOut:
+            [self stopTransactionProgress];
+            force = YES;
             defaultPrompt = @"Transaction Timed Out";
             break;
         case WPYDevicePromptNfcErrorCardInserted:
@@ -836,12 +876,18 @@
             defaultPrompt = @"Please Tap Card Again";
             break;
         case WPYDevicePromptReversal:
+            [self stopTransactionProgress];
+            force = YES;
             defaultPrompt = @"Transaction Declined - Reversal";
             break;
         case WPYDevicePromptCallBank:
+            [self stopTransactionProgress];
+            force = YES;
             defaultPrompt = @"Declined - Please Call Bank";
             break;
         case WPYDevicePromptNotAccepted:
+            [self stopTransactionProgress];
+            force = YES;
             defaultPrompt = @"Not Accepted";
             break;
         case WPYDevicePromptRemoveCard:
@@ -862,7 +908,10 @@
     
     [alert addAction: action];
     
-    [self displayAlert:alert];
+    if(force || self.transactionInProgress)
+    {
+        [self displayAlert:alert];
+    }
 
     if(completion != nil)
     {
