@@ -75,12 +75,12 @@
     // 1st tab for Transactions (Auth, Charge, Credit
     TransactionViewController * transactionViewController = [[TransactionViewController alloc] initWithNibName:nil bundle:nil];
     UINavigationController * transactionNav = [[UINavigationController alloc] initWithRootViewController: transactionViewController];
-    transactionNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[transactionNav viewControllers] firstObject]) title] image:nil tag:[index current]];
+    transactionNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[transactionNav viewControllers] firstObject]) title] image:[self imageWithImage:[UIImage imageNamed:@"credit_card_icon"]] tag:[index current]];
     
     // 2nd tab for Transactions (Void/Refund)
     VoidRefundViewController * voidRefundViewController = [[VoidRefundViewController alloc] initWithNibName:nil bundle:nil];
     UINavigationController * voidRefundNav = [[UINavigationController alloc] initWithRootViewController: voidRefundViewController];
-    voidRefundNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[voidRefundNav viewControllers] firstObject]) title] image:nil tag:[index current]];
+    voidRefundNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[voidRefundNav viewControllers] firstObject]) title] image:[self imageWithImage:[UIImage imageNamed:@"refund_void_icon"]] tag:[index current]];
     
     // 3rd tab for Settlement
     SettlementViewController * settlementViewController = [[SettlementViewController alloc] initWithNibName:nil bundle:nil];
@@ -95,6 +95,15 @@
     tabController.viewControllers = @[transactionNav, voidRefundNav, settlementNav];
     
     return YES;
+}
+
+- (UIImage *)imageWithImage:(UIImage *)image{
+    CGSize newSize = CGSizeMake(30, 30);
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return [newImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
