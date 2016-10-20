@@ -163,7 +163,7 @@
 		811A0D7D1BB2F20100B73C09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		811A0D7E1BB2F20100B73C09 /* WorldpaySDKDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorldpaySDKDemoTests.m; sourceTree = "<group>"; };
 		814EDC051C69636E0010877C /* WorldpaySDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldpaySDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		814EDC061C69636E0010877C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		814EDC061C69636E0010877C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = WorldpaySDKDemo/Info.plist; sourceTree = SOURCE_ROOT; };
 		853240011DB9323700C13FBE /* WorldPaySDK_AC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WorldPaySDK_AC.framework; path = ../../WorldPaySDK_AC.framework; sourceTree = "<group>"; };
 		853240021DB9323700C13FBE /* WorldPaySDK_Miura.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WorldPaySDK_Miura.framework; path = ../../WorldPaySDK_Miura.framework; sourceTree = "<group>"; };
 		859D8E921DB0163F006BD88E /* VaultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VaultViewController.h; sourceTree = "<group>"; };
@@ -216,7 +216,7 @@
 		89D2000D1DAECB160090C9AE /* BatchTransactionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BatchTransactionTableViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		89D2000E1DAECB160090C9AE /* BatchTransactionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BatchTransactionTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		89D2000F1DAECB160090C9AE /* BatchTransactionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BatchTransactionTableViewCell.xib; sourceTree = "<group>"; };
-		8C068D001DA4146E00578C9D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
+		8C068D001DA4146E00578C9D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8C2B20AF1DA3F23500643EEB /* TransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionViewController.h; sourceTree = "<group>"; };
 		8C2B20B01DA3F23500643EEB /* TransactionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionViewController.m; sourceTree = "<group>"; };
 		8C2B20B11DA3F23500643EEB /* TransactionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionViewController.xib; sourceTree = "<group>"; };
@@ -824,7 +824,7 @@
 					"$(inherited)",
 					ANYWHERE_NOMAD,
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/WorldpaySDKDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.worldpay.WorldpaySDKDemo-AC";
@@ -846,7 +846,7 @@
 					../,
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = ANYWHERE_NOMAD;
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/WorldpaySDKDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.worldpay.WorldpaySDKDemo-AC";
@@ -906,7 +906,7 @@
 					"$(PROJECT_DIR)",
 					../,
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/WorldpaySDKDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.worldpay.demo-miura";
@@ -928,7 +928,7 @@
 					"$(PROJECT_DIR)",
 					../,
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/WorldpaySDKDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.worldpay.demo-miura";
