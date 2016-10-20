@@ -16,10 +16,8 @@
 		814EDBF81C69636E0010877C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 811A0D611BB2F20100B73C09 /* main.m */; };
 		814EDBFF1C69636E0010877C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 811A0D711BB2F20100B73C09 /* LaunchScreen.xib */; };
 		814EDC001C69636E0010877C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 811A0D6F1BB2F20100B73C09 /* Images.xcassets */; };
-		853B14FE1DB9290600599794 /* WorldPaySDK_AC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853B14FD1DB9290600599794 /* WorldPaySDK_AC.framework */; };
-		853B14FF1DB9293400599794 /* WorldPaySDK_AC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 853B14FD1DB9290600599794 /* WorldPaySDK_AC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		853B15001DB92AC900599794 /* WorldPaySDK_Miura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813F2AF21D889708003F6716 /* WorldPaySDK_Miura.framework */; };
-		853B15011DB92AC900599794 /* WorldPaySDK_Miura.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 813F2AF21D889708003F6716 /* WorldPaySDK_Miura.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		853240091DB9327800C13FBE /* WorldPaySDK_AC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853240011DB9323700C13FBE /* WorldPaySDK_AC.framework */; };
+		8532400A1DB9327800C13FBE /* WorldPaySDK_AC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 853240011DB9323700C13FBE /* WorldPaySDK_AC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		859D8E951DB0163F006BD88E /* VaultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859D8E931DB0163F006BD88E /* VaultViewController.m */; };
 		859D8E961DB0163F006BD88E /* VaultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859D8E931DB0163F006BD88E /* VaultViewController.m */; };
 		859D8E971DB0163F006BD88E /* VaultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 859D8E941DB0163F006BD88E /* VaultViewController.xib */; };
@@ -40,6 +38,8 @@
 		859D8EB21DB01D9E006BD88E /* CustomerPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859D8EAF1DB01D9E006BD88E /* CustomerPaymentViewController.m */; };
 		859D8EB31DB01D9E006BD88E /* CustomerPaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 859D8EB01DB01D9E006BD88E /* CustomerPaymentViewController.xib */; };
 		859D8EB41DB01D9E006BD88E /* CustomerPaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 859D8EB01DB01D9E006BD88E /* CustomerPaymentViewController.xib */; };
+		85B368051DB933DA00358F86 /* WorldPaySDK_Miura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853240021DB9323700C13FBE /* WorldPaySDK_Miura.framework */; };
+		85B368061DB933DA00358F86 /* WorldPaySDK_Miura.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 853240021DB9323700C13FBE /* WorldPaySDK_Miura.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8908E7441DA5536A00EBF673 /* TransactionDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908E7421DA5536A00EBF673 /* TransactionDetailCell.m */; };
 		8908E7451DA5536A00EBF673 /* TransactionDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8908E7431DA5536A00EBF673 /* TransactionDetailCell.xib */; };
 		8908E7491DA6E57B00EBF673 /* CardDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908E7471DA6E57B00EBF673 /* CardDataCell.m */; };
@@ -128,24 +128,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		811A0DA31BB2F75C00B73C09 /* Embed Frameworks */ = {
+		853240001DB9320500C13FBE /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				853B14FF1DB9293400599794 /* WorldPaySDK_AC.framework in Embed Frameworks */,
+				8532400A1DB9327800C13FBE /* WorldPaySDK_AC.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		853B15021DB92AC900599794 /* Embed Frameworks */ = {
+		85B368071DB933DA00358F86 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				853B15011DB92AC900599794 /* WorldPaySDK_Miura.framework in Embed Frameworks */,
+				85B368061DB933DA00358F86 /* WorldPaySDK_Miura.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,10 +162,10 @@
 		811A0D781BB2F20100B73C09 /* WorldpaySDKDemo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldpaySDKDemo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		811A0D7D1BB2F20100B73C09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		811A0D7E1BB2F20100B73C09 /* WorldpaySDKDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorldpaySDKDemoTests.m; sourceTree = "<group>"; };
-		813F2AF21D889708003F6716 /* WorldPaySDK_Miura.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WorldPaySDK_Miura.framework; path = ../WorldPaySDK_Miura.framework; sourceTree = "<group>"; };
 		814EDC051C69636E0010877C /* WorldpaySDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldpaySDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		814EDC061C69636E0010877C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
-		853B14FD1DB9290600599794 /* WorldPaySDK_AC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WorldPaySDK_AC.framework; path = ../WorldPaySDK_AC.framework; sourceTree = "<group>"; };
+		853240011DB9323700C13FBE /* WorldPaySDK_AC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WorldPaySDK_AC.framework; path = ../../WorldPaySDK_AC.framework; sourceTree = "<group>"; };
+		853240021DB9323700C13FBE /* WorldPaySDK_Miura.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WorldPaySDK_Miura.framework; path = ../../WorldPaySDK_Miura.framework; sourceTree = "<group>"; };
 		859D8E921DB0163F006BD88E /* VaultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VaultViewController.h; sourceTree = "<group>"; };
 		859D8E931DB0163F006BD88E /* VaultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VaultViewController.m; sourceTree = "<group>"; };
 		859D8E941DB0163F006BD88E /* VaultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VaultViewController.xib; sourceTree = "<group>"; };
@@ -205,9 +205,9 @@
 		896A6EE21DAC321B00FD8F77 /* LandscapeNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandscapeNavigationController.m; sourceTree = "<group>"; };
 		89A4DF661DA80FAF007F79D6 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
 		89A4DF671DA8110E007F79D6 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
-		89CB9EAD1DA461EE00E4F7E4 /* TransactionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransactionDetailViewController.h; path = ../TransactionDetailViewController.h; sourceTree = "<group>"; };
-		89CB9EAE1DA461EE00E4F7E4 /* TransactionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TransactionDetailViewController.m; path = ../TransactionDetailViewController.m; sourceTree = "<group>"; };
-		89CB9EAF1DA461EE00E4F7E4 /* TransactionDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TransactionDetailViewController.xib; path = ../TransactionDetailViewController.xib; sourceTree = "<group>"; };
+		89CB9EAD1DA461EE00E4F7E4 /* TransactionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionDetailViewController.h; sourceTree = "<group>"; };
+		89CB9EAE1DA461EE00E4F7E4 /* TransactionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionDetailViewController.m; sourceTree = "<group>"; };
+		89CB9EAF1DA461EE00E4F7E4 /* TransactionDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionDetailViewController.xib; sourceTree = "<group>"; };
 		89D200021DAEB6DC0090C9AE /* SettlementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettlementViewController.h; sourceTree = "<group>"; };
 		89D200031DAEB6DC0090C9AE /* SettlementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettlementViewController.m; sourceTree = "<group>"; };
 		89D200041DAEB6DC0090C9AE /* SettlementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettlementViewController.xib; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				853B14FE1DB9290600599794 /* WorldPaySDK_AC.framework in Frameworks */,
+				853240091DB9327800C13FBE /* WorldPaySDK_AC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +256,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				853B15001DB92AC900599794 /* WorldPaySDK_Miura.framework in Frameworks */,
+				85B368051DB933DA00358F86 /* WorldPaySDK_Miura.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,8 +331,8 @@
 		811A0DA01BB2F57800B73C09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				853B14FD1DB9290600599794 /* WorldPaySDK_AC.framework */,
-				813F2AF21D889708003F6716 /* WorldPaySDK_Miura.framework */,
+				853240011DB9323700C13FBE /* WorldPaySDK_AC.framework */,
+				853240021DB9323700C13FBE /* WorldPaySDK_Miura.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -456,7 +456,7 @@
 				811A0D581BB2F20100B73C09 /* Sources */,
 				811A0D591BB2F20100B73C09 /* Frameworks */,
 				811A0D5A1BB2F20100B73C09 /* Resources */,
-				811A0DA31BB2F75C00B73C09 /* Embed Frameworks */,
+				853240001DB9320500C13FBE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -493,7 +493,7 @@
 				814EDBF51C69636E0010877C /* Sources */,
 				814EDBFA1C69636E0010877C /* Frameworks */,
 				814EDBFD1C69636E0010877C /* Resources */,
-				853B15021DB92AC900599794 /* Embed Frameworks */,
+				85B368071DB933DA00358F86 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -898,6 +898,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					../,
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -919,6 +920,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					../,
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
