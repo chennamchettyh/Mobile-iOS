@@ -1,9 +1,9 @@
 //
 //  SignatureViewController.m
-//  WorldPaySDKDemo
+//  WorldpaySDKDemo
 //
 //  Created by Harsha Chennamchetty on 10/10/16.
-//  Copyright © 2016 WorldPay. All rights reserved.
+//  Copyright © 2016 Worldpay. All rights reserved.
 //
 
 #define LINEWIDTH 5

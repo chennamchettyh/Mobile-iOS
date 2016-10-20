@@ -8,7 +8,8 @@
 #import <UIKit/UIKit.h>
 #import "WorldpayAPI.h"
 #import "WPYAuthTokenRequest.h"
-#import "WPYCustomerData.h"
+#import "WPYCustomerRequestData.h"
+#import "WPYCustomerResponseData.h"
 #import "WPYSwiper.h"
 #import "WPYAddressInfo.h"
 #import "WPYTender.h"

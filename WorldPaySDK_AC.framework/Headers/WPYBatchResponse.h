@@ -7,6 +7,8 @@
 
 #import "WPYDomainObject.h"
 
+@class WPYTransactionResponse;
+
 /** 
  * An object that only contains the identifier for the current batch.  Note that the 'identifier' property is common to all
  * WPYDomainObjects and is therefore visible at the base class level
@@ -16,4 +18,5 @@
  * A convenience method to get the WPYBatchResponse.identifier associated with the transaction
  */
 @property (nonatomic, getter=getBatchId) NSString *batchId;
+@property (nonatomic, strong) NSArray <WPYTransactionResponse *> *transactions;
 @end

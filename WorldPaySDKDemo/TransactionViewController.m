@@ -1,9 +1,9 @@
 //
 //  TransactionViewController.m
-//  WorldPaySDKDemo
+//  WorldpaySDKDemo
 //
 //  Created by Jonas Whidden on 10/4/16.
-//  Copyright © 2016 WorldPay. All rights reserved.
+//  Copyright © 2016 Worldpay. All rights reserved.
 //
 
 #import "TransactionViewController.h"

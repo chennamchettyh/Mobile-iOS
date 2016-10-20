@@ -1,8 +1,8 @@
 //
 //  AppDelegate.h
-//  WorldPaySDKDemo
+//  WorldpaySDKDemo
 //
-//  Copyright (c) 2015 WorldPay. All rights reserved.
+//  Copyright (c) 2015 Worldpay. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

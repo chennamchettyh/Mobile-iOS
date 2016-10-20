@@ -1,9 +1,9 @@
 //
 //  BatchDetailTableViewController.h
-//  WorldPaySDKDemo
+//  WorldpaySDKDemo
 //
 //  Created by Harsha Chennamchetty on 10/12/16.
-//  Copyright © 2016 WorldPay. All rights reserved.
+//  Copyright © 2016 Worldpay. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
