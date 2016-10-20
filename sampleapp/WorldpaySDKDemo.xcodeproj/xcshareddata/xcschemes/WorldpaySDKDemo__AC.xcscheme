@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "811A0D5B1BB2F20100B73C09"
                BuildableName = "WorldpaySDKDemo.app"
-               BlueprintName = "WorldpaySDKDemo_AC"
+               BlueprintName = "WorldpaySDKDemo__AC"
                ReferencedContainer = "container:WorldpaySDKDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,7 +34,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "811A0D5B1BB2F20100B73C09"
             BuildableName = "WorldpaySDKDemo.app"
-            BlueprintName = "WorldpaySDKDemo_AC"
+            BlueprintName = "WorldpaySDKDemo__AC"
             ReferencedContainer = "container:WorldpaySDKDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -57,7 +57,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "811A0D5B1BB2F20100B73C09"
             BuildableName = "WorldpaySDKDemo.app"
-            BlueprintName = "WorldpaySDKDemo_AC"
+            BlueprintName = "WorldpaySDKDemo__AC"
             ReferencedContainer = "container:WorldpaySDKDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -76,7 +76,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "811A0D5B1BB2F20100B73C09"
             BuildableName = "WorldpaySDKDemo.app"
-            BlueprintName = "WorldpaySDKDemo_AC"
+            BlueprintName = "WorldpaySDKDemo__AC"
             ReferencedContainer = "container:WorldpaySDKDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
