@@ -449,9 +449,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		811A0D5B1BB2F20100B73C09 /* WorldpaySDKDemo__AC */ = {
+		811A0D5B1BB2F20100B73C09 /* WorldpaySDKDemo_AC */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 811A0D821BB2F20100B73C09 /* Build configuration list for PBXNativeTarget "WorldpaySDKDemo__AC" */;
+			buildConfigurationList = 811A0D821BB2F20100B73C09 /* Build configuration list for PBXNativeTarget "WorldpaySDKDemo_AC" */;
 			buildPhases = (
 				811A0D581BB2F20100B73C09 /* Sources */,
 				811A0D591BB2F20100B73C09 /* Frameworks */,
@@ -462,7 +462,7 @@
 			);
 			dependencies = (
 			);
-			name = WorldpaySDKDemo__AC;
+			name = WorldpaySDKDemo_AC;
 			productName = WorldpaySDKDemo;
 			productReference = 811A0D5C1BB2F20100B73C09 /* WorldpaySDKDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -486,9 +486,9 @@
 			productReference = 811A0D781BB2F20100B73C09 /* WorldpaySDKDemo.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		814EDBF41C69636E0010877C /* WorldpaySDKDemo_Miura */ = {
+		814EDBF41C69636E0010877C /* WorldpaySDKDemo__Miura */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 814EDC021C69636E0010877C /* Build configuration list for PBXNativeTarget "WorldpaySDKDemo_Miura" */;
+			buildConfigurationList = 814EDC021C69636E0010877C /* Build configuration list for PBXNativeTarget "WorldpaySDKDemo__Miura" */;
 			buildPhases = (
 				814EDBF51C69636E0010877C /* Sources */,
 				814EDBFA1C69636E0010877C /* Frameworks */,
@@ -499,7 +499,7 @@
 			);
 			dependencies = (
 			);
-			name = WorldpaySDKDemo_Miura;
+			name = WorldpaySDKDemo__Miura;
 			productName = WorldpaySDKDemo;
 			productReference = 814EDC051C69636E0010877C /* WorldpaySDKDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -539,8 +539,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				814EDBF41C69636E0010877C /* WorldpaySDKDemo_Miura */,
-				811A0D5B1BB2F20100B73C09 /* WorldpaySDKDemo__AC */,
+				814EDBF41C69636E0010877C /* WorldpaySDKDemo__Miura */,
+				811A0D5B1BB2F20100B73C09 /* WorldpaySDKDemo_AC */,
 				811A0D771BB2F20100B73C09 /* WorldpaySDKDemoTests */,
 			);
 		};
@@ -694,12 +694,12 @@
 /* Begin PBXTargetDependency section */
 		811A0D7A1BB2F20100B73C09 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 811A0D5B1BB2F20100B73C09 /* WorldpaySDKDemo__AC */;
+			target = 811A0D5B1BB2F20100B73C09 /* WorldpaySDKDemo_AC */;
 			targetProxy = 811A0D791BB2F20100B73C09 /* PBXContainerItemProxy */;
 		};
 		8531C5501DB91D9900E89ED6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 814EDBF41C69636E0010877C /* WorldpaySDKDemo_Miura */;
+			target = 814EDBF41C69636E0010877C /* WorldpaySDKDemo__Miura */;
 			targetProxy = 8531C54F1DB91D9900E89ED6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -949,7 +949,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		811A0D821BB2F20100B73C09 /* Build configuration list for PBXNativeTarget "WorldpaySDKDemo__AC" */ = {
+		811A0D821BB2F20100B73C09 /* Build configuration list for PBXNativeTarget "WorldpaySDKDemo_AC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				811A0D831BB2F20100B73C09 /* Debug */,
@@ -967,7 +967,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		814EDC021C69636E0010877C /* Build configuration list for PBXNativeTarget "WorldpaySDKDemo_Miura" */ = {
+		814EDC021C69636E0010877C /* Build configuration list for PBXNativeTarget "WorldpaySDKDemo__Miura" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				814EDC031C69636E0010877C /* Debug */,

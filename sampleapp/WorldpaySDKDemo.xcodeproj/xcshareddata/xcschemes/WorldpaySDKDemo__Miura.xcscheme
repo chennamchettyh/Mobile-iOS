@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "811A0D5B1BB2F20100B73C09"
+               BlueprintIdentifier = "814EDBF41C69636E0010877C"
                BuildableName = "WorldpaySDKDemo.app"
-               BlueprintName = "WorldpaySDKDemo__AC"
+               BlueprintName = "WorldpaySDKDemo__Miura"
                ReferencedContainer = "container:WorldpaySDKDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,13 +28,23 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "811A0D771BB2F20100B73C09"
+               BuildableName = "WorldpaySDKDemo.xctest"
+               BlueprintName = "WorldpaySDKDemoTests"
+               ReferencedContainer = "container:WorldpaySDKDemo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "811A0D5B1BB2F20100B73C09"
+            BlueprintIdentifier = "814EDBF41C69636E0010877C"
             BuildableName = "WorldpaySDKDemo.app"
-            BlueprintName = "WorldpaySDKDemo__AC"
+            BlueprintName = "WorldpaySDKDemo__Miura"
             ReferencedContainer = "container:WorldpaySDKDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -55,9 +65,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "811A0D5B1BB2F20100B73C09"
+            BlueprintIdentifier = "814EDBF41C69636E0010877C"
             BuildableName = "WorldpaySDKDemo.app"
-            BlueprintName = "WorldpaySDKDemo__AC"
+            BlueprintName = "WorldpaySDKDemo__Miura"
             ReferencedContainer = "container:WorldpaySDKDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -74,9 +84,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "811A0D5B1BB2F20100B73C09"
+            BlueprintIdentifier = "814EDBF41C69636E0010877C"
             BuildableName = "WorldpaySDKDemo.app"
-            BlueprintName = "WorldpaySDKDemo__AC"
+            BlueprintName = "WorldpaySDKDemo__Miura"
             ReferencedContainer = "container:WorldpaySDKDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
