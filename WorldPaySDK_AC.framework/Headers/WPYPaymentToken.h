@@ -15,7 +15,7 @@
 /**
  * The ID of the token 
  */
-@property (nonatomic, strong) NSString *paymentToken;
+@property (nonatomic, strong) NSString *token;
 /**
  * The payment type associated with the token
  */

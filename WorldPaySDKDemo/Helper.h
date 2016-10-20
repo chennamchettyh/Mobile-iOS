@@ -1,9 +1,9 @@
 //
 //  NSObject_Helper.h
-//  WorldPaySDKDemo
+//  WorldpaySDKDemo
 //
 //  Created by Harsha Chennamchetty on 10/7/16.
-//  Copyright © 2016 WorldPay. All rights reserved.
+//  Copyright © 2016 Worldpay. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

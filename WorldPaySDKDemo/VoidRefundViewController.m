@@ -1,14 +1,14 @@
 //
 //  VoidRefundViewController.m
-//  WorldPaySDKDemo
+//  WorldpaySDKDemo
 //
 //  Created by Harsha Chennamchetty on 10/11/16.
-//  Copyright © 2016 WorldPay. All rights reserved.
+//  Copyright © 2016 Worldpay. All rights reserved.
 //
 
 #import "VoidRefundViewController.h"
 #import "DropDownTextField.h"
-#import "UIColor+WorldPay.h"
+#import "UIColor+Worldpay.h"
 #import "TransactionDetailViewController.h"
 
 #define VOIDINDEX 0
