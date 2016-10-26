@@ -10,9 +10,21 @@
 
 @interface CustomerPaymentViewController ()
 
+@property (nonatomic, strong) WPYPaymentMethod * method;
+
 @end
 
 @implementation CustomerPaymentViewController
+
+- (instancetype)initWithPaymentMethod:(WPYPaymentMethod *)method
+{
+    if((self = [super initWithNibName:nil bundle:nil]))
+    {
+        self.method = method;
+    }
+    
+    return self;
+}
 
 - (void)viewDidLoad
 {

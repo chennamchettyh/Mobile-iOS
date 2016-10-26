@@ -25,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePs-gl-s6z">
-                    <rect key="frame" x="216" y="28" width="167" height="38"/>
+                    <rect key="frame" x="216" y="77" width="167" height="38"/>
                     <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="17"/>
                     <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                     <state key="normal" title="Retrieve Customers"/>
@@ -34,7 +34,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faZ-Pb-i9V">
-                    <rect key="frame" x="216.5" y="74" width="167" height="38"/>
+                    <rect key="frame" x="216.5" y="123" width="167" height="38"/>
                     <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="17"/>
                     <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                     <state key="normal" title="Create Customer"/>
@@ -46,7 +46,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="faZ-Pb-i9V" firstAttribute="trailing" secondItem="ePs-gl-s6z" secondAttribute="trailing" id="H95-vz-BhI"/>
-                <constraint firstItem="ePs-gl-s6z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="28" id="HAy-ps-ZvV"/>
+                <constraint firstItem="ePs-gl-s6z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="77" id="HAy-ps-ZvV"/>
                 <constraint firstItem="faZ-Pb-i9V" firstAttribute="top" secondItem="ePs-gl-s6z" secondAttribute="bottom" constant="8" id="YAm-IQ-feC"/>
                 <constraint firstItem="ePs-gl-s6z" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="l0p-Ag-cmd"/>
                 <constraint firstItem="faZ-Pb-i9V" firstAttribute="leading" secondItem="ePs-gl-s6z" secondAttribute="leading" id="vjj-rT-uuc"/>

@@ -99,7 +99,7 @@
                 
             }
             
-            [(BillingAddressCell *)cell assignValues: self.transactionResponse];
+            [(BillingAddressCell *)cell assignValues: self.transactionResponse.billAddress];
 
 
             break;

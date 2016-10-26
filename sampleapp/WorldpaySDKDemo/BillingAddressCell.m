@@ -55,14 +55,14 @@
     // Configure the view for the selected state
 }
 
--(void)assignValues: (WPYTransactionResponse *)response
+-(void)assignValues: (WPYAddressInfo *)address
 {
-    self.line1Value.text = response.billAddress.line1;
-    self.cityValue.text = response.billAddress.city;
-    self.stateValue.text = response.billAddress.state;
-    self.zipValue.text = response.billAddress.zip;
-    self.companyValue.text = response.billAddress.company;
-    self.phoneValue.text = response.billAddress.phone;
+    self.line1Value.text = address.line1;
+    self.cityValue.text = address.city;
+    self.stateValue.text = address.state;
+    self.zipValue.text = address.zip;
+    self.companyValue.text = address.company;
+    self.phoneValue.text = address.phone;
 }
 
 @end

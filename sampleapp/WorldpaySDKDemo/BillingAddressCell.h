@@ -16,6 +16,6 @@
 
 @interface BillingAddressCell : UITableViewCell
 
--(void)assignValues: (WPYTransactionResponse *)response;
+-(void)assignValues: (WPYAddressInfo *)address;
 
 @end

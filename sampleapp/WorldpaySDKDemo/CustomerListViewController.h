@@ -14,6 +14,8 @@
 #import <WorldPaySDK_Miura/WorldPaySDK.h>
 #endif
 
-@interface CustomerListViewController : UIViewController
+@interface CustomerListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+-(instancetype)initWithList: (NSArray *) list;
 
 @end

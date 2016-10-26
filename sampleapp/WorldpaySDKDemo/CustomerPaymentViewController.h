@@ -16,4 +16,6 @@
 
 @interface CustomerPaymentViewController : UIViewController
 
+- (instancetype) initWithPaymentMethod:(WPYPaymentMethod *) method;
+
 @end

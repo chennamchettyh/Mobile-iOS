@@ -754,7 +754,8 @@
     }
     
     alert = [UIAlertController alertControllerWithTitle:@"Response" message:[NSString stringWithFormat:@"Status: %@\r\nResponse:%@\r\n%@", transactionStatus, responseMessage ?: @"No Message", signatureNeeded] preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+    {
         [self cleanAlertUserAction:YES];
     }]];
     
@@ -771,18 +772,6 @@
     NSLog(@"%@: %@", @"Swiper failed request with error", error);
 }
 
-- (void) swiper:(WPYSwiper *)swiper didRequestSignatureWithCompletion:(void(^)(NSString *))completion
-{
-    NSLog(@"%@", @"Swiper requested signature");
-    
-    // TODO: Actually get signature
-    
-    if(completion)
-    {
-        completion(nil);
-    }
-}
-
 - (void)swiper:(WPYSwiper *)swiper didRequestDevicePromptText:(WPYDevicePrompt)prompt completion:(void (^)(NSString *))completion
 {
     if(!self.transactionInProgress)
@@ -795,9 +784,10 @@
     UIAlertController * alert;
     
     NSString *defaultPrompt = nil;
-    UIAlertAction * action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction * action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+    {
         [self cleanAlertUserAction:YES];
-    }];;
+    }];
     
     switch (prompt)
     {
@@ -964,7 +954,8 @@
 {
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Manual entry failed with an error" preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+    {
         [self cleanAlertUserAction:YES];
     }]];
     
