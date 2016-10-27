@@ -827,7 +827,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/WorldpaySDKDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.worldpay.WorldpaySDKDemo-AC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.worldpay.ipc.acdemo;
 				PRODUCT_NAME = WorldpaySDKDemo;
 				PROVISIONING_PROFILE = "";
 			};
@@ -849,7 +849,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/WorldpaySDKDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.worldpay.WorldpaySDKDemo-AC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.worldpay.ipc.acdemo;
 				PRODUCT_NAME = WorldpaySDKDemo;
 				PROVISIONING_PROFILE = "";
 			};
@@ -909,7 +909,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/WorldpaySDKDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.worldpay.demo-miura";
+				PRODUCT_BUNDLE_IDENTIFIER = com.worldpay.ipc.miurademo;
 				PRODUCT_NAME = WorldpaySDKDemo;
 				PROVISIONING_PROFILE = "";
 			};
@@ -931,7 +931,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/WorldpaySDKDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.worldpay.demo-miura";
+				PRODUCT_BUNDLE_IDENTIFIER = com.worldpay.ipc.miurademo;
 				PRODUCT_NAME = WorldpaySDKDemo;
 				PROVISIONING_PROFILE = "";
 			};
