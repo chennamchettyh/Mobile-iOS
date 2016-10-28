@@ -66,7 +66,7 @@
 {
     if((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
     {
-        self.title = @"Transactions";
+        self.title = @"Debit/Credit";
     }
     
     return self;
