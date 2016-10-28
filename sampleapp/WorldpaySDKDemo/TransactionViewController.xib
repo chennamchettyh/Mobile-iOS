@@ -76,9 +76,9 @@
                         <segmentedControl autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="D3I-ew-RtV">
                             <rect key="frame" x="20" y="10" width="571.5" height="29"/>
                             <segments>
-                                <segment title="Card Present"/>
-                                <segment title="Card Not Present"/>
-                                <segment title="Vault"/>
+                                <segment title="Card"/>
+                                <segment title="No Card"/>
+                                <segment title="Vault Payment"/>
                             </segments>
                             <connections>
                                 <action selector="segmentedTouched:" destination="-1" eventType="valueChanged" id="xwo-Be-97h"/>
