@@ -31,7 +31,7 @@
 {
     if((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
     {
-        self.title = @"Void/Refund";
+        self.title = @"Refund/Void";
     }
     
     return self;
@@ -42,7 +42,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    if(![self.transactionTypeDropDown sharedInitWithOptionList:@[@"Void", @"Refund"] initialIndex:0 parentViewController:self title:@"Transaction Type"])
+    if(![self.transactionTypeDropDown sharedInitWithOptionList:@[@"Refund", @"Void"] initialIndex:0 parentViewController:self title:@"Transaction Type"])
     {
         NSAssert(FALSE, @"%@", @"Drop down failed to initialized properly");
     }
