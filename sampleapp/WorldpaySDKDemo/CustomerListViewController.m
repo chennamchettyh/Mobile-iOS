@@ -10,7 +10,7 @@
 #import "BillingAddressCell.h"
 #import "CustomerPaymentViewController.h"
 
-#define BILLINGADDRESSHEIGHT 346
+#define BILLINGADDRESSHEIGHT 288
 #define DEFAULTCELLHEIGHT 50
 
 @interface CustomerListViewController ()
