@@ -15,6 +15,8 @@
 #import "TransactionDetailViewController.h"
 #import "SignatureViewController.h"
 #import "LandscapeNavigationController.h"
+#import "LabeledTextField.h"
+#import "LabeledDropDownTextField.h"
 
 #define YESINDEX 0
 #define NOINDEX 1
@@ -28,19 +30,18 @@
 #define TEXTFIELDSIZE 14
 #define BUTTONTEXTSIZE 15
 
-#define MAGICMARGIN 28
-#define VAULTHEIGHT 65
+#define MAGICMARGIN 48
+#define VAULTHEIGHT 98
 #define VAULTTOPMARGIN 8
 
 @interface TransactionViewController ()
 
-@property (weak, nonatomic) IBOutlet DropDownTextField *transactionTypeDropDown;
+@property (weak, nonatomic) IBOutlet LabeledDropDownTextField *transactionTypeDropDown;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *cardPresentSegmented;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *addToVaultSegmented;
-@property (weak, nonatomic) IBOutlet UITextField *amountTextField;
-@property (weak, nonatomic) IBOutlet UITextField *cashbackTextField;
-@property (weak, nonatomic) IBOutlet UITextField *customerIdTextField;
-@property (weak, nonatomic) IBOutlet UITextField *paymentMethodTextField;
+@property (weak, nonatomic) IBOutlet LabeledTextField *amountTextField;
+@property (weak, nonatomic) IBOutlet LabeledTextField *customerIdTextField;
+@property (weak, nonatomic) IBOutlet LabeledTextField *paymentMethodTextField;
 @property (strong, nonatomic) WPYSwiper * swiper;
 @property (weak, nonatomic) IBOutlet ExtendableView *extendableInfoView;
 @property (weak, nonatomic) ExtendedInformationView * extendedInfoView;
@@ -66,7 +67,7 @@
 {
     if((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
     {
-        self.title = @"Debit/Credit";
+        self.title = @"Credit/Debit";
     }
     
     return self;
@@ -79,7 +80,7 @@
     
     [self toggleVaultInfo:false];
     
-    if(![self.transactionTypeDropDown sharedInitWithOptionList:@[@"Authorize", @"Charge", @"Credit"] initialIndex:0 parentViewController:self title:@"Transaction Type"])
+    if(![self.transactionTypeDropDown sharedInitWithOptionList:@[@"Authorize", @"Charge", @"Credit"] initialIndex:CHARGEINDEX parentViewController:self title:@"Transaction Type"])
     {
         NSAssert(FALSE, @"%@", @"Drop down failed to initialized properly");
     }
@@ -99,10 +100,18 @@
     // Grab swiper from API
     self.swiper = [[WorldpayAPI instance] swiperWithDelegate:self];
     
-    self.amountTextField.delegate = self;
-    self.cashbackTextField.delegate = self;
-    self.paymentMethodTextField.delegate = self;
-    self.customerIdTextField.delegate = self;
+    [self.amountTextField setTextFieldDelegate:self];
+    [self.amountTextField setLabelText:@"Amount"];
+    [self.amountTextField setFieldText:@"10.00"];
+    
+    [self.paymentMethodTextField setTextFieldDelegate:self];
+    [self.paymentMethodTextField setLabelText:@"Payment Id"];
+    
+    [self.customerIdTextField setTextFieldDelegate:self];
+    [self.customerIdTextField setLabelText:@"Customer Id"];
+    
+    [self.transactionTypeDropDown setTextFieldDelegate:self];
+    [self.transactionTypeDropDown setLabelText:@"Transaction Type"];
     
     [self.extendableInfoView setTitle:@"Extended Information"];
 
@@ -138,8 +147,6 @@
     [recognizer2 setNumberOfTouchesRequired:1];
     [self.extendedInfoView addGestureRecognizer:recognizer2];
     
-    [self.amountTextField setFont:[UIFont worldpayPrimaryWithSize: TEXTFIELDSIZE]];
-    [self.cashbackTextField setFont:[UIFont worldpayPrimaryWithSize: TEXTFIELDSIZE]];
     [self.cardPresentSegmented setTitleTextAttributes:[UIFont worldpayPrimaryAttributesWithSize: TEXTFIELDSIZE] forState:UIControlStateNormal];
     [self.addToVaultSegmented setTitleTextAttributes:[UIFont worldpayPrimaryAttributesWithSize: TEXTFIELDSIZE] forState:UIControlStateNormal];
     [self.startButton.titleLabel setFont:[UIFont worldpayPrimaryWithSize: BUTTONTEXTSIZE]];
@@ -149,12 +156,9 @@
         [label setFont:[UIFont worldpayPrimaryWithSize: LABELTEXTSIZE]];
     }
     
-    [self validateCashbackAllowed];
-    
     [self.transactionTypeDropDown setSelectionCallback:^(NSUInteger __unused index)
     {
         [self removeFocusFromTextField:nil];
-        [self validateCashbackAllowed];
     }];
     
     self.startButton.backgroundColor = [UIColor worldpayEmerald];
@@ -177,11 +181,6 @@
     [self.swiper disconnectSwiper];
     self.transition = NO;
     self.swiperAlert = nil;
-}
-
-- (void) validateCashbackAllowed
-{
-    [self.cashbackTextField setEnabled: [self cashbackAllowed]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -212,11 +211,11 @@
     else if(!visible && self.vaultHeightConstraint.constant == VAULTHEIGHT)
     {
         self.vaultHeightConstraint.constant = 0;
-        self.vaultTopMarginConstraint.constant = VAULTTOPMARGIN/2;
+        self.vaultTopMarginConstraint.constant = 0;
         
         [self.vaultView layoutIfNeeded];
-        self.paymentMethodTextField.text = @"";
-        self.customerIdTextField.text = @"";
+        [self.paymentMethodTextField setFieldText: @""];
+        [self.customerIdTextField setFieldText: @""];
     }
 }
 
@@ -284,7 +283,6 @@
     }
     
     WPYPaymentRequest * request;
-    WPYEMVTransactionType transactionType = WPYEMVTransactionTypeGoods;
     
     switch([self.transactionTypeDropDown selectedIndex])
     {
@@ -350,12 +348,6 @@
     }
     
     request.extendedData = extendedData;
-    
-    if([self cashbackAllowed] && self.cashbackTextField.text.doubleValue > 0)
-    {
-        request.amountOther = [NSDecimalNumber decimalNumberWithString:self.cashbackTextField.text];
-        transactionType = WPYEMVTransactionTypeCashback;
-    }
     
     if([self.cardPresentSegmented selectedSegmentIndex] == NOINDEX)
     {
@@ -470,24 +462,6 @@
             }
         }
     }
-}
-
-- (BOOL) cashbackAllowed
-{
-#ifdef ANYWHERE_NOMAD
-    switch([self.transactionTypeDropDown selectedIndex])
-    {
-        case AUTHORIZEINDEX:
-        case CHARGEINDEX:
-            return YES;
-        case CREDITINDEX:
-            return NO;
-        default:
-            return YES;
-    }
-#else
-    return NO;
-#endif
 }
 
 - (void) forceDisplayAlert: (UIAlertController *) alert

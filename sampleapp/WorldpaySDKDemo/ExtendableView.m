@@ -8,6 +8,7 @@
 
 #import "ExtendableView.h"
 #import "UIFont+Worldpay.h"
+#import "Helper.h"
 
 #define TITLESIZE 17
 
@@ -60,22 +61,16 @@
 
 - (void) setSecondaryViewInContainer: (UIView *) view
 {
-    for(UIView * view in self.secondaryContainerView.subviews)
+    for(UIView * view2 in self.secondaryContainerView.subviews)
     {
-        [view removeFromSuperview];
+        [view2 removeFromSuperview];
     }
     
-    view.translatesAutoresizingMaskIntoConstraints = false;
-    self.secondaryContainerView.translatesAutoresizingMaskIntoConstraints = false;
     self.translatesAutoresizingMaskIntoConstraints = false;
     
-    [self.secondaryContainerView addSubview:view];
     self.secondaryView = view;
     
-    [self.secondaryContainerView addConstraint:[NSLayoutConstraint constraintWithItem:self.secondaryView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.secondaryContainerView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0]];
-    [self.secondaryContainerView addConstraint:[NSLayoutConstraint constraintWithItem:self.secondaryView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.secondaryContainerView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]];
-    [self.secondaryContainerView addConstraint:[NSLayoutConstraint constraintWithItem:self.secondaryView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.secondaryContainerView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0]];
-    [self.secondaryContainerView addConstraint:[NSLayoutConstraint constraintWithItem:self.secondaryView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.secondaryContainerView attribute:NSLayoutAttributeRight multiplier:1.0 constant:0]];
+    [Helper constrainView:self.secondaryContainerView toSecondView:self.secondaryView];
 }
 
 - (IBAction)toggleSecondaryView:(id)sender

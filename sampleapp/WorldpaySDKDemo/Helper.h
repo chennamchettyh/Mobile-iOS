@@ -17,6 +17,7 @@
 @interface Helper: NSObject
 
 +(NSString *)getPaymentType: (WPYPaymentType)paymentType;
++ (void) constrainView:(UIView *)view toSecondView:(UIView *) secondView;
 
 @end
 
