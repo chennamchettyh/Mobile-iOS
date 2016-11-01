@@ -9,22 +9,18 @@
 #import "CardDataCell.h"
 #import "UIFont+Worldpay.h"
 
-
 #define LABELTEXTSIZE 17
 
 @interface CardDataCell()
-
 
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *formLabels;
 
 @property (weak, nonatomic) IBOutlet UILabel *cardNumberValue;
 @property (weak, nonatomic) IBOutlet UILabel *firstNameValue;
 @property (weak, nonatomic) IBOutlet UILabel *lastNameValue;
-@property (weak, nonatomic) IBOutlet UILabel *expirationMonthValue;
-@property (weak, nonatomic) IBOutlet UILabel *expirationYearValue;
+@property (weak, nonatomic) IBOutlet UILabel *expirationValue;
 
 @end
-
 
 @implementation CardDataCell
 
@@ -63,9 +59,7 @@
     self.cardNumberValue.text = response.card.number;
     self.firstNameValue.text = response.card.firstName;
     self.lastNameValue.text = response.card.lastName;
-    self.expirationMonthValue.text = [NSString stringWithFormat:@"%ld", (long)response.card.expirationMonth];
-    self.expirationYearValue.text = [NSString stringWithFormat:@"%ld", (long)response.card.expirationYear];
-
+    self.expirationValue.text = [NSString stringWithFormat:@"%ld/%ld", (long)response.card.expirationMonth, (long)response.card.expirationYear];
 }
 
 @end
