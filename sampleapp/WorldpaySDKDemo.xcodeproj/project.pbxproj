@@ -16,6 +16,10 @@
 		814EDBF81C69636E0010877C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 811A0D611BB2F20100B73C09 /* main.m */; };
 		814EDBFF1C69636E0010877C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 811A0D711BB2F20100B73C09 /* LaunchScreen.xib */; };
 		814EDC001C69636E0010877C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 811A0D6F1BB2F20100B73C09 /* Images.xcassets */; };
+		850C57571DCA53E300B1F6B0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 850C57551DCA53E300B1F6B0 /* HomeViewController.m */; };
+		850C57581DCA53E300B1F6B0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 850C57551DCA53E300B1F6B0 /* HomeViewController.m */; };
+		850C57591DCA53E300B1F6B0 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850C57561DCA53E300B1F6B0 /* HomeViewController.xib */; };
+		850C575A1DCA53E300B1F6B0 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850C57561DCA53E300B1F6B0 /* HomeViewController.xib */; };
 		85824BC61DC9175700CD6052 /* LabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 85824BC51DC9175700CD6052 /* LabeledTextField.m */; };
 		85824BC71DC9175700CD6052 /* LabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 85824BC51DC9175700CD6052 /* LabeledTextField.m */; };
 		85824BCC1DC919AE00CD6052 /* LabeledTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85824BCB1DC919AD00CD6052 /* LabeledTextField.xib */; };
@@ -172,6 +176,9 @@
 		811A0D7E1BB2F20100B73C09 /* WorldpaySDKDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorldpaySDKDemoTests.m; sourceTree = "<group>"; };
 		814EDC051C69636E0010877C /* WorldpaySDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldpaySDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		814EDC061C69636E0010877C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = WorldpaySDKDemo/Info.plist; sourceTree = SOURCE_ROOT; };
+		850C57541DCA53E300B1F6B0 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		850C57551DCA53E300B1F6B0 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		850C57561DCA53E300B1F6B0 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		85824BC41DC9175700CD6052 /* LabeledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabeledTextField.h; sourceTree = "<group>"; };
 		85824BC51DC9175700CD6052 /* LabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabeledTextField.m; sourceTree = "<group>"; };
 		85824BCB1DC919AD00CD6052 /* LabeledTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabeledTextField.xib; sourceTree = "<group>"; };
@@ -410,6 +417,9 @@
 				859D8EAE1DB01D9E006BD88E /* CustomerPaymentViewController.h */,
 				859D8EAF1DB01D9E006BD88E /* CustomerPaymentViewController.m */,
 				859D8EB01DB01D9E006BD88E /* CustomerPaymentViewController.xib */,
+				850C57541DCA53E300B1F6B0 /* HomeViewController.h */,
+				850C57551DCA53E300B1F6B0 /* HomeViewController.m */,
+				850C57561DCA53E300B1F6B0 /* HomeViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -593,6 +603,7 @@
 				859D8EAC1DB01D8F006BD88E /* CustomerDetailViewController.xib in Resources */,
 				8CDEB6C61DA8106600F81B63 /* ExtendedInformationView.xib in Resources */,
 				859D8EB31DB01D9E006BD88E /* CustomerPaymentViewController.xib in Resources */,
+				850C575A1DCA53E300B1F6B0 /* HomeViewController.xib in Resources */,
 				8C068D011DA4146E00578C9D /* Main.storyboard in Resources */,
 				896A6EDF1DAC267800FD8F77 /* SignatureViewController.xib in Resources */,
 			);
@@ -631,6 +642,7 @@
 				859D8EAD1DB01D8F006BD88E /* CustomerDetailViewController.xib in Resources */,
 				896A6ED71DAC137600FD8F77 /* TransactionDetailViewController.xib in Resources */,
 				859D8EB41DB01D9E006BD88E /* CustomerPaymentViewController.xib in Resources */,
+				850C57591DCA53E300B1F6B0 /* HomeViewController.xib in Resources */,
 				896A6ED61DAC096900FD8F77 /* CustomerCell.xib in Resources */,
 				896A6EE01DAC267800FD8F77 /* SignatureViewController.xib in Resources */,
 			);
@@ -649,6 +661,7 @@
 				811A0D651BB2F20100B73C09 /* AppDelegate.m in Sources */,
 				8908E7441DA5536A00EBF673 /* TransactionDetailCell.m in Sources */,
 				894DF3A11DAD3FAE0043B01D /* VoidRefundViewController.m in Sources */,
+				850C57581DCA53E300B1F6B0 /* HomeViewController.m in Sources */,
 				859D8EAA1DB01D8F006BD88E /* CustomerDetailViewController.m in Sources */,
 				89A4DF681DA8110E007F79D6 /* Helper.m in Sources */,
 				859D8EB11DB01D9E006BD88E /* CustomerPaymentViewController.m in Sources */,
@@ -692,6 +705,7 @@
 				814EDBF61C69636E0010877C /* AppDelegate.m in Sources */,
 				814EDBF81C69636E0010877C /* main.m in Sources */,
 				894DF3A21DAD3FAE0043B01D /* VoidRefundViewController.m in Sources */,
+				850C57571DCA53E300B1F6B0 /* HomeViewController.m in Sources */,
 				859D8EAB1DB01D8F006BD88E /* CustomerDetailViewController.m in Sources */,
 				896A6ECE1DAC093100FD8F77 /* TransactionDetailViewController.m in Sources */,
 				859D8EB21DB01D9E006BD88E /* CustomerPaymentViewController.m in Sources */,
