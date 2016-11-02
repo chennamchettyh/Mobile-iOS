@@ -110,7 +110,6 @@
     [self.customerIdTextField setTextFieldDelegate:self];
     [self.customerIdTextField setLabelText:@"Customer Id"];
     
-    [self.transactionTypeDropDown setTextFieldDelegate:self];
     [self.transactionTypeDropDown setLabelText:@"Transaction Type"];
     
     [self.extendableInfoView setTitle:@"Extended Information"];
