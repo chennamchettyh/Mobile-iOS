@@ -58,7 +58,7 @@
     self.cardNumberValue.text = response.card.number;
     self.firstNameValue.text = response.card.firstName;
     self.lastNameValue.text = response.card.lastName;
-    self.expirationValue.text = [NSString stringWithFormat:@"%ld/%ld", (long)response.card.expirationMonth, (long)response.card.expirationYear];
+    self.expirationValue.text = (response.card.expirationMonth > 0 && response.card.expirationYear > 0 ? [NSString stringWithFormat:@"%ld/%ld", (long)response.card.expirationMonth, (long)response.card.expirationYear] : @"");
 }
 
 @end

@@ -82,7 +82,7 @@
     // 1st tab for Home
     HomeViewController * homeViewController = [[HomeViewController alloc] initWithNibName:nil bundle:nil];
     UINavigationController * homeNav = [[UINavigationController alloc] initWithRootViewController: homeViewController];
-    homeNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[homeNav viewControllers] firstObject]) title] image:[self imageWithImage:nil] tag:[index current]];
+    homeNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[homeNav viewControllers] firstObject]) title] image:[self imageWithImage:[UIImage imageNamed:@"home_icon"]] tag:[index current]];
     
     // 2nd tab for Transactions (Auth, Charge, Credit)
     TransactionViewController * transactionViewController = [[TransactionViewController alloc] initWithNibName:nil bundle:nil];
