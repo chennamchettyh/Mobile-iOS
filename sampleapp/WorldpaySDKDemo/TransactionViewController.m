@@ -262,11 +262,11 @@
         
         if([self.customerIdTextField.text isEqualToString:@""])
         {
-            message = @"Must enter customer id for vault payment.";
+            message = @"Must enter Customer Id for Vault Payment.";
         }
         else if([self.paymentMethodTextField.text isEqualToString:@""])
         {
-            message = @"Must enter payment id for vault payment.";
+            message = @"Must enter Payment Id for Vault Payment.";
         }
         
         if(message != nil)

@@ -6,7 +6,7 @@
 //  Copyright © 2016 Worldpay. All rights reserved.
 //
 
-#import "LabeledTextField.h"
+#import "LabeledDropDownTextField.h"
 
 @interface LabeledDropDownTextField : UIView
 

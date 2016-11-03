@@ -9,16 +9,17 @@
 #import "VoidRefundViewController.h"
 #import "DropDownTextField.h"
 #import "TransactionDetailViewController.h"
+#import "LabeledDropDownTextField.h"
+#import "LabeledTextField.h"
 
 #define VOIDINDEX 0
 #define REFUNDINDEX 1
 
 @interface VoidRefundViewController ()
 
-@property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *textFields;
-@property (weak, nonatomic) IBOutlet DropDownTextField *transactionTypeDropDown;
-@property (weak, nonatomic) IBOutlet UITextField *transactionIdTextField;
-@property (weak, nonatomic) IBOutlet UITextField *amountTextField;
+@property (weak, nonatomic) IBOutlet LabeledDropDownTextField *transactionTypeDropDown;
+@property (weak, nonatomic) IBOutlet LabeledTextField *transactionIdTextField;
+@property (weak, nonatomic) IBOutlet LabeledTextField *amountTextField;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) UITextField *activeTextField;
 
@@ -45,11 +46,13 @@
     {
         NSAssert(FALSE, @"%@", @"Drop down failed to initialized properly");
     }
+    [self.transactionTypeDropDown setLabelText:@"Transaction Type"];
     
-    for(UITextField * textField in self.textFields)
-    {
-        textField.delegate = self;
-    }
+    [self.transactionIdTextField setLabelText:@"Transaction Id"];
+    [self.transactionIdTextField setTextFieldDelegate:self];
+    
+    [self.amountTextField setLabelText:@"Amount"];
+    [self.amountTextField setTextFieldDelegate:self];
     
     UITapGestureRecognizer *recognizer1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeFocusFromTextField:)];
     [recognizer1 setNumberOfTapsRequired:1];
