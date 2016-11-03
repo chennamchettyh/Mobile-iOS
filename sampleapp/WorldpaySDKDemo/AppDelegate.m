@@ -7,8 +7,6 @@
 
 #import "AppDelegate.h"
 #import "TransactionViewController.h"
-#import "UIColor+Worldpay.h"
-#import "UIFont+Worldpay.h"
 #import "Index.h"
 #import "VoidRefundViewController.h"
 #import "SettlementViewController.h"
@@ -44,19 +42,26 @@
     
     [[WorldpayAPI instance] generateAuthToken:authTokenRequest withCompletion:^(NSString *result, NSError *error)
     {
-         if(!result || error)
-         {
-             NSLog(@"Error generating AUTH Token: %@", error);
+        if(!result || error)
+        {
+            NSLog(@"Error generating AUTH Token: %@", error);
              
-             UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Unable to generate an auth token, please validate you are connected to the internet and your SecureNet Id and Key are correct in AppDelegate." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Unable to generate an auth token, please validate you are connected to the internet and your SecureNet Id and Key are correct in AppDelegate." preferredStyle:UIAlertControllerStyleAlert];
              
-             [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
-             {
-                 exit(0);
-             }]];
+            [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+            {
+                exit(0);
+            }]];
              
-             [self.window.rootViewController presentViewController:alert animated:true completion:nil];
-         }
+            [self.window.rootViewController presentViewController:alert animated:true completion:nil];
+        }
+        else
+        {
+            NSLog(@"%@", @"Auth token generated");
+            
+            self.authTokenAvailable = true;
+        }
+        
     }];
     
     // UIAppearance Proxy settings

@@ -7,7 +7,6 @@
 //
 
 #import "VaultViewController.h"
-#import "UIColor+Worldpay.h"
 #import "CustomerViewController.h"
 #import "CustomerListViewController.h"
 

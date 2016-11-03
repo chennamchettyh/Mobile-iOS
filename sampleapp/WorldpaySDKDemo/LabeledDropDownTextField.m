@@ -8,7 +8,6 @@
 
 #import "LabeledDropDownTextField.h"
 #import "DropDownTextField.h"
-#import "Helper.h"
 
 @interface LabeledDropDownTextField ()
 

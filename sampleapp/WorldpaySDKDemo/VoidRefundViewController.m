@@ -8,7 +8,6 @@
 
 #import "VoidRefundViewController.h"
 #import "DropDownTextField.h"
-#import "UIColor+Worldpay.h"
 #import "TransactionDetailViewController.h"
 
 #define VOIDINDEX 0
@@ -76,11 +75,17 @@
 {
     BOOL includeAmount = false;
     
+    [self removeFocusFromTextField:nil];
+    
+    CHECKAUTHTOKEN();
+    
     if([self.transactionIdTextField.text isEqualToString:@""])
     {
         UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Transaction Id is required." preferredStyle:UIAlertControllerStyleAlert];
         
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        
+        [self presentViewController:alert animated:true completion:nil];
         
         return;
     }
@@ -90,6 +95,8 @@
         UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Amount must be a positive number." preferredStyle:UIAlertControllerStyleAlert];
         
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        
+        [self presentViewController:alert animated:true completion:nil];
         
         return;
     }

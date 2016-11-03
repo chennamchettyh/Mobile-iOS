@@ -9,8 +9,6 @@
 #import "TransactionViewController.h"
 #import "DropDownTextField.h"
 #import "ExtendableView.h"
-#import "UIFont+Worldpay.h"
-#import "UIColor+Worldpay.h"
 #import "ExtendedInformationView.h"
 #import "TransactionDetailViewController.h"
 #import "SignatureViewController.h"
@@ -235,6 +233,8 @@
 - (IBAction) startTransaction
 {
     [self removeFocusFromTextField: nil];
+    
+    CHECKAUTHTOKEN();
     
     if([self.cardPresentSegmented selectedSegmentIndex] == YESINDEX && [self.swiper connectionState] != WPYSwiperConnected)
     {

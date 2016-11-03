@@ -7,8 +7,6 @@
 //
 
 #import "TransactionDetailCell.h"
-#import "UIFont+Worldpay.h"
-#import "Helper.h"
 
 #define LABELTEXTSIZE 17
 

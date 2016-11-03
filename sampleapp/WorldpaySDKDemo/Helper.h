@@ -14,10 +14,23 @@
 #import <WorldPaySDK_Miura/WorldPaySDK.h>
 #endif
 
+#define CHECKAUTHTOKEN() \
+if(![(AppDelegate *)[[UIApplication sharedApplication] delegate] authTokenAvailable]) \
+{ \
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"Error" message:@"Auth token has not yet been received from server, please try again in a few moments." preferredStyle:UIAlertControllerStyleAlert]; \
+    \
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]]; \
+    \
+    [self presentViewController:alertController animated:true completion:nil]; \
+    \
+    return; \
+}
+
 @interface Helper: NSObject
 
 +(NSString *)getPaymentType: (WPYPaymentType)paymentType;
 + (void) constrainView:(UIView *)view toSecondView:(UIView *) secondView;
+
 
 @end
 

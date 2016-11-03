@@ -7,8 +7,6 @@
 //
 
 #import "LabeledTextField.h"
-#import "UIFont+Worldpay.h"
-#import "Helper.h"
 
 @interface LabeledTextField ()
 

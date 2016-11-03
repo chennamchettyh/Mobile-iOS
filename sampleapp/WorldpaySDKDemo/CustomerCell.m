@@ -7,7 +7,6 @@
 //
 
 #import "CustomerCell.h"
-#import "UIFont+Worldpay.h"
 
 #define LABELTEXTSIZE 17
 

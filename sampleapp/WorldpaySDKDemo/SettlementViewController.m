@@ -7,7 +7,6 @@
 //
 
 #import "SettlementViewController.h"
-#import "UIColor+Worldpay.h"
 #import "BatchDetailTableViewController.h"
 
 @interface SettlementViewController ()
@@ -105,6 +104,8 @@
 {
     [self removeFocusFromTextField:nil];
     
+    CHECKAUTHTOKEN();
+    
     if(self.transition)
     {
         return;
@@ -125,6 +126,8 @@
 - (IBAction)closeBatch:(id)sender
 {
     [self removeFocusFromTextField:nil];
+    
+    CHECKAUTHTOKEN();
     
     if(self.transition)
     {

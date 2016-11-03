@@ -179,6 +179,7 @@
 		850C57541DCA53E300B1F6B0 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		850C57551DCA53E300B1F6B0 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		850C57561DCA53E300B1F6B0 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		850C575B1DCBA18500B1F6B0 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		85824BC41DC9175700CD6052 /* LabeledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabeledTextField.h; sourceTree = "<group>"; };
 		85824BC51DC9175700CD6052 /* LabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabeledTextField.m; sourceTree = "<group>"; };
 		85824BCB1DC919AD00CD6052 /* LabeledTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabeledTextField.xib; sourceTree = "<group>"; };
@@ -287,6 +288,7 @@
 		811A0D531BB2F20100B73C09 = {
 			isa = PBXGroup;
 			children = (
+				850C575B1DCBA18500B1F6B0 /* PrefixHeader.pch */,
 				811A0D5E1BB2F20100B73C09 /* WorldpaySDKDemo */,
 				811A0D7B1BB2F20100B73C09 /* WorldpaySDKDemoTests */,
 				811A0D5D1BB2F20100B73C09 /* Products */,
@@ -861,6 +863,7 @@
 					"$(PROJECT_DIR)",
 					../sdk,
 				);
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -887,6 +890,7 @@
 					"$(PROJECT_DIR)",
 					../sdk,
 				);
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = ANYWHERE_NOMAD;
 				INFOPLIST_FILE = "$(SRCROOT)/WorldpaySDKDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -948,6 +952,7 @@
 					"$(PROJECT_DIR)",
 					../sdk,
 				);
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/WorldpaySDKDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
@@ -970,6 +975,7 @@
 					"$(PROJECT_DIR)",
 					../sdk,
 				);
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/WorldpaySDKDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";

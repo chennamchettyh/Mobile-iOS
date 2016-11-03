@@ -7,7 +7,6 @@
 //
 
 #import "DropDownTextField.h"
-#import "UIFont+Worldpay.h"
 
 #define TEXTFIELDSIZE 14
 

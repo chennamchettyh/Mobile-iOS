@@ -7,8 +7,6 @@
 //
 
 #import "ExtendableView.h"
-#import "UIFont+Worldpay.h"
-#import "Helper.h"
 
 #define TITLESIZE 17
 

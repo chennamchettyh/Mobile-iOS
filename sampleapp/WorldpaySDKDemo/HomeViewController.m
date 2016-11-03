@@ -7,7 +7,6 @@
 //
 
 #import "HomeViewController.h"
-#import "UIColor+Worldpay.h"
 
 #define CREDITDEBITINDEX 1
 #define REFUNDVOIDINDEX 2
