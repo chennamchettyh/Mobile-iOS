@@ -130,6 +130,7 @@ typedef NS_ENUM(NSInteger, WPYEMVTransactionType)
 {
     WPYEMVTransactionTypeGoods,
     WPYEMVTransactionTypeCashback,
+    WPYEMVTransactionTypeServices,
     WPYEMVTransactionTypeRefund
 };
 
