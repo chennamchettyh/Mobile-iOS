@@ -28,11 +28,6 @@
     [Helper constrainView:self toSecondView:self.view];
 }
 
--(void)setTextFieldDelegate:(id<UITextFieldDelegate>)delegate
-{
-    self.textField.delegate = delegate;
-}
-
 - (void)setLabelText:(NSString *)string
 {
     self.label.text = string;

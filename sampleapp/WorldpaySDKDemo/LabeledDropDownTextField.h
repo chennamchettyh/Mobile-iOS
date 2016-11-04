@@ -17,7 +17,6 @@
 - (NSDictionary *) selectedValue;
 - (void) setSelectionCallback: (void (^) (NSUInteger)) callback;
 
-- (void) setTextFieldDelegate: (id <UITextFieldDelegate>) delegate;
 - (void) setLabelText: (NSString *) string;
 
 @end

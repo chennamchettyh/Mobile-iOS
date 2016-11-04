@@ -52,6 +52,7 @@
     [self.transactionIdTextField setTextFieldDelegate:self];
     
     [self.amountTextField setLabelText:@"Amount"];
+    [self.amountTextField setKeyboardTypeDecimal];
     [self.amountTextField setTextFieldDelegate:self];
     
     UITapGestureRecognizer *recognizer1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeFocusFromTextField:)];
@@ -230,6 +231,11 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     self.activeTextField = textField;
+    
+    if(textField.keyboardType == UIKeyboardTypeDecimalPad)
+    {
+        textField.text = @"";
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField

@@ -14,5 +14,6 @@
 - (void) setLabelText: (NSString *) string;
 - (NSString *) text;
 - (void) setFieldText: (NSString *) string;
+- (void) setKeyboardTypeDecimal;
 
 @end

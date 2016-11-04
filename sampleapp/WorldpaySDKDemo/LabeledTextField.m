@@ -47,4 +47,9 @@
     self.textField.text = string;
 }
 
+- (void) setKeyboardTypeDecimal
+{
+    self.textField.keyboardType = UIKeyboardTypeDecimalPad;
+}
+
 @end

@@ -99,6 +99,7 @@
     self.swiper = [[WorldpayAPI instance] swiperWithDelegate:self];
     
     [self.amountTextField setTextFieldDelegate:self];
+    [self.amountTextField setKeyboardTypeDecimal];
     [self.amountTextField setLabelText:@"Amount"];
     [self.amountTextField setFieldText:@"10.00"];
     
@@ -597,6 +598,11 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     self.activeTextField = textField;
+    
+    if(textField.keyboardType == UIKeyboardTypeDecimalPad)
+    {
+        textField.text = @"";
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
