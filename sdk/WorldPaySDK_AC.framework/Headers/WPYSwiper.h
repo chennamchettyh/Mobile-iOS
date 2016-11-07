@@ -130,7 +130,6 @@ typedef NS_ENUM(NSInteger, WPYEMVTransactionType)
 {
     WPYEMVTransactionTypeGoods,
     WPYEMVTransactionTypeCashback,
-    WPYEMVTransactionTypeServices,
     WPYEMVTransactionTypeRefund
 };
 
@@ -386,7 +385,14 @@ typedef NS_ENUM(NSInteger, WPYTransactionResult)
  * @param a reference to the error that caused the failure so that it can be properly handled
  */
 - (void) swiper:(WPYSwiper *)swiper didFailRequest:(WPYPaymentRequest *)request withError:(NSError *)error;
-
+/**
+ * This delegate function is called when a signature is required to complete the payment method requested
+ *
+ * @param swiper reference to the object that accepted the card input
+ * @param completion handler used to send signature data back to the SDK. Its parameter is a string of bytes for the
+ *        digitized image and must be called to complete the transaction
+ */
+- (void) swiper:(WPYSwiper *)swiper didRequestSignatureWithCompletion:(void(^)(NSString *))completion;
 @optional
 /**
  * This delegate method is called when the terminal is incapable of presenting the account type selection to the card holder.

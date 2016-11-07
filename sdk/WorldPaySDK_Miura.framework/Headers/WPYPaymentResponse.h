@@ -10,7 +10,7 @@
 
 typedef NS_ENUM(uint8_t, WPYResponseCode)
 {
-    WPYResponseCodeApproved = 0x01,
+    WPYResponseCodeApproved,
     WPYResponseCodeDeclined,
     WPYResponseCodeError
 };
