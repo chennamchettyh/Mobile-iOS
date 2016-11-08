@@ -299,6 +299,8 @@
             request = [WPYPaymentAuthorize new];
     }
     
+    WPYEMVTransactionType transactionType = WPYEMVTransactionTypeGoods;
+    
     request.amount = [NSDecimalNumber decimalNumberWithString:self.amountTextField.text];
     
     WPYExtendedCardData * extendedData = [[WPYExtendedCardData alloc] init];
@@ -345,6 +347,8 @@
         serviceData.server = self.extendedInfoView.serverName.text;
         
         extendedData.serviceData = serviceData;
+        
+        transactionType = WPYEMVTransactionTypeServices;
     }
     
     request.extendedData = extendedData;
@@ -364,7 +368,7 @@
         // Swiper transaction started
         [self startTransactionProgress];
         
-        [self.swiper beginEMVTransactionWithRequest:request transactionType:WPYEMVTransactionTypeGoods];
+        [self.swiper beginEMVTransactionWithRequest:request transactionType:transactionType];
     }
     else if([self.cardPresentSegmented selectedSegmentIndex] == VAULTINDEX)
     {
