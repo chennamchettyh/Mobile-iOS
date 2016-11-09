@@ -62,7 +62,7 @@
     
     WPYCustomerResponseData * customer1 = [WPYCustomerResponseData new];
     
-    customer1.identifier = @"1";
+    //customer1.identifier = @"1"; (identifier has been changed to read only)
     customer1.firstName = @"John";
     customer1.lastName = @"Doe";
     customer1.address = [WPYAddressInfo new];
@@ -121,7 +121,7 @@
     
     WPYCustomerResponseData * customer2 = [WPYCustomerResponseData new];
     
-    customer2.identifier = @"2";
+    //customer2.identifier = @"2"; (identifier has been changed to read only)
     customer2.firstName = @"Jane";
     customer2.lastName = @"Doe";
     customer2.address = [WPYAddressInfo new];

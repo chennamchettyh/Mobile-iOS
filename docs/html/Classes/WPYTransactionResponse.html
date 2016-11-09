@@ -76,6 +76,8 @@
 		
 		<option value="//api/name/gratuityAmount">gratuityAmount</option>
 		
+		<option value="//api/name/levelTwoData">levelTwoData</option>
+		
 		<option value="//api/name/paymentType">paymentType</option>
 		
 		<option value="//api/name/responseText">responseText</option>
@@ -153,7 +155,7 @@ to the server</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *customerId</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *customerId</code></div>
 
 		    
 			
@@ -199,7 +201,7 @@ to the server</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSDate *date</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDate *date</code></div>
 
 		    
 			
@@ -245,7 +247,7 @@ to the server</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *authorizationCode</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *authorizationCode</code></div>
 
 		    
 			
@@ -291,7 +293,7 @@ to the server</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSDecimalNumber *amount</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDecimalNumber *amount</code></div>
 
 		    
 			
@@ -337,7 +339,7 @@ to the server</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSDecimalNumber *gratuityAmount</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDecimalNumber *gratuityAmount</code></div>
 
 		    
 			
@@ -383,7 +385,7 @@ to the server</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) WPYCardTransactionData *card</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) WPYCardTransactionData *card</code></div>
 
 		    
 			
@@ -429,7 +431,7 @@ to the server</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) WPYCheckTransactionData *check</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) WPYCheckTransactionData *check</code></div>
 
 		    
 			
@@ -475,7 +477,7 @@ to the server</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) WPYAddressInfo *billAddress</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) WPYAddressInfo *billAddress</code></div>
 
 		    
 			
@@ -567,7 +569,7 @@ to the server</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property WPYPaymentType paymentType</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) WPYPaymentType paymentType</code></div>
 
 		    
 			
@@ -660,7 +662,7 @@ This will be displayed on the terminal, when possible (See <a href="../Classes/W
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *responseText</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *responseText</code></div>
 
 		    
 			
@@ -707,7 +709,7 @@ This will be displayed on the terminal, when possible (See <a href="../Classes/W
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, getter=getTransactionId) NSString *transactionId</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=getTransactionId) NSString *transactionId</code></div>
 
 		    
 			
@@ -720,6 +722,52 @@ This will be displayed on the terminal, when possible (See <a href="../Classes/W
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>A convenience method to get the WPYTransactionResponse.identifier associated with the transaction</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WPYTransactionResponse.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/levelTwoData" title="levelTwoData"></a>
+	<h3 class="method-title"><code><a href="#//api/name/levelTwoData">&nbsp;&nbsp;levelTwoData</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This optional parameter contains data that the merchant wishes to pass up to the payment gateway for that specific transaction</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) WPYLevelTwoData *levelTwoData</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This optional parameter contains data that the merchant wishes to pass up to the payment gateway for that specific transaction</p>
 			</div>
 			
 
@@ -751,7 +799,7 @@ This will be displayed on the terminal, when possible (See <a href="../Classes/W
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Worldpay. All rights reserved. Updated: 2016-11-04</p>
+						<p class="copyright">Copyright &copy; 2016 Worldpay. All rights reserved. Updated: 2016-11-09</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

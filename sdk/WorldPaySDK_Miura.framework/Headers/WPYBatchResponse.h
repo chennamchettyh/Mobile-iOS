@@ -17,6 +17,6 @@
 /**
  * A convenience method to get the WPYBatchResponse.identifier associated with the transaction
  */
-@property (nonatomic, getter=getBatchId) NSString *batchId;
-@property (nonatomic, strong) NSArray <WPYTransactionResponse *> *transactions;
+@property (nonatomic, readonly, getter=getBatchId) NSString *batchId;
+@property (nonatomic, readonly, strong) NSArray <WPYTransactionResponse *> *transactions;
 @end

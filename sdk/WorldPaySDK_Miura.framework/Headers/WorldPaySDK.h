@@ -41,6 +41,7 @@
 #import "WPYEMVData.h"
 #import "WPYReceiptObject.h"
 #import "WPYTransactionSearch.h"
+#import "WPYTransactionSearchResponse.h"
 
 //! Project version number for WorldpaySDK.
 FOUNDATION_EXPORT double WorldpaySDKVersionNumber;

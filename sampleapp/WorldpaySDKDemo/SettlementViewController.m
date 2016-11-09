@@ -57,9 +57,9 @@
 
 - (void) showTransactionsInBatch:(NSString *) batchId
 {
-    [[WorldpayAPI instance] getTransactionsInBatch:batchId withCompletion:^(NSArray<WPYTransactionResponse *> * transactions, NSError * error)
+    [[WorldpayAPI instance] getTransactionsInBatch:batchId withCompletion:^(WPYBatchResponse * response, NSError * error)
     {
-        [self displayBatchAlertWithId:batchId transactions:transactions error:error];
+        [self displayBatchAlertWithId:response.identifier transactions:response.transactions error:error];
     }];
 }
 

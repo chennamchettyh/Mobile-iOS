@@ -120,8 +120,6 @@
 		
 		<option value="//api/name/swiperWithDelegate:">- swiperWithDelegate:</option>
 		
-		<option value="//api/name/updateCustomer:withCompletion:">- updateCustomer:withCompletion:</option>
-		
 		<option value="//api/name/updateCustomer:withData:andCompletion:">- updateCustomer:withData:andCompletion:</option>
 		
 		<option value="//api/name/updateGiftCard:withCompletion:">- updateGiftCard:withCompletion:</option>
@@ -166,7 +164,7 @@
 						
 
 						
-						<h2 class="task-title">Other Methods</h2>
+						
 
 						<div class="task-list">
 							<div class="section-method">
@@ -880,8 +878,8 @@ to make calls to the web APIs after this is executed</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/updateCustomer:withCompletion:" title="updateCustomer:withCompletion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/updateCustomer:withCompletion:">&ndash;&nbsp;updateCustomer:withCompletion:</a></code>
+	<a name="//api/name/updateCustomer:withData:andCompletion:" title="updateCustomer:withData:andCompletion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateCustomer:withData:andCompletion:">&ndash;&nbsp;updateCustomer:withData:andCompletion:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -896,13 +894,18 @@ to make calls to the web APIs after this is executed</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)updateCustomer:(WPYCustomerRequestData *)<em>customerData</em> withCompletion:(void ( ^ ) ( WPYCustomerResponseData *, NSError *))<em>completion</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)updateCustomer:(NSString *)<em>customerId</em> withData:(WPYCustomerRequestData *)<em>customerData</em> andCompletion:(void ( ^ ) ( WPYCustomerResponseData *, NSError *))<em>completion</em></code></div>
 
 		    
 			
 			<div class="method-subsection arguments-section parameters">
 				<h4 class="method-subtitle parameter-title">Parameters</h4>
 				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>customerId</code></th>
+						<td><p>corresponding to the customer being updated</p></td>
+					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>completion</code></th>
@@ -1848,7 +1851,7 @@ to make calls to the web APIs after this is executed</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)searchTransactions:(WPYTransactionSearch *)<em>searchParams</em> withCompletion:(void ( ^ ) ( NSArray&lt;WPYTransactionResponse*&gt; *, NSError *))<em>completion</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)searchTransactions:(WPYTransactionSearch *)<em>searchParams</em> withCompletion:(void ( ^ ) ( WPYTransactionSearchResponse *, NSError *))<em>completion</em></code></div>
 
 		    
 			
@@ -1911,7 +1914,7 @@ to make calls to the web APIs after this is executed</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)getTransactionsInBatch:(NSString *)<em>batchId</em> withCompletion:(void ( ^ ) ( NSArray&lt;WPYTransactionResponse*&gt; *, NSError *))<em>completion</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)getTransactionsInBatch:(NSString *)<em>batchId</em> withCompletion:(void ( ^ ) ( WPYBatchResponse *, NSError *))<em>completion</em></code></div>
 
 		    
 			
@@ -1960,82 +1963,6 @@ to make calls to the web APIs after this is executed</p>
 </div>
 						</div>
 						
-
-						
-						<h2 class="task-title">Other Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/updateCustomer:withData:andCompletion:" title="updateCustomer:withData:andCompletion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/updateCustomer:withData:andCompletion:">&ndash;&nbsp;updateCustomer:withData:andCompletion:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Updates an existing customer on the server</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)updateCustomer:(NSString *)<em>customerId</em> withData:(WPYCustomerRequestData *)<em>customerData</em> andCompletion:(void ( ^ ) ( WPYCustomerResponseData *, NSError *))<em>completion</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>customerId</code></th>
-						<td><p>corresponding to the customer being updated</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>the</code></th>
-						<td><p>customer data that should be updated</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Updates an existing customer on the server</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">WorldPayAPI.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
 					</div>
 					
 					
@@ -2048,7 +1975,7 @@ to make calls to the web APIs after this is executed</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Worldpay. All rights reserved. Updated: 2016-11-04</p>
+						<p class="copyright">Copyright &copy; 2016 Worldpay. All rights reserved. Updated: 2016-11-09</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

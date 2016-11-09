@@ -27,6 +27,7 @@
 @class WPYGiftCardResponse;
 @class WPYPaymentResponse;
 @class WPYTransactionSearch;
+@class WPYTransactionSearchResponse;
 
 extern NSString *const WorldpaySDKErrorDomain;
 
@@ -279,7 +280,7 @@ extern NSString *const WorldpayServerErrorDomain;
  * @param search parameters include the start and end date for the search
  * @param completion handler used to notify the caller of any server results or errors
  */
-- (void)searchTransactions:(WPYTransactionSearch *)searchParams withCompletion:(void(^)(NSArray<WPYTransactionResponse *> *, NSError *))completion;
+- (void)searchTransactions:(WPYTransactionSearch *)searchParams withCompletion:(void(^)(WPYTransactionSearchResponse *, NSError *))completion;
 
 /**
  * Get transactions in the current batch
@@ -287,7 +288,7 @@ extern NSString *const WorldpayServerErrorDomain;
  * @param batch identifier for transactions
  * @param completion handler used to notify the caller of any server results or errors
  */
-- (void)getTransactionsInBatch:(NSString *)batchId withCompletion:(void(^)(NSArray<WPYTransactionResponse *> *, NSError *))completion;
+- (void)getTransactionsInBatch:(NSString *)batchId withCompletion:(void(^)(WPYBatchResponse *, NSError *))completion;
 @end
 
 @protocol WPYDebugDelegate <NSObject>

@@ -56,6 +56,14 @@
 		
 		<option value="//api/name/identifier">identifier</option>
 		
+		<option value="//api/name/responseCode">responseCode</option>
+		
+		<option value="//api/name/responseMessage">responseMessage</option>
+		
+		<option value="//api/name/result">result</option>
+		
+		<option value="//api/name/success">success</option>
+		
 	</optgroup>
 	
 
@@ -122,7 +130,7 @@ contains the id returned by the server for any object returned by the server</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *identifier</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *identifier</code></div>
 
 		    
 			
@@ -136,6 +144,190 @@ contains the id returned by the server for any object returned by the server</p>
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>The server returns object ID&rsquo;s as &ldquo;id&rdquo;, which is a protected word in Objective-C.  This property
 contains the id returned by the server for any object returned by the server</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WPYDomainObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/responseCode" title="responseCode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/responseCode">&nbsp;&nbsp;responseCode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Gateway response code for the current request</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) WPYResponseCode responseCode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Gateway response code for the current request</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WPYDomainObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/responseMessage" title="responseMessage"></a>
+	<h3 class="method-title"><code><a href="#//api/name/responseMessage">&nbsp;&nbsp;responseMessage</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Response Message containing a detailed message for the merchant, such as why a transaction was declined</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *responseMessage</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Response Message containing a detailed message for the merchant, such as why a transaction was declined</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WPYDomainObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/success" title="success"></a>
+	<h3 class="method-title"><code><a href="#//api/name/success">&nbsp;&nbsp;success</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Indicates whether or not the current request was successfully processed</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL success</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Indicates whether or not the current request was successfully processed</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WPYDomainObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/result" title="result"></a>
+	<h3 class="method-title"><code><a href="#//api/name/result">&nbsp;&nbsp;result</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Short message indicating the result of processing. Suitable to display to the card holder</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *result</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Short message indicating the result of processing. Suitable to display to the card holder</p>
 			</div>
 			
 
@@ -167,7 +359,7 @@ contains the id returned by the server for any object returned by the server</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Worldpay. All rights reserved. Updated: 2016-11-04</p>
+						<p class="copyright">Copyright &copy; 2016 Worldpay. All rights reserved. Updated: 2016-11-09</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
