@@ -16,6 +16,6 @@
 
 @interface BatchDetailTableViewController : UITableViewController
 
-- (instancetype)initWithTransactions:(NSArray<WPYTransactionResponse *> *) transactions batchId: (NSString *) batchId;
+- (instancetype)initWithTransactions:(NSArray<WPYTransaction *> *) transactions batchId: (NSString *) batchId;
 
 @end

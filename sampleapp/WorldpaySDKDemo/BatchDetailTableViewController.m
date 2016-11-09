@@ -14,13 +14,13 @@
 
 @interface BatchDetailTableViewController ()
 
-@property (strong, nonatomic) NSArray<WPYTransactionResponse *> * transactions;
+@property (strong, nonatomic) NSArray<WPYTransaction *> * transactions;
 
 @end
 
 @implementation BatchDetailTableViewController
 
-- (instancetype)initWithTransactions:(NSArray<WPYTransactionResponse *> *) transactions batchId: (NSString *) batchId
+- (instancetype)initWithTransactions:(NSArray<WPYTransaction *> *) transactions batchId: (NSString *) batchId
 {
     if((self = [super initWithStyle:UITableViewStylePlain]))
     {
@@ -57,7 +57,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    WPYTransactionResponse * transaction = [self.transactions objectAtIndex:(NSUInteger)indexPath.row];
+    WPYTransaction * transaction = [self.transactions objectAtIndex:(NSUInteger)indexPath.row];
     
     BatchTransactionTableViewCell * cell = [[BatchTransactionTableViewCell alloc] initWithTransaction:transaction];
     
@@ -71,7 +71,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    WPYTransactionResponse * transaction = [self.transactions objectAtIndex:(NSUInteger)indexPath.row];
+    WPYTransaction * transaction = [self.transactions objectAtIndex:(NSUInteger)indexPath.row];
     TransactionDetailViewController * detailVC = [[TransactionDetailViewController alloc] initWithNibName:nil bundle:nil];
     detailVC.transactionResponse = transaction;
     

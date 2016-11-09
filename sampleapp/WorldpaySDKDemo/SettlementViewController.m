@@ -71,7 +71,7 @@
     }];
 }
 
-- (void) displayBatchAlertWithId: (NSString *) batchId transactions: (NSArray<WPYTransactionResponse *> *) transactions error: (NSError *) error
+- (void) displayBatchAlertWithId: (NSString *) batchId transactions: (NSArray<WPYTransaction *> *) transactions error: (NSError *) error
 {
     if(error != nil)
     {

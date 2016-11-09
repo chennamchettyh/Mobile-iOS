@@ -7,8 +7,8 @@
 
 #import "WPYDomainObject.h"
 
-@class WPYTransactionResponse;
+@class WPYTransaction;
 
 @interface WPYTransactionSearchResponse : WPYDomainObject
-@property (nonatomic, readonly) NSArray <WPYTransactionResponse *> *transactions;
+@property (nonatomic, readonly) NSArray <WPYTransaction *> *transactions;
 @end

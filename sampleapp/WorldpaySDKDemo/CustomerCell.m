@@ -50,7 +50,7 @@
     // Configure the view for the selected state
 }
 
--(void)assignValues: (WPYTransactionResponse *)response
+-(void)assignValues: (WPYTransaction *)response
 {
     
     self.customerIdValue.text = response.customerId;

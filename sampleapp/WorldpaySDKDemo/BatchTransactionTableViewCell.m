@@ -10,14 +10,14 @@
 
 @interface BatchTransactionTableViewCell ()
 
-@property (strong, nonatomic) WPYTransactionResponse * transaction;
+@property (strong, nonatomic) WPYTransaction * transaction;
 @property (weak, nonatomic) IBOutlet UILabel *transactionIdLabel;
 
 @end
 
 @implementation BatchTransactionTableViewCell
 
--(instancetype)initWithTransaction: (WPYTransactionResponse *) transaction
+-(instancetype)initWithTransaction: (WPYTransaction *) transaction
 {
     NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"BatchTransactionTableViewCell" owner:self options:nil];
     

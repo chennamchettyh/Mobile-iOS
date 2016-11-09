@@ -16,6 +16,6 @@
 
 @interface TransactionDetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) WPYTransactionResponse * transactionResponse;
+@property (strong, nonatomic) WPYTransaction * transactionResponse;
 
 @end

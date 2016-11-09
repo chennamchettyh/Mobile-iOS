@@ -140,6 +140,7 @@ typedef NS_ENUM(NSInteger, WPYEMVTransactionType)
  */
 typedef NS_ENUM(NSInteger, WPYTransactionResult)
 {
+    WPYTransactionResultNotSet,
     WPYTransactionResultApproved,
     WPYTransactionResultTerminated,
     WPYTransactionResultDeclined,

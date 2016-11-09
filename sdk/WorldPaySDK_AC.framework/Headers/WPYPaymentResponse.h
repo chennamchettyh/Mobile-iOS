@@ -9,7 +9,7 @@
 #import "WPYSwiper.h"
 
 @class WPYEMVData;
-@class WPYTransactionResponse;
+@class WPYTransaction;
 @class WPYReceiptObject;
 
 /**
@@ -19,7 +19,7 @@
 /**
  * This object contains the transaction data from the server
  */
-@property (nonatomic, readonly) WPYTransactionResponse *transaction;
+@property (nonatomic, readonly) WPYTransaction *transaction;
 /**
  * This object contains information to help create a proper receipt. See Worldpay's receipt
  * guide for more information

@@ -16,6 +16,6 @@
 
 @interface BatchTransactionTableViewCell : UITableViewCell
 
--(instancetype)initWithTransaction: (WPYTransactionResponse *) transaction;
+-(instancetype)initWithTransaction: (WPYTransaction *) transaction;
 
 @end

@@ -53,7 +53,7 @@
     // Configure the view for the selected state
 }
 
--(void)assignValues: (WPYTransactionResponse *)response
+-(void)assignValues: (WPYTransaction *)response
 {
     self.cardNumberValue.text = response.card.number;
     self.firstNameValue.text = response.card.firstName;
