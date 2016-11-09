@@ -385,11 +385,11 @@
             {
                 [[WorldpayAPI instance] paymentAuthorize:(WPYPaymentAuthorize *)request withCompletion:^(WPYPaymentResponse * response, NSError * error)
                 {
-                    if(error)
+                    if(response.responseCode == WPYResponseCodeError || error)
                     {
                         NSLog(@"Error: %@",error);
                         
-                        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Transaction failed with an error." preferredStyle:UIAlertControllerStyleAlert];
+                        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:[NSString stringWithFormat:@"Transaction failed with an error.%@", (response.responseMessage.length > 0 ? [NSString stringWithFormat: @"\n\nMessage: %@", response.responseMessage] : @"")] preferredStyle:UIAlertControllerStyleAlert];
                         
                         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
                         
@@ -406,14 +406,14 @@
             {
                 [[WorldpayAPI instance] paymentCharge:(WPYPaymentCharge *)request withCompletion:^(WPYPaymentResponse * response, NSError * error)
                 {
-                    if(error)
+                    if(response.responseCode == WPYResponseCodeError || error)
                     {
                         NSLog(@"Error: %@",error);
-                         
-                        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Transaction failed with an error." preferredStyle:UIAlertControllerStyleAlert];
-                         
+                        
+                        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:[NSString stringWithFormat:@"Transaction failed with an error.%@", (response.responseMessage.length > 0 ? [NSString stringWithFormat: @"\n\nMessage: %@", response.responseMessage] : @"")] preferredStyle:UIAlertControllerStyleAlert];
+                        
                         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
-                         
+                        
                         [self presentViewController:alert animated:true completion:nil];
                     }
                     else
@@ -427,17 +427,16 @@
             {
                 [[WorldpayAPI instance] paymentCredit:(WPYPaymentCredit *)request withCompletion:^(WPYPaymentResponse * response, NSError * error)
                 {
-                    if(error)
+                    if(response.responseCode == WPYResponseCodeError || error)
                     {
                         NSLog(@"Error: %@",error);
-                         
-                        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Transaction failed with an error." preferredStyle:UIAlertControllerStyleAlert];
-                         
+                        
+                        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:[NSString stringWithFormat:@"Transaction failed with an error.%@", (response.responseMessage.length > 0 ? [NSString stringWithFormat: @"\n\nMessage: %@", response.responseMessage] : @"")] preferredStyle:UIAlertControllerStyleAlert];
+                        
                         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
-                         
+                        
                         [self presentViewController:alert animated:true completion:nil];
                     }
-                    else
                     {
                         [self swiper:self.swiper didFinishTransactionWithResponse:response];
                     }
@@ -448,14 +447,14 @@
             {
                 [[WorldpayAPI instance] paymentAuthorize:(WPYPaymentAuthorize *)request withCompletion:^(WPYPaymentResponse * response, NSError * error)
                 {
-                    if(error)
+                    if(response.responseCode == WPYResponseCodeError || error)
                     {
                         NSLog(@"Error: %@",error);
-                         
-                        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Transaction failed with an error." preferredStyle:UIAlertControllerStyleAlert];
-                         
+                        
+                        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:[NSString stringWithFormat:@"Transaction failed with an error.%@", (response.responseMessage.length > 0 ? [NSString stringWithFormat: @"\n\nMessage: %@", response.responseMessage] : @"")] preferredStyle:UIAlertControllerStyleAlert];
+                        
                         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
-                         
+                        
                         [self presentViewController:alert animated:true completion:nil];
                     }
                     else

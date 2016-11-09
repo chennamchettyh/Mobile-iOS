@@ -147,11 +147,11 @@
 
 - (void) handleResponse: (WPYPaymentResponse *) response withError: (NSError *) error
 {
-    if(error != nil)
+    if(response.responseCode == WPYResponseCodeError || error != nil)
     {
         NSLog(@"%@", error);
         
-        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"An error occurred." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:[NSString stringWithFormat:@"An error occurred.%@", (response.responseMessage.length > 0? [NSString stringWithFormat:@"\n\nMessage: %@", response.responseMessage]: @"")] preferredStyle:UIAlertControllerStyleAlert];
         
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
         
