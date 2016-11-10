@@ -52,7 +52,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, atomic) UIAlertController * swiperAlert;
 @property (weak, nonatomic) UITextField * activeTextField;
-@property (strong, nonatomic) WPYTransactionResponse * lastResponse;
+@property (strong, nonatomic) WPYTransaction * lastResponse;
 @property (assign, atomic) BOOL transition;
 @property (strong, nonatomic) IBOutletCollection(NSLayoutConstraint) NSArray *addToVaultConstraints;
 @property (assign, atomic) BOOL transactionInProgress;
@@ -671,7 +671,7 @@
     
     NSString *transactionStatus;
     
-    BOOL approved = response.result == WPYTransactionResultApproved;
+    BOOL approved = response.responseCode == WPYResponseCodeApproved;
     
     NSString * signatureNeeded = @"";
     
