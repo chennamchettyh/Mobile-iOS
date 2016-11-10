@@ -148,7 +148,7 @@
         }
         else if([response.identifier isEqualToString:@"0"])
         {
-            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Batch could not be successfully closed." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"No transactions in current batch." preferredStyle:UIAlertControllerStyleAlert];
             
             [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
             
