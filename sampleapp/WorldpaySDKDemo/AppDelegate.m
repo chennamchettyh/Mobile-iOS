@@ -8,7 +8,7 @@
 #import "AppDelegate.h"
 #import "TransactionViewController.h"
 #import "Index.h"
-#import "VoidRefundViewController.h"
+#import "RefundVoidViewController.h"
 #import "SettlementViewController.h"
 #import "VaultViewController.h"
 #import "HomeViewController.h"
@@ -89,10 +89,10 @@
     UINavigationController * transactionNav = [[UINavigationController alloc] initWithRootViewController: transactionViewController];
     transactionNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[transactionNav viewControllers] firstObject]) title] image:[self imageWithImage:[UIImage imageNamed:@"credit_card_icon"]] tag:[index current]];
     
-    // 3rd tab for Transactions (Void/Refund)
-    VoidRefundViewController * voidRefundViewController = [[VoidRefundViewController alloc] initWithNibName:nil bundle:nil];
-    UINavigationController * voidRefundNav = [[UINavigationController alloc] initWithRootViewController: voidRefundViewController];
-    voidRefundNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[voidRefundNav viewControllers] firstObject]) title] image:[self imageWithImage:[UIImage imageNamed:@"refund_void_icon"]] tag:[index current]];
+    // 3rd tab for Transactions (Refund/Void)
+    RefundVoidViewController * refundVoidViewController = [[RefundVoidViewController alloc] initWithNibName:nil bundle:nil];
+    UINavigationController * refundVoidNav = [[UINavigationController alloc] initWithRootViewController: refundVoidViewController];
+    refundVoidNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[refundVoidNav viewControllers] firstObject]) title] image:[self imageWithImage:[UIImage imageNamed:@"refund_void_icon"]] tag:[index current]];
     
     // 4th tab for Settlement
     SettlementViewController * settlementViewController = [[SettlementViewController alloc] initWithNibName:nil bundle:nil];
@@ -104,7 +104,7 @@
     UINavigationController * vaultNav = [[UINavigationController alloc] initWithRootViewController: vaultViewController];
     vaultNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[vaultNav viewControllers] firstObject]) title] image:nil tag:[index current]];
     
-    tabController.viewControllers = @[homeNav, transactionNav, voidRefundNav, settlementNav];
+    tabController.viewControllers = @[homeNav, transactionNav, refundVoidNav, settlementNav];
     
     return YES;
 }
