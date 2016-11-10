@@ -16,6 +16,6 @@
 
 @interface TransactionDetailCell : UITableViewCell
 
--(void)assignValues: (WPYTransactionResponse *)response;
+-(void)assignValues: (WPYTransaction *)response;
 
 @end

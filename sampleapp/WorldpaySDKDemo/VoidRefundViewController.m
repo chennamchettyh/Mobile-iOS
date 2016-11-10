@@ -12,8 +12,8 @@
 #import "LabeledDropDownTextField.h"
 #import "LabeledTextField.h"
 
-#define VOIDINDEX 0
-#define REFUNDINDEX 1
+#define VOIDINDEX 1
+#define REFUNDINDEX 0
 
 @interface VoidRefundViewController ()
 
@@ -127,7 +127,7 @@
             [self handleResponse:response withError:error];
         }];
     }
-    else
+    else if([self.transactionTypeDropDown selectedIndex] == REFUNDINDEX)
     {
         request = [WPYPaymentRefund new];
         
@@ -208,7 +208,7 @@
     }
 }
 
-- (void) showTransactionDetails:(WPYTransactionResponse *) response
+- (void) showTransactionDetails:(WPYTransaction *) response
 {
     TransactionDetailViewController * detailController = [[TransactionDetailViewController alloc] initWithNibName:nil bundle:nil];
     
