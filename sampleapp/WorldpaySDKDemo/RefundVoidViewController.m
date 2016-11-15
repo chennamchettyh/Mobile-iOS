@@ -165,23 +165,42 @@
         
         NSLog(@"Response: %@", [response jsonDictionary]);
         
-        switch (response.resultCode)
+        if(response.resultCode != WPYTransactionResultNotSet)
         {
-            case WPYTransactionResultApproved:
-                transactionStatus = @"Approved";
-                break;
-            case WPYTransactionResultDeclined:
-                transactionStatus = @"Declined";
-                break;
-            case WPYTransactionResultTerminated:
-                transactionStatus = @"Terminated";
-                break;
-            case WPYTransactionResultCardBlocked:
-                transactionStatus = @"Card Blocked";
-                break;
-            default:
-                transactionStatus = @"Other - see logs";
-                break;
+            switch (response.resultCode)
+            {
+                case WPYTransactionResultApproved:
+                    transactionStatus = @"Approved";
+                    break;
+                case WPYTransactionResultDeclined:
+                    transactionStatus = @"Declined";
+                    break;
+                case WPYTransactionResultTerminated:
+                    transactionStatus = @"Terminated";
+                    break;
+                case WPYTransactionResultCardBlocked:
+                    transactionStatus = @"Card Blocked";
+                    break;
+                default:
+                    transactionStatus = @"Other - see logs";
+            }
+        }
+        else
+        {
+            switch (response.responseCode)
+            {
+                case WPYResponseCodeApproved:
+                    transactionStatus = @"Approved";
+                    break;
+                case WPYResponseCodeDeclined:
+                    transactionStatus = @"Declined";
+                    break;
+                case WPYResponseCodeError:
+                    transactionStatus = @"Error";
+                    break;
+                default:
+                    transactionStatus = @"Other - see logs";
+            }
         }
         
         if(response.transaction != nil)
