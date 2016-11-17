@@ -16,4 +16,7 @@
 
 @interface CustomerViewController : UIViewController
 
+- (void) setRESTMode: (RESTMode) mode;
+- (BOOL) setEditableCustomer: (WPYCustomerRequestData *) customer;
+
 @end

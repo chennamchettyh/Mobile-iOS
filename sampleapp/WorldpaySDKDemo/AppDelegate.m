@@ -104,7 +104,7 @@
     UINavigationController * vaultNav = [[UINavigationController alloc] initWithRootViewController: vaultViewController];
     vaultNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[vaultNav viewControllers] firstObject]) title] image:nil tag:[index current]];
     
-    tabController.viewControllers = @[homeNav, transactionNav, refundVoidNav, settlementNav];
+    tabController.viewControllers = @[homeNav, transactionNav, refundVoidNav, settlementNav, vaultNav];
     
     return YES;
 }

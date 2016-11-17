@@ -52,6 +52,10 @@
 		85A5A98B1DB939390000513B /* WorldPaySDK_AC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 85A5A9891DB939390000513B /* WorldPaySDK_AC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		85A5A98E1DB939530000513B /* WorldPaySDK_Miura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85A5A98D1DB939530000513B /* WorldPaySDK_Miura.framework */; };
 		85A5A98F1DB939530000513B /* WorldPaySDK_Miura.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 85A5A98D1DB939530000513B /* WorldPaySDK_Miura.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		85E7B8CD1DDE39F00075B78B /* CustomerPaymentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E7B8CB1DDE39F00075B78B /* CustomerPaymentDetailViewController.m */; };
+		85E7B8CE1DDE39F00075B78B /* CustomerPaymentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E7B8CB1DDE39F00075B78B /* CustomerPaymentDetailViewController.m */; };
+		85E7B8CF1DDE39F00075B78B /* CustomerPaymentDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E7B8CC1DDE39F00075B78B /* CustomerPaymentDetailViewController.xib */; };
+		85E7B8D01DDE39F00075B78B /* CustomerPaymentDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E7B8CC1DDE39F00075B78B /* CustomerPaymentDetailViewController.xib */; };
 		8908E7441DA5536A00EBF673 /* TransactionDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908E7421DA5536A00EBF673 /* TransactionDetailCell.m */; };
 		8908E7451DA5536A00EBF673 /* TransactionDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8908E7431DA5536A00EBF673 /* TransactionDetailCell.xib */; };
 		8908E7491DA6E57B00EBF673 /* CardDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908E7471DA6E57B00EBF673 /* CardDataCell.m */; };
@@ -203,6 +207,9 @@
 		859D8EB01DB01D9E006BD88E /* CustomerPaymentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomerPaymentViewController.xib; sourceTree = "<group>"; };
 		85A5A9891DB939390000513B /* WorldPaySDK_AC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WorldPaySDK_AC.framework; path = ../../sdk/WorldPaySDK_AC.framework; sourceTree = "<group>"; };
 		85A5A98D1DB939530000513B /* WorldPaySDK_Miura.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WorldPaySDK_Miura.framework; path = ../../sdk/WorldPaySDK_Miura.framework; sourceTree = "<group>"; };
+		85E7B8CA1DDE39F00075B78B /* CustomerPaymentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerPaymentDetailViewController.h; sourceTree = "<group>"; };
+		85E7B8CB1DDE39F00075B78B /* CustomerPaymentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerPaymentDetailViewController.m; sourceTree = "<group>"; };
+		85E7B8CC1DDE39F00075B78B /* CustomerPaymentDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomerPaymentDetailViewController.xib; sourceTree = "<group>"; };
 		8908E7411DA5536A00EBF673 /* TransactionDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionDetailCell.h; sourceTree = "<group>"; };
 		8908E7421DA5536A00EBF673 /* TransactionDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionDetailCell.m; sourceTree = "<group>"; };
 		8908E7431DA5536A00EBF673 /* TransactionDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionDetailCell.xib; sourceTree = "<group>"; };
@@ -422,6 +429,9 @@
 				850C57541DCA53E300B1F6B0 /* HomeViewController.h */,
 				850C57551DCA53E300B1F6B0 /* HomeViewController.m */,
 				850C57561DCA53E300B1F6B0 /* HomeViewController.xib */,
+				85E7B8CA1DDE39F00075B78B /* CustomerPaymentDetailViewController.h */,
+				85E7B8CB1DDE39F00075B78B /* CustomerPaymentDetailViewController.m */,
+				85E7B8CC1DDE39F00075B78B /* CustomerPaymentDetailViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -607,6 +617,7 @@
 				859D8EB31DB01D9E006BD88E /* CustomerPaymentViewController.xib in Resources */,
 				850C575A1DCA53E300B1F6B0 /* HomeViewController.xib in Resources */,
 				8C068D011DA4146E00578C9D /* Main.storyboard in Resources */,
+				85E7B8D01DDE39F00075B78B /* CustomerPaymentDetailViewController.xib in Resources */,
 				896A6EDF1DAC267800FD8F77 /* SignatureViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -646,6 +657,7 @@
 				859D8EB41DB01D9E006BD88E /* CustomerPaymentViewController.xib in Resources */,
 				850C57591DCA53E300B1F6B0 /* HomeViewController.xib in Resources */,
 				896A6ED61DAC096900FD8F77 /* CustomerCell.xib in Resources */,
+				85E7B8CF1DDE39F00075B78B /* CustomerPaymentDetailViewController.xib in Resources */,
 				896A6EE01DAC267800FD8F77 /* SignatureViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -669,6 +681,7 @@
 				859D8EB11DB01D9E006BD88E /* CustomerPaymentViewController.m in Sources */,
 				89D200051DAEB6DC0090C9AE /* SettlementViewController.m in Sources */,
 				896A6EDC1DAC265500FD8F77 /* SignatureViewController.m in Sources */,
+				85E7B8CE1DDE39F00075B78B /* CustomerPaymentDetailViewController.m in Sources */,
 				811A0D621BB2F20100B73C09 /* main.m in Sources */,
 				8908E7491DA6E57B00EBF673 /* CardDataCell.m in Sources */,
 				8CAE8A8A1DA6B5EE006DBC36 /* ExtendableView.m in Sources */,
@@ -713,6 +726,7 @@
 				859D8EB21DB01D9E006BD88E /* CustomerPaymentViewController.m in Sources */,
 				89D200061DAEB6DC0090C9AE /* SettlementViewController.m in Sources */,
 				896A6EDD1DAC265500FD8F77 /* SignatureViewController.m in Sources */,
+				85E7B8CD1DDE39F00075B78B /* CustomerPaymentDetailViewController.m in Sources */,
 				8CAE8A8B1DA6B5EE006DBC36 /* ExtendableView.m in Sources */,
 				8CAE8A7F1DA69ED0006DBC36 /* UIColor+Worldpay.m in Sources */,
 				8CDEB6C41DA8105100F81B63 /* ExtendedInformationView.m in Sources */,

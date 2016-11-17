@@ -65,8 +65,7 @@
         [self removeFocusFromTextField:nil];
     }];
     
-    self.startButton.backgroundColor = [UIColor worldpayEmerald];
-    [self.startButton setTitleColor:[UIColor worldpayWhite] forState:UIControlStateNormal];
+    [Helper styleButtonPrimary:self.startButton];
 }
 
 - (void)didReceiveMemoryWarning

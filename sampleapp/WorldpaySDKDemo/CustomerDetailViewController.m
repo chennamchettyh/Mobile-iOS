@@ -18,6 +18,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.title = @"Customer Details";
+    
+    // TODO: Start with logic from customer list view controller to finish off this screen
 }
 
 - (void)didReceiveMemoryWarning
