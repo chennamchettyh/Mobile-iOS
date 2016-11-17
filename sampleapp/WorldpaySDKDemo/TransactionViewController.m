@@ -338,6 +338,13 @@
         extendedData.levelTwoData = level2;
     }
     
+    WPYTenderServiceData * serviceData = [[WPYTenderServiceData alloc] init];
+    
+    serviceData.gratuityAmount = [NSDecimalNumber decimalNumberWithString:@"1.00"];
+    serviceData.server = self.extendedInfoView.serverName.text;
+    
+    extendedData.serviceData = serviceData;
+    
     if(self.extendedInfoView.gratuityAmount.text.doubleValue > 0 || ![self.extendedInfoView.serverName.text  isEqualToString: @""])
     {
         WPYTenderServiceData * serviceData = [[WPYTenderServiceData alloc] init];

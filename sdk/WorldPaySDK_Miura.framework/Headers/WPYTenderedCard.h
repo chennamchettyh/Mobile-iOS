@@ -87,7 +87,7 @@ typedef NS_ENUM(NSInteger, WPYCardSource)
 /**
  * This property indicates what the source type of the card is - debit, msr, emv, etc
  */
-@property WPYCardSource sourceType;
+@property (nonatomic) WPYCardSource sourceType;
 /**
  * This property indicates what encryption method is used to secure the SRED data on
  * from the terminal
