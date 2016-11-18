@@ -10,9 +10,21 @@
 
 @interface CustomerDetailViewController ()
 
+@property (nonatomic, strong) WPYCustomerResponseData * customer;
+
 @end
 
 @implementation CustomerDetailViewController
+
+- (instancetype) initWithCustomer: (WPYCustomerResponseData *) customer
+{
+    if((self = [super initWithNibName:nil bundle:nil]))
+    {
+        self.customer = customer;
+    }
+    
+    return self;
+}
 
 - (void)viewDidLoad
 {

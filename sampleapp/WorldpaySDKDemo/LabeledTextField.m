@@ -52,4 +52,9 @@
     self.textField.keyboardType = UIKeyboardTypeDecimalPad;
 }
 
+- (void) setEnabled:(BOOL)enabled
+{
+    self.textField.enabled = enabled;
+}
+
 @end

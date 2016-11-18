@@ -15,5 +15,6 @@
 - (NSString *) text;
 - (void) setFieldText: (NSString *) string;
 - (void) setKeyboardTypeDecimal;
+- (void) setEnabled: (BOOL) enabled;
 
 @end

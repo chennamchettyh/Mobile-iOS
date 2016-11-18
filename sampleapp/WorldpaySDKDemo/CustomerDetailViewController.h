@@ -16,4 +16,6 @@
 
 @interface CustomerDetailViewController : UIViewController
 
+- (instancetype) initWithCustomer: (WPYCustomerResponseData *) customer;
+
 @end

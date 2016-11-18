@@ -16,7 +16,7 @@
 - (NSUInteger) selectedIndex;
 - (NSDictionary *) selectedValue;
 - (void) setSelectionCallback: (void (^) (NSUInteger)) callback;
-
 - (void) setLabelText: (NSString *) string;
+- (void) setEnabled: (BOOL) enabled;
 
 @end

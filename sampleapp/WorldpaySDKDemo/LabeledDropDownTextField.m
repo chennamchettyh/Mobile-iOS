@@ -58,4 +58,9 @@
     return [self.textField selectedValue];
 }
 
+- (void) setEnabled: (BOOL) enabled
+{
+    [self.textField setEnabled:enabled];
+}
+
 @end
