@@ -14,7 +14,7 @@
 #import <WorldPaySDK_Miura/WorldPaySDK.h>
 #endif
 
-@interface CustomerViewController : UIViewController
+@interface CustomerViewController : UIViewController <UITextFieldDelegate>
 
 - (void) setRESTMode: (RESTMode) mode;
 - (BOOL) setEditableCustomer: (WPYCustomerRequestData *) customer;

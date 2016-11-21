@@ -9,15 +9,23 @@
 #import "CustomerViewController.h"
 
 #import "LabeledTextField.h"
+#import "LabeledSegmentedControl.h"
 #import "CustomerDetailViewController.h"
 
 @interface CustomerViewController ()
 
 @property (nonatomic, assign) RESTMode mode;
 @property (nonatomic, strong) WPYCustomerRequestData * customer;
+@property (weak, nonatomic) UITextField * activeTextField;
+@property (weak, nonatomic) IBOutlet UIScrollView * scrollView;
 @property (nonatomic, weak) IBOutlet UIButton * submitButton;
 @property (nonatomic, weak) IBOutlet UIButton * cancelButton;
 @property (nonatomic, weak) IBOutlet LabeledTextField * customerIdField;
+@property (nonatomic, weak) IBOutlet LabeledTextField * firstNameField;
+@property (nonatomic, weak) IBOutlet LabeledTextField * lastNameField;
+@property (nonatomic, weak) IBOutlet LabeledTextField * phoneField;
+@property (nonatomic, weak) IBOutlet LabeledTextField * emailIdField;
+@property (nonatomic, weak) IBOutlet LabeledSegmentedControl * sendEmailReceiptsField;
 
 @end
 
@@ -47,6 +55,37 @@
         [self.submitButton addTarget:self action:@selector(saveCustomer) forControlEvents:UIControlEventTouchUpInside];
         [self.customerIdField setEnabled:false];
     }
+    
+    [self.customerIdField setLabelText:@"Customer Id"];
+    [self.customerIdField setTextFieldDelegate:self];
+    
+    [self.firstNameField setLabelText:@"First Name"];
+    [self.firstNameField setTextFieldDelegate:self];
+    
+    [self.lastNameField setLabelText:@"Last Name"];
+    [self.lastNameField setTextFieldDelegate:self];
+    
+    [self.phoneField setLabelText:@"Phone Number"];
+    [self.phoneField setTextFieldDelegate:self];
+    
+    [self.emailIdField setLabelText:@"E-Mail Address"];
+    [self.emailIdField setTextFieldDelegate:self];
+    
+    [self.sendEmailReceiptsField sharedInitWithOptionList:@[@"Yes", @"No"] initialIndex:0 parentViewController:self title:@"Send E-Mail Receipts"];
+    [self.sendEmailReceiptsField setSegmentedTouchedBlock:^
+    {
+        [self removeFocusFromTextField:nil];
+    }];
+    
+    UITapGestureRecognizer *recognizer1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeFocusFromTextField:)];
+    [recognizer1 setNumberOfTapsRequired:1];
+    [recognizer1 setNumberOfTouchesRequired:1];
+    [self.scrollView addGestureRecognizer:recognizer1];
+    
+    UITapGestureRecognizer *recognizer2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeFocusFromTextField:)];
+    [recognizer2 setNumberOfTapsRequired:1];
+    [recognizer2 setNumberOfTouchesRequired:1];
+    [self.view addGestureRecognizer:recognizer2];
 }
 
 - (void)didReceiveMemoryWarning
@@ -91,6 +130,8 @@
 
 - (void) createCustomer
 {
+    [self removeFocusFromTextField:nil];
+    
     [self disableButtons];
     
     [self syncCustomerToUI];
@@ -103,6 +144,8 @@
 
 - (void) saveCustomer
 {
+    [self removeFocusFromTextField:nil];
+    
     [self disableButtons];
     
     [self syncCustomerToUI];
@@ -167,9 +210,44 @@
 
 - (IBAction) cancel:(id)sender
 {
+    [self removeFocusFromTextField:nil];
+    
     [self disableButtons];
     
     [self.navigationController popViewControllerAnimated:true];
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (void) removeFocusFromTextField: (UITextField * __unused) textField
+{
+    if(self.activeTextField)
+    {
+        [self.activeTextField resignFirstResponder];
+        self.activeTextField = nil;
+    }
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    self.activeTextField = textField;
+    
+    if(textField.keyboardType == UIKeyboardTypeDecimalPad)
+    {
+        textField.text = @"";
+    }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self removeFocusFromTextField:textField];
+    
+    return true;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [self removeFocusFromTextField:textField];
 }
 
 @end

@@ -56,6 +56,12 @@
 		85E7B8CE1DDE39F00075B78B /* CustomerPaymentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E7B8CB1DDE39F00075B78B /* CustomerPaymentDetailViewController.m */; };
 		85E7B8CF1DDE39F00075B78B /* CustomerPaymentDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E7B8CC1DDE39F00075B78B /* CustomerPaymentDetailViewController.xib */; };
 		85E7B8D01DDE39F00075B78B /* CustomerPaymentDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E7B8CC1DDE39F00075B78B /* CustomerPaymentDetailViewController.xib */; };
+		85E7B8D31DE362590075B78B /* StateDropDownTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E7B8D21DE362590075B78B /* StateDropDownTextField.m */; };
+		85E7B8D41DE362590075B78B /* StateDropDownTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E7B8D21DE362590075B78B /* StateDropDownTextField.m */; };
+		85E7B8D71DE3664E0075B78B /* LabeledSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E7B8D61DE3664E0075B78B /* LabeledSegmentedControl.m */; };
+		85E7B8D81DE3664E0075B78B /* LabeledSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E7B8D61DE3664E0075B78B /* LabeledSegmentedControl.m */; };
+		85E7B8DA1DE366620075B78B /* LabeledSegmentedControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E7B8D91DE366620075B78B /* LabeledSegmentedControl.xib */; };
+		85E7B8DB1DE366620075B78B /* LabeledSegmentedControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E7B8D91DE366620075B78B /* LabeledSegmentedControl.xib */; };
 		8908E7441DA5536A00EBF673 /* TransactionDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908E7421DA5536A00EBF673 /* TransactionDetailCell.m */; };
 		8908E7451DA5536A00EBF673 /* TransactionDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8908E7431DA5536A00EBF673 /* TransactionDetailCell.xib */; };
 		8908E7491DA6E57B00EBF673 /* CardDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908E7471DA6E57B00EBF673 /* CardDataCell.m */; };
@@ -210,6 +216,11 @@
 		85E7B8CA1DDE39F00075B78B /* CustomerPaymentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerPaymentDetailViewController.h; sourceTree = "<group>"; };
 		85E7B8CB1DDE39F00075B78B /* CustomerPaymentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerPaymentDetailViewController.m; sourceTree = "<group>"; };
 		85E7B8CC1DDE39F00075B78B /* CustomerPaymentDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomerPaymentDetailViewController.xib; sourceTree = "<group>"; };
+		85E7B8D11DE362590075B78B /* StateDropDownTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateDropDownTextField.h; sourceTree = "<group>"; };
+		85E7B8D21DE362590075B78B /* StateDropDownTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateDropDownTextField.m; sourceTree = "<group>"; };
+		85E7B8D51DE3664E0075B78B /* LabeledSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabeledSegmentedControl.h; sourceTree = "<group>"; };
+		85E7B8D61DE3664E0075B78B /* LabeledSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabeledSegmentedControl.m; sourceTree = "<group>"; };
+		85E7B8D91DE366620075B78B /* LabeledSegmentedControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabeledSegmentedControl.xib; sourceTree = "<group>"; };
 		8908E7411DA5536A00EBF673 /* TransactionDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionDetailCell.h; sourceTree = "<group>"; };
 		8908E7421DA5536A00EBF673 /* TransactionDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionDetailCell.m; sourceTree = "<group>"; };
 		8908E7431DA5536A00EBF673 /* TransactionDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionDetailCell.xib; sourceTree = "<group>"; };
@@ -450,6 +461,11 @@
 				85824BCE1DC9230800CD6052 /* LabeledDropDownTextField.h */,
 				85824BCF1DC9230800CD6052 /* LabeledDropDownTextField.m */,
 				85824BD21DC923B000CD6052 /* LabeledDropDownTextField.xib */,
+				85E7B8D11DE362590075B78B /* StateDropDownTextField.h */,
+				85E7B8D21DE362590075B78B /* StateDropDownTextField.m */,
+				85E7B8D51DE3664E0075B78B /* LabeledSegmentedControl.h */,
+				85E7B8D61DE3664E0075B78B /* LabeledSegmentedControl.m */,
+				85E7B8D91DE366620075B78B /* LabeledSegmentedControl.xib */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -619,6 +635,7 @@
 				8C068D011DA4146E00578C9D /* Main.storyboard in Resources */,
 				85E7B8D01DDE39F00075B78B /* CustomerPaymentDetailViewController.xib in Resources */,
 				896A6EDF1DAC267800FD8F77 /* SignatureViewController.xib in Resources */,
+				85E7B8DB1DE366620075B78B /* LabeledSegmentedControl.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,6 +676,7 @@
 				896A6ED61DAC096900FD8F77 /* CustomerCell.xib in Resources */,
 				85E7B8CF1DDE39F00075B78B /* CustomerPaymentDetailViewController.xib in Resources */,
 				896A6EE01DAC267800FD8F77 /* SignatureViewController.xib in Resources */,
+				85E7B8DA1DE366620075B78B /* LabeledSegmentedControl.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +705,7 @@
 				8CAE8A8A1DA6B5EE006DBC36 /* ExtendableView.m in Sources */,
 				8CAE8A7E1DA69ED0006DBC36 /* UIColor+Worldpay.m in Sources */,
 				896A6EE31DAC321B00FD8F77 /* LandscapeNavigationController.m in Sources */,
+				85E7B8D41DE362590075B78B /* StateDropDownTextField.m in Sources */,
 				8CDEB6C31DA8105100F81B63 /* ExtendedInformationView.m in Sources */,
 				89D2000B1DAEC9780090C9AE /* BatchDetailTableViewController.m in Sources */,
 				85824BC71DC9175700CD6052 /* LabeledTextField.m in Sources */,
@@ -694,6 +713,7 @@
 				8908E74E1DA6EBBC00EBF673 /* BillingAddressCell.m in Sources */,
 				859D8E9C1DB01D59006BD88E /* CustomerViewController.m in Sources */,
 				859D8E951DB0163F006BD88E /* VaultViewController.m in Sources */,
+				85E7B8D81DE3664E0075B78B /* LabeledSegmentedControl.m in Sources */,
 				8CAE8A821DA6A26A006DBC36 /* UIFont+Worldpay.m in Sources */,
 				859D8EA31DB01D76006BD88E /* CustomerListViewController.m in Sources */,
 				8908E7531DA6FACB00EBF673 /* CustomerCell.m in Sources */,
@@ -732,6 +752,7 @@
 				8CDEB6C41DA8105100F81B63 /* ExtendedInformationView.m in Sources */,
 				896A6ECF1DAC094600FD8F77 /* TransactionDetailCell.m in Sources */,
 				896A6EE41DAC321B00FD8F77 /* LandscapeNavigationController.m in Sources */,
+				85E7B8D31DE362590075B78B /* StateDropDownTextField.m in Sources */,
 				8C2B20B31DA3F23500643EEB /* TransactionViewController.m in Sources */,
 				89D2000C1DAEC9780090C9AE /* BatchDetailTableViewController.m in Sources */,
 				85824BC61DC9175700CD6052 /* LabeledTextField.m in Sources */,
@@ -739,6 +760,7 @@
 				896A6ED51DAC096500FD8F77 /* CustomerCell.m in Sources */,
 				859D8E9D1DB01D59006BD88E /* CustomerViewController.m in Sources */,
 				859D8E961DB0163F006BD88E /* VaultViewController.m in Sources */,
+				85E7B8D71DE3664E0075B78B /* LabeledSegmentedControl.m in Sources */,
 				896A6ED31DAC095D00FD8F77 /* BillingAddressCell.m in Sources */,
 				859D8EA41DB01D76006BD88E /* CustomerListViewController.m in Sources */,
 				89A4DF691DA8110E007F79D6 /* Helper.m in Sources */,

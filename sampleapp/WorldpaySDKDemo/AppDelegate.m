@@ -20,6 +20,7 @@
 #endif
 
 #define TABSIZE 10
+#define TEXTFIELDSIZE 14
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -72,6 +73,7 @@
     [[UINavigationBar appearance] setTintColor: [UIColor worldpayWhite]];
     [[UINavigationBar appearance] setTitleTextAttributes: @{NSForegroundColorAttributeName : [UIColor worldpayWhite]}];
     [[UISegmentedControl appearance] setTintColor: [UIColor worldpayEmerald]];
+    [[UISegmentedControl appearance] setTitleTextAttributes:[UIFont worldpayPrimaryAttributesWithSize: TEXTFIELDSIZE] forState:UIControlStateNormal];
     [self.window setTintColor: [UIColor worldpayEmerald]];
     
     // Tab bar controller

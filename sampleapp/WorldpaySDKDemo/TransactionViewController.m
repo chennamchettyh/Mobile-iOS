@@ -145,8 +145,6 @@
     [recognizer2 setNumberOfTouchesRequired:1];
     [self.extendedInfoView addGestureRecognizer:recognizer2];
     
-    [self.cardPresentSegmented setTitleTextAttributes:[UIFont worldpayPrimaryAttributesWithSize: TEXTFIELDSIZE] forState:UIControlStateNormal];
-    [self.addToVaultSegmented setTitleTextAttributes:[UIFont worldpayPrimaryAttributesWithSize: TEXTFIELDSIZE] forState:UIControlStateNormal];
     [self.startButton.titleLabel setFont:[UIFont worldpayPrimaryWithSize: BUTTONTEXTSIZE]];
     
     for(UILabel * label in self.formLabels)
