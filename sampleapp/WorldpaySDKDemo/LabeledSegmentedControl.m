@@ -15,10 +15,20 @@
 @property (strong, nonatomic) NSArray * _optionList;
 @property (weak, nonatomic) UIViewController * _parentViewController;
 @property (copy, nonatomic, nullable) void (^segmentedTouched)(void);
+@property (strong, nonatomic) IBOutlet UIView * view;
 
 @end
 
 @implementation LabeledSegmentedControl
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    [[NSBundle mainBundle] loadNibNamed:@"LabeledSegmentedControl" owner:self options:nil];
+    
+    [Helper constrainView:self toSecondView:self.view];
+}
 
 - (BOOL)sharedInitWithOptionList:(NSArray *)optionList initialIndex:(NSUInteger)initialIndex parentViewController:(UIViewController *)parentViewController title:(NSString *)title
 {
@@ -53,11 +63,16 @@
         [self.segmentedControl insertSegmentWithTitle:option atIndex:self.segmentedControl.numberOfSegments animated:false];
     }
     
-    self.title.text = title;
+    [self setLabelText:title];
     [self setSelectedIndex:initialIndex];
     self._parentViewController = parentViewController;
     
     return YES;
+}
+
+- (void) setLabelText:(NSString *) text
+{
+    self.title.text = text;
 }
 
 - (void) setSelectedIndex:(NSUInteger) index
@@ -86,6 +101,11 @@
     {
         self.segmentedTouched();
     }
+}
+
+- (void) setEnabled:(BOOL)enabled
+{
+    self.segmentedControl.enabled = enabled;
 }
 
 @end

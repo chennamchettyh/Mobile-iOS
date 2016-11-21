@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="segmentedControl" destination="tXn-ZM-jTK" id="Oeu-C4-Dt9"/>
                 <outlet property="title" destination="blK-8Z-Kc2" id="KqJ-2T-9Bj"/>
+                <outlet property="view" destination="iN0-l3-epB" id="u3J-Kf-z3y"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

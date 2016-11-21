@@ -152,7 +152,7 @@
         [label setFont:[UIFont worldpayPrimaryWithSize: LABELTEXTSIZE]];
     }
     
-    [self.transactionTypeDropDown setSelectionCallback:^(NSUInteger __unused index)
+    [self.transactionTypeDropDown setEditingCallback:^
     {
         [self removeFocusFromTextField:nil];
     }];

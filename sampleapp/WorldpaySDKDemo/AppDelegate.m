@@ -7,7 +7,6 @@
 
 #import "AppDelegate.h"
 #import "TransactionViewController.h"
-#import "Index.h"
 #import "RefundVoidViewController.h"
 #import "SettlementViewController.h"
 #import "VaultViewController.h"

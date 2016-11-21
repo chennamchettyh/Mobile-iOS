@@ -56,12 +56,16 @@
 		85E7B8CE1DDE39F00075B78B /* CustomerPaymentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E7B8CB1DDE39F00075B78B /* CustomerPaymentDetailViewController.m */; };
 		85E7B8CF1DDE39F00075B78B /* CustomerPaymentDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E7B8CC1DDE39F00075B78B /* CustomerPaymentDetailViewController.xib */; };
 		85E7B8D01DDE39F00075B78B /* CustomerPaymentDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E7B8CC1DDE39F00075B78B /* CustomerPaymentDetailViewController.xib */; };
-		85E7B8D31DE362590075B78B /* StateDropDownTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E7B8D21DE362590075B78B /* StateDropDownTextField.m */; };
-		85E7B8D41DE362590075B78B /* StateDropDownTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E7B8D21DE362590075B78B /* StateDropDownTextField.m */; };
 		85E7B8D71DE3664E0075B78B /* LabeledSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E7B8D61DE3664E0075B78B /* LabeledSegmentedControl.m */; };
 		85E7B8D81DE3664E0075B78B /* LabeledSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E7B8D61DE3664E0075B78B /* LabeledSegmentedControl.m */; };
 		85E7B8DA1DE366620075B78B /* LabeledSegmentedControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E7B8D91DE366620075B78B /* LabeledSegmentedControl.xib */; };
 		85E7B8DB1DE366620075B78B /* LabeledSegmentedControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E7B8D91DE366620075B78B /* LabeledSegmentedControl.xib */; };
+		85E7B8DE1DE38F100075B78B /* LabeledTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E7B8DD1DE38F100075B78B /* LabeledTextView.m */; };
+		85E7B8DF1DE38F100075B78B /* LabeledTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E7B8DD1DE38F100075B78B /* LabeledTextView.m */; };
+		85E7B8E11DE38F270075B78B /* LabeledTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E7B8E01DE38F270075B78B /* LabeledTextView.xib */; };
+		85E7B8E21DE38F270075B78B /* LabeledTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E7B8E01DE38F270075B78B /* LabeledTextView.xib */; };
+		85E7B8E51DE3A3BD0075B78B /* NSDictionary+Worldpay.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E7B8E41DE3A3BD0075B78B /* NSDictionary+Worldpay.m */; };
+		85E7B8E61DE3A3BD0075B78B /* NSDictionary+Worldpay.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E7B8E41DE3A3BD0075B78B /* NSDictionary+Worldpay.m */; };
 		8908E7441DA5536A00EBF673 /* TransactionDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908E7421DA5536A00EBF673 /* TransactionDetailCell.m */; };
 		8908E7451DA5536A00EBF673 /* TransactionDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8908E7431DA5536A00EBF673 /* TransactionDetailCell.xib */; };
 		8908E7491DA6E57B00EBF673 /* CardDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908E7471DA6E57B00EBF673 /* CardDataCell.m */; };
@@ -216,11 +220,14 @@
 		85E7B8CA1DDE39F00075B78B /* CustomerPaymentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerPaymentDetailViewController.h; sourceTree = "<group>"; };
 		85E7B8CB1DDE39F00075B78B /* CustomerPaymentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerPaymentDetailViewController.m; sourceTree = "<group>"; };
 		85E7B8CC1DDE39F00075B78B /* CustomerPaymentDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomerPaymentDetailViewController.xib; sourceTree = "<group>"; };
-		85E7B8D11DE362590075B78B /* StateDropDownTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateDropDownTextField.h; sourceTree = "<group>"; };
-		85E7B8D21DE362590075B78B /* StateDropDownTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateDropDownTextField.m; sourceTree = "<group>"; };
 		85E7B8D51DE3664E0075B78B /* LabeledSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabeledSegmentedControl.h; sourceTree = "<group>"; };
 		85E7B8D61DE3664E0075B78B /* LabeledSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabeledSegmentedControl.m; sourceTree = "<group>"; };
 		85E7B8D91DE366620075B78B /* LabeledSegmentedControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabeledSegmentedControl.xib; sourceTree = "<group>"; };
+		85E7B8DC1DE38F100075B78B /* LabeledTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabeledTextView.h; sourceTree = "<group>"; };
+		85E7B8DD1DE38F100075B78B /* LabeledTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabeledTextView.m; sourceTree = "<group>"; };
+		85E7B8E01DE38F270075B78B /* LabeledTextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabeledTextView.xib; sourceTree = "<group>"; };
+		85E7B8E31DE3A3BD0075B78B /* NSDictionary+Worldpay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Worldpay.h"; sourceTree = "<group>"; };
+		85E7B8E41DE3A3BD0075B78B /* NSDictionary+Worldpay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Worldpay.m"; sourceTree = "<group>"; };
 		8908E7411DA5536A00EBF673 /* TransactionDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionDetailCell.h; sourceTree = "<group>"; };
 		8908E7421DA5536A00EBF673 /* TransactionDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionDetailCell.m; sourceTree = "<group>"; };
 		8908E7431DA5536A00EBF673 /* TransactionDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionDetailCell.xib; sourceTree = "<group>"; };
@@ -461,11 +468,12 @@
 				85824BCE1DC9230800CD6052 /* LabeledDropDownTextField.h */,
 				85824BCF1DC9230800CD6052 /* LabeledDropDownTextField.m */,
 				85824BD21DC923B000CD6052 /* LabeledDropDownTextField.xib */,
-				85E7B8D11DE362590075B78B /* StateDropDownTextField.h */,
-				85E7B8D21DE362590075B78B /* StateDropDownTextField.m */,
 				85E7B8D51DE3664E0075B78B /* LabeledSegmentedControl.h */,
 				85E7B8D61DE3664E0075B78B /* LabeledSegmentedControl.m */,
 				85E7B8D91DE366620075B78B /* LabeledSegmentedControl.xib */,
+				85E7B8DC1DE38F100075B78B /* LabeledTextView.h */,
+				85E7B8DD1DE38F100075B78B /* LabeledTextView.m */,
+				85E7B8E01DE38F270075B78B /* LabeledTextView.xib */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -473,6 +481,8 @@
 		8CAE8A7B1DA69E8F006DBC36 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				85E7B8E31DE3A3BD0075B78B /* NSDictionary+Worldpay.h */,
+				85E7B8E41DE3A3BD0075B78B /* NSDictionary+Worldpay.m */,
 				8CAE8A7C1DA69ED0006DBC36 /* UIColor+Worldpay.h */,
 				8CAE8A7D1DA69ED0006DBC36 /* UIColor+Worldpay.m */,
 				8CAE8A801DA6A26A006DBC36 /* UIFont+Worldpay.h */,
@@ -618,6 +628,7 @@
 				811A0D731BB2F20100B73C09 /* LaunchScreen.xib in Resources */,
 				85824BCD1DC919AE00CD6052 /* LabeledTextField.xib in Resources */,
 				8908E7541DA6FACB00EBF673 /* CustomerCell.xib in Resources */,
+				85E7B8E21DE38F270075B78B /* LabeledTextView.xib in Resources */,
 				811A0D701BB2F20100B73C09 /* Images.xcassets in Resources */,
 				8CAE8A8D1DA6B605006DBC36 /* ExtendableView.xib in Resources */,
 				8908E74F1DA6EBBC00EBF673 /* BillingAddressCell.xib in Resources */,
@@ -659,6 +670,7 @@
 				814EDC001C69636E0010877C /* Images.xcassets in Resources */,
 				85824BCC1DC919AE00CD6052 /* LabeledTextField.xib in Resources */,
 				8CAE8A8E1DA6B605006DBC36 /* ExtendableView.xib in Resources */,
+				85E7B8E11DE38F270075B78B /* LabeledTextView.xib in Resources */,
 				8C2B20B51DA3F23500643EEB /* TransactionViewController.xib in Resources */,
 				8CAE8AA11DA6F7A4006DBC36 /* AdelleSans_Regular.otf in Resources */,
 				8CAE8A9F1DA6F7A4006DBC36 /* AdelleSans_Bold.otf in Resources */,
@@ -705,10 +717,10 @@
 				8CAE8A8A1DA6B5EE006DBC36 /* ExtendableView.m in Sources */,
 				8CAE8A7E1DA69ED0006DBC36 /* UIColor+Worldpay.m in Sources */,
 				896A6EE31DAC321B00FD8F77 /* LandscapeNavigationController.m in Sources */,
-				85E7B8D41DE362590075B78B /* StateDropDownTextField.m in Sources */,
 				8CDEB6C31DA8105100F81B63 /* ExtendedInformationView.m in Sources */,
 				89D2000B1DAEC9780090C9AE /* BatchDetailTableViewController.m in Sources */,
 				85824BC71DC9175700CD6052 /* LabeledTextField.m in Sources */,
+				85E7B8E61DE3A3BD0075B78B /* NSDictionary+Worldpay.m in Sources */,
 				8C2B20B21DA3F23500643EEB /* TransactionViewController.m in Sources */,
 				8908E74E1DA6EBBC00EBF673 /* BillingAddressCell.m in Sources */,
 				859D8E9C1DB01D59006BD88E /* CustomerViewController.m in Sources */,
@@ -718,6 +730,7 @@
 				859D8EA31DB01D76006BD88E /* CustomerListViewController.m in Sources */,
 				8908E7531DA6FACB00EBF673 /* CustomerCell.m in Sources */,
 				89D200101DAECB160090C9AE /* BatchTransactionTableViewCell.m in Sources */,
+				85E7B8DF1DE38F100075B78B /* LabeledTextView.m in Sources */,
 				89CB9EB01DA461EE00E4F7E4 /* TransactionDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -752,10 +765,10 @@
 				8CDEB6C41DA8105100F81B63 /* ExtendedInformationView.m in Sources */,
 				896A6ECF1DAC094600FD8F77 /* TransactionDetailCell.m in Sources */,
 				896A6EE41DAC321B00FD8F77 /* LandscapeNavigationController.m in Sources */,
-				85E7B8D31DE362590075B78B /* StateDropDownTextField.m in Sources */,
 				8C2B20B31DA3F23500643EEB /* TransactionViewController.m in Sources */,
 				89D2000C1DAEC9780090C9AE /* BatchDetailTableViewController.m in Sources */,
 				85824BC61DC9175700CD6052 /* LabeledTextField.m in Sources */,
+				85E7B8E51DE3A3BD0075B78B /* NSDictionary+Worldpay.m in Sources */,
 				8CAE8A831DA6A26A006DBC36 /* UIFont+Worldpay.m in Sources */,
 				896A6ED51DAC096500FD8F77 /* CustomerCell.m in Sources */,
 				859D8E9D1DB01D59006BD88E /* CustomerViewController.m in Sources */,
@@ -765,6 +778,7 @@
 				859D8EA41DB01D76006BD88E /* CustomerListViewController.m in Sources */,
 				89A4DF691DA8110E007F79D6 /* Helper.m in Sources */,
 				89D200111DAECB160090C9AE /* BatchTransactionTableViewCell.m in Sources */,
+				85E7B8DE1DE38F100075B78B /* LabeledTextView.m in Sources */,
 				896A6ED11DAC095200FD8F77 /* CardDataCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

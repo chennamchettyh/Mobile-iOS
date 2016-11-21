@@ -10,13 +10,19 @@
 
 #import "LabeledTextField.h"
 #import "LabeledSegmentedControl.h"
+#import "LabeledTextView.h"
 #import "CustomerDetailViewController.h"
+
+#define YESINDEX 0
+#define NOINDEX 1
 
 @interface CustomerViewController ()
 
 @property (nonatomic, assign) RESTMode mode;
 @property (nonatomic, strong) WPYCustomerRequestData * customer;
+@property (nonatomic, strong) WPYCustomerResponseData * editCustomer;
 @property (weak, nonatomic) UITextField * activeTextField;
+@property (weak, nonatomic) UITextView * activeTextView;
 @property (weak, nonatomic) IBOutlet UIScrollView * scrollView;
 @property (nonatomic, weak) IBOutlet UIButton * submitButton;
 @property (nonatomic, weak) IBOutlet UIButton * cancelButton;
@@ -26,6 +32,19 @@
 @property (nonatomic, weak) IBOutlet LabeledTextField * phoneField;
 @property (nonatomic, weak) IBOutlet LabeledTextField * emailIdField;
 @property (nonatomic, weak) IBOutlet LabeledSegmentedControl * sendEmailReceiptsField;
+@property (nonatomic, weak) IBOutlet LabeledTextView * notesField;
+@property (nonatomic, weak) IBOutlet LabeledTextField * streetAddressField;
+@property (nonatomic, weak) IBOutlet LabeledTextField * cityField;
+@property (nonatomic, weak) IBOutlet LabeledTextField * stateField;
+@property (nonatomic, weak) IBOutlet LabeledTextField * countryField;
+@property (nonatomic, weak) IBOutlet LabeledTextField * zipField;
+@property (nonatomic, weak) IBOutlet LabeledTextField * companyField;
+@property (nonatomic, weak) IBOutlet LabeledTextField * udfKeyField1;
+@property (nonatomic, weak) IBOutlet LabeledTextField * udfKeyField2;
+@property (nonatomic, weak) IBOutlet LabeledTextField * udfKeyField3;
+@property (nonatomic, weak) IBOutlet LabeledTextField * udfValueField1;
+@property (nonatomic, weak) IBOutlet LabeledTextField * udfValueField2;
+@property (nonatomic, weak) IBOutlet LabeledTextField * udfValueField3;
 
 @end
 
@@ -36,13 +55,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.customer = [[WPYCustomerRequestData alloc] init];
+    
     [Helper styleButtonPrimary:self.submitButton];
     [Helper styleButtonPrimary:self.cancelButton];
     
     if(self.mode == RESTModeCreate)
     {
         self.title = @"Create Customer";
-        self.customer = [[WPYCustomerRequestData alloc] init];
         [self.submitButton setTitle:@"Create" forState:UIControlStateNormal];
         [self.submitButton addTarget:self action:@selector(createCustomer) forControlEvents:UIControlEventTouchUpInside];
         [self.customerIdField setEnabled:true];
@@ -77,6 +97,45 @@
         [self removeFocusFromTextField:nil];
     }];
     
+    [self.notesField setLabelText:@"Notes"];
+    [self.notesField setTextViewDelegate:self];
+    
+    [self.streetAddressField setLabelText:@"Street Address"];
+    [self.streetAddressField setTextFieldDelegate:self];
+    
+    [self.cityField setLabelText:@"City"];
+    [self.cityField setTextFieldDelegate:self];
+    
+    [self.stateField setLabelText:@"State"];
+    [self.stateField setTextFieldDelegate:self];
+    
+    [self.zipField setLabelText:@"Zip"];
+    [self.zipField setTextFieldDelegate:self];
+    
+    [self.countryField setLabelText:@"Country"];
+    [self.countryField setTextFieldDelegate:self];
+    
+    [self.companyField setLabelText:@"Company"];
+    [self.companyField setTextFieldDelegate:self];
+    
+    [self.udfKeyField1 setLabelText:@"User Defined Field #1"];
+    [self.udfKeyField1 setTextFieldDelegate:self];
+    
+    [self.udfKeyField2 setLabelText:@"User Defined Field #2"];
+    [self.udfKeyField2 setTextFieldDelegate:self];
+    
+    [self.udfKeyField3 setLabelText:@"User Defined Field #3"];
+    [self.udfKeyField3 setTextFieldDelegate:self];
+    
+    [self.udfValueField1 setLabelText:@"Value"];
+    [self.udfValueField1 setTextFieldDelegate:self];
+    
+    [self.udfValueField2 setLabelText:@"Value"];
+    [self.udfValueField2 setTextFieldDelegate:self];
+    
+    [self.udfValueField3 setLabelText:@"Value"];
+    [self.udfValueField3 setTextFieldDelegate:self];
+    
     UITapGestureRecognizer *recognizer1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeFocusFromTextField:)];
     [recognizer1 setNumberOfTapsRequired:1];
     [recognizer1 setNumberOfTouchesRequired:1];
@@ -106,11 +165,11 @@
     self.mode = mode;
 }
 
-- (BOOL) setEditableCustomer: (WPYCustomerRequestData *) customer
+- (BOOL) setEditableCustomer: (WPYCustomerResponseData *) customer
 {
     if(self.mode == RESTModeEdit)
     {
-        self.customer = customer;
+        self.editCustomer = customer;
         
         return true;
     }
@@ -120,12 +179,92 @@
 
 - (void) syncUIToCustomer
 {
-    // Fill in UI with data from model
+    // This is only called in edit mode
+    
+    [self.customerIdField setFieldText:self.editCustomer.identifier];
+    [self.firstNameField setFieldText:self.editCustomer.firstName];
+    [self.lastNameField setFieldText:self.editCustomer.lastName];
+    [self.phoneField setFieldText:self.editCustomer.phone];
+    [self.emailIdField setFieldText:self.editCustomer.email];
+    [self.sendEmailReceiptsField setSelectedIndex:(self.editCustomer.sendEmailReceipts ? YESINDEX : NOINDEX)];
+    [self.notesField setFieldText:self.editCustomer.notes];
+    [self.streetAddressField setFieldText:self.editCustomer.address.line1];
+    [self.cityField setFieldText:self.editCustomer.address.city];
+    [self.stateField setFieldText:self.editCustomer.address.state];
+    [self.zipField setFieldText:self.editCustomer.address.zip];
+    [self.companyField setFieldText:self.editCustomer.company];
+    
+    // Note that if user has more than 3 fields, the remaining will not be shown here
+    NSArray * alphaKeys = [self.editCustomer.userDefinedFields alphaSorted];
+    
+    if(alphaKeys.count > 0)
+    {
+        [self.udfKeyField1 setFieldText:alphaKeys[0]];
+        [self.udfValueField1 setFieldText:self.editCustomer.userDefinedFields[alphaKeys[0]]];
+    }
+    
+    if(alphaKeys.count > 1)
+    {
+        [self.udfKeyField2 setFieldText:alphaKeys[1]];
+        [self.udfValueField2 setFieldText:self.editCustomer.userDefinedFields[alphaKeys[1]]];
+    }
+    
+    if(alphaKeys.count > 2)
+    {
+        [self.udfKeyField3 setFieldText:alphaKeys[2]];
+        [self.udfValueField3 setFieldText:self.editCustomer.userDefinedFields[alphaKeys[2]]];
+    }
 }
 
 - (void) syncCustomerToUI
 {
-    // Fill in model with data from UI
+    // TODO: Customer ID cannot be set for create because of SDK limitation
+    // self.customer.identifier = self.customerIdField.text;
+    
+    self.customer.firstName = self.firstNameField.text;
+    self.customer.lastName = self.lastNameField.text;
+    self.customer.phone = self.phoneField.text;
+    self.customer.email = self.emailIdField.text;
+    self.customer.sendEmailReceipts = ([self.sendEmailReceiptsField getSelectedIndex] == YESINDEX ? true : false);
+    self.customer.notes = self.notesField.text;
+    
+    if(!self.customer.address)
+    {
+        self.customer.address = [[WPYAddressInfo alloc] init];
+    }
+    
+    self.customer.address.line1 = self.streetAddressField.text;
+    self.customer.address.city = self.cityField.text;
+    self.customer.address.state = self.stateField.text;
+    self.customer.address.zip = self.stateField.text;
+    self.customer.address.phone = self.phoneField.text;
+    self.customer.address.country = self.countryField.text;
+    self.customer.address.company = self.companyField.text;
+    self.customer.company = self.companyField.text;
+    
+    if(!self.customer.userDefinedFields)
+    {
+        self.customer.userDefinedFields = @{};
+    }
+    
+    NSMutableDictionary * mutableUDF = [self.customer.userDefinedFields mutableCopy];
+    
+    if(self.udfKeyField1.text.length > 0)
+    {
+        mutableUDF[self.udfKeyField1.text] = self.udfValueField1.text;
+    }
+    
+    if(self.udfKeyField2.text.length > 0)
+    {
+        mutableUDF[self.udfKeyField2.text] = self.udfValueField2.text;
+    }
+    
+    if(self.udfKeyField3.text.length > 0)
+    {
+        mutableUDF[self.udfKeyField3.text] = self.udfValueField3.text;
+    }
+    
+    self.customer.userDefinedFields = [NSDictionary dictionaryWithDictionary:mutableUDF];
 }
 
 - (void) createCustomer
@@ -150,7 +289,7 @@
     
     [self syncCustomerToUI];
     
-    [[WorldpayAPI instance] updateCustomer:[self.customerIdField text] withData:self.customer andCompletion:^(WPYCustomerResponseData * response, NSError * error)
+    [[WorldpayAPI instance] updateCustomer:self.editCustomer.identifier withData:self.customer andCompletion:^(WPYCustomerResponseData * response, NSError * error)
     {
         [self handleResponse:response error:error];
     }];
@@ -226,6 +365,11 @@
         [self.activeTextField resignFirstResponder];
         self.activeTextField = nil;
     }
+    else if(self.activeTextView)
+    {
+        [self.activeTextView resignFirstResponder];
+        self.activeTextView = nil;
+    }
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
@@ -248,6 +392,16 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     [self removeFocusFromTextField:textField];
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    self.activeTextView = textView;
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    [self removeFocusFromTextField:nil];
 }
 
 @end

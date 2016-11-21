@@ -16,6 +16,8 @@
 
 - (BOOL) sharedInitWithOptionList: (NSArray *) optionList initialIndex: (NSUInteger) initialIndex parentViewController: (UIViewController *) parentViewController title: (NSString *) title;
 
+- (void) setEditingCallback: (void (^) (void)) callback;
 - (void) setSelectionCallback: (void (^) (NSUInteger)) callback;
+- (void) setSelectedIndex: (NSUInteger) selectedIndex;
 
 @end

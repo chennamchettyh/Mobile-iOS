@@ -38,9 +38,19 @@
     return [self.textField sharedInitWithOptionList:optionList initialIndex:initialIndex parentViewController:parentViewController title:title];
 }
 
+- (void)setEditingCallback:(void (^)(void))callback
+{
+    [self.textField setEditingCallback:callback];
+}
+
 - (void)setSelectionCallback:(void (^)(NSUInteger))callback
 {
     [self.textField setSelectionCallback:callback];
+}
+
+- (void) setSelectedIndex: (NSUInteger) selectedIndex
+{
+    [self.textField setSelectedIndex:selectedIndex];
 }
 
 - (NSString *)selectedTitle

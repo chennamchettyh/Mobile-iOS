@@ -15,5 +15,8 @@
 - (NSInteger) getSelectedIndex;
 - (NSString *) getSelectedValue;
 - (void) setSegmentedTouchedBlock:(void (^)(void))segmentedTouched;
+- (void) setSelectedIndex:(NSUInteger)index;
+- (void) setLabelText:(NSString *)text;
+- (void) setEnabled: (BOOL) enabled;
 
 @end
