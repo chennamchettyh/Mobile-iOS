@@ -11,7 +11,7 @@
 #import "LabeledTextField.h"
 #import "LabeledSegmentedControl.h"
 #import "LabeledTextView.h"
-#import "CustomerDetailViewController.h"
+#import "CustomerPaymentDetailViewController.h"
 
 #define YESINDEX 0
 #define NOINDEX 1
@@ -45,6 +45,11 @@
 @property (nonatomic, weak) IBOutlet LabeledTextField * udfValueField1;
 @property (nonatomic, weak) IBOutlet LabeledTextField * udfValueField2;
 @property (nonatomic, weak) IBOutlet LabeledTextField * udfValueField3;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *detailsButtonsHeightConstraint;
+@property (assign, nonatomic) CGFloat originalDetailsHeightConstant;
+@property (weak, nonatomic) IBOutlet UIButton *editButton;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+@property (weak, nonatomic) IBOutlet UIView *detailButtonsView;
 
 @end
 
@@ -59,13 +64,19 @@
     
     [Helper styleButtonPrimary:self.submitButton];
     [Helper styleButtonPrimary:self.cancelButton];
+    [Helper styleButtonPrimary:self.editButton];
+    [Helper styleButtonPrimary:self.deleteButton];
     
+    self.originalDetailsHeightConstant = self.detailsButtonsHeightConstraint.constant;
+
     if(self.mode == RESTModeCreate)
     {
         self.title = @"Create Customer";
         [self.submitButton setTitle:@"Create" forState:UIControlStateNormal];
         [self.submitButton addTarget:self action:@selector(createCustomer) forControlEvents:UIControlEventTouchUpInside];
         [self.customerIdField setEnabled:true];
+        self.detailsButtonsHeightConstraint.constant = 0;
+        [self.detailButtonsView layoutIfNeeded];
     }
     else if(self.mode == RESTModeEdit)
     {
@@ -74,6 +85,40 @@
         [self.submitButton setTitle:@"Save" forState:UIControlStateNormal];
         [self.submitButton addTarget:self action:@selector(saveCustomer) forControlEvents:UIControlEventTouchUpInside];
         [self.customerIdField setEnabled:false];
+        [self.udfKeyField1 setEnabled:false];
+        [self.udfValueField1 setEnabled:false];
+        [self.udfKeyField2 setEnabled:false];
+        [self.udfValueField2 setEnabled:false];
+        [self.udfKeyField3 setEnabled:false];
+        [self.udfValueField3 setEnabled:false];
+        self.detailsButtonsHeightConstraint.constant = 0;
+        [self.detailButtonsView layoutIfNeeded];
+    }
+    else if(self.mode == RESTModeGet)
+    {
+        self.title = @"Customer Details";
+        [self syncUIToCustomer];
+        [self.submitButton setTitle:@"Payment Methods" forState:UIControlStateNormal];
+        [self.submitButton addTarget:self action:@selector(paymentMethods) forControlEvents:UIControlEventTouchUpInside];
+        [self.customerIdField setDisplayMode];
+        [self.firstNameField setDisplayMode];
+        [self.lastNameField setDisplayMode];
+        [self.phoneField setDisplayMode];
+        [self.emailIdField setDisplayMode];
+        [self.sendEmailReceiptsField setDisplayMode];
+        [self.notesField setDisplayMode];
+        [self.streetAddressField setDisplayMode];
+        [self.cityField setDisplayMode];
+        [self.stateField setDisplayMode];
+        [self.zipField setDisplayMode];
+        [self.countryField setDisplayMode];
+        [self.companyField setDisplayMode];
+        [self.udfKeyField1 setDisplayMode];
+        [self.udfValueField1 setDisplayMode];
+        [self.udfKeyField2 setDisplayMode];
+        [self.udfValueField2 setDisplayMode];
+        [self.udfKeyField3 setDisplayMode];
+        [self.udfValueField3 setDisplayMode];
     }
     
     [self.customerIdField setLabelText:@"Customer Id"];
@@ -145,6 +190,8 @@
     [recognizer2 setNumberOfTapsRequired:1];
     [recognizer2 setNumberOfTouchesRequired:1];
     [self.view addGestureRecognizer:recognizer2];
+    
+    [self registerForKeyboardNotifications];
 }
 
 - (void)didReceiveMemoryWarning
@@ -160,6 +207,13 @@
     [self enableButtons];
 }
 
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void) setRESTMode: (RESTMode) mode
 {
     self.mode = mode;
@@ -167,7 +221,7 @@
 
 - (BOOL) setEditableCustomer: (WPYCustomerResponseData *) customer
 {
-    if(self.mode == RESTModeEdit)
+    if(self.mode == RESTModeEdit || self.mode == RESTModeGet)
     {
         self.editCustomer = customer;
         
@@ -179,7 +233,7 @@
 
 - (void) syncUIToCustomer
 {
-    // This is only called in edit mode
+    // This is only called in get/edit mode
     
     [self.customerIdField setFieldText:self.editCustomer.identifier];
     [self.firstNameField setFieldText:self.editCustomer.firstName];
@@ -193,6 +247,7 @@
     [self.stateField setFieldText:self.editCustomer.address.state];
     [self.zipField setFieldText:self.editCustomer.address.zip];
     [self.companyField setFieldText:self.editCustomer.company];
+    self.customer.userDefinedFields = self.editCustomer.userDefinedFields;
     
     // Note that if user has more than 3 fields, the remaining will not be shown here
     NSArray * alphaKeys = [self.editCustomer.userDefinedFields alphaSorted];
@@ -218,9 +273,6 @@
 
 - (void) syncCustomerToUI
 {
-    // TODO: Customer ID cannot be set for create because of SDK limitation
-    // self.customer.identifier = self.customerIdField.text;
-    
     self.customer.firstName = self.firstNameField.text;
     self.customer.lastName = self.lastNameField.text;
     self.customer.phone = self.phoneField.text;
@@ -236,40 +288,49 @@
     self.customer.address.line1 = self.streetAddressField.text;
     self.customer.address.city = self.cityField.text;
     self.customer.address.state = self.stateField.text;
-    self.customer.address.zip = self.stateField.text;
+    self.customer.address.zip = self.zipField.text;
     self.customer.address.phone = self.phoneField.text;
     self.customer.address.country = self.countryField.text;
     self.customer.address.company = self.companyField.text;
     self.customer.company = self.companyField.text;
     
-    if(!self.customer.userDefinedFields)
+    // UDF are read-only in edit due to syncing issues when only displaying 3 fields
+    if(self.mode == RESTModeCreate)
     {
-        self.customer.userDefinedFields = @{};
+        // TODO: Customer ID cannot be set for create because of SDK limitation
+        // self.customer.identifier = self.customerIdField.text;
+        
+        if(!self.customer.userDefinedFields)
+        {
+            self.customer.userDefinedFields = @{};
+        }
+        
+        NSMutableDictionary * mutableUDF = [self.customer.userDefinedFields mutableCopy];
+        
+        if(self.udfKeyField1.text.length > 0)
+        {
+            mutableUDF[self.udfKeyField1.text] = self.udfValueField1.text;
+        }
+        
+        if(self.udfKeyField2.text.length > 0)
+        {
+            mutableUDF[self.udfKeyField2.text] = self.udfValueField2.text;
+        }
+        
+        if(self.udfKeyField3.text.length > 0)
+        {
+            mutableUDF[self.udfKeyField3.text] = self.udfValueField3.text;
+        }
+        
+        self.customer.userDefinedFields = [NSDictionary dictionaryWithDictionary:mutableUDF];
     }
-    
-    NSMutableDictionary * mutableUDF = [self.customer.userDefinedFields mutableCopy];
-    
-    if(self.udfKeyField1.text.length > 0)
-    {
-        mutableUDF[self.udfKeyField1.text] = self.udfValueField1.text;
-    }
-    
-    if(self.udfKeyField2.text.length > 0)
-    {
-        mutableUDF[self.udfKeyField2.text] = self.udfValueField2.text;
-    }
-    
-    if(self.udfKeyField3.text.length > 0)
-    {
-        mutableUDF[self.udfKeyField3.text] = self.udfValueField3.text;
-    }
-    
-    self.customer.userDefinedFields = [NSDictionary dictionaryWithDictionary:mutableUDF];
 }
 
 - (void) createCustomer
 {
     [self removeFocusFromTextField:nil];
+    
+    CHECKAUTHTOKEN();
     
     [self disableButtons];
     
@@ -285,6 +346,8 @@
 {
     [self removeFocusFromTextField:nil];
     
+    CHECKAUTHTOKEN();
+    
     [self disableButtons];
     
     [self syncCustomerToUI];
@@ -293,6 +356,97 @@
     {
         [self handleResponse:response error:error];
     }];
+}
+
+- (void) paymentMethods
+{
+    [self disableButtons];
+    
+    CustomerPaymentDetailViewController * paymentDetailVC = [[CustomerPaymentDetailViewController alloc] initWithPaymentMethods:self.editCustomer.paymentMethods];
+    
+    [self.navigationController pushViewController:paymentDetailVC animated:true];
+}
+
+- (void) switchToGet: (WPYCustomerResponseData *) customer
+{
+    self.mode = RESTModeGet;
+    
+    [self setEditableCustomer:customer];
+    
+    self.title = @"Customer Details";
+    [self syncUIToCustomer];
+    [self.submitButton setTitle:@"Payment Methods" forState:UIControlStateNormal];
+    [self.submitButton addTarget:self action:@selector(paymentMethods) forControlEvents:UIControlEventTouchUpInside];
+    [self.customerIdField setDisplayMode];
+    [self.firstNameField setDisplayMode];
+    [self.lastNameField setDisplayMode];
+    [self.phoneField setDisplayMode];
+    [self.emailIdField setDisplayMode];
+    [self.sendEmailReceiptsField setDisplayMode];
+    [self.notesField setDisplayMode];
+    [self.streetAddressField setDisplayMode];
+    [self.cityField setDisplayMode];
+    [self.stateField setDisplayMode];
+    [self.zipField setDisplayMode];
+    [self.countryField setDisplayMode];
+    [self.companyField setDisplayMode];
+    [self.udfKeyField1 setDisplayMode];
+    [self.udfValueField1 setDisplayMode];
+    [self.udfKeyField2 setDisplayMode];
+    [self.udfValueField2 setDisplayMode];
+    [self.udfKeyField3 setDisplayMode];
+    [self.udfValueField3 setDisplayMode];
+    
+    self.detailsButtonsHeightConstraint.constant = self.originalDetailsHeightConstant;
+    [self.detailButtonsView layoutIfNeeded];
+}
+
+- (IBAction) switchToEdit:(id)sender
+{
+    self.mode = RESTModeEdit;
+    
+    [self.customerIdField setEditMode];
+    [self.firstNameField setEditMode];
+    [self.lastNameField setEditMode];
+    [self.phoneField setEditMode];
+    [self.emailIdField setEditMode];
+    [self.sendEmailReceiptsField setEditMode];
+    [self.notesField setEditMode];
+    [self.streetAddressField setEditMode];
+    [self.cityField setEditMode];
+    [self.stateField setEditMode];
+    [self.zipField setEditMode];
+    [self.countryField setEditMode];
+    [self.companyField setEditMode];
+    [self.udfKeyField1 setEditMode];
+    [self.udfValueField1 setEditMode];
+    [self.udfKeyField2 setEditMode];
+    [self.udfValueField2 setEditMode];
+    [self.udfKeyField3 setEditMode];
+    [self.udfValueField3 setEditMode];
+    
+    [self.customerIdField setEnabled:false];
+    [self.udfKeyField1 setEnabled:false];
+    [self.udfValueField1 setEnabled:false];
+    [self.udfKeyField2 setEnabled:false];
+    [self.udfValueField2 setEnabled:false];
+    [self.udfKeyField3 setEnabled:false];
+    [self.udfValueField3 setEnabled:false];
+    
+    self.title = @"Edit Customer";
+    [self.submitButton setTitle:@"Save" forState:UIControlStateNormal];
+    [self.submitButton addTarget:self action:@selector(saveCustomer) forControlEvents:UIControlEventTouchUpInside];
+    self.detailsButtonsHeightConstraint.constant = 0;
+    [self.detailButtonsView layoutIfNeeded];
+}
+
+- (IBAction) deleteCustomer:(id)sender
+{
+    // TODO: SDK does not yet have this functionality
+    
+//    CHECKAUTHTOKEN();
+//    
+//    [self disableButtons];
 }
 
 - (void) handleResponse: (WPYCustomerResponseData *) response error: (NSError *) error
@@ -304,9 +458,7 @@
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
         [alert addAction:[UIAlertAction actionWithTitle:@"View Details" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
         {
-            CustomerDetailViewController * customerDetailVC = [[CustomerDetailViewController alloc] initWithCustomer:response];
             
-            [self presentViewController:customerDetailVC animated:true completion:nil];
         }]];
         
         [self presentViewController:alert animated:true completion:nil];
@@ -339,12 +491,16 @@
 {
     [self.submitButton setEnabled:true];
     [self.cancelButton setEnabled:true];
+    [self.editButton setEnabled:true];
+    [self.deleteButton setEnabled:true];
 }
 
 - (void) disableButtons
 {
     [self.submitButton setEnabled:false];
     [self.cancelButton setEnabled:false];
+    [self.editButton setEnabled:false];
+    [self.deleteButton setEnabled:false];
 }
 
 - (IBAction) cancel:(id)sender
@@ -402,6 +558,47 @@
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
     [self removeFocusFromTextField:nil];
+}
+
+// Call this method somewhere in your view controller setup code.
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+}
+
+// Called when the UIKeyboardDidShowNotification is sent.
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(self.scrollView.contentInset.top, 0.0, kbSize.height, 0.0);
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
+    
+    // If active text field is hidden by keyboard, scroll it so it's visible
+    // Your application might not need or want this behavior.
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= kbSize.height;
+    
+    UIView * activeView = (self.activeTextField ?: self.activeTextView);
+    
+    if (activeView && !CGRectContainsPoint(aRect, activeView.frame.origin) ) {
+        CGPoint scrollPoint = CGPointMake(0.0, activeView.frame.origin.y-kbSize.height);
+        [self.scrollView setContentOffset:scrollPoint animated:YES];
+    }
+}
+
+// Called when the UIKeyboardWillHideNotification is sent
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(self.scrollView.contentInset.top, 0.0, 0.0, 0.0);
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
 }
 
 @end

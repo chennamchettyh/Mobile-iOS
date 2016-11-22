@@ -19,5 +19,7 @@
 - (void) setEditingCallback: (void (^) (void)) callback;
 - (void) setSelectionCallback: (void (^) (NSUInteger)) callback;
 - (void) setSelectedIndex: (NSUInteger) selectedIndex;
+- (void) setDisplayMode;
+- (void) setEditMode;
 
 @end

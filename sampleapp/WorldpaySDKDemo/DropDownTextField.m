@@ -146,4 +146,16 @@
     return NO;
 }
 
+- (void) setDisplayMode
+{
+    self.borderStyle = UITextBorderStyleNone;
+    [self setEnabled:false];
+}
+
+- (void) setEditMode
+{
+    self.borderStyle = UITextBorderStyleRoundedRect;
+    [self setEnabled:true];
+}
+
 @end

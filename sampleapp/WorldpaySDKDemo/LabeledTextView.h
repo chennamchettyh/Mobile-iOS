@@ -15,5 +15,7 @@
 - (NSString *) text;
 - (void) setFieldText: (NSString *) string;
 - (void) setEnabled: (BOOL) enabled;
+- (void) setDisplayMode;
+- (void) setEditMode;
 
 @end

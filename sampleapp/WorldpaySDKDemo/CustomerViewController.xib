@@ -10,6 +10,8 @@
         <mutableArray key="AdelleSans_Regular.otf">
             <string>AdelleSans-Regular</string>
             <string>AdelleSans-Regular</string>
+            <string>AdelleSans-Regular</string>
+            <string>AdelleSans-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -20,6 +22,10 @@
                 <outlet property="companyField" destination="96D-iF-rnx" id="XGC-Dv-C0B"/>
                 <outlet property="countryField" destination="VW4-fI-ldc" id="7ST-Gg-c4U"/>
                 <outlet property="customerIdField" destination="RZ6-q3-mxd" id="gaD-U6-ZfQ"/>
+                <outlet property="deleteButton" destination="Auk-rX-NFv" id="TcA-4T-mkd"/>
+                <outlet property="detailButtonsView" destination="VcK-RK-xLv" id="E0I-SP-O0K"/>
+                <outlet property="detailsButtonsHeightConstraint" destination="ufg-mz-hph" id="NTW-Rr-eSR"/>
+                <outlet property="editButton" destination="Uvl-Ez-h8m" id="0sl-yB-3Un"/>
                 <outlet property="emailIdField" destination="b2Q-fO-r1G" id="sR1-sf-t1K"/>
                 <outlet property="firstNameField" destination="inO-Pq-sPA" id="ypU-9L-87x"/>
                 <outlet property="lastNameField" destination="SS9-rt-uZM" id="9uo-F6-6ra"/>
@@ -42,7 +48,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="887"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="973"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cww-lL-2iB">
@@ -244,33 +250,69 @@
                     </constraints>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbo-bh-6ug">
-                    <rect key="frame" x="8" y="848" width="240" height="31"/>
+                    <rect key="frame" x="8" y="887" width="240" height="31"/>
                     <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="15"/>
                     <state key="normal" title="Submit"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AK8-Re-Tub">
-                    <rect key="frame" x="352" y="848" width="240" height="31"/>
+                    <rect key="frame" x="352" y="887" width="240" height="31"/>
                     <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="15"/>
                     <state key="normal" title="Cancel"/>
                     <connections>
                         <action selector="cancel:" destination="-1" eventType="touchUpInside" id="3pc-qf-pVW"/>
                     </connections>
                 </button>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VcK-RK-xLv">
+                    <rect key="frame" x="0.0" y="840" width="600" height="39"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvl-Ez-h8m" userLabel="Edit Button">
+                            <rect key="frame" x="8" y="8" width="240" height="31"/>
+                            <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="15"/>
+                            <state key="normal" title="Edit"/>
+                            <connections>
+                                <action selector="switchToEdit:" destination="-1" eventType="touchUpInside" id="vq1-vt-xgB"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Auk-rX-NFv" userLabel="Delete Button">
+                            <rect key="frame" x="352" y="8" width="240" height="31"/>
+                            <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="15"/>
+                            <state key="normal" title="Delete Customer"/>
+                            <connections>
+                                <action selector="deleteCustomer:" destination="-1" eventType="touchUpInside" id="f98-jT-ObH"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Auk-rX-NFv" firstAttribute="top" secondItem="VcK-RK-xLv" secondAttribute="top" priority="750" constant="8" id="B3s-1O-cVU"/>
+                        <constraint firstAttribute="bottom" secondItem="Auk-rX-NFv" secondAttribute="bottom" id="Zre-xX-DoI"/>
+                        <constraint firstItem="Uvl-Ez-h8m" firstAttribute="top" secondItem="VcK-RK-xLv" secondAttribute="top" priority="750" constant="8" id="hQ6-iU-Kdb"/>
+                        <constraint firstAttribute="bottom" secondItem="Uvl-Ez-h8m" secondAttribute="bottom" id="rMY-pM-Xu2"/>
+                        <constraint firstAttribute="height" constant="39" id="ufg-mz-hph"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="Uvl-Ez-h8m" firstAttribute="leading" secondItem="dbo-bh-6ug" secondAttribute="leading" id="0Fg-mI-yyO"/>
                 <constraint firstItem="cww-lL-2iB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2kB-D6-V44"/>
+                <constraint firstItem="VcK-RK-xLv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7FT-cs-p2b"/>
                 <constraint firstItem="AK8-Re-Tub" firstAttribute="width" secondItem="dbo-bh-6ug" secondAttribute="width" id="91N-Uc-gBY"/>
-                <constraint firstAttribute="bottom" secondItem="dbo-bh-6ug" secondAttribute="bottom" constant="8" id="A7d-fP-toO"/>
+                <constraint firstItem="Uvl-Ez-h8m" firstAttribute="trailing" secondItem="dbo-bh-6ug" secondAttribute="trailing" id="9L7-9S-grB"/>
+                <constraint firstAttribute="bottom" secondItem="dbo-bh-6ug" secondAttribute="bottom" constant="55" id="A7d-fP-toO"/>
+                <constraint firstItem="Auk-rX-NFv" firstAttribute="trailing" secondItem="AK8-Re-Tub" secondAttribute="trailing" id="DxN-Rv-j0o"/>
                 <constraint firstItem="cww-lL-2iB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Mxz-Ag-Bj5"/>
                 <constraint firstItem="RZ6-q3-mxd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="N4r-eK-gUP"/>
-                <constraint firstItem="dbo-bh-6ug" firstAttribute="top" secondItem="cww-lL-2iB" secondAttribute="bottom" constant="13" id="U9Q-8j-2S0"/>
+                <constraint firstItem="dbo-bh-6ug" firstAttribute="top" secondItem="VcK-RK-xLv" secondAttribute="bottom" constant="8" id="Nv6-y0-oU0"/>
                 <constraint firstItem="dbo-bh-6ug" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="2:5" id="UQA-ul-ouV"/>
+                <constraint firstAttribute="trailing" secondItem="VcK-RK-xLv" secondAttribute="trailing" id="WKg-1P-SC3"/>
                 <constraint firstAttribute="trailing" secondItem="cww-lL-2iB" secondAttribute="trailing" id="Wt7-k9-ZRS"/>
                 <constraint firstItem="dbo-bh-6ug" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Xjk-5x-4PX"/>
+                <constraint firstItem="Auk-rX-NFv" firstAttribute="leading" secondItem="AK8-Re-Tub" secondAttribute="leading" id="Zuj-0P-s2F"/>
                 <constraint firstItem="AK8-Re-Tub" firstAttribute="top" secondItem="dbo-bh-6ug" secondAttribute="top" id="fd0-7L-hui"/>
                 <constraint firstAttribute="trailing" secondItem="RZ6-q3-mxd" secondAttribute="trailing" constant="20" id="gYc-8I-p9k"/>
                 <constraint firstAttribute="trailing" secondItem="AK8-Re-Tub" secondAttribute="trailing" constant="8" id="js8-6C-6Oe"/>
+                <constraint firstItem="VcK-RK-xLv" firstAttribute="top" secondItem="cww-lL-2iB" secondAttribute="bottom" constant="5" id="jsT-st-6oP"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>

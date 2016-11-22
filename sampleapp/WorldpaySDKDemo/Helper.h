@@ -28,7 +28,8 @@ if(![(AppDelegate *)[[UIApplication sharedApplication] delegate] authTokenAvaila
 
 typedef NS_ENUM(NSUInteger, RESTMode) {
     RESTModeCreate,
-    RESTModeEdit
+    RESTModeEdit,
+    RESTModeGet
 };
 
 @interface Helper: NSObject

@@ -108,4 +108,14 @@
     self.segmentedControl.enabled = enabled;
 }
 
+- (void) setDisplayMode
+{
+    [self setEnabled:false];
+}
+
+- (void) setEditMode
+{
+    [self setEnabled:true];
+}
+
 @end

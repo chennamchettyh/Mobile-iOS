@@ -24,9 +24,7 @@
     
     [[NSBundle mainBundle] loadNibNamed:@"LabeledTextView" owner:self options:nil];
     
-    self.textView.layer.cornerRadius = 5;
-    self.textView.layer.borderColor = [[UIColor worldpaySmoke] CGColor];
-    self.textView.layer.borderWidth = .5;
+    [self setEditMode];
     
     [Helper constrainView:self toSecondView:self.view];
 }
@@ -54,6 +52,21 @@
 - (void) setEnabled:(BOOL)enabled
 {
     self.textView.editable = enabled;
+}
+
+- (void) setDisplayMode
+{
+    self.textView.layer.cornerRadius = 0;
+    self.textView.layer.borderWidth = 0;
+    [self setEnabled:false];
+}
+
+- (void) setEditMode
+{
+    self.textView.layer.cornerRadius = 5;
+    self.textView.layer.borderColor = [[UIColor worldpaySmoke] CGColor];
+    self.textView.layer.borderWidth = .5;
+    [self setEnabled:true];
 }
 
 @end

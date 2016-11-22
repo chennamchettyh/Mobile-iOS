@@ -73,4 +73,14 @@
     [self.textField setEnabled:enabled];
 }
 
+- (void) setDisplayMode
+{
+    [self.textField setDisplayMode];
+}
+
+- (void) setEditMode
+{
+    [self.textField setEditMode];
+}
+
 @end

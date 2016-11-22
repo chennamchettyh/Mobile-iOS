@@ -57,4 +57,16 @@
     self.textField.enabled = enabled;
 }
 
+- (void) setDisplayMode
+{
+    self.textField.borderStyle = UITextBorderStyleNone;
+    [self setEnabled:false];
+}
+
+- (void) setEditMode
+{
+    self.textField.borderStyle = UITextBorderStyleRoundedRect;
+    [self setEnabled:true];
+}
+
 @end

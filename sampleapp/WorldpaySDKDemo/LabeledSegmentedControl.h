@@ -18,5 +18,7 @@
 - (void) setSelectedIndex:(NSUInteger)index;
 - (void) setLabelText:(NSString *)text;
 - (void) setEnabled: (BOOL) enabled;
+- (void) setDisplayMode;
+- (void) setEditMode;
 
 @end

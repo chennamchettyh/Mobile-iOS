@@ -40,10 +40,6 @@
 		859D8EA41DB01D76006BD88E /* CustomerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859D8EA11DB01D76006BD88E /* CustomerListViewController.m */; };
 		859D8EA51DB01D76006BD88E /* CustomerListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 859D8EA21DB01D76006BD88E /* CustomerListViewController.xib */; };
 		859D8EA61DB01D76006BD88E /* CustomerListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 859D8EA21DB01D76006BD88E /* CustomerListViewController.xib */; };
-		859D8EAA1DB01D8F006BD88E /* CustomerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859D8EA81DB01D8F006BD88E /* CustomerDetailViewController.m */; };
-		859D8EAB1DB01D8F006BD88E /* CustomerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859D8EA81DB01D8F006BD88E /* CustomerDetailViewController.m */; };
-		859D8EAC1DB01D8F006BD88E /* CustomerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 859D8EA91DB01D8F006BD88E /* CustomerDetailViewController.xib */; };
-		859D8EAD1DB01D8F006BD88E /* CustomerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 859D8EA91DB01D8F006BD88E /* CustomerDetailViewController.xib */; };
 		859D8EB11DB01D9E006BD88E /* CustomerPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859D8EAF1DB01D9E006BD88E /* CustomerPaymentViewController.m */; };
 		859D8EB21DB01D9E006BD88E /* CustomerPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859D8EAF1DB01D9E006BD88E /* CustomerPaymentViewController.m */; };
 		859D8EB31DB01D9E006BD88E /* CustomerPaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 859D8EB01DB01D9E006BD88E /* CustomerPaymentViewController.xib */; };
@@ -209,9 +205,6 @@
 		859D8EA01DB01D76006BD88E /* CustomerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerListViewController.h; sourceTree = "<group>"; };
 		859D8EA11DB01D76006BD88E /* CustomerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerListViewController.m; sourceTree = "<group>"; };
 		859D8EA21DB01D76006BD88E /* CustomerListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomerListViewController.xib; sourceTree = "<group>"; };
-		859D8EA71DB01D8F006BD88E /* CustomerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerDetailViewController.h; sourceTree = "<group>"; };
-		859D8EA81DB01D8F006BD88E /* CustomerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerDetailViewController.m; sourceTree = "<group>"; };
-		859D8EA91DB01D8F006BD88E /* CustomerDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomerDetailViewController.xib; sourceTree = "<group>"; };
 		859D8EAE1DB01D9E006BD88E /* CustomerPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerPaymentViewController.h; sourceTree = "<group>"; };
 		859D8EAF1DB01D9E006BD88E /* CustomerPaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerPaymentViewController.m; sourceTree = "<group>"; };
 		859D8EB01DB01D9E006BD88E /* CustomerPaymentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomerPaymentViewController.xib; sourceTree = "<group>"; };
@@ -438,9 +431,6 @@
 				859D8EA01DB01D76006BD88E /* CustomerListViewController.h */,
 				859D8EA11DB01D76006BD88E /* CustomerListViewController.m */,
 				859D8EA21DB01D76006BD88E /* CustomerListViewController.xib */,
-				859D8EA71DB01D8F006BD88E /* CustomerDetailViewController.h */,
-				859D8EA81DB01D8F006BD88E /* CustomerDetailViewController.m */,
-				859D8EA91DB01D8F006BD88E /* CustomerDetailViewController.xib */,
 				859D8EAE1DB01D9E006BD88E /* CustomerPaymentViewController.h */,
 				859D8EAF1DB01D9E006BD88E /* CustomerPaymentViewController.m */,
 				859D8EB01DB01D9E006BD88E /* CustomerPaymentViewController.xib */,
@@ -639,7 +629,6 @@
 				89D200121DAECB160090C9AE /* BatchTransactionTableViewCell.xib in Resources */,
 				8CAE8AA01DA6F7A4006DBC36 /* AdelleSans_Regular.otf in Resources */,
 				8CAE8A9E1DA6F7A4006DBC36 /* AdelleSans_Bold.otf in Resources */,
-				859D8EAC1DB01D8F006BD88E /* CustomerDetailViewController.xib in Resources */,
 				8CDEB6C61DA8106600F81B63 /* ExtendedInformationView.xib in Resources */,
 				859D8EB31DB01D9E006BD88E /* CustomerPaymentViewController.xib in Resources */,
 				850C575A1DCA53E300B1F6B0 /* HomeViewController.xib in Resources */,
@@ -681,7 +670,6 @@
 				89D200131DAECB160090C9AE /* BatchTransactionTableViewCell.xib in Resources */,
 				896A6ED01DAC094D00FD8F77 /* TransactionDetailCell.xib in Resources */,
 				8C068D021DA4147F00578C9D /* Main.storyboard in Resources */,
-				859D8EAD1DB01D8F006BD88E /* CustomerDetailViewController.xib in Resources */,
 				896A6ED71DAC137600FD8F77 /* TransactionDetailViewController.xib in Resources */,
 				859D8EB41DB01D9E006BD88E /* CustomerPaymentViewController.xib in Resources */,
 				850C57591DCA53E300B1F6B0 /* HomeViewController.xib in Resources */,
@@ -706,7 +694,6 @@
 				8908E7441DA5536A00EBF673 /* TransactionDetailCell.m in Sources */,
 				894DF3A11DAD3FAE0043B01D /* RefundVoidViewController.m in Sources */,
 				850C57581DCA53E300B1F6B0 /* HomeViewController.m in Sources */,
-				859D8EAA1DB01D8F006BD88E /* CustomerDetailViewController.m in Sources */,
 				89A4DF681DA8110E007F79D6 /* Helper.m in Sources */,
 				859D8EB11DB01D9E006BD88E /* CustomerPaymentViewController.m in Sources */,
 				89D200051DAEB6DC0090C9AE /* SettlementViewController.m in Sources */,
@@ -754,7 +741,6 @@
 				814EDBF81C69636E0010877C /* main.m in Sources */,
 				894DF3A21DAD3FAE0043B01D /* RefundVoidViewController.m in Sources */,
 				850C57571DCA53E300B1F6B0 /* HomeViewController.m in Sources */,
-				859D8EAB1DB01D8F006BD88E /* CustomerDetailViewController.m in Sources */,
 				896A6ECE1DAC093100FD8F77 /* TransactionDetailViewController.m in Sources */,
 				859D8EB21DB01D9E006BD88E /* CustomerPaymentViewController.m in Sources */,
 				89D200061DAEB6DC0090C9AE /* SettlementViewController.m in Sources */,
