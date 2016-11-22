@@ -39,9 +39,6 @@
 @property (nonatomic, weak) IBOutlet LabeledTextField * countryField;
 @property (nonatomic, weak) IBOutlet LabeledTextField * zipField;
 @property (nonatomic, weak) IBOutlet LabeledTextField * companyField;
-@property (nonatomic, weak) IBOutlet LabeledTextField * udfKeyField1;
-@property (nonatomic, weak) IBOutlet LabeledTextField * udfKeyField2;
-@property (nonatomic, weak) IBOutlet LabeledTextField * udfKeyField3;
 @property (nonatomic, weak) IBOutlet LabeledTextField * udfValueField1;
 @property (nonatomic, weak) IBOutlet LabeledTextField * udfValueField2;
 @property (nonatomic, weak) IBOutlet LabeledTextField * udfValueField3;
@@ -85,11 +82,8 @@
         [self.submitButton setTitle:@"Save" forState:UIControlStateNormal];
         [self.submitButton addTarget:self action:@selector(saveCustomer) forControlEvents:UIControlEventTouchUpInside];
         [self.customerIdField setEnabled:false];
-        [self.udfKeyField1 setEnabled:false];
         [self.udfValueField1 setEnabled:false];
-        [self.udfKeyField2 setEnabled:false];
         [self.udfValueField2 setEnabled:false];
-        [self.udfKeyField3 setEnabled:false];
         [self.udfValueField3 setEnabled:false];
         self.detailsButtonsHeightConstraint.constant = 0;
         [self.detailButtonsView layoutIfNeeded];
@@ -113,11 +107,8 @@
         [self.zipField setDisplayMode];
         [self.countryField setDisplayMode];
         [self.companyField setDisplayMode];
-        [self.udfKeyField1 setDisplayMode];
         [self.udfValueField1 setDisplayMode];
-        [self.udfKeyField2 setDisplayMode];
         [self.udfValueField2 setDisplayMode];
-        [self.udfKeyField3 setDisplayMode];
         [self.udfValueField3 setDisplayMode];
     }
     
@@ -163,22 +154,13 @@
     [self.companyField setLabelText:@"Company"];
     [self.companyField setTextFieldDelegate:self];
     
-    [self.udfKeyField1 setLabelText:@"User Defined Field #1"];
-    [self.udfKeyField1 setTextFieldDelegate:self];
-    
-    [self.udfKeyField2 setLabelText:@"User Defined Field #2"];
-    [self.udfKeyField2 setTextFieldDelegate:self];
-    
-    [self.udfKeyField3 setLabelText:@"User Defined Field #3"];
-    [self.udfKeyField3 setTextFieldDelegate:self];
-    
-    [self.udfValueField1 setLabelText:@"Value"];
+    [self.udfValueField1 setLabelText:@"User Defined Field #1"];
     [self.udfValueField1 setTextFieldDelegate:self];
     
-    [self.udfValueField2 setLabelText:@"Value"];
+    [self.udfValueField2 setLabelText:@"User Defined Field #2"];
     [self.udfValueField2 setTextFieldDelegate:self];
     
-    [self.udfValueField3 setLabelText:@"Value"];
+    [self.udfValueField3 setLabelText:@"User Defined Field #3"];
     [self.udfValueField3 setTextFieldDelegate:self];
     
     UITapGestureRecognizer *recognizer1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeFocusFromTextField:)];
@@ -250,29 +232,32 @@
     self.customer.userDefinedFields = self.editCustomer.userDefinedFields;
     
     // Note that if user has more than 3 fields, the remaining will not be shown here
-    NSArray * alphaKeys = [self.editCustomer.userDefinedFields alphaSorted];
+    NSUInteger udfCount = self.editCustomer.userDefinedFields.count;
     
-    if(alphaKeys.count > 0)
+    if(udfCount > 0)
     {
-        [self.udfKeyField1 setFieldText:alphaKeys[0]];
-        [self.udfValueField1 setFieldText:self.editCustomer.userDefinedFields[alphaKeys[0]]];
+        [self.udfValueField1 setFieldText:self.editCustomer.userDefinedFields[@"udf1"]];
     }
     
-    if(alphaKeys.count > 1)
+    if(udfCount > 1)
     {
-        [self.udfKeyField2 setFieldText:alphaKeys[1]];
-        [self.udfValueField2 setFieldText:self.editCustomer.userDefinedFields[alphaKeys[1]]];
+        [self.udfValueField2 setFieldText:self.editCustomer.userDefinedFields[@"udf2"]];
     }
     
-    if(alphaKeys.count > 2)
+    if(udfCount > 2)
     {
-        [self.udfKeyField3 setFieldText:alphaKeys[2]];
-        [self.udfValueField3 setFieldText:self.editCustomer.userDefinedFields[alphaKeys[2]]];
+        [self.udfValueField3 setFieldText:self.editCustomer.userDefinedFields[@"udf3"]];
     }
 }
 
 - (void) syncCustomerToUI
 {
+    if(self.mode == RESTModeCreate)
+    {
+        // TODO: Customer ID cannot be set for create because of SDK limitation
+        // self.customer.identifier = self.customerIdField.text;
+    }
+    
     self.customer.firstName = self.firstNameField.text;
     self.customer.lastName = self.lastNameField.text;
     self.customer.phone = self.phoneField.text;
@@ -293,35 +278,26 @@
     self.customer.address.country = self.countryField.text;
     self.customer.address.company = self.companyField.text;
     self.customer.company = self.companyField.text;
+        
+    NSMutableDictionary * mutableUDF = [NSMutableDictionary dictionary];
     
-    // UDF are read-only in edit due to syncing issues when only displaying 3 fields
-    if(self.mode == RESTModeCreate)
+    if(self.udfValueField1.text.length > 0)
     {
-        // TODO: Customer ID cannot be set for create because of SDK limitation
-        // self.customer.identifier = self.customerIdField.text;
-        
-        if(!self.customer.userDefinedFields)
-        {
-            self.customer.userDefinedFields = @{};
-        }
-        
-        NSMutableDictionary * mutableUDF = [self.customer.userDefinedFields mutableCopy];
-        
-        if(self.udfKeyField1.text.length > 0)
-        {
-            mutableUDF[self.udfKeyField1.text] = self.udfValueField1.text;
-        }
-        
-        if(self.udfKeyField2.text.length > 0)
-        {
-            mutableUDF[self.udfKeyField2.text] = self.udfValueField2.text;
-        }
-        
-        if(self.udfKeyField3.text.length > 0)
-        {
-            mutableUDF[self.udfKeyField3.text] = self.udfValueField3.text;
-        }
-        
+        mutableUDF[@"udf1"] = self.udfValueField1.text;
+    }
+    
+    if(self.udfValueField2.text.length > 0)
+    {
+        mutableUDF[@"udf2"] = self.udfValueField2.text;
+    }
+    
+    if(self.udfValueField3.text.length > 0)
+    {
+        mutableUDF[@"udf3"] = self.udfValueField3.text;
+    }
+    
+    if(mutableUDF.count > 0)
+    {
         self.customer.userDefinedFields = [NSDictionary dictionaryWithDictionary:mutableUDF];
     }
 }
@@ -390,11 +366,8 @@
     [self.zipField setDisplayMode];
     [self.countryField setDisplayMode];
     [self.companyField setDisplayMode];
-    [self.udfKeyField1 setDisplayMode];
     [self.udfValueField1 setDisplayMode];
-    [self.udfKeyField2 setDisplayMode];
     [self.udfValueField2 setDisplayMode];
-    [self.udfKeyField3 setDisplayMode];
     [self.udfValueField3 setDisplayMode];
     
     self.detailsButtonsHeightConstraint.constant = self.originalDetailsHeightConstant;
@@ -418,19 +391,13 @@
     [self.zipField setEditMode];
     [self.countryField setEditMode];
     [self.companyField setEditMode];
-    [self.udfKeyField1 setEditMode];
     [self.udfValueField1 setEditMode];
-    [self.udfKeyField2 setEditMode];
     [self.udfValueField2 setEditMode];
-    [self.udfKeyField3 setEditMode];
     [self.udfValueField3 setEditMode];
     
     [self.customerIdField setEnabled:false];
-    [self.udfKeyField1 setEnabled:false];
     [self.udfValueField1 setEnabled:false];
-    [self.udfKeyField2 setEnabled:false];
     [self.udfValueField2 setEnabled:false];
-    [self.udfKeyField3 setEnabled:false];
     [self.udfValueField3 setEnabled:false];
     
     self.title = @"Edit Customer";
@@ -469,11 +436,12 @@
 
 - (BOOL) handleError: (NSError *) error response: (WPYCustomerResponseData *) response
 {
-    if(error || response.responseCode == WPYResponseCodeError)
+    if(error || response.responseCode == WPYResponseCodeError || response.success == false)
     {
         [self enableButtons];
         
         NSLog(@"Error: %@",error);
+        NSLog(@"Response: %@", [response jsonDictionary]);
         
         UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:[NSString stringWithFormat:@"%@ customer failed with an error.%@", (self.mode == RESTModeCreate ? @"Create" : @"Save"),(response.responseMessage.length > 0 ? [NSString stringWithFormat: @"\n\nMessage: %@", response.responseMessage] : @"")] preferredStyle:UIAlertControllerStyleAlert];
         
