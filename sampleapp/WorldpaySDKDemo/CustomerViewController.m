@@ -236,17 +236,17 @@
     
     if(udfCount > 0)
     {
-        [self.udfValueField1 setFieldText:self.editCustomer.userDefinedFields[@"udf1"]];
+        [self.udfValueField1 setFieldText:self.editCustomer.userDefinedFields[@"UDF1"]];
     }
     
     if(udfCount > 1)
     {
-        [self.udfValueField2 setFieldText:self.editCustomer.userDefinedFields[@"udf2"]];
+        [self.udfValueField2 setFieldText:self.editCustomer.userDefinedFields[@"UDF2"]];
     }
     
     if(udfCount > 2)
     {
-        [self.udfValueField3 setFieldText:self.editCustomer.userDefinedFields[@"udf3"]];
+        [self.udfValueField3 setFieldText:self.editCustomer.userDefinedFields[@"UDF3"]];
     }
 }
 
@@ -312,8 +312,6 @@
     
     [self syncCustomerToUI];
     
-    NSLog(@"%@", [self.customer jsonDictionary]);
-    
     [[WorldpayAPI instance] createCustomer:self.customer withCompletion:^(WPYCustomerResponseData * response, NSError * error)
     {
         [self handleResponse:response error:error];
@@ -354,6 +352,7 @@
     self.title = @"Customer Details";
     [self syncUIToCustomer];
     [self.submitButton setTitle:@"Payment Methods" forState:UIControlStateNormal];
+    [self.submitButton removeTarget:self action:nil forControlEvents:UIControlEventAllEvents];
     [self.submitButton addTarget:self action:@selector(paymentMethods) forControlEvents:UIControlEventTouchUpInside];
     [self.customerIdField setDisplayMode];
     [self.firstNameField setDisplayMode];
@@ -398,12 +397,10 @@
     [self.udfValueField3 setEditMode];
     
     [self.customerIdField setEnabled:false];
-    [self.udfValueField1 setEnabled:false];
-    [self.udfValueField2 setEnabled:false];
-    [self.udfValueField3 setEnabled:false];
     
     self.title = @"Edit Customer";
     [self.submitButton setTitle:@"Save" forState:UIControlStateNormal];
+    [self.submitButton removeTarget:self action:nil forControlEvents:UIControlEventAllEvents];
     [self.submitButton addTarget:self action:@selector(saveCustomer) forControlEvents:UIControlEventTouchUpInside];
     self.detailsButtonsHeightConstraint.constant = 0;
     [self.detailButtonsView layoutIfNeeded];
@@ -427,7 +424,7 @@
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
         [alert addAction:[UIAlertAction actionWithTitle:@"View Details" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
         {
-            
+            [self switchToGet:response];
         }]];
         
         [self presentViewController:alert animated:true completion:nil];
