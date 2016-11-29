@@ -103,7 +103,7 @@
     // 5th tab for Vault (Placeholder, not fully implemented yet)
     VaultViewController * vaultViewController = [[VaultViewController alloc] initWithNibName:nil bundle:nil];
     UINavigationController * vaultNav = [[UINavigationController alloc] initWithRootViewController: vaultViewController];
-    vaultNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[vaultNav viewControllers] firstObject]) title] image:nil tag:[index current]];
+    vaultNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[vaultNav viewControllers] firstObject]) title] image:[self imageWithImage:[UIImage imageNamed:@"vault_icon"]] tag:[index current]];
     
     tabController.viewControllers = @[homeNav, transactionNav, refundVoidNav, settlementNav, vaultNav];
     

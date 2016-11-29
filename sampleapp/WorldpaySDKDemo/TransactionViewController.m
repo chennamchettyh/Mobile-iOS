@@ -296,7 +296,7 @@
             request = [WPYPaymentAuthorize new];
     }
     
-    WPYEMVTransactionType transactionType = WPYEMVTransactionTypeGoods;
+    WPYEMVTransactionType transactionType = WPYEMVTransactionTypeCashback;
     
     request.amount = [NSDecimalNumber decimalNumberWithString:self.amountTextField.text];
     

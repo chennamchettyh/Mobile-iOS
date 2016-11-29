@@ -111,15 +111,24 @@
                         <action selector="vault:" destination="-1" eventType="touchUpInside" id="myB-FF-y1y"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault_icon" translatesAutoresizingMaskIntoConstraints="NO" id="NqV-Fi-9Jx">
+                    <rect key="frame" x="100" y="481" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="NqV-Fi-9Jx" secondAttribute="height" multiplier="1:1" id="zjL-pg-Hmx"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="jXS-Cr-EBS" firstAttribute="leading" secondItem="bAs-Fp-UR8" secondAttribute="trailing" constant="-64.5" id="0Tk-1o-GPc"/>
                 <constraint firstItem="bAs-Fp-UR8" firstAttribute="height" secondItem="jXS-Cr-EBS" secondAttribute="height" multiplier="4:5" id="1WZ-kd-Igf"/>
                 <constraint firstItem="GRU-Io-ego" firstAttribute="leading" secondItem="KJ2-TG-uyF" secondAttribute="leading" id="3zv-YJ-Yba"/>
+                <constraint firstItem="NqV-Fi-9Jx" firstAttribute="width" secondItem="NqV-Fi-9Jx" secondAttribute="height" multiplier="1:1" id="4Nm-kL-LVo"/>
                 <constraint firstItem="w6O-69-Zlw" firstAttribute="top" secondItem="jXS-Cr-EBS" secondAttribute="bottom" id="9J6-Wo-aDy"/>
+                <constraint firstItem="NqV-Fi-9Jx" firstAttribute="trailing" secondItem="11n-XZ-1Na" secondAttribute="trailing" id="9pu-Or-wr4"/>
                 <constraint firstItem="jXS-Cr-EBS" firstAttribute="top" secondItem="tCy-Ic-cov" secondAttribute="bottom" constant="44" id="AQ4-Dj-ptG"/>
                 <constraint firstItem="O3X-uT-oGX" firstAttribute="height" secondItem="w6O-69-Zlw" secondAttribute="height" id="CRd-ll-E2i"/>
+                <constraint firstItem="NqV-Fi-9Jx" firstAttribute="centerY" secondItem="aNn-Fk-IJO" secondAttribute="centerY" id="DGd-vB-fL8"/>
                 <constraint firstItem="cra-U3-C5g" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="EQ7-Jm-Vl6"/>
                 <constraint firstItem="jXS-Cr-EBS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LSh-tl-H2K"/>
                 <constraint firstItem="kHC-0b-tsK" firstAttribute="leading" secondItem="bAs-Fp-UR8" secondAttribute="leading" id="PKg-Lm-LHC"/>
@@ -135,6 +144,7 @@
                 <constraint firstItem="kHC-0b-tsK" firstAttribute="trailing" secondItem="bAs-Fp-UR8" secondAttribute="trailing" id="bPB-Zv-Hha"/>
                 <constraint firstItem="kHC-0b-tsK" firstAttribute="centerY" secondItem="KJ2-TG-uyF" secondAttribute="centerY" id="g1U-8u-iez"/>
                 <constraint firstItem="cra-U3-C5g" firstAttribute="top" secondItem="GRU-Io-ego" secondAttribute="bottom" id="gG5-kz-cUV"/>
+                <constraint firstItem="NqV-Fi-9Jx" firstAttribute="leading" secondItem="11n-XZ-1Na" secondAttribute="leading" id="htY-IV-5Jz"/>
                 <constraint firstItem="aNn-Fk-IJO" firstAttribute="top" secondItem="cra-U3-C5g" secondAttribute="bottom" id="j5a-Gh-QLZ"/>
                 <constraint firstItem="GRU-Io-ego" firstAttribute="height" secondItem="jXS-Cr-EBS" secondAttribute="height" id="lFv-6D-vNM"/>
                 <constraint firstItem="w6O-69-Zlw" firstAttribute="centerX" secondItem="GRU-Io-ego" secondAttribute="centerX" id="lYJ-JJ-Kgp"/>
@@ -157,6 +167,7 @@
         <image name="credit_card_icon" width="249" height="175"/>
         <image name="refund_void_icon" width="119" height="229"/>
         <image name="settlement" width="40" height="40"/>
+        <image name="vault_icon" width="220" height="279"/>
         <image name="worldpay_logo" width="2936" height="558"/>
     </resources>
 </document>
