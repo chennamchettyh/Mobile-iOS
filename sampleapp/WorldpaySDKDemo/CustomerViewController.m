@@ -312,6 +312,8 @@
     
     [self syncCustomerToUI];
     
+    NSLog(@"%@", [self.customer jsonDictionary]);
+    
     [[WorldpayAPI instance] createCustomer:self.customer withCompletion:^(WPYCustomerResponseData * response, NSError * error)
     {
         [self handleResponse:response error:error];
