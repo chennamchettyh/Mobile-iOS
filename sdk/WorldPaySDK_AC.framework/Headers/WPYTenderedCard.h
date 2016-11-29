@@ -11,6 +11,9 @@
 
 @class WPYAddressInfo;
 
+/**
+ * This indicates what ineterface was used for obtaining the card data.
+ */
 typedef NS_ENUM(NSInteger, WPYCardSource)
 {
     WPYCardSourceNotSet = -1,

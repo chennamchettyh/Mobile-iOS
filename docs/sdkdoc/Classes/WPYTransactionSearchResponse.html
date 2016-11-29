@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>WPYBatchResponse Class Reference</title>
+	<title>WPYTransactionSearchResponse Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -43,8 +43,6 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
-	<option value="overview">Overview</option>
-	
 
 	
 	
@@ -55,8 +53,6 @@
 	
 	
 	<optgroup label="Properties">
-		
-		<option value="//api/name/batchId">batchId</option>
 		
 		<option value="//api/name/responseCode">responseCode</option>
 		
@@ -87,7 +83,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">WPYBatchResponse Class Reference</h1>
+					<h1 class="title">WPYTransactionSearchResponse Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -96,21 +92,12 @@
 	<td><a href="../Classes/WPYDomainObject.html">WPYDomainObject</a> : NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>WPYBatchResponse.h<br />WPYBatchResponse.m</td>
+	<td>WPYTransactionSearchResponse.h<br />WPYTransactionSearchResponse.m</td>
 </tr>
 						</tbody></table></div>
 					
 
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>An object that only contains the identifier for the current batch.  Note that the &lsquo;identifier&rsquo; property is common to all
-WPYDomainObjects and is therefore visible at the base class level</p>
-					</div>
-					
-					
 
 					
 					
@@ -162,7 +149,7 @@ WPYDomainObjects and is therefore visible at the base class level</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">WPYBatchResponse.h</code></p>
+				<p><code class="declared-in-ref">WPYTransactionSearchResponse.h</code></p>
 			</div>
 			
 			
@@ -208,7 +195,7 @@ WPYDomainObjects and is therefore visible at the base class level</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">WPYBatchResponse.h</code></p>
+				<p><code class="declared-in-ref">WPYTransactionSearchResponse.h</code></p>
 			</div>
 			
 			
@@ -254,7 +241,7 @@ WPYDomainObjects and is therefore visible at the base class level</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">WPYBatchResponse.h</code></p>
+				<p><code class="declared-in-ref">WPYTransactionSearchResponse.h</code></p>
 			</div>
 			
 			
@@ -300,53 +287,7 @@ WPYDomainObjects and is therefore visible at the base class level</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">WPYBatchResponse.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/batchId" title="batchId"></a>
-	<h3 class="method-title"><code><a href="#//api/name/batchId">&nbsp;&nbsp;batchId</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>A convenience method to get the WPYBatchResponse.identifier associated with the transaction</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=getBatchId) NSString *batchId</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>A convenience method to get the WPYBatchResponse.identifier associated with the transaction</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">WPYBatchResponse.h</code></p>
+				<p><code class="declared-in-ref">WPYTransactionSearchResponse.h</code></p>
 			</div>
 			
 			
@@ -364,12 +305,12 @@ WPYDomainObjects and is therefore visible at the base class level</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>A list of transactions associated with the batch</p>
+				<p>The list of transactions that matches the parameters in the initial search</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, strong) NSArray&lt;WPYTransaction*&gt; *transactions</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;WPYTransaction*&gt; *transactions</code></div>
 
 		    
 			
@@ -381,7 +322,7 @@ WPYDomainObjects and is therefore visible at the base class level</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>A list of transactions associated with the batch</p>
+				<p>The list of transactions that matches the parameters in the initial search</p>
 			</div>
 			
 
@@ -392,7 +333,7 @@ WPYDomainObjects and is therefore visible at the base class level</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">WPYBatchResponse.h</code></p>
+				<p><code class="declared-in-ref">WPYTransactionSearchResponse.h</code></p>
 			</div>
 			
 			

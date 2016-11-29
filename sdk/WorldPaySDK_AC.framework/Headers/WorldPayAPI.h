@@ -10,6 +10,7 @@
 
 @protocol WPYSwiperDelegate;
 @class WPYAuthTokenRequest;
+@class WPYAuthTokenResponse;
 @class WPYTender;
 @class WPYCustomerRequestData;
 @class WPYCustomerResponseData;
@@ -105,7 +106,7 @@ extern NSString *const WorldpayServerErrorDomain;
  * @param Auth Token Request object containing user credentials
  * @param completion handler used to notify the caller of any server results or errors
  */
-- (void)generateAuthToken:(WPYAuthTokenRequest *)authTokenRequest withCompletion:(void(^)(NSString *, NSError *))completion;
+- (void)generateAuthToken:(WPYAuthTokenRequest *)authTokenRequest withCompletion:(void(^)(WPYAuthTokenResponse *, NSError *))completion;
 
 /**
  * Clears the keychain data out of the application. Completely resets the auth token information

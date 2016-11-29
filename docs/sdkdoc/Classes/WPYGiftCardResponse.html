@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>WPYPaymentCapture Class Reference</title>
+	<title>WPYGiftCardResponse Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -43,8 +43,6 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
-	<option value="overview">Overview</option>
-	
 
 	
 	
@@ -56,11 +54,13 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/amount">amount</option>
+		<option value="//api/name/responseCode">responseCode</option>
 		
-		<option value="//api/name/extendedData">extendedData</option>
+		<option value="//api/name/responseMessage">responseMessage</option>
 		
-		<option value="//api/name/transactionId">transactionId</option>
+		<option value="//api/name/result">result</option>
+		
+		<option value="//api/name/success">success</option>
 		
 	</optgroup>
 	
@@ -81,7 +81,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">WPYPaymentCapture Class Reference</h1>
+					<h1 class="title">WPYGiftCardResponse Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -90,20 +90,12 @@
 	<td><a href="../Classes/WPYDomainObject.html">WPYDomainObject</a> : NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>WPYPaymentCapture.h<br />WPYPaymentCapture.m</td>
+	<td>WPYGiftCardResponse.h<br />WPYGiftCardResponse.m</td>
 </tr>
 						</tbody></table></div>
 					
 
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>This requests that the previously authorized transaction be captured</p>
-					</div>
-					
-					
 
 					
 					
@@ -116,8 +108,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/amount" title="amount"></a>
-	<h3 class="method-title"><code><a href="#//api/name/amount">&nbsp;&nbsp;amount</a></code>
+	<a name="//api/name/responseCode" title="responseCode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/responseCode">&nbsp;&nbsp;responseCode</a></code>
 </h3>
 
 	<div class="method-info">
@@ -127,12 +119,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The amount to capture against the previous authorization</p>
+				<p>Gateway response code for the current request</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSDecimalNumber *amount</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) WPYResponseCode responseCode</code></div>
 
 		    
 			
@@ -144,7 +136,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>The amount to capture against the previous authorization</p>
+				<p>Gateway response code for the current request</p>
 			</div>
 			
 
@@ -155,15 +147,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">WPYPaymentCapture.h</code></p>
+				<p><code class="declared-in-ref">WPYGiftCardResponse.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/transactionId" title="transactionId"></a>
-	<h3 class="method-title"><code><a href="#//api/name/transactionId">&nbsp;&nbsp;transactionId</a></code>
+	<a name="//api/name/responseMessage" title="responseMessage"></a>
+	<h3 class="method-title"><code><a href="#//api/name/responseMessage">&nbsp;&nbsp;responseMessage</a></code>
 </h3>
 
 	<div class="method-info">
@@ -173,12 +165,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The transaction ID of the authorization to be captured</p>
+				<p>Response Message containing a detailed message for the merchant, such as why a transaction was declined</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *transactionId</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *responseMessage</code></div>
 
 		    
 			
@@ -190,7 +182,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>The transaction ID of the authorization to be captured</p>
+				<p>Response Message containing a detailed message for the merchant, such as why a transaction was declined</p>
 			</div>
 			
 
@@ -201,15 +193,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">WPYPaymentCapture.h</code></p>
+				<p><code class="declared-in-ref">WPYGiftCardResponse.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/extendedData" title="extendedData"></a>
-	<h3 class="method-title"><code><a href="#//api/name/extendedData">&nbsp;&nbsp;extendedData</a></code>
+	<a name="//api/name/success" title="success"></a>
+	<h3 class="method-title"><code><a href="#//api/name/success">&nbsp;&nbsp;success</a></code>
 </h3>
 
 	<div class="method-info">
@@ -219,12 +211,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Additional card data that the merchant may wish to include with the transaction</p>
+				<p>Indicates whether or not the current request was successfully processed</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) WPYExtendedCardData *extendedData</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL success</code></div>
 
 		    
 			
@@ -236,7 +228,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Additional card data that the merchant may wish to include with the transaction</p>
+				<p>Indicates whether or not the current request was successfully processed</p>
 			</div>
 			
 
@@ -247,7 +239,53 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">WPYPaymentCapture.h</code></p>
+				<p><code class="declared-in-ref">WPYGiftCardResponse.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/result" title="result"></a>
+	<h3 class="method-title"><code><a href="#//api/name/result">&nbsp;&nbsp;result</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Short message indicating the result of processing. Suitable to display to the <a href="#//api/name/card">card</a> holder</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *result</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Short message indicating the result of processing. Suitable to display to the <a href="#//api/name/card">card</a> holder</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WPYGiftCardResponse.h</code></p>
 			</div>
 			
 			

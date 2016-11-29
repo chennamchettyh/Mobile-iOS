@@ -40,9 +40,9 @@
     authTokenRequest.terminalId = @"445";
     authTokenRequest.terminalVendor = @"4554";
     
-    [[WorldpayAPI instance] generateAuthToken:authTokenRequest withCompletion:^(NSString *result, NSError *error)
+    [[WorldpayAPI instance] generateAuthToken:authTokenRequest withCompletion:^(WPYAuthTokenResponse *result, NSError *error)
     {
-        if(!result || error)
+        if(!result || !result.success || error)
         {
             NSLog(@"Error generating AUTH Token: %@", error);
              

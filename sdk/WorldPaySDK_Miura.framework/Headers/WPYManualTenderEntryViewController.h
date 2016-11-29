@@ -23,7 +23,8 @@ typedef NS_ENUM(NSInteger, WPYManualTenderType)
  *
  * @param The delegate that will be responding to the WPYManualTenderEntryDelegate protocol
  * @param The type of tender that is going to be entered (check or credit card)
- * @param The prepopulated payment request object that will be used to process the tender
+ * @param The prepopulated payment request object that will be used to process the tender. You must set things such as gratuity data, and other fields
+ *   not associated with the tender itself
  */
 - (instancetype) initWithDelegate:(id <WPYManualTenderEntryDelegate>)delegate tenderType:(WPYManualTenderType)tenderType request:(WPYPaymentRequest *)request;
 @end

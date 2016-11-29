@@ -17,6 +17,10 @@ typedef NS_ENUM(NSInteger, WPYPaymentMethodDuplicateCheckType)
     WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderGroup = 3
 };
 
+/**
+ * Gateway Response code indicating whether the request was approved, declined, or resulted in a server error.
+ * The response code is set on all parent response objects being returned from the gateway
+ */
 typedef NS_ENUM(NSInteger, WPYResponseCode)
 {
     WPYResponseCodeApproved = 0x01,
@@ -30,23 +34,6 @@ typedef NS_ENUM(NSInteger, WPYResponseCode)
  * contains the id returned by the server for any object returned by the server
  */
 @property (nonatomic, readonly) NSString *identifier;
-/**
- * Gateway response code for the current request
- */
-@property (nonatomic, readonly) WPYResponseCode responseCode;
-/**
- * Response Message containing a detailed message for the merchant, such as why a transaction was declined
- */
-@property (nonatomic, readonly) NSString *responseMessage;
-/**
- * Indicates whether or not the current request was successfully processed
- */
-@property (nonatomic, readonly) BOOL success;
-/**
- * Short message indicating the result of processing. Suitable to display to the card holder
- */
-@property (nonatomic, readonly) NSString *result;
-
 
 
 - (NSMutableDictionary *)jsonDictionary;

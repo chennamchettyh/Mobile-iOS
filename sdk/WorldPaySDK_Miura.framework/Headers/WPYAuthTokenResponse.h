@@ -1,19 +1,13 @@
 //
-//  WPYTransactionResponse.h
-//  WorldpaySDK
+//  WPYAuthTokenResponse.h
+//  WorldPaySDK
 //
-//  Copyright © 2015 Worldpay. All rights reserved.
+//  Copyright © 2016 WorldPay. All rights reserved.
 //
 
 #import "WPYDomainObject.h"
 
-@class WPYTransaction;
-
-/** 
- * This object contains transaction response information returned from the gateway after sending a payment request
- * to the server
- */
-@interface WPYTransactionResponse : WPYDomainObject
+@interface WPYAuthTokenResponse : WPYDomainObject
 /**
  * Gateway response code for the current request
  */
@@ -31,7 +25,7 @@
  */
 @property (nonatomic, readonly) NSString *result;
 /**
- * An object containing all of the details for the transaction
+ * The authorization token issued by the server.
  */
-@property (nonatomic, readonly) WPYTransaction *transaction;
+@property (nonatomic, readonly, getter=authToken) NSString *authToken;
 @end

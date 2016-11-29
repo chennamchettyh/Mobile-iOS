@@ -124,7 +124,10 @@ typedef NS_ENUM(NSInteger, WPYSwiperType)
 };
 
 /** 
- * Type of transaction that the merchant would like to perform
+ * Type of transaction that the merchant would like to perform.
+ * A transaction with type Goods is debit/credit only with no gratuity or cash back allowed
+ * A transaction with type Cashback is a sale w/ cash back allowed if supported by the card type
+ * A transaction with type Services is a sale w/ inline tip adjustment allowed
  */
 typedef NS_ENUM(NSInteger, WPYEMVTransactionType)
 {
@@ -135,8 +138,9 @@ typedef NS_ENUM(NSInteger, WPYEMVTransactionType)
 };
 
 /**
- * The result of the requested transaction.  Most of these statuses are returned by the terminal
- * but some can be returned by the gateway, instead 
+ * The result of the requested transaction.  These statuses are returned by the terminal based on the result of the transaction
+ * and may be based on the online process result from the gateway but also represent various errors or results that can happen
+ * due to EMV errors or reversals
  */
 typedef NS_ENUM(NSInteger, WPYTransactionResult)
 {
