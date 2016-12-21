@@ -8,6 +8,9 @@
 #import <UIKit/UIKit.h>
 
 @class WPYTender;
+@class WPYPaymentMethodRequest;
+@class WPYPaymentMethod;
+
 @protocol WPYManualTenderEntryDelegate;
 
 typedef NS_ENUM(NSInteger, WPYManualTenderType)
@@ -27,9 +30,29 @@ typedef NS_ENUM(NSInteger, WPYManualTenderType)
  *   not associated with the tender itself
  */
 - (instancetype) initWithDelegate:(id <WPYManualTenderEntryDelegate>)delegate tenderType:(WPYManualTenderType)tenderType request:(WPYPaymentRequest *)request;
+
+/**
+ * Creates a Manual Entry View Controller that can be presented by the host application to accept card or ACH information and then send the request
+ * for processing.  When the event is complete, the delegate will be notified of with the payment response
+ *
+ * @param The delegate that will be responding to the WPYManualTenderEntryDelegate protocol
+ * @param The type of tender that is going to be entered (check or credit card)
+ * @param The prepopulated payment method request object that will be used to create the payment method. You must set all fields
+ *        not associated directly with the tender itself
+ */
+- (instancetype)initWithDelegate:(id<WPYManualTenderEntryDelegate>)delegate tenderType:(WPYManualTenderType)tenderType paymentMethodRequest:(WPYPaymentMethodRequest *)request;
 @end
 
 @protocol WPYManualTenderEntryDelegate <NSObject>
+/**
+ * This method is called by the Manual Tender View Controller to notify the host application when a create payment method request
+ * has been completed
+ *
+ * @param Reference to the Manual Entry View Controller that is notifying the application
+ * @param The payment method response sent from the Worldpay server
+ * @param reference to any error that may have been returned during the request
+ */
+- (void)manualTenderEntryController:(WPYManualTenderEntryViewController *)controller didReceivePaymentMethod:(WPYPaymentMethod *)method withError:(NSError *)error;
 /**
  * This method is called by the Manual Tender View Controller to notify the host application when a request has been completed
  *
@@ -52,7 +75,6 @@ typedef NS_ENUM(NSInteger, WPYManualTenderType)
  * @param reference to the Manual Entry View Controller that is proessing the request
  */
 - (void)manualTenderEntryControllerIsProcessingRequest:(WPYManualTenderEntryViewController *)controller;
-
 /**
  * This method is called by the Manual Tender View Controller to notify the host application that it is has been dismissed
  * with a request to cancel entry

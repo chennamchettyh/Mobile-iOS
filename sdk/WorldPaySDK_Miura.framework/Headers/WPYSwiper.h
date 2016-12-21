@@ -9,6 +9,8 @@
 @class WPYTenderedCard;
 @class WPYPaymentRequest;
 @class WPYPaymentResponse;
+@class WPYPaymentMethod;
+@class WPYPaymentMethodRequest;
 
 typedef void (^PaymentCompletion)(WPYPaymentResponse *, NSError *);
 
@@ -137,34 +139,6 @@ typedef NS_ENUM(NSInteger, WPYEMVTransactionType)
     WPYEMVTransactionTypeRefund
 };
 
-/**
- * The result of the requested transaction.  These statuses are returned by the terminal based on the result of the transaction
- * and may be based on the online process result from the gateway but also represent various errors or results that can happen
- * due to EMV errors or reversals
- */
-typedef NS_ENUM(NSInteger, WPYTransactionResult)
-{
-    WPYTransactionResultNotSet,
-    WPYTransactionResultApproved,
-    WPYTransactionResultTerminated,
-    WPYTransactionResultDeclined,
-    WPYTransactionResultSetAmountCancelOrTimeout,
-    WPYTransactionResultCapkFail,
-    WPYTransactionResultNotIcc,
-    WPYTransactionResultCardBlocked,
-    WPYTransactionResultDeviceError,
-    WPYTransactionResultCardNotSupported,
-    WPYTransactionResultMissingMandatoryData,
-    WPYTransactionResultNoEmvApps,
-    WPYTransactionResultInvalidIccData,
-    WPYTransactionResultConditionsOfUseNotSatisfied,
-    WPYTransactionResultApplicationBlocked,
-    WPYTransactionResultIccCardRemoved,
-    WPYTransactionResultReversal
-};
-
-
-
 @protocol WPYSwiperDelegate;
 
 @interface WPYSwiper : NSObject
@@ -275,6 +249,13 @@ typedef NS_ENUM(NSInteger, WPYTransactionResult)
           AnywhereCommerce devices must have the cashback amount / type set at the start of the transaction
  */
 - (void) beginNFCTransactionWithRequest:(WPYPaymentRequest *)request transactionType:(WPYEMVTransactionType)transactionType;
+
+/**
+ * Generate Payment Method using card information captured from the card terminal
+ *
+ * @param request object that will be populated with the information captured by the terminal
+ */
+- (void) createPaymentMethod:(WPYPaymentMethodRequest *)request;
 
 /**
  * If the terminal is configured to pass application selection onto the application layer, this function must be called to select the card application,
@@ -466,6 +447,15 @@ typedef NS_ENUM(NSInteger, WPYTransactionResult)
  * @param an enumeration representing the type of card event
  */
 - (void) swiper:(WPYSwiper *)swiper didReceiveCardEvent:(WPYCardEvent)eventType;
+
+/**
+ * This delegate method is called when the terminal receives card data and sends it to the secure vault to create a payment method.
+ *
+ * @param swiper a reference to the object that handled the request
+ * @param method a reference to the payment method object returned by the server
+ * @param error a reference to any error objects returned in the request
+ */
+- (void) swiper:(WPYSwiper *)swiper didReceivePaymentMethod:(WPYPaymentMethod *)method withError:(NSError *)error;
 
 /**
  * This method is called when a bluetooth connection attempt is made and there may be one or more devices that are available to be paired with

@@ -20,6 +20,7 @@
 @class WPYPaymentAuthorize;
 @class WPYPaymentCapture;
 @class WPYPaymentCharge;
+@class WPYPaymentVerify;
 @class WPYPaymentVoid;
 @class WPYPaymentRefund;
 @class WPYPaymentCredit;
@@ -195,27 +196,26 @@ extern NSString *const WorldpayServerErrorDomain;
  * Get payment method from the server
  *
  * @param identifier of the payment method stored on the server
+ * @param identifier of the customer associated with the payment method
  * @param completion handler used to notify the caller of any server results or errors
  */
-- (void)getPaymentMethod:(NSString *)identifier withCompletion:(void(^)(WPYPaymentMethod *, NSError *))completion;
+- (void)getPaymentMethod:(NSString *)methodId withCustomerId:(NSString *)customerId completion:(void(^)(WPYPaymentMethod *, NSError *))completion;
 
 /**
  * Update an existing payment method on the server
  *
- * @param Request object containing the new payment method information
- * @param the existing payment method that is to be updated
+ * @param the updated payment method
  * @param completion handler used to notify the caller of any server results or errors
  */
-- (void)updatePaymentMethod:(WPYPaymentMethodRequest *)request paymentMethod:(WPYPaymentMethod *)paymentMethod withCompletion:(void(^)(WPYPaymentMethod *, NSError *))completion;
+- (void)updatePaymentMethod:(WPYPaymentMethod *)paymentMethod withCompletion:(void(^)(WPYPaymentMethod *, NSError *))completion;
 
 /**
  * Create a new payment method on the server
  *
  * @param Request object containing the payment method information
- * @param The customer ID for the new payment method
  * @param completion handler used to notify the caller of any server results or errors
  */
-- (void)createPaymentMethod:(WPYPaymentMethodRequest *)request customerId:(NSString *)customerId withCompletion:(void(^)(WPYPaymentMethod *, NSError *))completion;
+- (void)createPaymentMethod:(WPYPaymentMethodRequest *)request withCompletion:(void(^)(WPYPaymentMethod *, NSError *))completion;
 
 #pragma mark payment processing
 /**
@@ -242,6 +242,13 @@ extern NSString *const WorldpayServerErrorDomain;
  */
 - (void)paymentCharge:(WPYPaymentCharge *)request withCompletion:(void(^)(WPYPaymentResponse *, NSError *))completion;
 
+/**
+ * Card verification allows merchants to verify the cardholder account number, address, or security code.
+ *
+ * @param payment verify request object containing all of the information needed to verify the payment card
+ * @param completion handler used to notify the caller of any server results or errors
+ */
+- (void)paymentVerify:(WPYPaymentVerify *)request withCompletion:(void(^)(WPYPaymentResponse *, NSError *))completion;
 /**
  * Void an authorized payment
  *

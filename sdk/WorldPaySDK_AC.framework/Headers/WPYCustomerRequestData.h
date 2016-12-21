@@ -11,7 +11,11 @@
 
 @interface WPYCustomerRequestData : WPYDomainObject
 /**
- * Customer First Name
+ * Optional on create requests: Customer ID is set by the server if not provided.
+*/
+@property (nonatomic, strong) NSString *customerId;
+/**
+* Customer First Name
  */
 @property (nonatomic, strong) NSString *firstName;
 /**

@@ -7,7 +7,7 @@
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -84,7 +84,7 @@
 		
 		<option value="//api/name/createGiftCard:withCompletion:">- createGiftCard:withCompletion:</option>
 		
-		<option value="//api/name/createPaymentMethod:customerId:withCompletion:">- createPaymentMethod:customerId:withCompletion:</option>
+		<option value="//api/name/createPaymentMethod:withCompletion:">- createPaymentMethod:withCompletion:</option>
 		
 		<option value="//api/name/deletePaymentMethod:withCompletion:">- deletePaymentMethod:withCompletion:</option>
 		
@@ -96,7 +96,7 @@
 		
 		<option value="//api/name/getGiftCard:withCompletion:">- getGiftCard:withCompletion:</option>
 		
-		<option value="//api/name/getPaymentMethod:withCompletion:">- getPaymentMethod:withCompletion:</option>
+		<option value="//api/name/getPaymentMethod:withCustomerId:completion:">- getPaymentMethod:withCustomerId:completion:</option>
 		
 		<option value="//api/name/getTransactionDetails:withCompletion:">- getTransactionDetails:withCompletion:</option>
 		
@@ -114,6 +114,8 @@
 		
 		<option value="//api/name/paymentRefund:withCompletion:">- paymentRefund:withCompletion:</option>
 		
+		<option value="//api/name/paymentVerify:withCompletion:">- paymentVerify:withCompletion:</option>
+		
 		<option value="//api/name/paymentVoid:withCompletion:">- paymentVoid:withCompletion:</option>
 		
 		<option value="//api/name/searchTransactions:withCompletion:">- searchTransactions:withCompletion:</option>
@@ -124,7 +126,7 @@
 		
 		<option value="//api/name/updateGiftCard:withCompletion:">- updateGiftCard:withCompletion:</option>
 		
-		<option value="//api/name/updatePaymentMethod:paymentMethod:withCompletion:">- updatePaymentMethod:paymentMethod:withCompletion:</option>
+		<option value="//api/name/updatePaymentMethod:withCompletion:">- updatePaymentMethod:withCompletion:</option>
 		
 	</optgroup>
 	
@@ -1195,8 +1197,8 @@ to make calls to the web APIs after this is executed</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/getPaymentMethod:withCompletion:" title="getPaymentMethod:withCompletion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getPaymentMethod:withCompletion:">&ndash;&nbsp;getPaymentMethod:withCompletion:</a></code>
+	<a name="//api/name/getPaymentMethod:withCustomerId:completion:" title="getPaymentMethod:withCustomerId:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getPaymentMethod:withCustomerId:completion:">&ndash;&nbsp;getPaymentMethod:withCustomerId:completion:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -1211,7 +1213,7 @@ to make calls to the web APIs after this is executed</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)getPaymentMethod:(NSString *)<em>identifier</em> withCompletion:(void ( ^ ) ( WPYPaymentMethod *, NSError *))<em>completion</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)getPaymentMethod:(NSString *)<em>methodId</em> withCustomerId:(NSString *)<em>customerId</em> completion:(void ( ^ ) ( WPYPaymentMethod *, NSError *))<em>completion</em></code></div>
 
 		    
 			
@@ -1220,13 +1222,13 @@ to make calls to the web APIs after this is executed</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>identifier</code></th>
-						<td><p>of the payment method stored on the server</p></td>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<th scope="row" class="argument-name"><code>identifier</code></th>
+						<td><p>of the customer associated with the payment method</p></td>
 					</tr>
 				
 				</table>
@@ -1258,8 +1260,8 @@ to make calls to the web APIs after this is executed</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/updatePaymentMethod:paymentMethod:withCompletion:" title="updatePaymentMethod:paymentMethod:withCompletion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/updatePaymentMethod:paymentMethod:withCompletion:">&ndash;&nbsp;updatePaymentMethod:paymentMethod:withCompletion:</a></code>
+	<a name="//api/name/updatePaymentMethod:withCompletion:" title="updatePaymentMethod:withCompletion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updatePaymentMethod:withCompletion:">&ndash;&nbsp;updatePaymentMethod:withCompletion:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -1274,7 +1276,7 @@ to make calls to the web APIs after this is executed</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)updatePaymentMethod:(WPYPaymentMethodRequest *)<em>request</em> paymentMethod:(WPYPaymentMethod *)<em>paymentMethod</em> withCompletion:(void ( ^ ) ( WPYPaymentMethod *, NSError *))<em>completion</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)updatePaymentMethod:(WPYPaymentMethod *)<em>paymentMethod</em> withCompletion:(void ( ^ ) ( WPYPaymentMethod *, NSError *))<em>completion</em></code></div>
 
 		    
 			
@@ -1285,16 +1287,11 @@ to make calls to the web APIs after this is executed</p>
 					<tr>
 						<th scope="row" class="argument-name"><code>completion</code></th>
 						<td><p>handler used to notify the caller of any server results or errors</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>Request</code></th>
-						<td><p>object containing the new payment method information</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>the</code></th>
-						<td><p>existing payment method that is to be updated</p></td>
+						<td><p>updated payment method</p></td>
 					</tr>
 				
 				</table>
@@ -1326,8 +1323,8 @@ to make calls to the web APIs after this is executed</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/createPaymentMethod:customerId:withCompletion:" title="createPaymentMethod:customerId:withCompletion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/createPaymentMethod:customerId:withCompletion:">&ndash;&nbsp;createPaymentMethod:customerId:withCompletion:</a></code>
+	<a name="//api/name/createPaymentMethod:withCompletion:" title="createPaymentMethod:withCompletion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createPaymentMethod:withCompletion:">&ndash;&nbsp;createPaymentMethod:withCompletion:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -1342,7 +1339,7 @@ to make calls to the web APIs after this is executed</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)createPaymentMethod:(WPYPaymentMethodRequest *)<em>request</em> customerId:(NSString *)<em>customerId</em> withCompletion:(void ( ^ ) ( WPYPaymentMethod *, NSError *))<em>completion</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)createPaymentMethod:(WPYPaymentMethodRequest *)<em>request</em> withCompletion:(void ( ^ ) ( WPYPaymentMethod *, NSError *))<em>completion</em></code></div>
 
 		    
 			
@@ -1358,11 +1355,6 @@ to make calls to the web APIs after this is executed</p>
 					<tr>
 						<th scope="row" class="argument-name"><code>Request</code></th>
 						<td><p>object containing the payment method information</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>The</code></th>
-						<td><p>customer ID for the new payment method</p></td>
 					</tr>
 				
 				</table>
@@ -1566,6 +1558,69 @@ to make calls to the web APIs after this is executed</p>
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>Immediately charge payment using the requested payment type</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WorldPayAPI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/paymentVerify:withCompletion:" title="paymentVerify:withCompletion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/paymentVerify:withCompletion:">&ndash;&nbsp;paymentVerify:withCompletion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Card verification allows merchants to verify the cardholder account number, address, or security code.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)paymentVerify:(WPYPaymentVerify *)<em>request</em> withCompletion:(void ( ^ ) ( WPYPaymentResponse *, NSError *))<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>handler used to notify the caller of any server results or errors</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>payment</code></th>
+						<td><p>verify request object containing all of the information needed to verify the payment card</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Card verification allows merchants to verify the cardholder account number, address, or security code.</p>
 			</div>
 			
 
@@ -1975,10 +2030,10 @@ to make calls to the web APIs after this is executed</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Worldpay. All rights reserved. Updated: 2016-11-29</p>
+						<p class="copyright">Copyright &copy; 2016 Worldpay. All rights reserved. Updated: 2016-12-21</p>
 						
 						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

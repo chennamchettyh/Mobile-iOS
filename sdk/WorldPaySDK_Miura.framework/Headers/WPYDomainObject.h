@@ -25,7 +25,9 @@ typedef NS_ENUM(NSInteger, WPYResponseCode)
 {
     WPYResponseCodeApproved = 0x01,
     WPYResponseCodeDeclined,
-    WPYResponseCodeError
+    WPYResponseCodeError,
+    WPYResponseCodeTransactionTerminated,
+    WPYResponseCodeReversal,
 };
 
 @interface WPYDomainObject : NSObject <NSCopying>

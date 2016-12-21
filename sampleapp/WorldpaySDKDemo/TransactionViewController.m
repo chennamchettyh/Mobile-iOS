@@ -221,10 +221,18 @@
     if([self.cardPresentSegmented selectedSegmentIndex] == VAULTINDEX)
     {
         [self toggleVaultInfo:true];
+        [self.extendedInfoView setMobileGrautity];
+        
     }
-    else
+    else if([self.cardPresentSegmented selectedSegmentIndex] == NOINDEX)
     {
         [self toggleVaultInfo:false];
+        [self.extendedInfoView setMobileGrautity];
+    }
+    else if([self.cardPresentSegmented selectedSegmentIndex] == YESINDEX)
+    {
+        [self toggleVaultInfo:false];
+        [self.extendedInfoView setTerminalGratuity];
     }
 }
 
@@ -335,16 +343,22 @@
         extendedData.levelTwoData = level2;
     }
     
-    if(self.extendedInfoView.gratuityAmount.text.doubleValue > 0 || ![self.extendedInfoView.serverName.text  isEqualToString: @""])
+    if(self.extendedInfoView.gratuityAmount.text.doubleValue > 0 || ![self.extendedInfoView.serverName.text isEqualToString: @""])
     {
         WPYTenderServiceData * serviceData = [[WPYTenderServiceData alloc] init];
         
-        serviceData.gratuityAmount = [NSDecimalNumber decimalNumberWithString:self.extendedInfoView.gratuityAmount.text];
-        request.amount = [request.amount decimalNumberByAdding:serviceData.gratuityAmount];
+        if(self.extendedInfoView.gratuityAmount.text.doubleValue > 0)
+        {
+            serviceData.gratuityAmount = [NSDecimalNumber decimalNumberWithString:self.extendedInfoView.gratuityAmount.text];
+        }
+        
         serviceData.server = self.extendedInfoView.serverName.text;
         
         extendedData.serviceData = serviceData;
-        
+    }
+    
+    if(self.extendedInfoView.terminalGratuity.selectedSegmentIndex != 0)
+    {
         transactionType = WPYEMVTransactionTypeServices;
     }
     
@@ -672,44 +686,26 @@
     
     NSString * signatureNeeded = @"";
     
-    if(response.resultCode != WPYTransactionResultNotSet)
+    switch (response.responseCode)
     {
-        switch (response.resultCode)
-        {
-            case WPYTransactionResultApproved:
-                transactionStatus = @"Approved";
-                approved = YES;
-                break;
-            case WPYTransactionResultDeclined:
-                transactionStatus = @"Declined";
-                break;
-            case WPYTransactionResultTerminated:
-                transactionStatus = @"Terminated";
-                break;
-            case WPYTransactionResultCardBlocked:
-                transactionStatus = @"Card Blocked";
-                break;
-            default:
-                transactionStatus = @"Other - see logs";
-        }
-    }
-    else
-    {
-        switch (response.responseCode)
-        {
-            case WPYResponseCodeApproved:
-                transactionStatus = @"Approved";
-                approved = YES;
-                break;
-            case WPYResponseCodeDeclined:
-                transactionStatus = @"Declined";
-                break;
-            case WPYResponseCodeError:
-                transactionStatus = @"Error";
-                break;
-            default:
-                transactionStatus = @"Other - see logs";
-        }
+        case WPYResponseCodeApproved:
+            transactionStatus = @"Approved";
+            approved = YES;
+            break;
+        case WPYResponseCodeDeclined:
+            transactionStatus = @"Declined";
+            break;
+        case WPYResponseCodeError:
+            transactionStatus = @"Error";
+            break;
+        case WPYResponseCodeTransactionTerminated:
+            transactionStatus = @"Terminated";
+            break;
+        case WPYResponseCodeReversal:
+            transactionStatus = @"Decline - Reversal";
+            break;
+        default:
+            transactionStatus = @"Other - see logs";
     }
     
     if(response == nil)
@@ -731,7 +727,7 @@
             responseMessage = response.transaction.responseText;
         }
         
-        if(response.resultCode == WPYTransactionResultReversal)
+        if(response.responseCode == WPYResponseCodeReversal)
         {
             // TODO: In demo, this result had its own message, wondering if response.transaction.responseText is fine?
             
@@ -977,6 +973,28 @@
 - (void) manualResponseAlert: (WPYPaymentResponse *) tender
 {
     [self swiper:nil didFinishTransactionWithResponse:tender];
+}
+
+- (void)manualTenderEntryController:(WPYManualTenderEntryViewController *)controller didReceivePaymentMethod:(WPYPaymentMethod *)method withError:(NSError *)error
+{
+    NSLog(@"%@: %@", @"Manual entry received payment method", method.identifier);
+    
+    if(!method || error)
+    {
+    
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:[NSString stringWithFormat: @"Manual entry failed to create payment method%@", (error ? [NSString stringWithFormat:@"with an error: %@", [error localizedDescription]] : @"")] preferredStyle:UIAlertControllerStyleAlert];
+    
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+        {
+            [self cleanAlertUserAction:YES];
+        }]];
+    
+        [self displayAlert:alert];
+    }
+    else
+    {
+        // Do something with payment method
+    }
 }
 
 @end

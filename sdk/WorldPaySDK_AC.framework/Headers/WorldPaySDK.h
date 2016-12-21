@@ -22,6 +22,7 @@
 #import "WPYPaymentVoid.h"
 #import "WPYPaymentRefund.h"
 #import "WPYPaymentCredit.h"
+#import "WPYPaymentVerify.h"
 #import "WPYGetPaymentToken.h"
 #import "WPYBatchResponse.h"
 #import "WPYExtendedCardData.h"

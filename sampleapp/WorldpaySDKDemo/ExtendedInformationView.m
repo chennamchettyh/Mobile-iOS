@@ -9,7 +9,7 @@
 #import "ExtendedInformationView.h"
 
 #define VIEWHEIGHTWITHGRATUITY 272
-#define GRATUITYHIDDEN YES
+#define GRATUITYHIDDEN NO
 #define GRATUITYHEIGHT 106
 
 #if GRATUITYHIDDEN
@@ -37,6 +37,8 @@
     {
         [self hideGratuity];
     }
+    
+    [self setTerminalGratuity];
 }
 
 - (instancetype) initWithFrame:(CGRect)frame
@@ -54,6 +56,22 @@
     [super awakeFromNib];
     
     [self sharedInit];
+}
+
+- (void) setTerminalGratuity
+{
+    [self.gratuityAmount setHidden:true];
+    [self.gratuityAmount setEnabled:false];
+    [self.gratuityAmount setText:nil];
+    [self.terminalGratuity setHidden:false];
+}
+
+- (void) setMobileGrautity
+{
+    [self.terminalGratuity setHidden:true];
+    [self.terminalGratuity setSelectedSegmentIndex:0];
+    [self.gratuityAmount setEnabled:true];
+    [self.gratuityAmount setHidden:false];
 }
 
 - (void) hideGratuity

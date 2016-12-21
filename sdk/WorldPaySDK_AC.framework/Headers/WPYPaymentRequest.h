@@ -16,7 +16,7 @@
 /**
  * This base class is used to represent the common info used for various types of payment requests.  This allows a generic object to 
  * be used in order to request the automatic handling of EMV transactions.  This base class cannot be used to perform an actual transaction by itself
- * you must use a child object such as WPYPaymentAuthorize, WPYPaymentCredit or WPYPaymentCharge.  WPYPaymentVoid should be used with a transaction
+ * you must use a child object such as WPYPaymentAuthorize, WPYPaymentCredit, WPYPaymentVerify or WPYPaymentCharge.  WPYPaymentVoid should be used with a transaction
  * ID and not passed in as a payment request in an EMV transaction.  The SDK will automatically generate a PaymentVoid request if the terminal requests
  * that a transaction be reversed.
  */
