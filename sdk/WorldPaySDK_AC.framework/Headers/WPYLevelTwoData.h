@@ -22,7 +22,7 @@
 /**
  * The cost of freight associated with the order
  */
-@property (nonatomic, strong) NSDecimalNumber *freight;
+@property (nonatomic, strong) NSDecimalNumber *freightAmount;
 /**
  * The retail lane or register associated with the transaction
  */
