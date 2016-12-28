@@ -8,19 +8,44 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
-/// To Be Documented
+/**
+ * Indicates how (and whether) the method should check for duplicate accounts. Defaults to 1.
+ *
+ * 0 - Does not check for Duplicate Card Number for specified Customer ID
+ * 1 - Checks for Duplicate Card Number for specified Customer ID
+ * 2 - Checks for Duplicate Card Number for All Customer IDs for specified SecureNet ID
+ * 3 - Checks for Duplicate Card Number for All Customer IDs for specified Group ID
+ */
 typedef NS_ENUM(NSInteger, WPYPaymentMethodDuplicateCheckType)
 {
-    /// To Be Documented
     WPYPaymentMethodDuplicateCheckTypeUnset = -1,
-    /// To Be Documented
     WPYPaymentMethodDuplicateCheckTypeNone = 0,
-    /// To Be Documented
     WPYPaymentMethodDuplicateCheckTypeCustomer = 1,
-    /// To Be Documented
     WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderId = 2,
-    /// To Be Documented
     WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderGroup = 3
+};
+
+/**
+ * Indicates how checks for duplicate transactions should behave. Duplicates are evaluated on the basis of
+ * amount, card number, and order ID; these evaluation criteria can be extended to also include customer ID,
+ * invoice number, or a user-defined field. Valid values for this parameter are:
+ *
+ * 0 - No duplicate check
+ * 1 - Exception code is returned in case of duplicate
+ * 2 - Previously existing transaction is returned in case of duplicate
+ * 3 - Check is performed as above but without using order ID, and exception code is returned in case of
+ * duplicate
+ *
+ * The transactionDuplicateCheckIndicator parameter must be enabled in the Virtual Terminal under Tools
+ * -> Duplicate Transactions. Duplicates are checked only for APPROVED transactions.
+ */
+typedef NS_ENUM(NSInteger, WPYTransactionDuplicateCheckType)
+{
+    WPYTransactionDuplicateCheckTypeUnset = -1,
+    WPYTransactionDuplicateCheckTypeNone = 0,
+    WPYTransactionDuplicateCheckTypeException = 1,
+    WPYTransactionDuplicateCheckTypePreviousTransaction = 2,
+    WPYTransactionDuplicateCheckTypeExceptionNoOrderId = 3
 };
 
 /**

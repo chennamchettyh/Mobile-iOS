@@ -60,6 +60,8 @@
 		
 		<option value="//api/name/card">card</option>
 		
+		<option value="//api/name/orderId">orderId</option>
+		
 		<option value="//api/name/transactionId">transactionId</option>
 		
 		<option value="//api/name/voidType">voidType</option>
@@ -293,6 +295,60 @@ with this parameter</p>
 				<p>The type of void being sent to the gateway.  This is automatically set by the SDK to merchant unless
 the transaction is caused by an EMV reversal.  The application developer does not need to do anything
 with this parameter</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WPYPaymentVoid.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/orderId" title="orderId"></a>
+	<h3 class="method-title"><code><a href="#//api/name/orderId">&nbsp;&nbsp;orderId</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Client-generated unique ID for each transaction, used as a way to prevent the processing of duplicate
+transactions. The orderId must be unique to the merchant&rsquo;s SecureNet ID; however, uniqueness is only
+evaluated for APPROVED transactions and only for the last 30 days. If a transaction is declined, the
+corresponding orderId may be used again.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *orderId</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Client-generated unique ID for each transaction, used as a way to prevent the processing of duplicate
+transactions. The orderId must be unique to the merchant&rsquo;s SecureNet ID; however, uniqueness is only
+evaluated for APPROVED transactions and only for the last 30 days. If a transaction is declined, the
+corresponding orderId may be used again.</p>
+
+<p>The orderId is limited to 25 characters; e.g., “CUSTOMERID MMddyyyyHHmmss”.</p>
 			</div>
 			
 

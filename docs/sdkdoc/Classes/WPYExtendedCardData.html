@@ -70,8 +70,6 @@
 		
 		<option value="//api/name/deviceCode">deviceCode</option>
 		
-		<option value="//api/name/duplicateCheckType">duplicateCheckType</option>
-		
 		<option value="//api/name/entrySource">entrySource</option>
 		
 		<option value="//api/name/invoiceDescription">invoiceDescription</option>
@@ -80,6 +78,8 @@
 		
 		<option value="//api/name/levelTwoData">levelTwoData</option>
 		
+		<option value="//api/name/mailOrTelephoneOrderData">mailOrTelephoneOrderData</option>
+		
 		<option value="//api/name/notes">notes</option>
 		
 		<option value="//api/name/orderId">orderId</option>
@@ -87,6 +87,10 @@
 		<option value="//api/name/serviceData">serviceData</option>
 		
 		<option value="//api/name/terminalData">terminalData</option>
+		
+		<option value="//api/name/transactionDuplicateCheckIndicator">transactionDuplicateCheckIndicator</option>
+		
+		<option value="//api/name/typeOfGoods">typeOfGoods</option>
 		
 		<option value="//api/name/userDefinedFields">userDefinedFields</option>
 		
@@ -750,8 +754,8 @@ the terminal (where applicable - See <a href="../Classes/WPYPaymentRequest.html"
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/duplicateCheckType" title="duplicateCheckType"></a>
-	<h3 class="method-title"><code><a href="#//api/name/duplicateCheckType">&nbsp;&nbsp;duplicateCheckType</a></code>
+	<a name="//api/name/transactionDuplicateCheckIndicator" title="transactionDuplicateCheckIndicator"></a>
+	<h3 class="method-title"><code><a href="#//api/name/transactionDuplicateCheckIndicator">&nbsp;&nbsp;transactionDuplicateCheckIndicator</a></code>
 </h3>
 
 	<div class="method-info">
@@ -766,7 +770,7 @@ the terminal (where applicable - See <a href="../Classes/WPYPaymentRequest.html"
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) WPYPaymentMethodDuplicateCheckType duplicateCheckType</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) WPYTransactionDuplicateCheckType transactionDuplicateCheckIndicator</code></div>
 
 		    
 			
@@ -919,6 +923,98 @@ programmed into a card terminal</p>
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>A dictionary of user defined key/value pairs of custom data provided about the customer</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WPYExtendedCardData.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/typeOfGoods" title="typeOfGoods"></a>
+	<h3 class="method-title"><code><a href="#//api/name/typeOfGoods">&nbsp;&nbsp;typeOfGoods</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Type of goods that are being purchased. Valid values are DIGITAL or PHYSICAL.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *typeOfGoods</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Type of goods that are being purchased. Valid values are DIGITAL or PHYSICAL.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WPYExtendedCardData.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mailOrTelephoneOrderData" title="mailOrTelephoneOrderData"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mailOrTelephoneOrderData">&nbsp;&nbsp;mailOrTelephoneOrderData</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Additional data for remote orders. Required in the case of a mail, phone, or ecommerce transaction.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) WPYMailOrTelephoneOrderData *mailOrTelephoneOrderData</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Additional data for remote orders. Required in the case of a mail, phone, or ecommerce transaction.</p>
 			</div>
 			
 

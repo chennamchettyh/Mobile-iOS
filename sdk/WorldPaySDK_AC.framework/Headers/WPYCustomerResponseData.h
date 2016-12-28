@@ -37,7 +37,7 @@
 /**
  * Phone number associated with customer
  */
-@property (nonatomic, strong) NSString *phone;
+@property (nonatomic, strong) NSString *phoneNumber;
 /**
  * Name of the company the customer works for
  */

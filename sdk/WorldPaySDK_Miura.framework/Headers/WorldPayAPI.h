@@ -53,7 +53,7 @@ typedef NS_ENUM(NSInteger, WorldpaySDKError)
 /**
  * This is a singleton object that contains the base of the Worldpay Total calling methods.
  */
-@interface WorldpayAPI : NSObject <NSURLSessionDelegate>
+@interface WorldpayAPI : NSObject <NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate>
 
 /**
  * Tells the WorldpayAPI object to send messages to the test host configured at compile time

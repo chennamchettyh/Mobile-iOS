@@ -338,7 +338,7 @@
         
             level2.orderDate = date;
         }
-        level2.purchaseOrderNumber = self.extendedInfoView.purchaseOrder.text;
+        level2.purchaseOrder = self.extendedInfoView.purchaseOrder.text;
         
         extendedData.levelTwoData = level2;
     }
@@ -362,7 +362,7 @@
         transactionType = WPYEMVTransactionTypeServices;
     }
     
-    request.extendedData = extendedData;
+    request.extendedInformation = extendedData;
     
     if([self.cardPresentSegmented selectedSegmentIndex] == NOINDEX)
     {

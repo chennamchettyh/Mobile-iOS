@@ -45,7 +45,7 @@
 /**
  * If a check is presented, this is the duplicate check type to be used
  */
-@property WPYPaymentMethodDuplicateCheckType duplicateCheckType;
+@property WPYPaymentMethodDuplicateCheckType accountDuplicateCheckIndicator;
 /**
  * A custom mapping of name/value pairs provided by the merchant
  */

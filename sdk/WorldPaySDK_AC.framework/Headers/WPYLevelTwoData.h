@@ -34,9 +34,9 @@
 /**
  * Tax Status of the order
  */
-@property (nonatomic, strong) NSNumber *taxStatus;
+@property (nonatomic, strong) NSNumber *status;
 /**
  * THe purchase order number associated with the order
  */
-@property (nonatomic, strong) NSString *purchaseOrderNumber;
+@property (nonatomic, strong) NSString *purchaseOrder;
 @end

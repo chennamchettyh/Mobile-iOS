@@ -220,7 +220,7 @@
     [self.customerIdField setFieldText:self.editCustomer.identifier];
     [self.firstNameField setFieldText:self.editCustomer.firstName];
     [self.lastNameField setFieldText:self.editCustomer.lastName];
-    [self.phoneField setFieldText:self.editCustomer.phone];
+    [self.phoneField setFieldText:self.editCustomer.phoneNumber];
     [self.emailIdField setFieldText:self.editCustomer.email];
     [self.sendEmailReceiptsField setSelectedIndex:(self.editCustomer.sendEmailReceipts ? YESINDEX : NOINDEX)];
     [self.notesField setFieldText:self.editCustomer.notes];
@@ -260,7 +260,7 @@
     
     self.customer.firstName = self.firstNameField.text;
     self.customer.lastName = self.lastNameField.text;
-    self.customer.phone = self.phoneField.text;
+    self.customer.phoneNumber = self.phoneField.text;
     self.customer.email = self.emailIdField.text;
     self.customer.sendEmailReceipts = ([self.sendEmailReceiptsField getSelectedIndex] == YESINDEX ? true : false);
     self.customer.notes = self.notesField.text;

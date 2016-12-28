@@ -16,6 +16,7 @@
  * This object is returned by the server upon completion of a payment request
  */
 @interface WPYPaymentResponse : WPYResponseObject
+
 /**
  * This object contains the transaction data from the server
  */
@@ -25,4 +26,9 @@
  * guide for more information
  */
 @property (nonatomic, strong) WPYReceiptObject *receiptData;
+/**
+ * This object contains the EMV data from the server
+ */
+@property (nonatomic, strong) WPYEMVData *emvResponse;
+
 @end

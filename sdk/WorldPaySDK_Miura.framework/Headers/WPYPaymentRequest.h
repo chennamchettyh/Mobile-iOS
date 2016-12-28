@@ -54,5 +54,5 @@
  * card terminal information, including "Terminal ID".  If a custom terminal ID is required, this object should be included or the terminal ID should
  * be set via the request Auth token method
  */
-@property (nonatomic, strong) WPYExtendedCardData *extendedData;
+@property (nonatomic, strong) WPYExtendedCardData *extendedInformation;
 @end
