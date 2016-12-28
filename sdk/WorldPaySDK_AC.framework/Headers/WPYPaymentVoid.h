@@ -14,7 +14,9 @@
  */
 typedef NS_ENUM(uint8_t, WPYVoidType)
 {
+    /// self-explanatory
     WPYVoidTypeMerchant = 1,
+    /// self-explanatory
     WPYVoidTypeSystem = 2
 };
 

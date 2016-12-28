@@ -43,6 +43,8 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 
 	
 	
@@ -158,6 +160,14 @@
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This is a singleton object that contains the base of the Worldpay Total calling methods.</p>
+					</div>
+					
+					
 
 					
 					
@@ -418,7 +428,7 @@ These bodies may contain PCI or PII data and may only be used with test cards on
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Class instance init unavailable.  Use [WorldpayApi instance] to get class <a href="#//api/name/instance">instance</a></p>
+				<p>Class <a href="#//api/name/instance">instance</a> init unavailable.  Use WorldpayAPI <a href="#//api/name/instance">instance</a> to get class <a href="#//api/name/instance">instance</a></p>
 			</div>
 			
 		    
@@ -440,7 +450,7 @@ These bodies may contain PCI or PII data and may only be used with test cards on
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Class instance init unavailable.  Use [WorldpayApi instance] to get class <a href="#//api/name/instance">instance</a></p>
+				<p>Class <a href="#//api/name/instance">instance</a> init unavailable.  Use WorldpayAPI <a href="#//api/name/instance">instance</a> to get class <a href="#//api/name/instance">instance</a></p>
 			</div>
 			
 
@@ -484,7 +494,7 @@ These bodies may contain PCI or PII data and may only be used with test cards on
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p>that will listen to <a href="#//api/name/swiper">swiper</a> events</p></td>
+						<td><p>Delegate that will listen to <a href="#//api/name/swiper">swiper</a> events</p></td>
 					</tr>
 				
 				</table>
@@ -534,7 +544,7 @@ These bodies may contain PCI or PII data and may only be used with test cards on
 			<div class="method-subsection brief-description">
 				<p>Authenticates user credentials against the World Pay server. The token
 will automatically be saved in the application keychain by the SDK and
-can be removed by calling: - (void)<a href="#//api/name/clearSDKKeychain">clearSDKKeychain</a></p>
+can be removed by calling: - <a href="#//api/name/clearSDKKeychain">clearSDKKeychain</a></p>
 			</div>
 			
 		    
@@ -548,13 +558,13 @@ can be removed by calling: - (void)<a href="#//api/name/clearSDKKeychain">clearS
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<th scope="row" class="argument-name"><code>authTokenRequest</code></th>
+						<td><p>Auth Token Request object containing user credentials</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>Auth</code></th>
-						<td><p>Token Request object containing user credentials</p></td>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -570,7 +580,7 @@ can be removed by calling: - (void)<a href="#//api/name/clearSDKKeychain">clearS
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>Authenticates user credentials against the World Pay server. The token
 will automatically be saved in the application keychain by the SDK and
-can be removed by calling: - (void)<a href="#//api/name/clearSDKKeychain">clearSDKKeychain</a></p>
+can be removed by calling: - <a href="#//api/name/clearSDKKeychain">clearSDKKeychain</a></p>
 			</div>
 			
 
@@ -664,7 +674,7 @@ to make calls to the web APIs after this is executed</p>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -722,7 +732,7 @@ to make calls to the web APIs after this is executed</p>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -779,13 +789,13 @@ to make calls to the web APIs after this is executed</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<th scope="row" class="argument-name"><code>customerId</code></th>
+						<td><p>Customer ID that reqpresents the desired customer</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>Customer</code></th>
-						<td><p>ID that reqpresents the desired customer</p></td>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -842,13 +852,13 @@ to make calls to the web APIs after this is executed</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<th scope="row" class="argument-name"><code>customerData</code></th>
+						<td><p>The customer data that should be saved on the server</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>the</code></th>
-						<td><p>customer data that should be saved on the server</p></td>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -906,17 +916,17 @@ to make calls to the web APIs after this is executed</p>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>customerId</code></th>
-						<td><p>corresponding to the customer being updated</p></td>
+						<td><p>Customer id corresponding to the customer being updated</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>customerData</code></th>
+						<td><p>The customer data that should be updated</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>the</code></th>
-						<td><p>customer data that should be updated</p></td>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -974,12 +984,12 @@ to make calls to the web APIs after this is executed</p>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>identifier</code></th>
-						<td><p>for gift card</p></td>
+						<td><p>Gift card id</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -1027,7 +1037,7 @@ to make calls to the web APIs after this is executed</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)updateGiftCard:(NSString *)<em>identifer</em> withCompletion:(void ( ^ ) ( WPYGiftCardResponse *, NSError *))<em>completion</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)updateGiftCard:(NSString *)<em>identifier</em> withCompletion:(void ( ^ ) ( WPYGiftCardResponse *, NSError *))<em>completion</em></code></div>
 
 		    
 			
@@ -1036,8 +1046,13 @@ to make calls to the web APIs after this is executed</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
+						<th scope="row" class="argument-name"><code>identifier</code></th>
+						<td><p>Identifier for the card to be updated</p></td>
+					</tr>
+				
+					<tr>
 						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -1052,8 +1067,6 @@ to make calls to the web APIs after this is executed</p>
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>Update gift card stored on the server</p>
-
-<p>param identifier for the card to be updated</p>
 			</div>
 			
 
@@ -1097,12 +1110,12 @@ to make calls to the web APIs after this is executed</p>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>identifier</code></th>
-						<td><p>of the card to be stored on the server</p></td>
+						<td><p>Identifier of the card to be stored on the server</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -1159,13 +1172,13 @@ to make calls to the web APIs after this is executed</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<th scope="row" class="argument-name"><code>paymentMethod</code></th>
+						<td><p>Payment method to be deleted on the server</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>payment</code></th>
-						<td><p>method to be deleted on the server</p></td>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -1222,13 +1235,18 @@ to make calls to the web APIs after this is executed</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<th scope="row" class="argument-name"><code>methodId</code></th>
+						<td><p>Identifier of the payment method stored on the server</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>identifier</code></th>
-						<td><p>of the customer associated with the payment method</p></td>
+						<th scope="row" class="argument-name"><code>customerId</code></th>
+						<td><p>Identifier of the customer associated with the payment method</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -1285,13 +1303,13 @@ to make calls to the web APIs after this is executed</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<th scope="row" class="argument-name"><code>paymentMethod</code></th>
+						<td><p>The updated payment method</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>the</code></th>
-						<td><p>updated payment method</p></td>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -1348,13 +1366,13 @@ to make calls to the web APIs after this is executed</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>Request object containing the payment method information</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>Request</code></th>
-						<td><p>object containing the payment method information</p></td>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -1411,13 +1429,13 @@ to make calls to the web APIs after this is executed</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>Payment authorize request object with the appropriate payment information</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>payment</code></th>
-						<td><p>authorize request object with the appropriate payment information</p></td>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -1474,13 +1492,13 @@ to make calls to the web APIs after this is executed</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>Payment capture request object with the information about the authorized request</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>payment</code></th>
-						<td><p>capture request object with the information about the authorized request</p></td>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -1537,13 +1555,13 @@ to make calls to the web APIs after this is executed</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>Payment charge request object containing all of the information needed to charge a payment</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>payment</code></th>
-						<td><p>charge request object containing all of the information needed to charge a payment</p></td>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -1600,13 +1618,13 @@ to make calls to the web APIs after this is executed</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>Payment verify request object containing all of the information needed to verify the payment card</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>payment</code></th>
-						<td><p>verify request object containing all of the information needed to verify the payment card</p></td>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -1663,13 +1681,13 @@ to make calls to the web APIs after this is executed</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>Payment Void request object that contains the needed information to void an authorized transaction</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>Payment</code></th>
-						<td><p>Void request object that contains the needed information to void an authorized transaction</p></td>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -1726,13 +1744,13 @@ to make calls to the web APIs after this is executed</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>PaymentRefund request object needed to refund a captured payment</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>PaymentRefund</code></th>
-						<td><p>request object needed to refund a captured payment</p></td>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -1789,13 +1807,13 @@ to make calls to the web APIs after this is executed</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>Payment Credit request object containing the tender info needed to apply a credit</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>Payment</code></th>
-						<td><p>Credit request object containing the tender info needed to apply a credit</p></td>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -1852,13 +1870,13 @@ to make calls to the web APIs after this is executed</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<th scope="row" class="argument-name"><code>transactionId</code></th>
+						<td><p>transaction identifier</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>transaction</code></th>
-						<td><p>identifier</p></td>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -1915,13 +1933,13 @@ to make calls to the web APIs after this is executed</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<th scope="row" class="argument-name"><code>searchParams</code></th>
+						<td><p>Search parameters include the start and end date for the search</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>search</code></th>
-						<td><p>parameters include the start and end date for the search</p></td>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -1978,13 +1996,13 @@ to make calls to the web APIs after this is executed</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>handler used to notify the caller of any server results or errors</p></td>
+						<th scope="row" class="argument-name"><code>batchId</code></th>
+						<td><p>Batch identifier for transactions</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>batch</code></th>
-						<td><p>identifier for transactions</p></td>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Completion handler used to notify the caller of any server results or errors</p></td>
 					</tr>
 				
 				</table>
@@ -2030,7 +2048,7 @@ to make calls to the web APIs after this is executed</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Worldpay. All rights reserved. Updated: 2016-12-22</p>
+						<p class="copyright">Copyright &copy; 2016 Worldpay. All rights reserved. Updated: 2016-12-28</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

@@ -7,6 +7,9 @@
 
 #import "WPYDomainObject.h"
 
+/**
+ * This is the objet that contains the results from any server transaction.
+ */
 @interface WPYResponseObject : WPYDomainObject
 /**
  * Gateway response code for the current request

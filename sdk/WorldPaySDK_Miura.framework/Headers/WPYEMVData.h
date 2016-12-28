@@ -40,8 +40,8 @@
  * This method will take the object and, based on the auth code and response message from the gateway, will
  * create the EMV result TLV to send down to the terminal for 2nd AC generation
  *
- * @param ResponseCode returned on the Payment Response
- * @param The "Response Text" returned by the server, which may contain information about a declined transaction
+ * @param responseCode The response code returned on the Payment Response
+ * @return The "Response Text" returned by the server, which may contain information about a declined transaction.
  */
 - (NSString *)encodeEMVDataWithAuthCode:(WPYResponseCode)responseCode;
 @end

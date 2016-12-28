@@ -171,8 +171,8 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>a</code></th>
-						<td><p>reference to the object communicating with the credit card terminal</p></td>
+						<th scope="row" class="argument-name"><code>swiper</code></th>
+						<td><p>A reference to the object communicating with the credit card terminal</p></td>
 					</tr>
 				
 				</table>
@@ -229,8 +229,8 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>a</code></th>
-						<td><p>reference to the swiper that is reporting the end of communication</p></td>
+						<th scope="row" class="argument-name"><code>swiper</code></th>
+						<td><p>A reference to the swiper that is reporting the end of communication</p></td>
 					</tr>
 				
 				</table>
@@ -287,8 +287,8 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>a</code></th>
-						<td><p>reference to the object that could not open the hardware communication</p></td>
+						<th scope="row" class="argument-name"><code>swiper</code></th>
+						<td><p>A reference to the object that could not open the hardware communication</p></td>
 					</tr>
 				
 				</table>
@@ -346,8 +346,8 @@ but will be reattempted</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>a</code></th>
-						<td><p>reference to the object that is continuing to attempt communication with the credit card terminal</p></td>
+						<th scope="row" class="argument-name"><code>swiper</code></th>
+						<td><p>A reference to the object that is continuing to attempt communication with the credit card terminal</p></td>
 					</tr>
 				
 				</table>
@@ -405,13 +405,13 @@ but will be reattempted</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>a</code></th>
-						<td><p>reference to the object that experienced the error</p></td>
+						<th scope="row" class="argument-name"><code>swiper</code></th>
+						<td><p>A reference to the object that experienced the error</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>an</code></th>
-						<td><p>error object with information on the error that occurred</p></td>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>An error object with information on the error that occurred</p></td>
 					</tr>
 				
 				</table>
@@ -469,13 +469,13 @@ and no more online requests are pending.</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>a</code></th>
-						<td><p>reference to the object that generated and processed the EMV request</p></td>
+						<th scope="row" class="argument-name"><code>swiper</code></th>
+						<td><p>A reference to the object that generated and processed the EMV request</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>the</code></th>
-						<td><p>authorization response from the online processor, if any.  If there was a reversal, this will be the result of the payment reversal</p></td>
+						<th scope="row" class="argument-name"><code>response</code></th>
+						<td><p>The authorization response from the online processor, if any.  If there was a reversal, this will be the result of the payment reversal</p></td>
 					</tr>
 				
 				</table>
@@ -533,8 +533,18 @@ and no more online requests are pending.</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>a</code></th>
-						<td><p>reference to the error that caused the failure so that it can be properly handled</p></td>
+						<th scope="row" class="argument-name"><code>swiper</code></th>
+						<td><p>A reference to the object that attempted to perform the request</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>A reference to the failed request so that it may be retried</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>A reference to the error that caused the failure so that it can be properly handled</p></td>
 					</tr>
 				
 				</table>
@@ -592,13 +602,13 @@ If this method is implemented then the delegate must call back the referencing o
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>a</code></th>
-						<td><p>reference to the object making the request</p></td>
+						<th scope="row" class="argument-name"><code>swiper</code></th>
+						<td><p>A reference to the object making the request</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>an</code></th>
-						<td><p>array of account types that the user must pick from (NSNumber -> <a href="../Constants/WPYCardAccountType.html">WPYCardAccountType</a> enumeration)</p></td>
+						<th scope="row" class="argument-name"><code>accountTypes</code></th>
+						<td><p>An array of account types that the user must pick from (NSNumber -> <a href="../Constants/WPYCardAccountType.html">WPYCardAccountType</a> enumeration)</p></td>
 					</tr>
 				
 				</table>
@@ -657,13 +667,13 @@ Miura devices do not call this method</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>a</code></th>
-						<td><p>reference to the object making the request</p></td>
+						<th scope="row" class="argument-name"><code>swiper</code></th>
+						<td><p>A reference to the object making the request</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>boolean</code></th>
-						<td><p>indicating whether or not the user accepted the transaction amount</p></td>
+						<th scope="row" class="argument-name"><code>confirmed</code></th>
+						<td><p>A boolean indicating whether or not the user accepted the transaction amount</p></td>
 					</tr>
 				
 				</table>
@@ -722,13 +732,18 @@ This method is only called by certain devices that can display text and have a k
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>a</code></th>
-						<td><p>decimal number representing the amount the user keyed in</p></td>
+						<th scope="row" class="argument-name"><code>swiper</code></th>
+						<td><p>A reference to the object making the request</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>the</code></th>
-						<td><p>currency code of the keyed in amount</p></td>
+						<th scope="row" class="argument-name"><code>amount</code></th>
+						<td><p>A decimal number representing the amount the user keyed in</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>currencyCode</code></th>
+						<td><p>The currency code of the keyed in amount</p></td>
 					</tr>
 				
 				</table>
@@ -786,13 +801,13 @@ This method is only called by certain devices that can display text and have a k
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>a</code></th>
-						<td><p>reference to the object making the request</p></td>
+						<th scope="row" class="argument-name"><code>swiper</code></th>
+						<td><p>A reference to the object making the request</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>indicating</code></th>
-						<td><p>the battery status of the device</p></td>
+						<th scope="row" class="argument-name"><code>batteryStatus</code></th>
+						<td><p>Indicates the battery status of the device</p></td>
 					</tr>
 				
 				</table>
@@ -850,8 +865,13 @@ When the hardware supports it, the terminal will manage application selection au
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>a</code></th>
-						<td><p>list of the Application Labels for each application in the candidate list</p></td>
+						<th scope="row" class="argument-name"><code>swiper</code></th>
+						<td><p>A reference to the object making the request</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>applications</code></th>
+						<td><p>A list of the Application Labels for each application in the candidate list</p></td>
 					</tr>
 				
 				</table>
@@ -910,8 +930,8 @@ This is typical on audiojack devices or other devices that have no keypad</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>a</code></th>
-						<td><p>reference to the object making the request</p></td>
+						<th scope="row" class="argument-name"><code>swiper</code></th>
+						<td><p>A reference to the object making the request</p></td>
 					</tr>
 				
 				</table>
@@ -971,13 +991,18 @@ string to have the terminal display default text.</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>a</code></th>
-						<td><p>completion handler to call if the terminal is capable of displaying text. If not supported, a nil handler will be sent</p></td>
+						<th scope="row" class="argument-name"><code>swiper</code></th>
+						<td><p>A reference to the object making the request</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>an</code></th>
-						<td><p>enumeration representing the type of information that should be presented to the card holder</p></td>
+						<th scope="row" class="argument-name"><code>prompt</code></th>
+						<td><p>An enumeration representing the type of information that should be presented to the card holder</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>A completion handler to call if the terminal is capable of displaying text. If not supported, a nil handler will be sent</p></td>
 					</tr>
 				
 				</table>
@@ -1037,13 +1062,13 @@ the card data is not going to be returned for whatever reason.  For instance, a 
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>a</code></th>
-						<td><p>reference to the object making the request</p></td>
+						<th scope="row" class="argument-name"><code>swiper</code></th>
+						<td><p>A reference to the object making the request</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>an</code></th>
-						<td><p>enumeration representing the type of card event</p></td>
+						<th scope="row" class="argument-name"><code>eventType</code></th>
+						<td><p>An enumeration representing the type of card event</p></td>
 					</tr>
 				
 				</table>
@@ -1102,17 +1127,17 @@ the card data is not going to be returned for whatever reason.  For instance, a 
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>swiper</code></th>
-						<td><p>a reference to the object that handled the request</p></td>
+						<td><p>A reference to the object that handled the request</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>method</code></th>
-						<td><p>a reference to the payment method object returned by the server</p></td>
+						<td><p>A reference to the payment method object returned by the server</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>a reference to any error objects returned in the request</p></td>
+						<td><p>A reference to any error objects returned in the request</p></td>
 					</tr>
 				
 				</table>
@@ -1170,8 +1195,18 @@ For Anywhere Commerce bluetooth devices this may return all devices within range
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>a</code></th>
-						<td><p>completion handler that must be called with the index of the device that was selected by the user</p></td>
+						<th scope="row" class="argument-name"><code>devices</code></th>
+						<td><p>A list of the names of all the devices visible</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>swiper</code></th>
+						<td><p>A reference to the object making the request</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>A completion handler that must be called with the index of the device that was selected by the user</p></td>
 					</tr>
 				
 				</table>
@@ -1230,8 +1265,8 @@ delegate and therefore this message is only useful if the application cares abou
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>a</code></th>
-						<td><p>reference to the card terminal that is receiving the key press</p></td>
+						<th scope="row" class="argument-name"><code>swiper</code></th>
+						<td><p>A reference to the card terminal that is receiving the key press</p></td>
 					</tr>
 				
 				</table>
@@ -1278,7 +1313,7 @@ delegate and therefore this message is only useful if the application cares abou
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Worldpay. All rights reserved. Updated: 2016-12-22</p>
+						<p class="copyright">Copyright &copy; 2016 Worldpay. All rights reserved. Updated: 2016-12-28</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

@@ -13,8 +13,11 @@
  */
 typedef NS_ENUM(NSInteger, WPYAvsResultType)
 {
+    /// self-explanatory
     WPYAvsResultTypeMatch = 0,
+    /// self-explanatory
     WPYAvsResultTypeNotMatched = 1,
+    /// self-explanatory
     WPYAvsResultTypeNotChecked = 2
 };
 

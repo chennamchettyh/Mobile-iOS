@@ -43,6 +43,8 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 
 	
 	
@@ -94,9 +96,15 @@
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/cardHasPinData">- cardHasPinData</option>
+		
 		<option value="//api/name/initCardWithTLV:withSwiperType:pinBlock:pinKSN:andKSN:requireSignature:applicationId:cardSource:">- initCardWithTLV:withSwiperType:pinBlock:pinKSN:andKSN:requireSignature:applicationId:cardSource:</option>
 		
 		<option value="//api/name/initSwipedCardWithCardHolderName:expirationDate:maskedPan:trackData:cvv:ksn:pinBlock:pinKSN:isICCCapable:withSwiperType:fallback:">- initSwipedCardWithCardHolderName:expirationDate:maskedPan:trackData:cvv:ksn:pinBlock:pinKSN:isICCCapable:withSwiperType:fallback:</option>
+		
+		<option value="//api/name/initWithDictionary:">- initWithDictionary:</option>
+		
+		<option value="//api/name/jsonDictionary">- jsonDictionary</option>
 		
 	</optgroup>
 	
@@ -128,6 +136,14 @@
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class is used when the customer tendered a credit card.</p>
+					</div>
+					
+					
 
 					
 					
@@ -136,7 +152,7 @@
 						
 
 						
-						
+						<h2 class="task-title">Other Methods</h2>
 
 						<div class="task-list">
 							<div class="section-method">
@@ -289,7 +305,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>card expiration year</p>
+				<p>Card expiration year</p>
 			</div>
 			
 		    
@@ -306,7 +322,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>card expiration year</p>
+				<p>Card expiration year</p>
 			</div>
 			
 
@@ -335,7 +351,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>last four digits of the card <a href="#//api/name/number">number</a></p>
+				<p>Last four digits of the card <a href="#//api/name/number">number</a></p>
 			</div>
 			
 		    
@@ -352,7 +368,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>last four digits of the card <a href="#//api/name/number">number</a></p>
+				<p>Last four digits of the card <a href="#//api/name/number">number</a></p>
 			</div>
 			
 
@@ -905,48 +921,58 @@ from the terminal</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
+						<th scope="row" class="argument-name"><code>cardHolder</code></th>
+						<td><p>Full card holder name, as seen on the card</p></td>
+					</tr>
+				
+					<tr>
 						<th scope="row" class="argument-name"><code>expiration</code></th>
-						<td><p>date of the card</p></td>
+						<td><p>Expiration date of the card</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>masked</code></th>
-						<td><p>Primary Account Number for the card</p></td>
+						<th scope="row" class="argument-name"><code>maskedPan</code></th>
+						<td><p>Masked Primary Account Number for the card</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>Key</code></th>
-						<td><p>Serial Number used to encrypt the PIN data</p></td>
+						<th scope="row" class="argument-name"><code>trackDict</code></th>
+						<td><p>Dictionary containing track1, track2, track3, track1Length, track2Length, track3Length data.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>dictionary</code></th>
-						<td><p>containing track1, track2, track3, track1Length, track2Length, track3Length data.</p></td>
+						<th scope="row" class="argument-name"><code>cvv</code></th>
+						<td><p>CVV <a href="#//api/name/number">number</a> from the back of the card</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>CVV</code></th>
-						<td><p><a href="#//api/name/number">number</a> from the back of the card</p></td>
+						<th scope="row" class="argument-name"><code>ksn</code></th>
+						<td><p>Key Serial Number used to encrypt the card data</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>encrypted</code></th>
-						<td><p>PIN data</p></td>
+						<th scope="row" class="argument-name"><code>pinBlock</code></th>
+						<td><p>Encrypted PIN data</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>BOOL</code></th>
-						<td><p>indicating whether or not the card has a chip, based on track service code</p></td>
+						<th scope="row" class="argument-name"><code>pinKsn</code></th>
+						<td><p>Key Serial Number used to encrypt the PIN data</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>Full</code></th>
-						<td><p>card holder name, as seen on the card</p></td>
+						<th scope="row" class="argument-name"><code>iccCard</code></th>
+						<td><p>BOOL indicating whether or not the card has a chip, based on track service code</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>Type</code></th>
-						<td><p>of the swiper used to encrypt the card data</p></td>
+						<th scope="row" class="argument-name"><code>swiperType</code></th>
+						<td><p>Type of the swiper used to encrypt the card data</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>fallbackIndicator</code></th>
+						<td><p>A boolean that indicates this was a fallback transaction</p></td>
 					</tr>
 				
 				</table>
@@ -1008,38 +1034,43 @@ from the terminal</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>string</code></th>
-						<td><p>containing the Application ID that represents the card being used</p></td>
+						<th scope="row" class="argument-name"><code>tlv</code></th>
+						<td><p>Tag, Length, Value string of the card data from the terminal</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>Key</code></th>
-						<td><p>Serial Number used to encrypt the card data</p></td>
+						<th scope="row" class="argument-name"><code>swiperType</code></th>
+						<td><p>Type of the swiper used to encrypt the card data</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>The</code></th>
-						<td><p>input method and account type for the selected card (Contact Debit versus Contacless Debit, etc0.</p></td>
+						<th scope="row" class="argument-name"><code>pinBlock</code></th>
+						<td><p>encrypted PIN data</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>encrypted</code></th>
-						<td><p>PIN data</p></td>
+						<th scope="row" class="argument-name"><code>pinKsn</code></th>
+						<td><p>Key Serial Number used to encrypt the PIN data</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>Type</code></th>
-						<td><p>of the swiper used to encrypt the card data</p></td>
+						<th scope="row" class="argument-name"><code>ksn</code></th>
+						<td><p>Key Serial Number used to encrypt the card data</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>BOOL</code></th>
-						<td><p>indicating whether or not the CVM Results indicate that a <a href="#//api/name/signature">signature</a> is required</p></td>
+						<th scope="row" class="argument-name"><code>signatureRequired</code></th>
+						<td><p>A BOOL indicating whether or not the CVM Results indicate that a <a href="#//api/name/signature">signature</a> is required</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>Tag,</code></th>
-						<td><p>Length, Value string of the card data from the terminal</p></td>
+						<th scope="row" class="argument-name"><code>aid</code></th>
+						<td><p>String containing the Application ID that represents the card being used</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>cardSource</code></th>
+						<td><p>The input method and account type for the selected card (Contact Debit versus Contacless Debit, etc0.</p></td>
 					</tr>
 				
 				</table>
@@ -1075,6 +1106,164 @@ from the terminal</p>
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/cardHasPinData" title="cardHasPinData"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cardHasPinData">&ndash;&nbsp;cardHasPinData</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Flag indicating that the card has an associated PIN</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)cardHasPinData</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Flag indicating that the card has an associated PIN</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WPYTenderedCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithDictionary:" title="initWithDictionary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDictionary:">&ndash;&nbsp;initWithDictionary:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initiatilize the internal <a href="../Classes/WPYDomainObject.html#//api/name/jsonDictionary">jsonDictionary</a> with a provided json string</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithDictionary:(NSDictionary *)<em>jsonDictionary</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>jsonDictionary</code></th>
+						<td><p>Json string used to initialize the object</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initiatilize the internal <a href="../Classes/WPYDomainObject.html#//api/name/jsonDictionary">jsonDictionary</a> with a provided json string</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WPYDomainObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/jsonDictionary" title="jsonDictionary"></a>
+	<h3 class="method-title"><code><a href="#//api/name/jsonDictionary">&ndash;&nbsp;jsonDictionary</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The json string used in interacting with the server</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)jsonDictionary</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The json string used in interacting with the server</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WPYDomainObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -1090,7 +1279,7 @@ from the terminal</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Worldpay. All rights reserved. Updated: 2016-12-22</p>
+						<p class="copyright">Copyright &copy; 2016 Worldpay. All rights reserved. Updated: 2016-12-28</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

@@ -21,7 +21,7 @@
  * that a transaction be reversed.
  */
 @interface WPYPaymentRequest : WPYDomainObject
-/*
+/**
  * The total amount of the request, excluding the amountOther for a cashback transaction.  This is because the Anywhere Commerce devices will automatically
  * add the "Amount Other" to the total on a cashback transaction and the Miura device ignores the amountOther field and presents the cashback prompt on the
  * terminal IF the card's Application Usage Control allows cashback

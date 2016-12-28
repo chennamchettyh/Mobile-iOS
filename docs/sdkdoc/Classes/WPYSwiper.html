@@ -43,6 +43,8 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 
 	
 	
@@ -150,6 +152,15 @@
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This is the core object used to represent the swiper. This object becomes a base class
+for specific swiper objects designed for the given peripheral</p>
+					</div>
+					
+					
 
 					
 					
@@ -543,7 +554,7 @@ you must specify the correct input type for the hardware being used at the time 
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Creates an instance of a swiper, with a <a href="../Classes/WPYSwiper.html#//api/name/delegate">delegate</a> assigned at instantiation</p>
+				<p>Creates an instance of a swiper, with a <a href="#//api/name/delegate">delegate</a> assigned at instantiation</p>
 			</div>
 			
 		    
@@ -557,8 +568,8 @@ you must specify the correct input type for the hardware being used at the time 
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>the</code></th>
-						<td><p>initial <a href="../Classes/WPYSwiper.html#//api/name/delegate">delegate</a> that the swiper will call with events.  This can be changed at any time after instantiation.</p></td>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>The initial <a href="#//api/name/delegate">delegate</a> that the swiper will call with events.  This can be changed at any time after instantiation.</p></td>
 					</tr>
 				
 				</table>
@@ -568,7 +579,7 @@ you must specify the correct input type for the hardware being used at the time 
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>an instance of a swiper</p>
+				<p>An instance of a swiper</p>
 			</div>
 			
 
@@ -577,7 +588,7 @@ you must specify the correct input type for the hardware being used at the time 
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Creates an instance of a swiper, with a <a href="../Classes/WPYSwiper.html#//api/name/delegate">delegate</a> assigned at instantiation</p>
+				<p>Creates an instance of a swiper, with a <a href="#//api/name/delegate">delegate</a> assigned at instantiation</p>
 			</div>
 			
 
@@ -666,8 +677,8 @@ you must specify the correct input type for the hardware being used at the time 
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>the</code></th>
-						<td><p>type of hardware interface used to communicate with the device - Audio or Bluetooth</p></td>
+						<th scope="row" class="argument-name"><code>inputType</code></th>
+						<td><p>The type of hardware interface used to communicate with the device - Audio or Bluetooth</p></td>
 					</tr>
 				
 				</table>
@@ -911,8 +922,8 @@ to swipe, tap, or insert a card will do nothing.</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>a</code></th>
-						<td><p>pointer to the request object used to complete the payment request.  This must be populated with all required info as the transaction will begin
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>A pointer to the request object used to complete the payment request.  This must be populated with all required info as the transaction will begin
 immediately if the card entry is successful.  If the card entry is canceled then a fail message will be sent to the <a href="../Classes/WPYSwiper.html#//api/name/delegate">delegate</a></p></td>
 					</tr>
 				
@@ -957,19 +968,7 @@ to swipe, tap, or insert a card will do nothing.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<ul>
-<li>Start a contact EMV transaction.  If no EMV card is inserted, the swiper will request that a card be inserted or swiped. This handles swipe events.
-*</li>
-<li>@param a pointer to the request object used to complete the EMV Request.  This must be populated with all required info as any request for online</li>
-<li><pre><code> processing will happen automatically if the terminal requests it.
-</code></pre></li>
-<li>@param the transaction type to set in the Application Cryptogram - Such as a goods sale, refund, or cashback transaction. Some devices handle
-        cashback on the terminal and will process cashback transactions as sale and will then allow the terminal user to set a cashback amount.
-        AnywhereCommerce devices must have the cashback amount / type set at the start of the transaction.  Miura devices will enable cashback</li>
-<li><pre><code> only if this is set to type Cashback but will process as a sale if the user declines to enter a cashback amount
-</code></pre></li>
-</ul>
-
+				<p>Start a contact EMV transaction.  If no EMV card is inserted, the swiper will request that a card be inserted or swiped. This handles swipe events.</p>
 			</div>
 			
 		    
@@ -977,6 +976,27 @@ to swipe, tap, or insert a card will do nothing.</p>
 			<div class="method-subsection method-declaration"><code>- (void)beginEMVTransactionWithRequest:(WPYPaymentRequest *)<em>request</em> transactionType:(WPYEMVTransactionType)<em>transactionType</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>A pointer to the request object used to complete the EMV Request.  This must be populated with all required info as any request for online
+processing will happen automatically if the terminal requests it.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>transactionType</code></th>
+						<td><p>The transaction type to set in the Application Cryptogram - Such as a goods sale, refund, or cashback transaction. Some devices handle
+cashback on the terminal and will process cashback transactions as sale and will then allow the terminal user to set a cashback amount.
+AnywhereCommerce devices must have the cashback amount / type set at the start of the transaction.  Miura devices will enable cashback
+only if this is set to type Cashback but will process as a sale if the user declines to enter a cashback amount</p></td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -986,19 +1006,7 @@ to swipe, tap, or insert a card will do nothing.</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<ul>
-<li>Start a contact EMV transaction.  If no EMV card is inserted, the swiper will request that a card be inserted or swiped. This handles swipe events.
-*</li>
-<li>@param a pointer to the request object used to complete the EMV Request.  This must be populated with all required info as any request for online</li>
-<li><pre><code> processing will happen automatically if the terminal requests it.
-</code></pre></li>
-<li>@param the transaction type to set in the Application Cryptogram - Such as a goods sale, refund, or cashback transaction. Some devices handle
-        cashback on the terminal and will process cashback transactions as sale and will then allow the terminal user to set a cashback amount.
-        AnywhereCommerce devices must have the cashback amount / type set at the start of the transaction.  Miura devices will enable cashback</li>
-<li><pre><code> only if this is set to type Cashback but will process as a sale if the user declines to enter a cashback amount
-</code></pre></li>
-</ul>
-
+				<p>Start a contact EMV transaction.  If no EMV card is inserted, the swiper will request that a card be inserted or swiped. This handles swipe events.</p>
 			</div>
 			
 
@@ -1027,18 +1035,8 @@ to swipe, tap, or insert a card will do nothing.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<ul>
-<li>Start a contactless EMV or MSD transaction.  Some hardware allows card swipes in NFC mode, others do not.  Does nothing if NFC is not supported on</li>
-<li>the current terminal hardware - be sure to check if NFC is available
-*</li>
-<li>@param a pointer to the request object used to complete the EMV Request.  This must be populated with all required info as any request for online</li>
-<li><pre><code> processing will happen automatically if the terminal requests it.
-</code></pre></li>
-<li>@param the transaction type to set in the Application Cryptogram - Such as a goods sale, refund, or cashback transaction. Some devices handle
-        cashback on the terminal and will process cashback transactions as sale and will then allow the terminal user to set a cashback amount.
-        AnywhereCommerce devices must have the cashback amount / type set at the start of the transaction</li>
-</ul>
-
+				<p>Start a contactless EMV or MSD transaction.  Some hardware allows card swipes in NFC mode, others do not.  Does nothing if NFC is not supported on
+the current terminal hardware - be sure to check if NFC is available</p>
 			</div>
 			
 		    
@@ -1046,6 +1044,26 @@ to swipe, tap, or insert a card will do nothing.</p>
 			<div class="method-subsection method-declaration"><code>- (void)beginNFCTransactionWithRequest:(WPYPaymentRequest *)<em>request</em> transactionType:(WPYEMVTransactionType)<em>transactionType</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>A pointer to the request object used to complete the EMV Request.  This must be populated with all required info as any request for online
+processing will happen automatically if the terminal requests it.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>transactionType</code></th>
+						<td><p>The transaction type to set in the Application Cryptogram - Such as a goods sale, refund, or cashback transaction. Some devices handle
+cashback on the terminal and will process cashback transactions as sale and will then allow the terminal user to set a cashback amount.
+AnywhereCommerce devices must have the cashback amount / type set at the start of the transaction</p></td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -1055,18 +1073,8 @@ to swipe, tap, or insert a card will do nothing.</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<ul>
-<li>Start a contactless EMV or MSD transaction.  Some hardware allows card swipes in NFC mode, others do not.  Does nothing if NFC is not supported on</li>
-<li>the current terminal hardware - be sure to check if NFC is available
-*</li>
-<li>@param a pointer to the request object used to complete the EMV Request.  This must be populated with all required info as any request for online</li>
-<li><pre><code> processing will happen automatically if the terminal requests it.
-</code></pre></li>
-<li>@param the transaction type to set in the Application Cryptogram - Such as a goods sale, refund, or cashback transaction. Some devices handle
-        cashback on the terminal and will process cashback transactions as sale and will then allow the terminal user to set a cashback amount.
-        AnywhereCommerce devices must have the cashback amount / type set at the start of the transaction</li>
-</ul>
-
+				<p>Start a contactless EMV or MSD transaction.  Some hardware allows card swipes in NFC mode, others do not.  Does nothing if NFC is not supported on
+the current terminal hardware - be sure to check if NFC is available</p>
 			</div>
 			
 
@@ -1110,7 +1118,7 @@ to swipe, tap, or insert a card will do nothing.</p>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>request</code></th>
-						<td><p>object that will be populated with the information captured by the terminal</p></td>
+						<td><p>A request object that will be populated with the information captured by the terminal</p></td>
 					</tr>
 				
 				</table>
@@ -1162,6 +1170,18 @@ when requested.</p>
 			<div class="method-subsection method-declaration"><code>- (void)selectEMVCardApplication:(NSInteger)<em>application</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>application</code></th>
+						<td><p>Application to select</p></td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -1216,8 +1236,8 @@ transaction total prior to online authorization</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>boolean</code></th>
-						<td><p>indicating whether the card holder has accepted the final total</p></td>
+						<th scope="row" class="argument-name"><code>confirmed</code></th>
+						<td><p>A boolean indicating whether the card holder has accepted the final total</p></td>
 					</tr>
 				
 				</table>
@@ -1274,7 +1294,7 @@ transaction total prior to online authorization</p>
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>boolean indicating whether or not the swiper&rsquo;s display can show custom text</p>
+				<p>A boolean indicating whether or not the swiper&rsquo;s display can show custom text</p>
 			</div>
 			
 
@@ -1373,8 +1393,8 @@ by the developer based on the character width of the display in question.</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>a</code></th>
-						<td><p>string of text that will be displayed on the terminal</p></td>
+						<th scope="row" class="argument-name"><code>text</code></th>
+						<td><p>A string of text that will be displayed on the terminal</p></td>
 					</tr>
 				
 				</table>
@@ -1434,8 +1454,8 @@ selected</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>the</code></th>
-						<td><p>account type that the user has selected.  This must be &lsquo;credit&rsquo; OR &lsquo;debit&rsquo;, any other input will default to credit.</p></td>
+						<th scope="row" class="argument-name"><code>type</code></th>
+						<td><p>The account type that the user has selected.  This must be &lsquo;credit&rsquo; OR &lsquo;debit&rsquo;, any other input will default to credit.</p></td>
 					</tr>
 				
 				</table>
@@ -1493,7 +1513,7 @@ selected</p>
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>credit card terminal serial number</p>
+				<p>A credit card terminal serial number</p>
 			</div>
 			
 
@@ -1544,7 +1564,7 @@ selected</p>
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>the software version of the terminal&rsquo;s OS</p>
+				<p>The software version of the terminal&rsquo;s OS</p>
 			</div>
 			
 
@@ -1605,13 +1625,13 @@ after an online processing request has been completed.  It is is only used inter
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>the</code></th>
-						<td><p>response from the processor, including any EMV data returned by the issuing bank</p></td>
+						<th scope="row" class="argument-name"><code>response</code></th>
+						<td><p>The response from the processor, including any EMV data returned by the issuing bank</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>any</code></th>
-						<td><p>server errors that may have been returned during the processing request - this determines whether a request was declined on or offline</p></td>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>Any server errors that may have been returned during the processing request - this determines whether a request was declined on or offline</p></td>
 					</tr>
 				
 				</table>
@@ -1621,7 +1641,7 @@ after an online processing request has been completed.  It is is only used inter
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>a TLV string containing the appropriate data to be sent to the terminal after online processing</p>
+				<p>A TLV string containing the appropriate data to be sent to the terminal after online processing.</p>
 			</div>
 			
 
@@ -1675,8 +1695,8 @@ This is used internally and should never actually be required to be called exter
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>the</code></th>
-						<td><p>AID that has been selected by the card holder / terminal</p></td>
+						<th scope="row" class="argument-name"><code>aid</code></th>
+						<td><p>The AID that has been selected by the card holder / terminal</p></td>
 					</tr>
 				
 				</table>
@@ -1686,7 +1706,7 @@ This is used internally and should never actually be required to be called exter
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>an enumeration indacting what type of transactions can be run against that AID</p>
+				<p>An enumeration indacting what type of transactions can be run against that AID.</p>
 			</div>
 			
 
@@ -1728,7 +1748,7 @@ This is used internally and should never actually be required to be called exter
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Worldpay. All rights reserved. Updated: 2016-12-22</p>
+						<p class="copyright">Copyright &copy; 2016 Worldpay. All rights reserved. Updated: 2016-12-28</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

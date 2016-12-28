@@ -100,7 +100,7 @@
                         <constraint firstAttribute="height" constant="30" id="gZJ-0q-Lfg"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                 </textField>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qvn-pS-Zkp">
                     <rect key="frame" x="8" y="129" width="568" height="31"/>

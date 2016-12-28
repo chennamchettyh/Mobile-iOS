@@ -13,6 +13,9 @@
 @class WPYAddressInfo;
 @class WPYLevelTwoData;
 
+/**
+ * This class contains the attributes and methods to perform a credit/debit/check transaction
+ */
 @interface WPYTransaction : WPYDomainObject
 /**
  * The ID of the customer associated with the transaction, if any

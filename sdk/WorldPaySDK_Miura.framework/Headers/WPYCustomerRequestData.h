@@ -9,6 +9,9 @@
 
 @class WPYAddressInfo;
 
+/**
+ * Request object used in customer vault transactions.
+ */
 @interface WPYCustomerRequestData : WPYDomainObject
 /**
  * Optional on create requests: Customer ID is set by the server if not provided.
