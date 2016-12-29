@@ -33,6 +33,10 @@
 @property (nonatomic, strong) NSDecimalNumber *taxAmount;
 /**
  * Tax Status of the order
+ * 
+ * 0 - NotIncluded
+ * 1 - Included
+ * 2 - Exempt
  */
 @property (nonatomic, strong) NSNumber *status;
 /**
