@@ -184,11 +184,6 @@
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This delegate function is called when a communication channel has been opened with the credit card terminal</p>
-			</div>
-			
 
 			
 
@@ -241,11 +236,6 @@
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This delegate function is called when the communication channel to the credit card terminal has been closed.</p>
-			</div>
 			
 
 			
@@ -300,11 +290,6 @@
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This delegate function is called when the connection to the swiper hardware fails to be created</p>
-			</div>
-			
 
 			
 
@@ -358,12 +343,6 @@ but will be reattempted</p>
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This delegate function is called when the communication channel to the credit card terminal could not be opened,
-but will be reattempted</p>
-			</div>
 			
 
 			
@@ -423,11 +402,6 @@ but will be reattempted</p>
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This delegate function is called when an error has been detected when performing a requested task</p>
-			</div>
-			
 
 			
 
@@ -486,12 +460,6 @@ and no more online requests are pending.</p>
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This delegate function is called after the terminal has generated the Transaction Certificate or Application Authentication Cryptogram
-and no more online requests are pending.</p>
-			</div>
 			
 
 			
@@ -556,11 +524,6 @@ and no more online requests are pending.</p>
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This delegate function is called when an attempt to make a payment failed with a non-authorization related error.</p>
-			</div>
-			
 
 			
 
@@ -620,12 +583,6 @@ If this method is implemented then the delegate must call back the referencing o
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This delegate method is called when the terminal is incapable of presenting the account type selection to the card holder.
-If this method is implemented then the delegate must call back the referencing object or the transaction will timeout</p>
-			</div>
-			
 
 			
 
@@ -684,12 +641,6 @@ Miura devices do not call this method</p>
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This delegate method is called by some devices when the user confirms/rejects the transaction amount on the terminal hardware
-Miura devices do not call this method</p>
-			</div>
 			
 
 			
@@ -755,12 +706,6 @@ This method is only called by certain devices that can display text and have a k
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This delegate method is called when the user keys in an amount when requested by the device
-This method is only called by certain devices that can display text and have a keypad</p>
-			</div>
-			
 
 			
 
@@ -818,11 +763,6 @@ This method is only called by certain devices that can display text and have a k
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This delegate method is called when the terminal sends a low battery status message</p>
-			</div>
 			
 
 			
@@ -883,12 +823,6 @@ When the hardware supports it, the terminal will manage application selection au
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This delegate method is called when the terminal is not configured to present the application options to the card holder directly
-When the hardware supports it, the terminal will manage application selection automatically (Miura for instance)</p>
-			</div>
-			
 
 			
 
@@ -942,12 +876,6 @@ This is typical on audiojack devices or other devices that have no keypad</p>
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This delegate method is called when the terminal is not configured to request final transaction amount confirmation from the card holder directly
-This is typical on audiojack devices or other devices that have no keypad</p>
-			</div>
 			
 
 			
@@ -1014,13 +942,6 @@ string to have the terminal display default text.</p>
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This delegate method is called when the terminal would like text displayed by the user.  If the terminal is capable of displaying text (swiperCanDisplayText)
-and this method is implemented, then the terminal should be sent a text string to display to the user.  This can be done via the completion handler, with a NIL
-string to have the terminal display default text.</p>
-			</div>
-			
 
 			
 
@@ -1079,12 +1000,6 @@ the card data is not going to be returned for whatever reason.  For instance, a 
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This delegate method is called when the terminal receives a card event.  It does not return the card data and therefore is called in the event that
-the card data is not going to be returned for whatever reason.  For instance, a card swipe does not return data if the card is IC capable and was swiped</p>
-			</div>
 			
 
 			
@@ -1148,11 +1063,6 @@ the card data is not going to be returned for whatever reason.  For instance, a 
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This delegate method is called when the terminal receives card data and sends it to the secure vault to create a payment method.</p>
-			</div>
 			
 
 			
@@ -1218,12 +1128,6 @@ For Anywhere Commerce bluetooth devices this may return all devices within range
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This method is called when a bluetooth connection attempt is made and there may be one or more devices that are available to be paired with
-For Anywhere Commerce bluetooth devices this may return all devices within range</p>
-			</div>
-			
 
 			
 
@@ -1278,12 +1182,6 @@ delegate and therefore this message is only useful if the application cares abou
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This method is called when a key is pressed on a supported device (Miura).  For EMV / PIN security, the key press will not be relayed to the
-delegate and therefore this message is only useful if the application cares about keypad presses for whatever reason.</p>
-			</div>
-			
 
 			
 
@@ -1313,7 +1211,7 @@ delegate and therefore this message is only useful if the application cares abou
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Worldpay. All rights reserved. Updated: 2016-12-29</p>
+						<p class="copyright">Copyright &copy; 2016 Worldpay. All rights reserved. Updated: 2016-12-30</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

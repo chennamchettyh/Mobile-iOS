@@ -98,7 +98,7 @@
 	<td><a href="../Classes/WPYDomainObject.html">WPYDomainObject</a> : NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>WPYPaymentRequest.h<br />WPYPaymentRequest.m</td>
+	<td>WPYPaymentRequest.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -110,7 +110,7 @@
 						<h2 class="subtitle subtitle-overview">Overview</h2>
 						<p>This base class is used to represent the common info used for various types of payment requests.  This allows a generic object to
 be used in order to request the automatic handling of EMV transactions.  This base class cannot be used to perform an actual transaction by itself
-you must use a child object such as <a href="../Classes/WPYPaymentAuthorize.html">WPYPaymentAuthorize</a>, <a href="../Classes/WPYPaymentCredit.html">WPYPaymentCredit</a>, <a href="../Classes/WPYPaymentVerify.html">WPYPaymentVerify</a> or <a href="../Classes/WPYPaymentCharge.html">WPYPaymentCharge</a>.  <a href="../Classes/WPYPaymentVoid.html">WPYPaymentVoid</a> should be used with a transaction
+you must use a child object such as <a href="../Classes/WPYPaymentAuthorize.html">WPYPaymentAuthorize</a>, <a href="../Classes/WPYPaymentCredit.html">WPYPaymentCredit</a>, WPYPaymentVerify or <a href="../Classes/WPYPaymentCharge.html">WPYPaymentCharge</a>.  <a href="../Classes/WPYPaymentVoid.html">WPYPaymentVoid</a> should be used with a transaction
 ID and not passed in as a payment request in an EMV transaction.  The SDK will automatically generate a PaymentVoid request if the terminal requests
 that a transaction be reversed.</p>
 					</div>
@@ -156,13 +156,6 @@ terminal IF the card&rsquo;s Application Usage Control allows cashback</p>
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>The total amount of the request, excluding the <a href="#//api/name/amountOther">amountOther</a> for a cashback transaction.  This is because the Anywhere Commerce devices will automatically
-add the &ldquo;Amount Other&rdquo; to the total on a cashback transaction and the Miura device ignores the <a href="#//api/name/amountOther">amountOther</a> field and presents the cashback prompt on the
-terminal IF the card&rsquo;s Application Usage Control allows cashback</p>
-			</div>
-			
 
 			
 
@@ -203,11 +196,6 @@ terminal IF the card&rsquo;s Application Usage Control allows cashback</p>
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>The amountOther is typically used to represent the cashback <a href="#//api/name/amount">amount</a> of a transaction and is an optional parameter.  It defaults to 0.00</p>
-			</div>
 			
 
 			
@@ -251,12 +239,6 @@ to help limit the PCI obligations on the merchant</p>
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>The card that will be charged on this transaction.  If the card data comes from the terminal, the SDK will automatically add this parameter in order
-to help limit the PCI obligations on the merchant</p>
-			</div>
-			
 
 			
 
@@ -297,11 +279,6 @@ to help limit the PCI obligations on the merchant</p>
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>If the purchaser is presenting a check instead of a <a href="#//api/name/card">card</a>, this parameter should be supplied at the time of the transaction</p>
-			</div>
 			
 
 			
@@ -344,11 +321,6 @@ to help limit the PCI obligations on the merchant</p>
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>If using a payment token instead of a presented <a href="#//api/name/card">card</a> or <a href="#//api/name/check">check</a>, this property should be set</p>
-			</div>
-			
 
 			
 
@@ -389,11 +361,6 @@ to help limit the PCI obligations on the merchant</p>
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Address for the account holder</p>
-			</div>
 			
 
 			
@@ -438,13 +405,6 @@ be set via the request Auth <a href="#//api/name/token">token</a> method</p>
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Optional extended <a href="#//api/name/card">card</a> data to be provided by the merchant.  On <a href="#//api/name/card">card</a> present transactions, the SDK will automatically add this object and populate
-<a href="#//api/name/card">card</a> terminal information, including &ldquo;Terminal ID&rdquo;.  If a custom terminal ID is required, this object should be included or the terminal ID should
-be set via the request Auth <a href="#//api/name/token">token</a> method</p>
-			</div>
-			
 
 			
 
@@ -474,7 +434,7 @@ be set via the request Auth <a href="#//api/name/token">token</a> method</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Worldpay. All rights reserved. Updated: 2016-12-29</p>
+						<p class="copyright">Copyright &copy; 2016 Worldpay. All rights reserved. Updated: 2016-12-30</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

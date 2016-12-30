@@ -157,7 +157,7 @@
 	<td>NSURLSessionDataDelegate<br />NSURLSessionDelegate<br />NSURLSessionTaskDelegate</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>WorldPayAPI.h<br />WorldPayAPI.m</td>
+	<td>WorldPayAPI.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -209,11 +209,6 @@
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Tells the WorldpayAPI object to send messages to the test host configured at compile time</p>
-			</div>
-			
 
 			
 
@@ -240,7 +235,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>When enabled, and TestHost is enabled, the <a href="#//api/name/debugDelegate">debugDelegate</a> will be sent HTTP request and <a href="#//api/name/response">response</a> bodies for logging purposes.
+				<p>When enabled, and TestHost is enabled, the <a href="#//api/name/debugDelegate">debugDelegate</a> will be sent HTTP request and response bodies for logging purposes.
 These bodies may contain PCI or PII data and may only be used with test cards on a test environment</p>
 			</div>
 			
@@ -255,12 +250,6 @@ These bodies may contain PCI or PII data and may only be used with test cards on
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>When enabled, and TestHost is enabled, the <a href="#//api/name/debugDelegate">debugDelegate</a> will be sent HTTP request and <a href="#//api/name/response">response</a> bodies for logging purposes.
-These bodies may contain PCI or PII data and may only be used with test cards on a test environment</p>
-			</div>
 			
 
 			
@@ -288,7 +277,7 @@ These bodies may contain PCI or PII data and may only be used with test cards on
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The delegate that would like to receive debug messages containing HTTP request and <a href="#//api/name/response">response</a> bodies</p>
+				<p>The delegate that would like to receive debug messages containing HTTP request and response bodies</p>
 			</div>
 			
 		    
@@ -302,11 +291,6 @@ These bodies may contain PCI or PII data and may only be used with test cards on
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>The delegate that would like to receive debug messages containing HTTP request and <a href="#//api/name/response">response</a> bodies</p>
-			</div>
 			
 
 			
@@ -348,11 +332,6 @@ These bodies may contain PCI or PII data and may only be used with test cards on
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>The terminal ID set when the auth token request was made</p>
-			</div>
 			
 
 			
@@ -400,11 +379,6 @@ These bodies may contain PCI or PII data and may only be used with test cards on
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Returns shared instance pointer of the WorldpayAPI entry point</p>
-			</div>
-			
 
 			
 
@@ -451,11 +425,6 @@ These bodies may contain PCI or PII data and may only be used with test cards on
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Class <a href="#//api/name/instance">instance</a> init unavailable.  Use WorldpayAPI <a href="#//api/name/instance">instance</a> to get class <a href="#//api/name/instance">instance</a></p>
-			</div>
-			
 
 			
 
@@ -482,7 +451,7 @@ These bodies may contain PCI or PII data and may only be used with test cards on
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Returns a pointer to a credit card <a href="#//api/name/swiper">swiper</a> object</p>
+				<p>Returns a pointer to a credit card swiper object</p>
 			</div>
 			
 		    
@@ -497,7 +466,7 @@ These bodies may contain PCI or PII data and may only be used with test cards on
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p>Delegate that will listen to <a href="#//api/name/swiper">swiper</a> events</p></td>
+						<td><p>Delegate that will listen to swiper events</p></td>
 					</tr>
 				
 				</table>
@@ -513,11 +482,6 @@ These bodies may contain PCI or PII data and may only be used with test cards on
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Returns a pointer to a credit card <a href="#//api/name/swiper">swiper</a> object</p>
-			</div>
 			
 
 			
@@ -579,13 +543,6 @@ can be removed by calling: - <a href="#//api/name/clearSDKKeychain">clearSDKKeyc
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Authenticates user credentials against the World Pay server. The token
-will automatically be saved in the application keychain by the SDK and
-can be removed by calling: - <a href="#//api/name/clearSDKKeychain">clearSDKKeychain</a></p>
-			</div>
-			
 
 			
 
@@ -628,13 +585,6 @@ to make calls to the web APIs after this is executed</p>
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Clears the keychain data out of the application. Completely resets the auth token information
-and removes it from the application keychain.  A new auth token must be generated in order
-to make calls to the web APIs after this is executed</p>
-			</div>
 			
 
 			
@@ -689,11 +639,6 @@ to make calls to the web APIs after this is executed</p>
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Gets the current batch identifier</p>
-			</div>
-			
 
 			
 
@@ -746,11 +691,6 @@ to make calls to the web APIs after this is executed</p>
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Closes the current batch</p>
-			</div>
 			
 
 			
@@ -810,11 +750,6 @@ to make calls to the web APIs after this is executed</p>
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Gets customer data from the server</p>
-			</div>
-			
 
 			
 
@@ -872,11 +807,6 @@ to make calls to the web APIs after this is executed</p>
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Creates a new customer object to be stored on the server</p>
-			</div>
 			
 
 			
@@ -941,11 +871,6 @@ to make calls to the web APIs after this is executed</p>
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Updates an existing customer on the server</p>
-			</div>
-			
 
 			
 
@@ -1003,11 +928,6 @@ to make calls to the web APIs after this is executed</p>
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Get Gift Card from server</p>
-			</div>
 			
 
 			
@@ -1067,11 +987,6 @@ to make calls to the web APIs after this is executed</p>
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Update gift card stored on the server</p>
-			</div>
-			
 
 			
 
@@ -1130,11 +1045,6 @@ to make calls to the web APIs after this is executed</p>
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Create a new gift card to be stored on the serfver</p>
-			</div>
-			
 
 			
 
@@ -1192,11 +1102,6 @@ to make calls to the web APIs after this is executed</p>
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Delete a payment method being stored on the server</p>
-			</div>
 			
 
 			
@@ -1261,11 +1166,6 @@ to make calls to the web APIs after this is executed</p>
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Get payment method from the server</p>
-			</div>
-			
 
 			
 
@@ -1323,11 +1223,6 @@ to make calls to the web APIs after this is executed</p>
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Update an existing payment method on the server</p>
-			</div>
 			
 
 			
@@ -1387,11 +1282,6 @@ to make calls to the web APIs after this is executed</p>
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Create a new payment method on the server</p>
-			</div>
-			
 
 			
 
@@ -1449,11 +1339,6 @@ to make calls to the web APIs after this is executed</p>
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Request Authorization of a payment</p>
-			</div>
 			
 
 			
@@ -1513,11 +1398,6 @@ to make calls to the web APIs after this is executed</p>
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Capture an authorized payment</p>
-			</div>
-			
 
 			
 
@@ -1575,11 +1455,6 @@ to make calls to the web APIs after this is executed</p>
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Immediately charge payment using the requested payment type</p>
-			</div>
 			
 
 			
@@ -1639,11 +1514,6 @@ to make calls to the web APIs after this is executed</p>
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Card verification allows merchants to verify the cardholder account number, address, or security code.</p>
-			</div>
-			
 
 			
 
@@ -1701,11 +1571,6 @@ to make calls to the web APIs after this is executed</p>
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Void an authorized payment</p>
-			</div>
 			
 
 			
@@ -1765,11 +1630,6 @@ to make calls to the web APIs after this is executed</p>
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Refund a payment that has been captured</p>
-			</div>
-			
 
 			
 
@@ -1827,11 +1687,6 @@ to make calls to the web APIs after this is executed</p>
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Request a credit to the tender in the request object</p>
-			</div>
 			
 
 			
@@ -1891,11 +1746,6 @@ to make calls to the web APIs after this is executed</p>
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Get details for a transaction by identifier</p>
-			</div>
-			
 
 			
 
@@ -1953,11 +1803,6 @@ to make calls to the web APIs after this is executed</p>
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Search transactions</p>
-			</div>
 			
 
 			
@@ -2017,11 +1862,6 @@ to make calls to the web APIs after this is executed</p>
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Get transactions in the current batch</p>
-			</div>
-			
 
 			
 
@@ -2051,7 +1891,7 @@ to make calls to the web APIs after this is executed</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Worldpay. All rights reserved. Updated: 2016-12-29</p>
+						<p class="copyright">Copyright &copy; 2016 Worldpay. All rights reserved. Updated: 2016-12-30</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

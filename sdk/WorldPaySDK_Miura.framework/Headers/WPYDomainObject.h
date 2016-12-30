@@ -18,10 +18,15 @@
  */
 typedef NS_ENUM(NSInteger, WPYPaymentMethodDuplicateCheckType)
 {
+    /// Unset
     WPYPaymentMethodDuplicateCheckTypeUnset = -1,
+    /// Does not check for Duplicate Card Number for specified Customer ID
     WPYPaymentMethodDuplicateCheckTypeNone = 0,
+    /// Checks for Duplicate Card Number for specified Customer ID
     WPYPaymentMethodDuplicateCheckTypeCustomer = 1,
+    /// Checks for Duplicate Card Number for All Customer IDs for specified SecureNet ID
     WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderId = 2,
+    /// Checks for Duplicate Card Number for All Customer IDs for specified Group ID
     WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderGroup = 3
 };
 
@@ -41,10 +46,15 @@ typedef NS_ENUM(NSInteger, WPYPaymentMethodDuplicateCheckType)
  */
 typedef NS_ENUM(NSInteger, WPYTransactionDuplicateCheckType)
 {
+    /// Unset
     WPYTransactionDuplicateCheckTypeUnset = -1,
+    /// No duplicate check
     WPYTransactionDuplicateCheckTypeNone = 0,
+    /// Exception code is returned in case of duplicate
     WPYTransactionDuplicateCheckTypeException = 1,
+    /// Previously existing transaction is returned in case of duplicate
     WPYTransactionDuplicateCheckTypePreviousTransaction = 2,
+    /// Check is performed as above but without using order ID, and exception code is returned in case of duplicate
     WPYTransactionDuplicateCheckTypeExceptionNoOrderId = 3
 };
 
