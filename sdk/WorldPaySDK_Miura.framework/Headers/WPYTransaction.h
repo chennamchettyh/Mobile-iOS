@@ -67,7 +67,7 @@
 /**
  * A convenience method to get the WPYTransaction.identifier associated with the transaction
  */
-@property (nonatomic, readonly, getter=getTransactionId) NSString *transactionId;
+@property (nonatomic, readonly, getter=getTransactionIdentifier) NSString *transactionIdentifier;
 /**
  * This optional parameter contains data that the merchant wishes to pass up to the payment gateway for that specific transaction
  */

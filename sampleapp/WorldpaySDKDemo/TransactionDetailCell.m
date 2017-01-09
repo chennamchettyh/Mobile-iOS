@@ -56,7 +56,7 @@
 
 -(void)assignValues: (WPYTransaction *)response
 {
-    self.transactionIdValue.text = response.transactionId;
+    self.transactionIdValue.text = response.transactionIdentifier;
     self.amountValue.text = [NSString stringWithFormat:@"%@", response.amount ?: @""];
     self.paymentTypeValue.text = [Helper getPaymentType:response.paymentType];
     self.responseTextValue.text = response.responseText;

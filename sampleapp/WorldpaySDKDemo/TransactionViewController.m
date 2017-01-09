@@ -758,7 +758,7 @@
         }
     }
     
-    alert = [UIAlertController alertControllerWithTitle:@"Response" message:[NSString stringWithFormat:@"Status: %@\r\n%@Message: %@\r\n%@", transactionStatus, (response.transaction.transactionId.integerValue > 0 ? [NSString stringWithFormat:@"Transaction Id: %@\r\n", response.transaction.transactionId]: @""),responseMessage ?: @"No Message", signatureNeeded] preferredStyle:UIAlertControllerStyleAlert];
+    alert = [UIAlertController alertControllerWithTitle:@"Response" message:[NSString stringWithFormat:@"Status: %@\r\n%@Message: %@\r\n%@", transactionStatus, (response.transaction.transactionIdentifier.integerValue > 0 ? [NSString stringWithFormat:@"Transaction Id: %@\r\n", response.transaction.transactionIdentifier]: @""),responseMessage ?: @"No Message", signatureNeeded] preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self cleanAlertUserAction:YES];
     }]];
