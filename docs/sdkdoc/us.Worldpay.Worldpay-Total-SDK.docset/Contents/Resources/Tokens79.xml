@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYCardEntryMode.html">
+	<File path="Constants/WPYCVMethod.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYCardEntryMode</TokenIdentifier>
-			<Abstract type="html">This helps the application developer understand how the terminal read the card data in order to
-execute the payment request.  This may affect the language printed to the receipt</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYCVMethod</TokenIdentifier>
+			<Abstract type="html">This data indicates the type of cardholder verification that was performed on the transaction.
+The type of CVM that is used to help determine what information will be on the receipt</Abstract>
 			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
             
 			
@@ -15,9 +15,9 @@ execute the payment request.  This may affect the language printed to the receip
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardEntryModeContact</TokenIdentifier>
-            <Abstract type="html">Card was a contact card</Abstract>
-            <Declaration>WPYCardEntryModeContact</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodNoCVM</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>WPYCVMethodNoCVM</Declaration>
             
             <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
             
@@ -25,9 +25,9 @@ execute the payment request.  This may affect the language printed to the receip
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardEntryModeContactlessEMV</TokenIdentifier>
-            <Abstract type="html">Card was a contactless EMV</Abstract>
-            <Declaration>WPYCardEntryModeContactlessEMV</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodPlaintextPIN</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>WPYCVMethodPlaintextPIN</Declaration>
             
             <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
             
@@ -35,9 +35,9 @@ execute the payment request.  This may affect the language printed to the receip
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardEntryModeContactlessMSR</TokenIdentifier>
-            <Abstract type="html">Card was a contactless magnetic stripe</Abstract>
-            <Declaration>WPYCardEntryModeContactlessMSR</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodOnlinePIN</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>WPYCVMethodOnlinePIN</Declaration>
             
             <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
             
@@ -45,9 +45,9 @@ execute the payment request.  This may affect the language printed to the receip
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardEntryModeMSR</TokenIdentifier>
-            <Abstract type="html">Card was a magnetic stripe</Abstract>
-            <Declaration>WPYCardEntryModeMSR</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodMobileConfirmCode</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>WPYCVMethodMobileConfirmCode</Declaration>
             
             <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
             
@@ -55,9 +55,19 @@ execute the payment request.  This may affect the language printed to the receip
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardEntryModeManual</TokenIdentifier>
-            <Abstract type="html">Data was entered by hand</Abstract>
-            <Declaration>WPYCardEntryModeManual</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodOfflineEncipheredPIN</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>WPYCVMethodOfflineEncipheredPIN</Declaration>
+            
+            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+            
+            <NodeRef refid="79"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodSignature</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>WPYCVMethodSignature</Declaration>
             
             <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
             

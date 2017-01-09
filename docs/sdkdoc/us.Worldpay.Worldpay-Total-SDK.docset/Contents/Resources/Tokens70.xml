@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/PinError.html">
+	<File path="Constants/NFCError.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/PinError</TokenIdentifier>
-			<Abstract type="html">Error types in processing a PIN</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/NFCError</TokenIdentifier>
+			<Abstract type="html">NFC error types</Abstract>
 			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
             
 			
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PinErrorCanceled</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/NFCErrorAborted</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>PinErrorCanceled</Declaration>
+            <Declaration>NFCErrorAborted</Declaration>
             
             <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PinErrorInternalError09</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/NFCErrorTimeOut</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>PinErrorInternalError09</Declaration>
+            <Declaration>NFCErrorTimeOut</Declaration>
             
             <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
             
@@ -34,9 +34,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PinErrorInternalError0A</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/NFCErrorCardInserted</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>PinErrorInternalError0A</Declaration>
+            <Declaration>NFCErrorCardInserted</Declaration>
             
             <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
             
@@ -44,9 +44,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PinErrorInternalError0B</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/NFCErrorCardSwiped</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>PinErrorInternalError0B</Declaration>
+            <Declaration>NFCErrorCardSwiped</Declaration>
             
             <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
             
@@ -54,9 +54,39 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PinErrorUserBypassedPin</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/NFCErrorUseIccOrMsr</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>PinErrorUserBypassedPin</Declaration>
+            <Declaration>NFCErrorUseIccOrMsr</Declaration>
+            
+            <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+            
+            <NodeRef refid="70"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/NFCErrorUseIccMsrOrOtherCard</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>NFCErrorUseIccMsrOrOtherCard</Declaration>
+            
+            <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+            
+            <NodeRef refid="70"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/NFCErrorUseIcc</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>NFCErrorUseIcc</Declaration>
+            
+            <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+            
+            <NodeRef refid="70"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/NFCErrorHardwareError</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>NFCErrorHardwareError</Declaration>
             
             <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
             

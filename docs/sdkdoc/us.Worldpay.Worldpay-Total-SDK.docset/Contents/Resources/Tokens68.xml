@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/NFCError.html">
+	<File path="Constants/ICCError.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/NFCError</TokenIdentifier>
-			<Abstract type="html">NFC error types</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/ICCError</TokenIdentifier>
+			<Abstract type="html">Chip card error types</Abstract>
 			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
             
 			
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/NFCErrorAborted</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ICCErrorInvalidData</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>NFCErrorAborted</Declaration>
+            <Declaration>ICCErrorInvalidData</Declaration>
             
             <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/NFCErrorTimeOut</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ICCErrorTerminalNotReady</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>NFCErrorTimeOut</Declaration>
+            <Declaration>ICCErrorTerminalNotReady</Declaration>
             
             <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
             
@@ -34,9 +34,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/NFCErrorCardInserted</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ICCErrorNoCardInserted</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>NFCErrorCardInserted</Declaration>
+            <Declaration>ICCErrorNoCardInserted</Declaration>
             
             <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
             
@@ -44,9 +44,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/NFCErrorCardSwiped</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ICCErrorInvalidCardNoMSRFallback</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>NFCErrorCardSwiped</Declaration>
+            <Declaration>ICCErrorInvalidCardNoMSRFallback</Declaration>
             
             <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
             
@@ -54,9 +54,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/NFCErrorUseIccOrMsr</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ICCErrorTransactionInProgress</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>NFCErrorUseIccOrMsr</Declaration>
+            <Declaration>ICCErrorTransactionInProgress</Declaration>
             
             <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
             
@@ -64,9 +64,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/NFCErrorUseIccMsrOrOtherCard</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ICCErrorDataMissing</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>NFCErrorUseIccMsrOrOtherCard</Declaration>
+            <Declaration>ICCErrorDataMissing</Declaration>
             
             <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
             
@@ -74,9 +74,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/NFCErrorUseIcc</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ICCErrorUnsupportedCardTypeMSRFallback</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>NFCErrorUseIcc</Declaration>
+            <Declaration>ICCErrorUnsupportedCardTypeMSRFallback</Declaration>
             
             <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
             
@@ -84,9 +84,39 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/NFCErrorHardwareError</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ICCErrorMissingFile</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>NFCErrorHardwareError</Declaration>
+            <Declaration>ICCErrorMissingFile</Declaration>
+            
+            <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+            
+            <NodeRef refid="68"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ICCErrorReadError</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>ICCErrorReadError</Declaration>
+            
+            <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+            
+            <NodeRef refid="68"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ICCErrorInvalidIssuerPublicKey</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>ICCErrorInvalidIssuerPublicKey</Declaration>
+            
+            <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+            
+            <NodeRef refid="68"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ICCErrorUserCanceled</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>ICCErrorUserCanceled</Declaration>
             
             <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
             

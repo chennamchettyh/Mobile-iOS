@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYVoidType.html">
+	<File path="Constants/WPYTransactionDuplicateCheckType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYVoidType</TokenIdentifier>
-			<Abstract type="html">This enumeration indicates who is requesting the void - the merchant or the terminal / card.  This
-does not ever need to be used by the merchant or developer as WPYVoidTypeMerchant is automatically
-set and overridden by the SDK when an EMV reversal is being performed</Abstract>
-			<DeclaredIn>WPYPaymentVoid.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYTransactionDuplicateCheckType</TokenIdentifier>
+			<Abstract type="html">Indicates how checks for duplicate transactions should behave. Duplicates are evaluated on the basis of
+amount, card number, and order ID; these evaluation criteria can be extended to also include customer ID,
+invoice number, or a user-defined field. Valid values for this parameter are:</Abstract>
+			<DeclaredIn>WPYDomainObject.h</DeclaredIn>
             
 			
 			<NodeRef refid="98"/>
@@ -16,21 +16,51 @@ set and overridden by the SDK when an EMV reversal is being performed</Abstract>
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYVoidTypeMerchant</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYVoidTypeMerchant</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYTransactionDuplicateCheckTypeUnset</TokenIdentifier>
+            <Abstract type="html">Unset</Abstract>
+            <Declaration>WPYTransactionDuplicateCheckTypeUnset</Declaration>
             
-            <DeclaredIn>WPYPaymentVoid.h</DeclaredIn>
+            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
             
             <NodeRef refid="98"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYVoidTypeSystem</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYVoidTypeSystem</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYTransactionDuplicateCheckTypeNone</TokenIdentifier>
+            <Abstract type="html">No duplicate check</Abstract>
+            <Declaration>WPYTransactionDuplicateCheckTypeNone</Declaration>
             
-            <DeclaredIn>WPYPaymentVoid.h</DeclaredIn>
+            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
+            
+            <NodeRef refid="98"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYTransactionDuplicateCheckTypeException</TokenIdentifier>
+            <Abstract type="html">Exception code is returned in case of duplicate</Abstract>
+            <Declaration>WPYTransactionDuplicateCheckTypeException</Declaration>
+            
+            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
+            
+            <NodeRef refid="98"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYTransactionDuplicateCheckTypePreviousTransaction</TokenIdentifier>
+            <Abstract type="html">Previously existing transaction is returned in case of duplicate</Abstract>
+            <Declaration>WPYTransactionDuplicateCheckTypePreviousTransaction</Declaration>
+            
+            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
+            
+            <NodeRef refid="98"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYTransactionDuplicateCheckTypeExceptionNoOrderId</TokenIdentifier>
+            <Abstract type="html">Check is performed as above but without using order ID, and exception code is returned in case of duplicate</Abstract>
+            <Declaration>WPYTransactionDuplicateCheckTypeExceptionNoOrderId</Declaration>
+            
+            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
             
             <NodeRef refid="98"/>
         </Token>

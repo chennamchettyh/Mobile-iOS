@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYCVMethod.html">
+	<File path="Constants/WPYAuthMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYCVMethod</TokenIdentifier>
-			<Abstract type="html">This data indicates the type of cardholder verification that was performed on the transaction.
-The type of CVM that is used to help determine what information will be on the receipt</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYAuthMode</TokenIdentifier>
+			<Abstract type="html">This indicates how the transaction was either authorized or denied.  Since Worldpay requires all
+transactions to go online, an approval should be authorized by the issuing bank while a reversal
+will likely come from the card instead</Abstract>
 			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
             
 			
@@ -15,9 +16,9 @@ The type of CVM that is used to help determine what information will be on the r
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodNoCVM</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCVMethodNoCVM</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYAuthModeIssuer</TokenIdentifier>
+            <Abstract type="html">Transaction result was determined by the card issuer/gateway</Abstract>
+            <Declaration>WPYAuthModeIssuer</Declaration>
             
             <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
             
@@ -25,49 +26,9 @@ The type of CVM that is used to help determine what information will be on the r
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodPlaintextPIN</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCVMethodPlaintextPIN</Declaration>
-            
-            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
-            
-            <NodeRef refid="77"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodOnlinePIN</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCVMethodOnlinePIN</Declaration>
-            
-            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
-            
-            <NodeRef refid="77"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodMobileConfirmCode</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCVMethodMobileConfirmCode</Declaration>
-            
-            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
-            
-            <NodeRef refid="77"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodOfflineEncipheredPIN</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCVMethodOfflineEncipheredPIN</Declaration>
-            
-            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
-            
-            <NodeRef refid="77"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodSignature</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCVMethodSignature</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYAuthModeCard</TokenIdentifier>
+            <Abstract type="html">Transaction result was determined by the card / terminal</Abstract>
+            <Declaration>WPYAuthModeCard</Declaration>
             
             <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
             

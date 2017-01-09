@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYSwiperState.html">
+	<File path="Constants/WPYSwiperBatteryStatus.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYSwiperState</TokenIdentifier>
-			<Abstract type="html">The current connection state of the card terminal</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYSwiperBatteryStatus</TokenIdentifier>
+			<Abstract type="html">Indication of when the terminal is reporting low battery status</Abstract>
 			<DeclaredIn>WPYSwiper.h</DeclaredIn>
             
 			
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperDisconnected</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperBatteryStatusCriticallyLow</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYSwiperDisconnected</Declaration>
+            <Declaration>WPYSwiperBatteryStatusCriticallyLow</Declaration>
             
             <DeclaredIn>WPYSwiper.h</DeclaredIn>
             
@@ -24,19 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperConnecting</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperBatteryStatusLow</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYSwiperConnecting</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="94"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperConnected</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYSwiperConnected</Declaration>
+            <Declaration>WPYSwiperBatteryStatusLow</Declaration>
             
             <DeclaredIn>WPYSwiper.h</DeclaredIn>
             

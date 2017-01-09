@@ -294,7 +294,7 @@ a {
 
 pre,
 code {
-    font-family: "Source Code Pro", Monaco, Menlo, Consolas, monospace;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
     word-wrap: break-word
 }
 
@@ -572,15 +572,16 @@ article #content footer p {
 .method-title {
     margin-left: -15px;
     margin-bottom: 0px;
-    transition: margin-left .3s ease-out
+    transition: margin-left .3s ease-out;
+
 }
 
 .section-method.hide .method-title {
-    margin-left: 0
+    margin-left: 0;  
+    font-weight: 400;
 }
 
 .method-title code {
-    font-weight: 400;
     font-size: .85em
 }
 

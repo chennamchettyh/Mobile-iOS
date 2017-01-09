@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYAvsResultType.html">
+	<File path="Constants/USCommonDebitMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYAvsResultType</TokenIdentifier>
-			<Abstract type="html">The Address Verification Service result indicates whether or not the
-billing address was verified and, if so, what the result was</Abstract>
-			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/USCommonDebitMode</TokenIdentifier>
+			<Abstract type="html">Determines what type of debit application will be allowed or whether the user can select one</Abstract>
+			<DeclaredIn>TransactionSettings.h</DeclaredIn>
             
 			
 			<NodeRef refid="76"/>
@@ -15,31 +14,31 @@ billing address was verified and, if so, what the result was</Abstract>
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYAvsResultTypeMatch</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYAvsResultTypeMatch</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/USCommonDebitModeDefault</TokenIdentifier>
+            <Abstract type="html">Default behavior - cardholder selects application</Abstract>
+            <Declaration>USCommonDebitModeDefault</Declaration>
             
-            <DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
-            
-            <NodeRef refid="76"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYAvsResultTypeNotMatched</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYAvsResultTypeNotMatched</Declaration>
-            
-            <DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
+            <DeclaredIn>TransactionSettings.h</DeclaredIn>
             
             <NodeRef refid="76"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYAvsResultTypeNotChecked</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYAvsResultTypeNotChecked</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/USCommonDebitModePreferCommonDebit</TokenIdentifier>
+            <Abstract type="html">No Application Selection - Use US Common Debit</Abstract>
+            <Declaration>USCommonDebitModePreferCommonDebit</Declaration>
             
-            <DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
+            <DeclaredIn>TransactionSettings.h</DeclaredIn>
+            
+            <NodeRef refid="76"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/USCommonDebitModePreferGlobalDebit</TokenIdentifier>
+            <Abstract type="html">No Application Selection - Use Global Debit</Abstract>
+            <Declaration>USCommonDebitModePreferGlobalDebit</Declaration>
+            
+            <DeclaredIn>TransactionSettings.h</DeclaredIn>
             
             <NodeRef refid="76"/>
         </Token>

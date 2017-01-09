@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYCardEvent.html">
+	<File path="Constants/WPYCardAccountType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYCardEvent</TokenIdentifier>
-			<Abstract type="html">This notifies the application developer when certain types of events have occurred.  Some of the events may not be
-supported on all hardware.  For instance, not all terminals notify the SDK when a card has been remved from the chip
-reader</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYCardAccountType</TokenIdentifier>
+			<Abstract type="html">This is an indication of the type of transactions that a specific card application can support
+On devices where the terminal is capable of handling application support, it will automatically
+prompt for credit or debit when appropriate.  On non-capable devices, the application will
+be notified when the user must choose credit or debit</Abstract>
 			<DeclaredIn>WPYSwiper.h</DeclaredIn>
             
 			
@@ -16,9 +17,9 @@ reader</Abstract>
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardEventSwiped</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCardAccountTypeCredit</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCardEventSwiped</Declaration>
+            <Declaration>WPYCardAccountTypeCredit</Declaration>
             
             <DeclaredIn>WPYSwiper.h</DeclaredIn>
             
@@ -26,9 +27,9 @@ reader</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardEventInserted</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCardAccountTypeDebit</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCardEventInserted</Declaration>
+            <Declaration>WPYCardAccountTypeDebit</Declaration>
             
             <DeclaredIn>WPYSwiper.h</DeclaredIn>
             
@@ -36,9 +37,9 @@ reader</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardEventRemoved</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCardAccountTypeCreditOrDebit</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCardEventRemoved</Declaration>
+            <Declaration>WPYCardAccountTypeCreditOrDebit</Declaration>
             
             <DeclaredIn>WPYSwiper.h</DeclaredIn>
             
@@ -46,29 +47,9 @@ reader</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardEventNonICCInserted</TokenIdentifier>
-            <Abstract type="html">Card inserted backwards or a non-chip card was inserted</Abstract>
-            <Declaration>WPYCardEventNonICCInserted</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="80"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardEventBadSwipe</TokenIdentifier>
-            <Abstract type="html">Partial or no track data received</Abstract>
-            <Declaration>WPYCardEventBadSwipe</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="80"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardEventIccCardSwiped</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCardAccountTypeUnknown</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCardEventIccCardSwiped</Declaration>
+            <Declaration>WPYCardAccountTypeUnknown</Declaration>
             
             <DeclaredIn>WPYSwiper.h</DeclaredIn>
             

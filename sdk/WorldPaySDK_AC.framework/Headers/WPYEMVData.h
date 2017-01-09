@@ -15,7 +15,7 @@
 /**
  * EMV Auth Code (Used for tag 8A if provided, otherwise generated manually based on gateway response)
  */
-@property (nonatomic, strong) NSString *EMVAuthResponseCode;
+@property (nonatomic, strong) NSString *emvAuthResponseCode;
 /**
  * EMV Issuer Authentication Data tag 91, if provided.  This is cryptographically signed by the issuer
  * and cannot be derived.  The card has the option to decline if this data is not returned on an authorization

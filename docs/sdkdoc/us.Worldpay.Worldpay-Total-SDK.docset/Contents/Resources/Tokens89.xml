@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYPaymentMethodDuplicateCheckType.html">
+	<File path="Constants/WPYEMVTransactionType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYPaymentMethodDuplicateCheckType</TokenIdentifier>
-			<Abstract type="html">Indicates how (and whether) the method should check for duplicate accounts. Defaults to 1.</Abstract>
-			<DeclaredIn>WPYDomainObject.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYEMVTransactionType</TokenIdentifier>
+			<Abstract type="html">Type of transaction that the merchant would like to perform.
+A transaction with type Goods is debit/credit only with no gratuity or cash back allowed
+A transaction with type Cashback is a sale w/ cash back allowed if supported by the card type
+A transaction with type Services is a sale w/ inline tip adjustment allowed</Abstract>
+			<DeclaredIn>WPYSwiper.h</DeclaredIn>
             
 			
 			<NodeRef refid="89"/>
@@ -14,51 +17,41 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeUnset</TokenIdentifier>
-            <Abstract type="html">Unset</Abstract>
-            <Declaration>WPYPaymentMethodDuplicateCheckTypeUnset</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYEMVTransactionTypeGoods</TokenIdentifier>
+            <Abstract type="html">Debit/credit only with no gratuity or cash back allowed</Abstract>
+            <Declaration>WPYEMVTransactionTypeGoods</Declaration>
             
-            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
-            
-            <NodeRef refid="89"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeNone</TokenIdentifier>
-            <Abstract type="html">Does not check for Duplicate Card Number for specified Customer ID</Abstract>
-            <Declaration>WPYPaymentMethodDuplicateCheckTypeNone</Declaration>
-            
-            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
+            <DeclaredIn>WPYSwiper.h</DeclaredIn>
             
             <NodeRef refid="89"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeCustomer</TokenIdentifier>
-            <Abstract type="html">Checks for Duplicate Card Number for specified Customer ID</Abstract>
-            <Declaration>WPYPaymentMethodDuplicateCheckTypeCustomer</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYEMVTransactionTypeCashback</TokenIdentifier>
+            <Abstract type="html">A sale w/ cash back allowed if supported by the card type</Abstract>
+            <Declaration>WPYEMVTransactionTypeCashback</Declaration>
             
-            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
-            
-            <NodeRef refid="89"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderId</TokenIdentifier>
-            <Abstract type="html">Checks for Duplicate Card Number for All Customer IDs for specified SecureNet ID</Abstract>
-            <Declaration>WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderId</Declaration>
-            
-            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
+            <DeclaredIn>WPYSwiper.h</DeclaredIn>
             
             <NodeRef refid="89"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderGroup</TokenIdentifier>
-            <Abstract type="html">Checks for Duplicate Card Number for All Customer IDs for specified Group ID</Abstract>
-            <Declaration>WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderGroup</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYEMVTransactionTypeServices</TokenIdentifier>
+            <Abstract type="html">A sale w/ inline tip adjustment allowed</Abstract>
+            <Declaration>WPYEMVTransactionTypeServices</Declaration>
             
-            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
+            <DeclaredIn>WPYSwiper.h</DeclaredIn>
+            
+            <NodeRef refid="89"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYEMVTransactionTypeRefund</TokenIdentifier>
+            <Abstract type="html">A refund transaction</Abstract>
+            <Declaration>WPYEMVTransactionTypeRefund</Declaration>
+            
+            <DeclaredIn>WPYSwiper.h</DeclaredIn>
             
             <NodeRef refid="89"/>
         </Token>

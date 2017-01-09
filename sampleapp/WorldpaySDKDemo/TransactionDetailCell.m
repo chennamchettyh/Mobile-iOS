@@ -61,7 +61,7 @@
     self.paymentTypeValue.text = [Helper getPaymentType:response.paymentType];
     self.responseTextValue.text = response.responseText;
     self.responseMessageValue.text = response.responseText;
-    self.gratuityValue.text = [response.gratuityAmount stringValue];
+    self.gratuityValue.text = [response.gratuity stringValue];
 }
 
 @end
