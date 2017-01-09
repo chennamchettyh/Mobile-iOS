@@ -184,7 +184,7 @@
 /**
  * indicates whether the functionality to send reciept via email is enabled or not.
  */
-@property (nonatomic, assign) BOOL * emailReceipt;
+@property (nonatomic, assign) BOOL emailReceipt;
 /**
  * For stored value cards this is the Previous Balance (15 characters long zero filled decimal number with explicit decimal point) followed by Cash Out
  * Amount (15 characters long zero filled decimal number with explicit decimal point).
