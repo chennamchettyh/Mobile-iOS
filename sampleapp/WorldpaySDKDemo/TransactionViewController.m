@@ -642,6 +642,37 @@
 
 #pragma mark - WPYSwiperDelegate
 
+- (void)swiper:(WPYSwiper *)swiper didReceiveCardEvent:(WPYCardEvent)eventType
+{
+    NSString * type;
+    
+    switch(eventType)
+    {
+        case WPYCardEventSwiped:
+            type = @"swiped";
+            break;
+        case WPYCardEventInserted:
+            type = @"inserted";
+            break;
+        case WPYCardEventRemoved:
+            type = @"removed";
+            break;
+        case WPYCardEventNonICCInserted:
+            type = @"non-icc inserted";
+            break;
+        case WPYCardEventBadSwipe:
+            type = @"bad swipe";
+            break;
+        case WPYCardEventIccCardSwiped:
+            type = @"icc swiped";
+            break;
+        default:
+            break;
+    }
+    
+    NSLog(@"Card event received: %@", type);
+}
+
 - (void)didConnectSwiper:(WPYSwiper *)swiper
 {
     NSLog(@"%@", @"Swiper connected");
