@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/WPYStoredCheck.html">
+	<File path="Classes/WPYTenderedCheck.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/WPYStoredCheck</TokenIdentifier>
-			<Abstract type="html">Stored Check information from the secure vault</Abstract>
-			<DeclaredIn>WPYStoredCheck.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/WPYTenderedCheck</TokenIdentifier>
+			<Abstract type="html">Object representing the collection of data that is used to capture payment through an electronic
+check</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
             
 			
 			<NodeRef refid="43"/>
@@ -13,23 +14,11 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYStoredCheck/setAccountType:</TokenIdentifier>
-			<Abstract type="html">The account type of the stored check data</Abstract>
-			<DeclaredIn>WPYStoredCheck.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/setAccountType:</TokenIdentifier>
+			<Abstract type="html">The type of account the check will be drafted against</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
 			
-			<Declaration>@property WPYCheckAccountType accountType</Declaration>
-			
-			
-			<Anchor>//api/name/accountType</Anchor>
-            <NodeRef refid="43"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYStoredCheck/accountType</TokenIdentifier>
-			<Abstract type="html">The account type of the stored check data</Abstract>
-			<DeclaredIn>WPYStoredCheck.h</DeclaredIn>
-			
-			<Declaration>@property WPYCheckAccountType accountType</Declaration>
+			<Declaration>@property (nonatomic) WPYCheckAccountType accountType</Declaration>
 			
 			
 			<Anchor>//api/name/accountType</Anchor>
@@ -37,11 +26,11 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYStoredCheck/accountType</TokenIdentifier>
-			<Abstract type="html">The account type of the stored check data</Abstract>
-			<DeclaredIn>WPYStoredCheck.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/accountType</TokenIdentifier>
+			<Abstract type="html">The type of account the check will be drafted against</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
 			
-			<Declaration>@property WPYCheckAccountType accountType</Declaration>
+			<Declaration>@property (nonatomic) WPYCheckAccountType accountType</Declaration>
 			
 			
 			<Anchor>//api/name/accountType</Anchor>
@@ -49,9 +38,57 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYStoredCheck/setRoutingNumber:</TokenIdentifier>
-			<Abstract type="html">The ACH routing number associated with the account</Abstract>
-			<DeclaredIn>WPYStoredCheck.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYTenderedCheck/accountType</TokenIdentifier>
+			<Abstract type="html">The type of account the check will be drafted against</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) WPYCheckAccountType accountType</Declaration>
+			
+			
+			<Anchor>//api/name/accountType</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/setCheckType:</TokenIdentifier>
+			<Abstract type="html">Type of check used in this transaction</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) WPYCheckType checkType</Declaration>
+			
+			
+			<Anchor>//api/name/checkType</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/checkType</TokenIdentifier>
+			<Abstract type="html">Type of check used in this transaction</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) WPYCheckType checkType</Declaration>
+			
+			
+			<Anchor>//api/name/checkType</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYTenderedCheck/checkType</TokenIdentifier>
+			<Abstract type="html">Type of check used in this transaction</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) WPYCheckType checkType</Declaration>
+			
+			
+			<Anchor>//api/name/checkType</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/setRoutingNumber:</TokenIdentifier>
+			<Abstract type="html">ACH routing number for the bank</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSString *routingNumber</Declaration>
 			
@@ -61,9 +98,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYStoredCheck/routingNumber</TokenIdentifier>
-			<Abstract type="html">The ACH routing number associated with the account</Abstract>
-			<DeclaredIn>WPYStoredCheck.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/routingNumber</TokenIdentifier>
+			<Abstract type="html">ACH routing number for the bank</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSString *routingNumber</Declaration>
 			
@@ -73,9 +110,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYStoredCheck/routingNumber</TokenIdentifier>
-			<Abstract type="html">The ACH routing number associated with the account</Abstract>
-			<DeclaredIn>WPYStoredCheck.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYTenderedCheck/routingNumber</TokenIdentifier>
+			<Abstract type="html">ACH routing number for the bank</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSString *routingNumber</Declaration>
 			
@@ -85,45 +122,81 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYStoredCheck/setLastFourDigits:</TokenIdentifier>
-			<Abstract type="html">The last four digits of the account number</Abstract>
-			<DeclaredIn>WPYStoredCheck.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/setAccountNumber:</TokenIdentifier>
+			<Abstract type="html">Account number associated with this check</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *lastFourDigits</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *accountNumber</Declaration>
 			
 			
-			<Anchor>//api/name/lastFourDigits</Anchor>
+			<Anchor>//api/name/accountNumber</Anchor>
             <NodeRef refid="43"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYStoredCheck/lastFourDigits</TokenIdentifier>
-			<Abstract type="html">The last four digits of the account number</Abstract>
-			<DeclaredIn>WPYStoredCheck.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/accountNumber</TokenIdentifier>
+			<Abstract type="html">Account number associated with this check</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *lastFourDigits</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *accountNumber</Declaration>
 			
 			
-			<Anchor>//api/name/lastFourDigits</Anchor>
+			<Anchor>//api/name/accountNumber</Anchor>
             <NodeRef refid="43"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYStoredCheck/lastFourDigits</TokenIdentifier>
-			<Abstract type="html">The last four digits of the account number</Abstract>
-			<DeclaredIn>WPYStoredCheck.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYTenderedCheck/accountNumber</TokenIdentifier>
+			<Abstract type="html">Account number associated with this check</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *lastFourDigits</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *accountNumber</Declaration>
 			
 			
-			<Anchor>//api/name/lastFourDigits</Anchor>
+			<Anchor>//api/name/accountNumber</Anchor>
             <NodeRef refid="43"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYStoredCheck/setAddress:</TokenIdentifier>
-			<Abstract type="html">The address associated with the payment check</Abstract>
-			<DeclaredIn>WPYStoredCheck.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/setCheckNumber:</TokenIdentifier>
+			<Abstract type="html">The check number to be used reported to the account holder&apos;s bank</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *checkNumber</Declaration>
+			
+			
+			<Anchor>//api/name/checkNumber</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/checkNumber</TokenIdentifier>
+			<Abstract type="html">The check number to be used reported to the account holder&apos;s bank</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *checkNumber</Declaration>
+			
+			
+			<Anchor>//api/name/checkNumber</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYTenderedCheck/checkNumber</TokenIdentifier>
+			<Abstract type="html">The check number to be used reported to the account holder&apos;s bank</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *checkNumber</Declaration>
+			
+			
+			<Anchor>//api/name/checkNumber</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/setAddress:</TokenIdentifier>
+			<Abstract type="html">The address of the account holder</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) WPYAddressInfo *address</Declaration>
 			
@@ -133,9 +206,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYStoredCheck/address</TokenIdentifier>
-			<Abstract type="html">The address associated with the payment check</Abstract>
-			<DeclaredIn>WPYStoredCheck.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/address</TokenIdentifier>
+			<Abstract type="html">The address of the account holder</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) WPYAddressInfo *address</Declaration>
 			
@@ -145,9 +218,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYStoredCheck/address</TokenIdentifier>
-			<Abstract type="html">The address associated with the payment check</Abstract>
-			<DeclaredIn>WPYStoredCheck.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYTenderedCheck/address</TokenIdentifier>
+			<Abstract type="html">The address of the account holder</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) WPYAddressInfo *address</Declaration>
 			
@@ -157,45 +230,81 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYStoredCheck/setName:</TokenIdentifier>
-			<Abstract type="html">The name associated with the account</Abstract>
-			<DeclaredIn>WPYStoredCheck.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/setFirstName:</TokenIdentifier>
+			<Abstract type="html">First name of the account holder</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *name</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *firstName</Declaration>
 			
 			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/firstName</Anchor>
             <NodeRef refid="43"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYStoredCheck/name</TokenIdentifier>
-			<Abstract type="html">The name associated with the account</Abstract>
-			<DeclaredIn>WPYStoredCheck.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/firstName</TokenIdentifier>
+			<Abstract type="html">First name of the account holder</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *name</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *firstName</Declaration>
 			
 			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/firstName</Anchor>
             <NodeRef refid="43"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYStoredCheck/name</TokenIdentifier>
-			<Abstract type="html">The name associated with the account</Abstract>
-			<DeclaredIn>WPYStoredCheck.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYTenderedCheck/firstName</TokenIdentifier>
+			<Abstract type="html">First name of the account holder</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *name</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *firstName</Declaration>
 			
 			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/firstName</Anchor>
             <NodeRef refid="43"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYStoredCheck/setEmail:</TokenIdentifier>
-			<Abstract type="html">The email address associated with the account</Abstract>
-			<DeclaredIn>WPYStoredCheck.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/setLastName:</TokenIdentifier>
+			<Abstract type="html">Last name of the account holder</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *lastName</Declaration>
+			
+			
+			<Anchor>//api/name/lastName</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/lastName</TokenIdentifier>
+			<Abstract type="html">Last name of the account holder</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *lastName</Declaration>
+			
+			
+			<Anchor>//api/name/lastName</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYTenderedCheck/lastName</TokenIdentifier>
+			<Abstract type="html">Last name of the account holder</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *lastName</Declaration>
+			
+			
+			<Anchor>//api/name/lastName</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/setEmail:</TokenIdentifier>
+			<Abstract type="html">Email address of the account holder</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSString *email</Declaration>
 			
@@ -205,9 +314,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYStoredCheck/email</TokenIdentifier>
-			<Abstract type="html">The email address associated with the account</Abstract>
-			<DeclaredIn>WPYStoredCheck.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/email</TokenIdentifier>
+			<Abstract type="html">Email address of the account holder</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSString *email</Declaration>
 			
@@ -217,9 +326,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYStoredCheck/email</TokenIdentifier>
-			<Abstract type="html">The email address associated with the account</Abstract>
-			<DeclaredIn>WPYStoredCheck.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYTenderedCheck/email</TokenIdentifier>
+			<Abstract type="html">Email address of the account holder</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSString *email</Declaration>
 			
@@ -229,38 +338,113 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYStoredCheck/setBank:</TokenIdentifier>
-			<Abstract type="html">The name of the bank associated the account</Abstract>
-			<DeclaredIn>WPYStoredCheck.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/setFront:</TokenIdentifier>
+			<Abstract type="html">byte string of an image of the front side of the check for capturing a paper check to process
+electronically</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *bank</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *front</Declaration>
 			
 			
-			<Anchor>//api/name/bank</Anchor>
+			<Anchor>//api/name/front</Anchor>
             <NodeRef refid="43"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYStoredCheck/bank</TokenIdentifier>
-			<Abstract type="html">The name of the bank associated the account</Abstract>
-			<DeclaredIn>WPYStoredCheck.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/front</TokenIdentifier>
+			<Abstract type="html">byte string of an image of the front side of the check for capturing a paper check to process
+electronically</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *bank</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *front</Declaration>
 			
 			
-			<Anchor>//api/name/bank</Anchor>
+			<Anchor>//api/name/front</Anchor>
             <NodeRef refid="43"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYStoredCheck/bank</TokenIdentifier>
-			<Abstract type="html">The name of the bank associated the account</Abstract>
-			<DeclaredIn>WPYStoredCheck.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYTenderedCheck/front</TokenIdentifier>
+			<Abstract type="html">byte string of an image of the front side of the check for capturing a paper check to process
+electronically</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *bank</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *front</Declaration>
 			
 			
-			<Anchor>//api/name/bank</Anchor>
+			<Anchor>//api/name/front</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/setBack:</TokenIdentifier>
+			<Abstract type="html">byte string of an image of the back side of the check for capturing a paper check to process</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *back</Declaration>
+			
+			
+			<Anchor>//api/name/back</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/back</TokenIdentifier>
+			<Abstract type="html">byte string of an image of the back side of the check for capturing a paper check to process</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *back</Declaration>
+			
+			
+			<Anchor>//api/name/back</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYTenderedCheck/back</TokenIdentifier>
+			<Abstract type="html">byte string of an image of the back side of the check for capturing a paper check to process</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *back</Declaration>
+			
+			
+			<Anchor>//api/name/back</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/setVerificationType:</TokenIdentifier>
+			<Abstract type="html">The type of verification used to validate the check</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) WPYVerificationType verificationType</Declaration>
+			
+			
+			<Anchor>//api/name/verificationType</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderedCheck/verificationType</TokenIdentifier>
+			<Abstract type="html">The type of verification used to validate the check</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) WPYVerificationType verificationType</Declaration>
+			
+			
+			<Anchor>//api/name/verificationType</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYTenderedCheck/verificationType</TokenIdentifier>
+			<Abstract type="html">The type of verification used to validate the check</Abstract>
+			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) WPYVerificationType verificationType</Declaration>
+			
+			
+			<Anchor>//api/name/verificationType</Anchor>
             <NodeRef refid="43"/>
 		</Token>
 		

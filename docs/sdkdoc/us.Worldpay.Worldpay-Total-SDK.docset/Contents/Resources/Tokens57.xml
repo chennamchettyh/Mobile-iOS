@@ -1,51 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/WPYDebugDelegate.html">
+	<File path="Constants/CardTrack.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/WPYDebugDelegate</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/CardTrack</TokenIdentifier>
+			<Abstract type="html">Card track specifier</Abstract>
+			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
             
 			
 			<NodeRef refid="57"/>
 		</Token>
 		
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/WPYDebugDelegate/willSendRequest:</TokenIdentifier>
-			<Abstract type="html">This method is used to convey the request headers and body to be sent to the server</Abstract>
-			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
-			
-			<Declaration>- (void)willSendRequest:(NSString *)request</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>request</Name>
-					<Abstract type="html">Request string containing the pertinent information</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/willSendRequest:</Anchor>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CardTrack1</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>CardTrack1</Declaration>
+            
+            <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+            
             <NodeRef refid="57"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/WPYDebugDelegate/didReceiveResponse:</TokenIdentifier>
-			<Abstract type="html">This method is used to convey the response body that was sent from the server</Abstract>
-			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
-			
-			<Declaration>- (void)didReceiveResponse:(NSString *)response</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>response</Name>
-					<Abstract type="html">Response string containing the pertinent response info</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/didReceiveResponse:</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CardTrack2</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>CardTrack2</Declaration>
+            
+            <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+            
             <NodeRef refid="57"/>
-		</Token>
-		
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CardTrack3</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>CardTrack3</Declaration>
+            
+            <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+            
+            <NodeRef refid="57"/>
+        </Token>
         
         
 	</File>

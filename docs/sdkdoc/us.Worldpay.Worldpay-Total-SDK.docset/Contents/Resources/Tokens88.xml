@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYDevicePrompt.html">
+	<File path="Constants/WPYSwiperType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYDevicePrompt</TokenIdentifier>
-			<Abstract type="html">When certain text needs to be displayed to the user, these prompts will be sent to the application developer to indicate
-what kind of text should be displayed.  For terminals that canDisplayText, you can choose not to handle device prompt text
-if you&apos;d like to use the default text.  For terminals that cannot display text, all of these prompts must be handled and
-properly presented to the card holder</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYSwiperType</TokenIdentifier>
+			<Abstract type="html">The type of encryption used to secure the SRED data for a card read from a terminal</Abstract>
 			<DeclaredIn>WPYSwiper.h</DeclaredIn>
             
 			
@@ -17,9 +14,9 @@ properly presented to the card holder</Abstract>
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptInsertCard</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperTypeNotSet</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptInsertCard</Declaration>
+            <Declaration>WPYSwiperTypeNotSet</Declaration>
             
             <DeclaredIn>WPYSwiper.h</DeclaredIn>
             
@@ -27,9 +24,9 @@ properly presented to the card holder</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptInsertOrSwipe</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperTypeNone</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptInsertOrSwipe</Declaration>
+            <Declaration>WPYSwiperTypeNone</Declaration>
             
             <DeclaredIn>WPYSwiper.h</DeclaredIn>
             
@@ -37,9 +34,9 @@ properly presented to the card holder</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptChipCardSwiped</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperTypeIDTech</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptChipCardSwiped</Declaration>
+            <Declaration>WPYSwiperTypeIDTech</Declaration>
             
             <DeclaredIn>WPYSwiper.h</DeclaredIn>
             
@@ -47,9 +44,9 @@ properly presented to the card holder</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptSwipeError</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperTypeMagTek</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptSwipeError</Declaration>
+            <Declaration>WPYSwiperTypeMagTek</Declaration>
             
             <DeclaredIn>WPYSwiper.h</DeclaredIn>
             
@@ -57,239 +54,9 @@ properly presented to the card holder</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptConfirmAmount</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperTypeMiura</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptConfirmAmount</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptNonICCard</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptNonICCard</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptApproved</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptApproved</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptDeclined</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptDeclined</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptCanceled</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptCanceled</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptRetry</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptRetry</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptTransactionTimedOut</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptTransactionTimedOut</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptNfcErrorCardInserted</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptNfcErrorCardInserted</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptNfcErrorCardSwiped</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptNfcErrorCardSwiped</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptNfcErrorUseICCard</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptNfcErrorUseICCard</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptNfcErrorUseICCOrMSR</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptNfcErrorUseICCOrMSR</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptNfcHardwareError</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptNfcHardwareError</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptEmvReaderError</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptEmvReaderError</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptEmvMSRFallback</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptEmvMSRFallback</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptEmvInvalidCard</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptEmvInvalidCard</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptProcessing</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptProcessing</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptEmvRemoveCard</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptEmvRemoveCard</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptTapCardAgain</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptTapCardAgain</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptReversal</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptReversal</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptCallBank</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptCallBank</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptNotAccepted</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptNotAccepted</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptRemoveCard</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptRemoveCard</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptMultipleCardsDetected</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptMultipleCardsDetected</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYDevicePromptTapCard</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYDevicePromptTapCard</Declaration>
+            <Declaration>WPYSwiperTypeMiura</Declaration>
             
             <DeclaredIn>WPYSwiper.h</DeclaredIn>
             

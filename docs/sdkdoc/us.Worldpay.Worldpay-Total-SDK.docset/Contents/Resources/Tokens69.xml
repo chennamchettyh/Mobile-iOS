@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ManualEntryError.html">
+	<File path="Constants/WPYAvsResultType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ManualEntryError</TokenIdentifier>
-			<Abstract type="html">Error in taking a manual transaction</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYAvsResultType</TokenIdentifier>
+			<Abstract type="html">The Address Verification Service result indicates whether or not the
+billing address was verified and, if so, what the result was</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
             
 			
 			<NodeRef refid="69"/>
@@ -14,21 +15,31 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ManualEntryErrorCanceled</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYAvsResultTypeMatch</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>ManualEntryErrorCanceled</Declaration>
+            <Declaration>WPYAvsResultTypeMatch</Declaration>
             
-            <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+            <DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
             
             <NodeRef refid="69"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ManualEntryErrorNotSREDReady</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYAvsResultTypeNotMatched</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>ManualEntryErrorNotSREDReady</Declaration>
+            <Declaration>WPYAvsResultTypeNotMatched</Declaration>
             
-            <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+            <DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
+            
+            <NodeRef refid="69"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYAvsResultTypeNotChecked</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>WPYAvsResultTypeNotChecked</Declaration>
+            
+            <DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
             
             <NodeRef refid="69"/>
         </Token>

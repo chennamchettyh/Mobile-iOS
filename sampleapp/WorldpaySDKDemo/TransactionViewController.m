@@ -816,7 +816,7 @@
     
 }
 
-- (void)swiper:(WPYSwiper *)swiper didRequestDevicePromptText:(WPYDevicePrompt)prompt completion:(void (^)(NSString *))completion
+- (void) swiper:(WPYSwiper *)swiper didRequestDevicePromptText:(WPYDevicePrompt)prompt defaultText:(NSString *) defaultText completion:(void (^)(NSString *))completion
 {
     if(!self.transactionInProgress)
     {
@@ -960,7 +960,7 @@
             defaultPrompt = @"Tap Card";
             break;
         default:
-            defaultPrompt = nil;
+            defaultPrompt = defaultText;
             break;
     }
     

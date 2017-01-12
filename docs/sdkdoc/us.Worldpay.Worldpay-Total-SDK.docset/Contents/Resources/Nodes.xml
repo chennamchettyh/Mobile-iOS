@@ -69,11 +69,6 @@
 						<NodeRef refid="48"/>
 						<NodeRef refid="49"/>
 						<NodeRef refid="50"/>
-						<NodeRef refid="51"/>
-						<NodeRef refid="52"/>
-						<NodeRef refid="53"/>
-						<NodeRef refid="54"/>
-						<NodeRef refid="55"/>
 						
 					</Subnodes>
 				</Node>
@@ -84,10 +79,10 @@
 					<Name>Protocols</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="56"/>
-						<NodeRef refid="57"/>
-						<NodeRef refid="58"/>
-						<NodeRef refid="59"/>
+						<NodeRef refid="51"/>
+						<NodeRef refid="52"/>
+						<NodeRef refid="53"/>
+						<NodeRef refid="54"/>
 						
 					</Subnodes>
 				</Node>
@@ -97,6 +92,11 @@
 					<Name>Constants</Name>
 					<Path>index.html</Path>
 					<Subnodes>
+						<NodeRef refid="55"/>
+						<NodeRef refid="56"/>
+						<NodeRef refid="57"/>
+						<NodeRef refid="58"/>
+						<NodeRef refid="59"/>
 						<NodeRef refid="60"/>
 						<NodeRef refid="61"/>
 						<NodeRef refid="62"/>
@@ -130,15 +130,6 @@
 						<NodeRef refid="90"/>
 						<NodeRef refid="91"/>
 						<NodeRef refid="92"/>
-						<NodeRef refid="93"/>
-						<NodeRef refid="94"/>
-						<NodeRef refid="95"/>
-						<NodeRef refid="96"/>
-						<NodeRef refid="97"/>
-						<NodeRef refid="98"/>
-						<NodeRef refid="99"/>
-						<NodeRef refid="100"/>
-						<NodeRef refid="101"/>
 						
 					</Subnodes>
 				</Node>
@@ -148,7 +139,7 @@
                     <Name>Blocks</Name>
                     <Path>index.html</Path>
                     <Subnodes>
-                        <NodeRef refid="102"/>
+                        <NodeRef refid="93"/>
                         
                     </Subnodes>
                 </Node>
@@ -174,39 +165,6 @@
         </Node>
 		
 		<Node id="4" type="file" documentType="reference">
-            <Name>CardEvent</Name>
-            <Path>Classes/CardEvent.html</Path>
-            
-                <Subnodes>
-                <Node type="section">
-                    <Path>Classes/CardEvent.html</Path>
-                    <Name>Overview</Name>
-                    <Anchor>overview</Anchor>
-                </Node>
-                <Node type="section">
-                    <Path>Classes/CardEvent.html</Path>
-                    <Name>Tasks</Name>
-                    <Anchor>tasks</Anchor>
-                </Node>
-                
-                <Node type="section">
-                    <Path>Classes/CardEvent.html</Path>
-                    <Name>Properties</Name>
-                    <Anchor>properties</Anchor>
-                </Node>
-                
-                
-                
-                <Node type="section">
-                    <Path>Classes/CardEvent.html</Path>
-                    <Name>Instance Methods</Name>
-                    <Anchor>instance_methods</Anchor>
-                </Node>
-                
-            </Subnodes>
-            
-        </Node>
-		<Node id="5" type="file" documentType="reference">
             <Name>MiuraDeviceController</Name>
             <Path>Classes/MiuraDeviceController.html</Path>
             
@@ -245,61 +203,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="6" type="file" documentType="reference">
-            <Name>NumericData</Name>
-            <Path>Classes/NumericData.html</Path>
-            
-                <Subnodes>
-                <Node type="section">
-                    <Path>Classes/NumericData.html</Path>
-                    <Name>Overview</Name>
-                    <Anchor>overview</Anchor>
-                </Node>
-                <Node type="section">
-                    <Path>Classes/NumericData.html</Path>
-                    <Name>Tasks</Name>
-                    <Anchor>tasks</Anchor>
-                </Node>
-                
-                <Node type="section">
-                    <Path>Classes/NumericData.html</Path>
-                    <Name>Properties</Name>
-                    <Anchor>properties</Anchor>
-                </Node>
-                
-                
-                
-            </Subnodes>
-            
-        </Node>
-		<Node id="7" type="file" documentType="reference">
-            <Name>PINRequestData</Name>
-            <Path>Classes/PINRequestData.html</Path>
-            
-                <Subnodes>
-                <Node type="section">
-                    <Path>Classes/PINRequestData.html</Path>
-                    <Name>Overview</Name>
-                    <Anchor>overview</Anchor>
-                </Node>
-                <Node type="section">
-                    <Path>Classes/PINRequestData.html</Path>
-                    <Name>Tasks</Name>
-                    <Anchor>tasks</Anchor>
-                </Node>
-                
-                <Node type="section">
-                    <Path>Classes/PINRequestData.html</Path>
-                    <Name>Properties</Name>
-                    <Anchor>properties</Anchor>
-                </Node>
-                
-                
-                
-            </Subnodes>
-            
-        </Node>
-		<Node id="8" type="file" documentType="reference">
+		<Node id="5" type="file" documentType="reference">
             <Name>SettlementData</Name>
             <Path>Classes/SettlementData.html</Path>
             
@@ -326,67 +230,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="9" type="file" documentType="reference">
-            <Name>TransactionData</Name>
-            <Path>Classes/TransactionData.html</Path>
-            
-                <Subnodes>
-                <Node type="section">
-                    <Path>Classes/TransactionData.html</Path>
-                    <Name>Overview</Name>
-                    <Anchor>overview</Anchor>
-                </Node>
-                <Node type="section">
-                    <Path>Classes/TransactionData.html</Path>
-                    <Name>Tasks</Name>
-                    <Anchor>tasks</Anchor>
-                </Node>
-                
-                <Node type="section">
-                    <Path>Classes/TransactionData.html</Path>
-                    <Name>Properties</Name>
-                    <Anchor>properties</Anchor>
-                </Node>
-                
-                
-                
-                <Node type="section">
-                    <Path>Classes/TransactionData.html</Path>
-                    <Name>Instance Methods</Name>
-                    <Anchor>instance_methods</Anchor>
-                </Node>
-                
-            </Subnodes>
-            
-        </Node>
-		<Node id="10" type="file" documentType="reference">
-            <Name>TransactionSettings</Name>
-            <Path>Classes/TransactionSettings.html</Path>
-            
-                <Subnodes>
-                <Node type="section">
-                    <Path>Classes/TransactionSettings.html</Path>
-                    <Name>Overview</Name>
-                    <Anchor>overview</Anchor>
-                </Node>
-                <Node type="section">
-                    <Path>Classes/TransactionSettings.html</Path>
-                    <Name>Tasks</Name>
-                    <Anchor>tasks</Anchor>
-                </Node>
-                
-                <Node type="section">
-                    <Path>Classes/TransactionSettings.html</Path>
-                    <Name>Properties</Name>
-                    <Anchor>properties</Anchor>
-                </Node>
-                
-                
-                
-            </Subnodes>
-            
-        </Node>
-		<Node id="11" type="file" documentType="reference">
+		<Node id="6" type="file" documentType="reference">
             <Name>VaultData</Name>
             <Path>Classes/VaultData.html</Path>
             
@@ -413,7 +257,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="12" type="file" documentType="reference">
+		<Node id="7" type="file" documentType="reference">
             <Name>WPYAddressInfo</Name>
             <Path>Classes/WPYAddressInfo.html</Path>
             
@@ -440,7 +284,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="13" type="file" documentType="reference">
+		<Node id="8" type="file" documentType="reference">
             <Name>WPYAuthTokenRequest</Name>
             <Path>Classes/WPYAuthTokenRequest.html</Path>
             
@@ -467,7 +311,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="14" type="file" documentType="reference">
+		<Node id="9" type="file" documentType="reference">
             <Name>WPYAuthTokenResponse</Name>
             <Path>Classes/WPYAuthTokenResponse.html</Path>
             
@@ -494,7 +338,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="15" type="file" documentType="reference">
+		<Node id="10" type="file" documentType="reference">
             <Name>WPYBatchResponse</Name>
             <Path>Classes/WPYBatchResponse.html</Path>
             
@@ -521,7 +365,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="16" type="file" documentType="reference">
+		<Node id="11" type="file" documentType="reference">
             <Name>WPYCardTransactionData</Name>
             <Path>Classes/WPYCardTransactionData.html</Path>
             
@@ -548,7 +392,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="17" type="file" documentType="reference">
+		<Node id="12" type="file" documentType="reference">
             <Name>WPYCheckTransactionData</Name>
             <Path>Classes/WPYCheckTransactionData.html</Path>
             
@@ -575,7 +419,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="18" type="file" documentType="reference">
+		<Node id="13" type="file" documentType="reference">
             <Name>WPYCustomerRequestData</Name>
             <Path>Classes/WPYCustomerRequestData.html</Path>
             
@@ -602,7 +446,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="19" type="file" documentType="reference">
+		<Node id="14" type="file" documentType="reference">
             <Name>WPYCustomerResponseData</Name>
             <Path>Classes/WPYCustomerResponseData.html</Path>
             
@@ -629,7 +473,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="20" type="file" documentType="reference">
+		<Node id="15" type="file" documentType="reference">
             <Name>WPYDomainObject</Name>
             <Path>Classes/WPYDomainObject.html</Path>
             
@@ -662,7 +506,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="21" type="file" documentType="reference">
+		<Node id="16" type="file" documentType="reference">
             <Name>WPYEMVData</Name>
             <Path>Classes/WPYEMVData.html</Path>
             
@@ -695,7 +539,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="22" type="file" documentType="reference">
+		<Node id="17" type="file" documentType="reference">
             <Name>WPYExtendedCardData</Name>
             <Path>Classes/WPYExtendedCardData.html</Path>
             
@@ -722,7 +566,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="23" type="file" documentType="reference">
+		<Node id="18" type="file" documentType="reference">
             <Name>WPYGetPaymentToken</Name>
             <Path>Classes/WPYGetPaymentToken.html</Path>
             
@@ -749,7 +593,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="24" type="file" documentType="reference">
+		<Node id="19" type="file" documentType="reference">
             <Name>WPYLevelTwoData</Name>
             <Path>Classes/WPYLevelTwoData.html</Path>
             
@@ -776,12 +620,12 @@
             </Subnodes>
             
         </Node>
-		<Node id="25" type="file" documentType="reference">
+		<Node id="20" type="file" documentType="reference">
             <Name>WPYLogger</Name>
             <Path>Classes/WPYLogger.html</Path>
             
         </Node>
-		<Node id="26" type="file" documentType="reference">
+		<Node id="21" type="file" documentType="reference">
             <Name>WPYMailOrTelephoneOrderData</Name>
             <Path>Classes/WPYMailOrTelephoneOrderData.html</Path>
             
@@ -808,7 +652,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="27" type="file" documentType="reference">
+		<Node id="22" type="file" documentType="reference">
             <Name>WPYManualTenderEntryViewController</Name>
             <Path>Classes/WPYManualTenderEntryViewController.html</Path>
             
@@ -835,7 +679,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="28" type="file" documentType="reference">
+		<Node id="23" type="file" documentType="reference">
             <Name>WPYMiura</Name>
             <Path>Classes/WPYMiura.html</Path>
             
@@ -862,12 +706,12 @@
             </Subnodes>
             
         </Node>
-		<Node id="29" type="file" documentType="reference">
+		<Node id="24" type="file" documentType="reference">
             <Name>WPYPaymentAuthorize</Name>
             <Path>Classes/WPYPaymentAuthorize.html</Path>
             
         </Node>
-		<Node id="30" type="file" documentType="reference">
+		<Node id="25" type="file" documentType="reference">
             <Name>WPYPaymentCapture</Name>
             <Path>Classes/WPYPaymentCapture.html</Path>
             
@@ -894,17 +738,17 @@
             </Subnodes>
             
         </Node>
-		<Node id="31" type="file" documentType="reference">
+		<Node id="26" type="file" documentType="reference">
             <Name>WPYPaymentCharge</Name>
             <Path>Classes/WPYPaymentCharge.html</Path>
             
         </Node>
-		<Node id="32" type="file" documentType="reference">
+		<Node id="27" type="file" documentType="reference">
             <Name>WPYPaymentCredit</Name>
             <Path>Classes/WPYPaymentCredit.html</Path>
             
         </Node>
-		<Node id="33" type="file" documentType="reference">
+		<Node id="28" type="file" documentType="reference">
             <Name>WPYPaymentMethod</Name>
             <Path>Classes/WPYPaymentMethod.html</Path>
             
@@ -931,7 +775,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="34" type="file" documentType="reference">
+		<Node id="29" type="file" documentType="reference">
             <Name>WPYPaymentMethodRequest</Name>
             <Path>Classes/WPYPaymentMethodRequest.html</Path>
             
@@ -958,7 +802,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="35" type="file" documentType="reference">
+		<Node id="30" type="file" documentType="reference">
             <Name>WPYPaymentRefund</Name>
             <Path>Classes/WPYPaymentRefund.html</Path>
             
@@ -985,7 +829,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="36" type="file" documentType="reference">
+		<Node id="31" type="file" documentType="reference">
             <Name>WPYPaymentRequest</Name>
             <Path>Classes/WPYPaymentRequest.html</Path>
             
@@ -1012,7 +856,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="37" type="file" documentType="reference">
+		<Node id="32" type="file" documentType="reference">
             <Name>WPYPaymentResponse</Name>
             <Path>Classes/WPYPaymentResponse.html</Path>
             
@@ -1045,7 +889,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="38" type="file" documentType="reference">
+		<Node id="33" type="file" documentType="reference">
             <Name>WPYPaymentToken</Name>
             <Path>Classes/WPYPaymentToken.html</Path>
             
@@ -1072,7 +916,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="39" type="file" documentType="reference">
+		<Node id="34" type="file" documentType="reference">
             <Name>WPYPaymentVoid</Name>
             <Path>Classes/WPYPaymentVoid.html</Path>
             
@@ -1099,7 +943,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="40" type="file" documentType="reference">
+		<Node id="35" type="file" documentType="reference">
             <Name>WPYReceiptObject</Name>
             <Path>Classes/WPYReceiptObject.html</Path>
             
@@ -1126,7 +970,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="41" type="file" documentType="reference">
+		<Node id="36" type="file" documentType="reference">
             <Name>WPYResponseObject</Name>
             <Path>Classes/WPYResponseObject.html</Path>
             
@@ -1153,7 +997,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="42" type="file" documentType="reference">
+		<Node id="37" type="file" documentType="reference">
             <Name>WPYStoredCard</Name>
             <Path>Classes/WPYStoredCard.html</Path>
             
@@ -1180,7 +1024,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="43" type="file" documentType="reference">
+		<Node id="38" type="file" documentType="reference">
             <Name>WPYStoredCheck</Name>
             <Path>Classes/WPYStoredCheck.html</Path>
             
@@ -1207,7 +1051,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="44" type="file" documentType="reference">
+		<Node id="39" type="file" documentType="reference">
             <Name>WPYSwiper</Name>
             <Path>Classes/WPYSwiper.html</Path>
             
@@ -1230,6 +1074,12 @@
                 </Node>
                 
                 
+                <Node type="section">
+                    <Path>Classes/WPYSwiper.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
                 
                 <Node type="section">
                     <Path>Classes/WPYSwiper.html</Path>
@@ -1240,7 +1090,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="45" type="file" documentType="reference">
+		<Node id="40" type="file" documentType="reference">
             <Name>WPYTender</Name>
             <Path>Classes/WPYTender.html</Path>
             
@@ -1267,7 +1117,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="46" type="file" documentType="reference">
+		<Node id="41" type="file" documentType="reference">
             <Name>WPYTenderServiceData</Name>
             <Path>Classes/WPYTenderServiceData.html</Path>
             
@@ -1294,7 +1144,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="47" type="file" documentType="reference">
+		<Node id="42" type="file" documentType="reference">
             <Name>WPYTenderedCard</Name>
             <Path>Classes/WPYTenderedCard.html</Path>
             
@@ -1327,7 +1177,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="48" type="file" documentType="reference">
+		<Node id="43" type="file" documentType="reference">
             <Name>WPYTenderedCheck</Name>
             <Path>Classes/WPYTenderedCheck.html</Path>
             
@@ -1354,7 +1204,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="49" type="file" documentType="reference">
+		<Node id="44" type="file" documentType="reference">
             <Name>WPYTerminalInfo</Name>
             <Path>Classes/WPYTerminalInfo.html</Path>
             
@@ -1381,7 +1231,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="50" type="file" documentType="reference">
+		<Node id="45" type="file" documentType="reference">
             <Name>WPYTrackData</Name>
             <Path>Classes/WPYTrackData.html</Path>
             
@@ -1408,7 +1258,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="51" type="file" documentType="reference">
+		<Node id="46" type="file" documentType="reference">
             <Name>WPYTransaction</Name>
             <Path>Classes/WPYTransaction.html</Path>
             
@@ -1435,7 +1285,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="52" type="file" documentType="reference">
+		<Node id="47" type="file" documentType="reference">
             <Name>WPYTransactionResponse</Name>
             <Path>Classes/WPYTransactionResponse.html</Path>
             
@@ -1462,7 +1312,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="53" type="file" documentType="reference">
+		<Node id="48" type="file" documentType="reference">
             <Name>WPYTransactionSearch</Name>
             <Path>Classes/WPYTransactionSearch.html</Path>
             
@@ -1489,7 +1339,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="54" type="file" documentType="reference">
+		<Node id="49" type="file" documentType="reference">
             <Name>WPYTransactionSearchResponse</Name>
             <Path>Classes/WPYTransactionSearchResponse.html</Path>
             
@@ -1516,7 +1366,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="55" type="file" documentType="reference">
+		<Node id="50" type="file" documentType="reference">
             <Name>WorldpayAPI</Name>
             <Path>Classes/WorldpayAPI.html</Path>
             
@@ -1557,7 +1407,7 @@
         </Node>
 		
 		
-        <Node id="56" type="file" documentType="reference">
+        <Node id="51" type="file" documentType="reference">
             <Name>MiuraDeviceControllerDelegate</Name>
             <Path>Protocols/MiuraDeviceControllerDelegate.html</Path>
             
@@ -1584,7 +1434,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="57" type="file" documentType="reference">
+		<Node id="52" type="file" documentType="reference">
             <Name>WPYDebugDelegate</Name>
             <Path>Protocols/WPYDebugDelegate.html</Path>
             
@@ -1611,7 +1461,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="58" type="file" documentType="reference">
+		<Node id="53" type="file" documentType="reference">
             <Name>WPYManualTenderEntryDelegate</Name>
             <Path>Protocols/WPYManualTenderEntryDelegate.html</Path>
             
@@ -1638,7 +1488,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="59" type="file" documentType="reference">
+		<Node id="54" type="file" documentType="reference">
             <Name>WPYSwiperDelegate</Name>
             <Path>Protocols/WPYSwiperDelegate.html</Path>
             
@@ -1666,218 +1516,198 @@
             
         </Node>
 		
-        <Node id="60" type="file" documentType="reference">
+        <Node id="55" type="file" documentType="reference">
             <Name>BatteryStatus</Name>
             <Path>Constants/BatteryStatus.html</Path>
             
         </Node>
-		<Node id="61" type="file" documentType="reference">
-            <Name>CVMethod</Name>
-            <Path>Constants/CVMethod.html</Path>
-            
-        </Node>
-		<Node id="62" type="file" documentType="reference">
-            <Name>CardEntryMode</Name>
-            <Path>Constants/CardEntryMode.html</Path>
-            
-        </Node>
-		<Node id="63" type="file" documentType="reference">
+		<Node id="56" type="file" documentType="reference">
             <Name>CardStatus</Name>
             <Path>Constants/CardStatus.html</Path>
             
         </Node>
-		<Node id="64" type="file" documentType="reference">
+		<Node id="57" type="file" documentType="reference">
             <Name>CardTrack</Name>
             <Path>Constants/CardTrack.html</Path>
             
         </Node>
-		<Node id="65" type="file" documentType="reference">
+		<Node id="58" type="file" documentType="reference">
             <Name>DeviceError</Name>
             <Path>Constants/DeviceError.html</Path>
             
         </Node>
-		<Node id="66" type="file" documentType="reference">
+		<Node id="59" type="file" documentType="reference">
             <Name>DevicePrompt</Name>
             <Path>Constants/DevicePrompt.html</Path>
             
         </Node>
-		<Node id="67" type="file" documentType="reference">
+		<Node id="60" type="file" documentType="reference">
             <Name>DeviceStatus</Name>
             <Path>Constants/DeviceStatus.html</Path>
             
         </Node>
-		<Node id="68" type="file" documentType="reference">
+		<Node id="61" type="file" documentType="reference">
             <Name>ICCError</Name>
             <Path>Constants/ICCError.html</Path>
             
         </Node>
-		<Node id="69" type="file" documentType="reference">
+		<Node id="62" type="file" documentType="reference">
             <Name>ManualEntryError</Name>
             <Path>Constants/ManualEntryError.html</Path>
             
         </Node>
-		<Node id="70" type="file" documentType="reference">
+		<Node id="63" type="file" documentType="reference">
             <Name>NFCError</Name>
             <Path>Constants/NFCError.html</Path>
             
         </Node>
-		<Node id="71" type="file" documentType="reference">
+		<Node id="64" type="file" documentType="reference">
             <Name>NumericDataInput</Name>
             <Path>Constants/NumericDataInput.html</Path>
             
         </Node>
-		<Node id="72" type="file" documentType="reference">
+		<Node id="65" type="file" documentType="reference">
             <Name>PinError</Name>
             <Path>Constants/PinError.html</Path>
             
         </Node>
-		<Node id="73" type="file" documentType="reference">
+		<Node id="66" type="file" documentType="reference">
             <Name>PrinterError</Name>
             <Path>Constants/PrinterError.html</Path>
             
         </Node>
-		<Node id="74" type="file" documentType="reference">
-            <Name>TransactionState</Name>
-            <Path>Constants/TransactionState.html</Path>
-            
-        </Node>
-		<Node id="75" type="file" documentType="reference">
+		<Node id="67" type="file" documentType="reference">
             <Name>TransactionType</Name>
             <Path>Constants/TransactionType.html</Path>
             
         </Node>
-		<Node id="76" type="file" documentType="reference">
-            <Name>USCommonDebitMode</Name>
-            <Path>Constants/USCommonDebitMode.html</Path>
-            
-        </Node>
-		<Node id="77" type="file" documentType="reference">
+		<Node id="68" type="file" documentType="reference">
             <Name>WPYAuthMode</Name>
             <Path>Constants/WPYAuthMode.html</Path>
             
         </Node>
-		<Node id="78" type="file" documentType="reference">
+		<Node id="69" type="file" documentType="reference">
             <Name>WPYAvsResultType</Name>
             <Path>Constants/WPYAvsResultType.html</Path>
             
         </Node>
-		<Node id="79" type="file" documentType="reference">
+		<Node id="70" type="file" documentType="reference">
             <Name>WPYCVMethod</Name>
             <Path>Constants/WPYCVMethod.html</Path>
             
         </Node>
-		<Node id="80" type="file" documentType="reference">
+		<Node id="71" type="file" documentType="reference">
             <Name>WPYCardAccountType</Name>
             <Path>Constants/WPYCardAccountType.html</Path>
             
         </Node>
-		<Node id="81" type="file" documentType="reference">
+		<Node id="72" type="file" documentType="reference">
             <Name>WPYCardEntryMode</Name>
             <Path>Constants/WPYCardEntryMode.html</Path>
             
         </Node>
-		<Node id="82" type="file" documentType="reference">
+		<Node id="73" type="file" documentType="reference">
             <Name>WPYCardEvent</Name>
             <Path>Constants/WPYCardEvent.html</Path>
             
         </Node>
-		<Node id="83" type="file" documentType="reference">
+		<Node id="74" type="file" documentType="reference">
             <Name>WPYCardInputType</Name>
             <Path>Constants/WPYCardInputType.html</Path>
             
         </Node>
-		<Node id="84" type="file" documentType="reference">
+		<Node id="75" type="file" documentType="reference">
             <Name>WPYCardSource</Name>
             <Path>Constants/WPYCardSource.html</Path>
             
         </Node>
-		<Node id="85" type="file" documentType="reference">
+		<Node id="76" type="file" documentType="reference">
             <Name>WPYCardType</Name>
             <Path>Constants/WPYCardType.html</Path>
             
         </Node>
-		<Node id="86" type="file" documentType="reference">
+		<Node id="77" type="file" documentType="reference">
             <Name>WPYCheckAccountType</Name>
             <Path>Constants/WPYCheckAccountType.html</Path>
             
         </Node>
-		<Node id="87" type="file" documentType="reference">
+		<Node id="78" type="file" documentType="reference">
             <Name>WPYCheckType</Name>
             <Path>Constants/WPYCheckType.html</Path>
             
         </Node>
-		<Node id="88" type="file" documentType="reference">
+		<Node id="79" type="file" documentType="reference">
             <Name>WPYDevicePrompt</Name>
             <Path>Constants/WPYDevicePrompt.html</Path>
             
         </Node>
-		<Node id="89" type="file" documentType="reference">
+		<Node id="80" type="file" documentType="reference">
             <Name>WPYEMVTransactionType</Name>
             <Path>Constants/WPYEMVTransactionType.html</Path>
             
         </Node>
-		<Node id="90" type="file" documentType="reference">
+		<Node id="81" type="file" documentType="reference">
             <Name>WPYManualTenderType</Name>
             <Path>Constants/WPYManualTenderType.html</Path>
             
         </Node>
-		<Node id="91" type="file" documentType="reference">
+		<Node id="82" type="file" documentType="reference">
             <Name>WPYPaymentMethodDuplicateCheckType</Name>
             <Path>Constants/WPYPaymentMethodDuplicateCheckType.html</Path>
             
         </Node>
-		<Node id="92" type="file" documentType="reference">
+		<Node id="83" type="file" documentType="reference">
             <Name>WPYPaymentType</Name>
             <Path>Constants/WPYPaymentType.html</Path>
             
         </Node>
-		<Node id="93" type="file" documentType="reference">
+		<Node id="84" type="file" documentType="reference">
             <Name>WPYResponseCode</Name>
             <Path>Constants/WPYResponseCode.html</Path>
             
         </Node>
-		<Node id="94" type="file" documentType="reference">
+		<Node id="85" type="file" documentType="reference">
             <Name>WPYSwiperBatteryStatus</Name>
             <Path>Constants/WPYSwiperBatteryStatus.html</Path>
             
         </Node>
-		<Node id="95" type="file" documentType="reference">
+		<Node id="86" type="file" documentType="reference">
             <Name>WPYSwiperInputType</Name>
             <Path>Constants/WPYSwiperInputType.html</Path>
             
         </Node>
-		<Node id="96" type="file" documentType="reference">
+		<Node id="87" type="file" documentType="reference">
             <Name>WPYSwiperState</Name>
             <Path>Constants/WPYSwiperState.html</Path>
             
         </Node>
-		<Node id="97" type="file" documentType="reference">
+		<Node id="88" type="file" documentType="reference">
             <Name>WPYSwiperType</Name>
             <Path>Constants/WPYSwiperType.html</Path>
             
         </Node>
-		<Node id="98" type="file" documentType="reference">
+		<Node id="89" type="file" documentType="reference">
             <Name>WPYTransactionDuplicateCheckType</Name>
             <Path>Constants/WPYTransactionDuplicateCheckType.html</Path>
             
         </Node>
-		<Node id="99" type="file" documentType="reference">
+		<Node id="90" type="file" documentType="reference">
             <Name>WPYVerificationType</Name>
             <Path>Constants/WPYVerificationType.html</Path>
             
         </Node>
-		<Node id="100" type="file" documentType="reference">
+		<Node id="91" type="file" documentType="reference">
             <Name>WPYVoidType</Name>
             <Path>Constants/WPYVoidType.html</Path>
             
         </Node>
-		<Node id="101" type="file" documentType="reference">
+		<Node id="92" type="file" documentType="reference">
             <Name>WorldpaySDKError</Name>
             <Path>Constants/WorldpaySDKError.html</Path>
             
         </Node>
 		
-        <Node id="102" type="file" documentType="reference">
+        <Node id="93" type="file" documentType="reference">
             <Name>PaymentCompletion</Name>
             <Path>Blocks/PaymentCompletion.html</Path>
             

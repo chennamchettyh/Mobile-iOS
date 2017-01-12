@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYPaymentType.html">
+	<File path="Constants/WorldpaySDKError.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYPaymentType</TokenIdentifier>
-			<Abstract type="html">The type of payment method associated with this payment type. Typically used with stored payment methods</Abstract>
-			<DeclaredIn>WPYTender.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/WorldpaySDKError</TokenIdentifier>
+			<Abstract type="html">This is the error code returned when an NSError is generated due to a missing authentication token.
+No web service calls can complete (except for the token request) without a valid authorization token</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
             
 			
 			<NodeRef refid="92"/>
@@ -14,51 +15,31 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentTypeUnknown</TokenIdentifier>
-            <Abstract type="html">Unknown payment type</Abstract>
-            <Declaration>WPYPaymentTypeUnknown</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WorldpaySDKErrorNoAuthToken</TokenIdentifier>
+            <Abstract type="html">No auth token provided</Abstract>
+            <Declaration>WorldpaySDKErrorNoAuthToken</Declaration>
             
-            <DeclaredIn>WPYTender.h</DeclaredIn>
-            
-            <NodeRef refid="92"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentTypeCheck</TokenIdentifier>
-            <Abstract type="html">Payment is a check</Abstract>
-            <Declaration>WPYPaymentTypeCheck</Declaration>
-            
-            <DeclaredIn>WPYTender.h</DeclaredIn>
+            <DeclaredIn>WorldPayAPI.h</DeclaredIn>
             
             <NodeRef refid="92"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentTypeDebitCard</TokenIdentifier>
-            <Abstract type="html">Payment is a debit card</Abstract>
-            <Declaration>WPYPaymentTypeDebitCard</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WorldpaySDKErrorInvalidRequestTypeForTender</TokenIdentifier>
+            <Abstract type="html">Returned if you try to run an auth on a manually entered check, for instance</Abstract>
+            <Declaration>WorldpaySDKErrorInvalidRequestTypeForTender</Declaration>
             
-            <DeclaredIn>WPYTender.h</DeclaredIn>
-            
-            <NodeRef refid="92"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentTypeCreditCard</TokenIdentifier>
-            <Abstract type="html">Payment is a credit card</Abstract>
-            <Declaration>WPYPaymentTypeCreditCard</Declaration>
-            
-            <DeclaredIn>WPYTender.h</DeclaredIn>
+            <DeclaredIn>WorldPayAPI.h</DeclaredIn>
             
             <NodeRef refid="92"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentTypeStoredValue</TokenIdentifier>
-            <Abstract type="html">Payment is a prepaid card</Abstract>
-            <Declaration>WPYPaymentTypeStoredValue</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WorldpaySDKErrorTerminalConnectionLost</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>WorldpaySDKErrorTerminalConnectionLost</Declaration>
             
-            <DeclaredIn>WPYTender.h</DeclaredIn>
+            <DeclaredIn>WorldPayAPI.h</DeclaredIn>
             
             <NodeRef refid="92"/>
         </Token>

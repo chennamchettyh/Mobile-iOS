@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VaultData.html">
+	<File path="Classes/WPYCardTransactionData.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VaultData</TokenIdentifier>
-			<Abstract type="html">VaultData object</Abstract>
-			<DeclaredIn>VaultData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/WPYCardTransactionData</TokenIdentifier>
+			<Abstract type="html">Information about the credit card that was received from the payment gateway</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
             
 			
 			<NodeRef refid="11"/>
@@ -13,81 +13,45 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VaultData/setToken:</TokenIdentifier>
-			<Abstract type="html">vault token</Abstract>
-			<DeclaredIn>VaultData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYCardTransactionData/setNumber:</TokenIdentifier>
+			<Abstract type="html">Redacted card number</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) WPYPaymentToken *token</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *number</Declaration>
 			
 			
-			<Anchor>//api/name/token</Anchor>
+			<Anchor>//api/name/number</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VaultData/token</TokenIdentifier>
-			<Abstract type="html">vault token</Abstract>
-			<DeclaredIn>VaultData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYCardTransactionData/number</TokenIdentifier>
+			<Abstract type="html">Redacted card number</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) WPYPaymentToken *token</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *number</Declaration>
 			
 			
-			<Anchor>//api/name/token</Anchor>
+			<Anchor>//api/name/number</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VaultData/token</TokenIdentifier>
-			<Abstract type="html">vault token</Abstract>
-			<DeclaredIn>VaultData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYCardTransactionData/number</TokenIdentifier>
+			<Abstract type="html">Redacted card number</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) WPYPaymentToken *token</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *number</Declaration>
 			
 			
-			<Anchor>//api/name/token</Anchor>
+			<Anchor>//api/name/number</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VaultData/setCompany:</TokenIdentifier>
-			<Abstract type="html">company of the customer.</Abstract>
-			<DeclaredIn>VaultData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *company</Declaration>
-			
-			
-			<Anchor>//api/name/company</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VaultData/company</TokenIdentifier>
-			<Abstract type="html">company of the customer.</Abstract>
-			<DeclaredIn>VaultData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *company</Declaration>
-			
-			
-			<Anchor>//api/name/company</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VaultData/company</TokenIdentifier>
-			<Abstract type="html">company of the customer.</Abstract>
-			<DeclaredIn>VaultData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *company</Declaration>
-			
-			
-			<Anchor>//api/name/company</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VaultData/setFirstName:</TokenIdentifier>
-			<Abstract type="html">first name of the customer.</Abstract>
-			<DeclaredIn>VaultData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYCardTransactionData/setFirstName:</TokenIdentifier>
+			<Abstract type="html">Cardholder first name</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSString *firstName</Declaration>
 			
@@ -97,9 +61,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VaultData/firstName</TokenIdentifier>
-			<Abstract type="html">first name of the customer.</Abstract>
-			<DeclaredIn>VaultData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYCardTransactionData/firstName</TokenIdentifier>
+			<Abstract type="html">Cardholder first name</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSString *firstName</Declaration>
 			
@@ -109,9 +73,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VaultData/firstName</TokenIdentifier>
-			<Abstract type="html">first name of the customer.</Abstract>
-			<DeclaredIn>VaultData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYCardTransactionData/firstName</TokenIdentifier>
+			<Abstract type="html">Cardholder first name</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSString *firstName</Declaration>
 			
@@ -121,9 +85,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VaultData/setLastName:</TokenIdentifier>
-			<Abstract type="html">last name of the customer.</Abstract>
-			<DeclaredIn>VaultData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYCardTransactionData/setLastName:</TokenIdentifier>
+			<Abstract type="html">Cardholder last name</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSString *lastName</Declaration>
 			
@@ -133,9 +97,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VaultData/lastName</TokenIdentifier>
-			<Abstract type="html">last name of the customer.</Abstract>
-			<DeclaredIn>VaultData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYCardTransactionData/lastName</TokenIdentifier>
+			<Abstract type="html">Cardholder last name</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSString *lastName</Declaration>
 			
@@ -145,9 +109,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VaultData/lastName</TokenIdentifier>
-			<Abstract type="html">last name of the customer.</Abstract>
-			<DeclaredIn>VaultData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYCardTransactionData/lastName</TokenIdentifier>
+			<Abstract type="html">Cardholder last name</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSString *lastName</Declaration>
 			
@@ -157,74 +121,182 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VaultData/setEmail:</TokenIdentifier>
-			<Abstract type="html">email address of the customer.</Abstract>
-			<DeclaredIn>VaultData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYCardTransactionData/setBrand:</TokenIdentifier>
+			<Abstract type="html">Brand associated with the card</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *email</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *brand</Declaration>
 			
 			
-			<Anchor>//api/name/email</Anchor>
+			<Anchor>//api/name/brand</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VaultData/email</TokenIdentifier>
-			<Abstract type="html">email address of the customer.</Abstract>
-			<DeclaredIn>VaultData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYCardTransactionData/brand</TokenIdentifier>
+			<Abstract type="html">Brand associated with the card</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *email</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *brand</Declaration>
 			
 			
-			<Anchor>//api/name/email</Anchor>
+			<Anchor>//api/name/brand</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VaultData/email</TokenIdentifier>
-			<Abstract type="html">email address of the customer.</Abstract>
-			<DeclaredIn>VaultData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYCardTransactionData/brand</TokenIdentifier>
+			<Abstract type="html">Brand associated with the card</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *email</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *brand</Declaration>
 			
 			
-			<Anchor>//api/name/email</Anchor>
+			<Anchor>//api/name/brand</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VaultData/setPhone:</TokenIdentifier>
-			<Abstract type="html">phone number of the customer.</Abstract>
-			<DeclaredIn>VaultData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYCardTransactionData/setExpirationMonth:</TokenIdentifier>
+			<Abstract type="html">Card expiration month</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *phone</Declaration>
+			<Declaration>@property NSInteger expirationMonth</Declaration>
 			
 			
-			<Anchor>//api/name/phone</Anchor>
+			<Anchor>//api/name/expirationMonth</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VaultData/phone</TokenIdentifier>
-			<Abstract type="html">phone number of the customer.</Abstract>
-			<DeclaredIn>VaultData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYCardTransactionData/expirationMonth</TokenIdentifier>
+			<Abstract type="html">Card expiration month</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *phone</Declaration>
+			<Declaration>@property NSInteger expirationMonth</Declaration>
 			
 			
-			<Anchor>//api/name/phone</Anchor>
+			<Anchor>//api/name/expirationMonth</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VaultData/phone</TokenIdentifier>
-			<Abstract type="html">phone number of the customer.</Abstract>
-			<DeclaredIn>VaultData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYCardTransactionData/expirationMonth</TokenIdentifier>
+			<Abstract type="html">Card expiration month</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *phone</Declaration>
+			<Declaration>@property NSInteger expirationMonth</Declaration>
 			
 			
-			<Anchor>//api/name/phone</Anchor>
+			<Anchor>//api/name/expirationMonth</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYCardTransactionData/setExpirationYear:</TokenIdentifier>
+			<Abstract type="html">Card expiration year</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger expirationYear</Declaration>
+			
+			
+			<Anchor>//api/name/expirationYear</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYCardTransactionData/expirationYear</TokenIdentifier>
+			<Abstract type="html">Card expiration year</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger expirationYear</Declaration>
+			
+			
+			<Anchor>//api/name/expirationYear</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYCardTransactionData/expirationYear</TokenIdentifier>
+			<Abstract type="html">Card expiration year</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger expirationYear</Declaration>
+			
+			
+			<Anchor>//api/name/expirationYear</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYCardTransactionData/setAvsCode:</TokenIdentifier>
+			<Abstract type="html">AVS Code sent from gateway</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *avsCode</Declaration>
+			
+			
+			<Anchor>//api/name/avsCode</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYCardTransactionData/avsCode</TokenIdentifier>
+			<Abstract type="html">AVS Code sent from gateway</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *avsCode</Declaration>
+			
+			
+			<Anchor>//api/name/avsCode</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYCardTransactionData/avsCode</TokenIdentifier>
+			<Abstract type="html">AVS Code sent from gateway</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *avsCode</Declaration>
+			
+			
+			<Anchor>//api/name/avsCode</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYCardTransactionData/setAvsResult:</TokenIdentifier>
+			<Abstract type="html">Type of the AVS Result received</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
+			
+			<Declaration>@property WPYAvsResultType avsResult</Declaration>
+			
+			
+			<Anchor>//api/name/avsResult</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYCardTransactionData/avsResult</TokenIdentifier>
+			<Abstract type="html">Type of the AVS Result received</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
+			
+			<Declaration>@property WPYAvsResultType avsResult</Declaration>
+			
+			
+			<Anchor>//api/name/avsResult</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYCardTransactionData/avsResult</TokenIdentifier>
+			<Abstract type="html">Type of the AVS Result received</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
+			
+			<Declaration>@property WPYAvsResultType avsResult</Declaration>
+			
+			
+			<Anchor>//api/name/avsResult</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		

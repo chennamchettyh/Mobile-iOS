@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/WPYPaymentRefund.html">
+	<File path="Classes/WPYReceiptObject.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/WPYPaymentRefund</TokenIdentifier>
-			<Abstract type="html">This requests that the specified transaction be refunded to the account holder</Abstract>
-			<DeclaredIn>WPYPaymentRefund.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/WPYReceiptObject</TokenIdentifier>
+			<Abstract type="html">The purpose of this object is to consolidate all of the information that a developer will need to create
+a receipt that is in compliance with card brand and Worldpay receipt formatting requirements</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
             
 			
 			<NodeRef refid="35"/>
@@ -13,161 +14,431 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYPaymentRefund/setAmount:</TokenIdentifier>
-			<Abstract type="html">The amount of the refund being requested</Abstract>
-			<DeclaredIn>WPYPaymentRefund.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYReceiptObject/setCardHolderName:</TokenIdentifier>
+			<Abstract type="html">The cardholder&apos;s name.  It may be &quot;Last Name / First Name&quot; or just &quot;Last Name&quot; depending on how the data
+was acquired</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSDecimalNumber *amount</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *cardHolderName</Declaration>
 			
 			
-			<Anchor>//api/name/amount</Anchor>
+			<Anchor>//api/name/cardHolderName</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYPaymentRefund/amount</TokenIdentifier>
-			<Abstract type="html">The amount of the refund being requested</Abstract>
-			<DeclaredIn>WPYPaymentRefund.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYReceiptObject/cardHolderName</TokenIdentifier>
+			<Abstract type="html">The cardholder&apos;s name.  It may be &quot;Last Name / First Name&quot; or just &quot;Last Name&quot; depending on how the data
+was acquired</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSDecimalNumber *amount</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *cardHolderName</Declaration>
 			
 			
-			<Anchor>//api/name/amount</Anchor>
+			<Anchor>//api/name/cardHolderName</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYPaymentRefund/amount</TokenIdentifier>
-			<Abstract type="html">The amount of the refund being requested</Abstract>
-			<DeclaredIn>WPYPaymentRefund.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYReceiptObject/cardHolderName</TokenIdentifier>
+			<Abstract type="html">The cardholder&apos;s name.  It may be &quot;Last Name / First Name&quot; or just &quot;Last Name&quot; depending on how the data
+was acquired</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSDecimalNumber *amount</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *cardHolderName</Declaration>
 			
 			
-			<Anchor>//api/name/amount</Anchor>
+			<Anchor>//api/name/cardHolderName</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYPaymentRefund/setTransactionId:</TokenIdentifier>
-			<Abstract type="html">The transaction ID that the refund will be applied against</Abstract>
-			<DeclaredIn>WPYPaymentRefund.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYReceiptObject/setMaskedPan:</TokenIdentifier>
+			<Abstract type="html">The masked card number</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *transactionId</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *maskedPan</Declaration>
 			
 			
-			<Anchor>//api/name/transactionId</Anchor>
+			<Anchor>//api/name/maskedPan</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYPaymentRefund/transactionId</TokenIdentifier>
-			<Abstract type="html">The transaction ID that the refund will be applied against</Abstract>
-			<DeclaredIn>WPYPaymentRefund.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYReceiptObject/maskedPan</TokenIdentifier>
+			<Abstract type="html">The masked card number</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *transactionId</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *maskedPan</Declaration>
 			
 			
-			<Anchor>//api/name/transactionId</Anchor>
+			<Anchor>//api/name/maskedPan</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYPaymentRefund/transactionId</TokenIdentifier>
-			<Abstract type="html">The transaction ID that the refund will be applied against</Abstract>
-			<DeclaredIn>WPYPaymentRefund.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYReceiptObject/maskedPan</TokenIdentifier>
+			<Abstract type="html">The masked card number</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *transactionId</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *maskedPan</Declaration>
 			
 			
-			<Anchor>//api/name/transactionId</Anchor>
+			<Anchor>//api/name/maskedPan</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYPaymentRefund/setOrderId:</TokenIdentifier>
-			<Abstract type="html">Client-generated unique ID for each transaction, used as a way to prevent the processing of duplicate
-transactions. The orderId must be unique to the merchant&apos;s SecureNet ID; however, uniqueness is only
-evaluated for APPROVED transactions and only for the last 30 days. If a transaction is declined, the
-corresponding orderId may be used again.</Abstract>
-			<DeclaredIn>WPYPaymentRefund.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYReceiptObject/setCardEntryMode:</TokenIdentifier>
+			<Abstract type="html">This field indicates how the terminal acquired the card data</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *orderId</Declaration>
+			<Declaration>@property (nonatomic) WPYCardEntryMode cardEntryMode</Declaration>
 			
 			
-			<Anchor>//api/name/orderId</Anchor>
+			<Anchor>//api/name/cardEntryMode</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYPaymentRefund/orderId</TokenIdentifier>
-			<Abstract type="html">Client-generated unique ID for each transaction, used as a way to prevent the processing of duplicate
-transactions. The orderId must be unique to the merchant&apos;s SecureNet ID; however, uniqueness is only
-evaluated for APPROVED transactions and only for the last 30 days. If a transaction is declined, the
-corresponding orderId may be used again.</Abstract>
-			<DeclaredIn>WPYPaymentRefund.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYReceiptObject/cardEntryMode</TokenIdentifier>
+			<Abstract type="html">This field indicates how the terminal acquired the card data</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *orderId</Declaration>
+			<Declaration>@property (nonatomic) WPYCardEntryMode cardEntryMode</Declaration>
 			
 			
-			<Anchor>//api/name/orderId</Anchor>
+			<Anchor>//api/name/cardEntryMode</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYPaymentRefund/orderId</TokenIdentifier>
-			<Abstract type="html">Client-generated unique ID for each transaction, used as a way to prevent the processing of duplicate
-transactions. The orderId must be unique to the merchant&apos;s SecureNet ID; however, uniqueness is only
-evaluated for APPROVED transactions and only for the last 30 days. If a transaction is declined, the
-corresponding orderId may be used again.</Abstract>
-			<DeclaredIn>WPYPaymentRefund.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYReceiptObject/cardEntryMode</TokenIdentifier>
+			<Abstract type="html">This field indicates how the terminal acquired the card data</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *orderId</Declaration>
+			<Declaration>@property (nonatomic) WPYCardEntryMode cardEntryMode</Declaration>
 			
 			
-			<Anchor>//api/name/orderId</Anchor>
+			<Anchor>//api/name/cardEntryMode</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYPaymentRefund/setExtendedInformation:</TokenIdentifier>
-			<Abstract type="html">Optional extended card data to be provided by the merchant.  On card present transactions, the SDK will automatically add this object and populate
-card terminal information, including &quot;Terminal ID&quot;.  If a custom terminal ID is required, this object should be included or the terminal ID should
-be set via the request Auth token method</Abstract>
-			<DeclaredIn>WPYPaymentRefund.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYReceiptObject/setApplicationId:</TokenIdentifier>
+			<Abstract type="html">For EMV transactions only: This lists the Application ID that was used in the card transaction.  This data must
+be included on all receipts, if available</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) WPYExtendedCardData *extendedInformation</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *applicationId</Declaration>
 			
 			
-			<Anchor>//api/name/extendedInformation</Anchor>
+			<Anchor>//api/name/applicationId</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYPaymentRefund/extendedInformation</TokenIdentifier>
-			<Abstract type="html">Optional extended card data to be provided by the merchant.  On card present transactions, the SDK will automatically add this object and populate
-card terminal information, including &quot;Terminal ID&quot;.  If a custom terminal ID is required, this object should be included or the terminal ID should
-be set via the request Auth token method</Abstract>
-			<DeclaredIn>WPYPaymentRefund.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYReceiptObject/applicationId</TokenIdentifier>
+			<Abstract type="html">For EMV transactions only: This lists the Application ID that was used in the card transaction.  This data must
+be included on all receipts, if available</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) WPYExtendedCardData *extendedInformation</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *applicationId</Declaration>
 			
 			
-			<Anchor>//api/name/extendedInformation</Anchor>
+			<Anchor>//api/name/applicationId</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYPaymentRefund/extendedInformation</TokenIdentifier>
-			<Abstract type="html">Optional extended card data to be provided by the merchant.  On card present transactions, the SDK will automatically add this object and populate
-card terminal information, including &quot;Terminal ID&quot;.  If a custom terminal ID is required, this object should be included or the terminal ID should
-be set via the request Auth token method</Abstract>
-			<DeclaredIn>WPYPaymentRefund.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYReceiptObject/applicationId</TokenIdentifier>
+			<Abstract type="html">For EMV transactions only: This lists the Application ID that was used in the card transaction.  This data must
+be included on all receipts, if available</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) WPYExtendedCardData *extendedInformation</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *applicationId</Declaration>
 			
 			
-			<Anchor>//api/name/extendedInformation</Anchor>
+			<Anchor>//api/name/applicationId</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYReceiptObject/setApplicationPreferredName:</TokenIdentifier>
+			<Abstract type="html">For EMV transactions only: This is &apos;Brand Name&apos; of the Card as supplied by the issuer and is required to be displayed on all receipts,
+if available</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *applicationPreferredName</Declaration>
+			
+			
+			<Anchor>//api/name/applicationPreferredName</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYReceiptObject/applicationPreferredName</TokenIdentifier>
+			<Abstract type="html">For EMV transactions only: This is &apos;Brand Name&apos; of the Card as supplied by the issuer and is required to be displayed on all receipts,
+if available</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *applicationPreferredName</Declaration>
+			
+			
+			<Anchor>//api/name/applicationPreferredName</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYReceiptObject/applicationPreferredName</TokenIdentifier>
+			<Abstract type="html">For EMV transactions only: This is &apos;Brand Name&apos; of the Card as supplied by the issuer and is required to be displayed on all receipts,
+if available</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *applicationPreferredName</Declaration>
+			
+			
+			<Anchor>//api/name/applicationPreferredName</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYReceiptObject/setTerminalVerificationResults:</TokenIdentifier>
+			<Abstract type="html">For EMV transactions only: This is the TVR code that indicates what actions were performed between the terminal and the
+card to validate the authenticity of the card and the cardholder.  This information should be included on all receipts, if
+available</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *terminalVerificationResults</Declaration>
+			
+			
+			<Anchor>//api/name/terminalVerificationResults</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYReceiptObject/terminalVerificationResults</TokenIdentifier>
+			<Abstract type="html">For EMV transactions only: This is the TVR code that indicates what actions were performed between the terminal and the
+card to validate the authenticity of the card and the cardholder.  This information should be included on all receipts, if
+available</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *terminalVerificationResults</Declaration>
+			
+			
+			<Anchor>//api/name/terminalVerificationResults</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYReceiptObject/terminalVerificationResults</TokenIdentifier>
+			<Abstract type="html">For EMV transactions only: This is the TVR code that indicates what actions were performed between the terminal and the
+card to validate the authenticity of the card and the cardholder.  This information should be included on all receipts, if
+available</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *terminalVerificationResults</Declaration>
+			
+			
+			<Anchor>//api/name/terminalVerificationResults</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYReceiptObject/setTransactionStatusInformation:</TokenIdentifier>
+			<Abstract type="html">For EMV transactions only: This contains information about the functions that were performed throughout the transaction.
+This should be included on all receipts, if available</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *transactionStatusInformation</Declaration>
+			
+			
+			<Anchor>//api/name/transactionStatusInformation</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYReceiptObject/transactionStatusInformation</TokenIdentifier>
+			<Abstract type="html">For EMV transactions only: This contains information about the functions that were performed throughout the transaction.
+This should be included on all receipts, if available</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *transactionStatusInformation</Declaration>
+			
+			
+			<Anchor>//api/name/transactionStatusInformation</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYReceiptObject/transactionStatusInformation</TokenIdentifier>
+			<Abstract type="html">For EMV transactions only: This contains information about the functions that were performed throughout the transaction.
+This should be included on all receipts, if available</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *transactionStatusInformation</Declaration>
+			
+			
+			<Anchor>//api/name/transactionStatusInformation</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYReceiptObject/setApplicationCryptogram:</TokenIdentifier>
+			<Abstract type="html">For EMV transactions only: This contains the application cryptogram supplied by the terminal</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *applicationCryptogram</Declaration>
+			
+			
+			<Anchor>//api/name/applicationCryptogram</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYReceiptObject/applicationCryptogram</TokenIdentifier>
+			<Abstract type="html">For EMV transactions only: This contains the application cryptogram supplied by the terminal</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *applicationCryptogram</Declaration>
+			
+			
+			<Anchor>//api/name/applicationCryptogram</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYReceiptObject/applicationCryptogram</TokenIdentifier>
+			<Abstract type="html">For EMV transactions only: This contains the application cryptogram supplied by the terminal</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *applicationCryptogram</Declaration>
+			
+			
+			<Anchor>//api/name/applicationCryptogram</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYReceiptObject/setCardHolderVerificationMethod:</TokenIdentifier>
+			<Abstract type="html">This property contains the cardholder verification method that was used to validate that a valid user presented the card.
+You can use this information to help determine whether or not a signature should be captured, and the receipt should indicate
+what method was used to validate the transaction, if any.</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) WPYCVMethod cardHolderVerificationMethod</Declaration>
+			
+			
+			<Anchor>//api/name/cardHolderVerificationMethod</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYReceiptObject/cardHolderVerificationMethod</TokenIdentifier>
+			<Abstract type="html">This property contains the cardholder verification method that was used to validate that a valid user presented the card.
+You can use this information to help determine whether or not a signature should be captured, and the receipt should indicate
+what method was used to validate the transaction, if any.</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) WPYCVMethod cardHolderVerificationMethod</Declaration>
+			
+			
+			<Anchor>//api/name/cardHolderVerificationMethod</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYReceiptObject/cardHolderVerificationMethod</TokenIdentifier>
+			<Abstract type="html">This property contains the cardholder verification method that was used to validate that a valid user presented the card.
+You can use this information to help determine whether or not a signature should be captured, and the receipt should indicate
+what method was used to validate the transaction, if any.</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) WPYCVMethod cardHolderVerificationMethod</Declaration>
+			
+			
+			<Anchor>//api/name/cardHolderVerificationMethod</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYReceiptObject/setAuthMode:</TokenIdentifier>
+			<Abstract type="html">This property indicates whether or not the transaction result is due to a determination made by the issuer / gateway or the
+card / terminal.</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) WPYAuthMode authMode</Declaration>
+			
+			
+			<Anchor>//api/name/authMode</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYReceiptObject/authMode</TokenIdentifier>
+			<Abstract type="html">This property indicates whether or not the transaction result is due to a determination made by the issuer / gateway or the
+card / terminal.</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) WPYAuthMode authMode</Declaration>
+			
+			
+			<Anchor>//api/name/authMode</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYReceiptObject/authMode</TokenIdentifier>
+			<Abstract type="html">This property indicates whether or not the transaction result is due to a determination made by the issuer / gateway or the
+card / terminal.</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) WPYAuthMode authMode</Declaration>
+			
+			
+			<Anchor>//api/name/authMode</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYReceiptObject/setCardRequiresSignature:</TokenIdentifier>
+			<Abstract type="html">This flag is set when the SDK believes that a signature should be required for the transaction
+While this is usually set in accordance with the CVM Method above, the Miura terminal sometimes
+indicates that a signature is required even on a PIN based transaction.</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL cardRequiresSignature</Declaration>
+			
+			
+			<Anchor>//api/name/cardRequiresSignature</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYReceiptObject/cardRequiresSignature</TokenIdentifier>
+			<Abstract type="html">This flag is set when the SDK believes that a signature should be required for the transaction
+While this is usually set in accordance with the CVM Method above, the Miura terminal sometimes
+indicates that a signature is required even on a PIN based transaction.</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL cardRequiresSignature</Declaration>
+			
+			
+			<Anchor>//api/name/cardRequiresSignature</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYReceiptObject/cardRequiresSignature</TokenIdentifier>
+			<Abstract type="html">This flag is set when the SDK believes that a signature should be required for the transaction
+While this is usually set in accordance with the CVM Method above, the Miura terminal sometimes
+indicates that a signature is required even on a PIN based transaction.</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL cardRequiresSignature</Declaration>
+			
+			
+			<Anchor>//api/name/cardRequiresSignature</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		

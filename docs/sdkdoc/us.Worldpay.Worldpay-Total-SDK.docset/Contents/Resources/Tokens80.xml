@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYCardAccountType.html">
+	<File path="Constants/WPYEMVTransactionType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYCardAccountType</TokenIdentifier>
-			<Abstract type="html">This is an indication of the type of transactions that a specific card application can support
-On devices where the terminal is capable of handling application support, it will automatically
-prompt for credit or debit when appropriate.  On non-capable devices, the application will
-be notified when the user must choose credit or debit</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYEMVTransactionType</TokenIdentifier>
+			<Abstract type="html">Type of transaction that the merchant would like to perform.
+A transaction with type Goods is debit/credit only with no gratuity or cash back allowed
+A transaction with type Cashback is a sale w/ cash back allowed if supported by the card type
+A transaction with type Services is a sale w/ inline tip adjustment allowed</Abstract>
 			<DeclaredIn>WPYSwiper.h</DeclaredIn>
             
 			
@@ -17,9 +17,9 @@ be notified when the user must choose credit or debit</Abstract>
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardAccountTypeCredit</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCardAccountTypeCredit</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYEMVTransactionTypeGoods</TokenIdentifier>
+            <Abstract type="html">Debit/credit only with no gratuity or cash back allowed</Abstract>
+            <Declaration>WPYEMVTransactionTypeGoods</Declaration>
             
             <DeclaredIn>WPYSwiper.h</DeclaredIn>
             
@@ -27,9 +27,9 @@ be notified when the user must choose credit or debit</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardAccountTypeDebit</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCardAccountTypeDebit</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYEMVTransactionTypeCashback</TokenIdentifier>
+            <Abstract type="html">A sale w/ cash back allowed if supported by the card type</Abstract>
+            <Declaration>WPYEMVTransactionTypeCashback</Declaration>
             
             <DeclaredIn>WPYSwiper.h</DeclaredIn>
             
@@ -37,9 +37,9 @@ be notified when the user must choose credit or debit</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardAccountTypeCreditOrDebit</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCardAccountTypeCreditOrDebit</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYEMVTransactionTypeServices</TokenIdentifier>
+            <Abstract type="html">A sale w/ inline tip adjustment allowed</Abstract>
+            <Declaration>WPYEMVTransactionTypeServices</Declaration>
             
             <DeclaredIn>WPYSwiper.h</DeclaredIn>
             
@@ -47,9 +47,9 @@ be notified when the user must choose credit or debit</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardAccountTypeUnknown</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCardAccountTypeUnknown</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYEMVTransactionTypeRefund</TokenIdentifier>
+            <Abstract type="html">A refund transaction</Abstract>
+            <Declaration>WPYEMVTransactionTypeRefund</Declaration>
             
             <DeclaredIn>WPYSwiper.h</DeclaredIn>
             

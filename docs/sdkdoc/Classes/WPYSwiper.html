@@ -76,11 +76,15 @@
 	
 
 	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/accountTypeForAID:">+ accountTypeForAID:</option>
+		
+	</optgroup>
+	
 
 	
 	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/accountTypeForAID:">- accountTypeForAID:</option>
 		
 		<option value="//api/name/beginEMVTransactionWithRequest:transactionType:">- beginEMVTransactionWithRequest:transactionType:</option>
 		
@@ -90,7 +94,9 @@
 		
 		<option value="//api/name/cancelCheckForCard">- cancelCheckForCard</option>
 		
-		<option value="//api/name/cancelTransaction">- cancelTransaction</option>
+		<option value="//api/name/cancelTransaction:">- cancelTransaction:</option>
+		
+		<option value="//api/name/cardInserted">- cardInserted</option>
 		
 		<option value="//api/name/checkForCard">- checkForCard</option>
 		
@@ -99,6 +105,8 @@
 		<option value="//api/name/connectSwiperWithInputType:">- connectSwiperWithInputType:</option>
 		
 		<option value="//api/name/createPaymentMethod:">- createPaymentMethod:</option>
+		
+		<option value="//api/name/defaultDevicePromptText:parameters:">- defaultDevicePromptText:parameters:</option>
 		
 		<option value="//api/name/disconnectSwiper">- disconnectSwiper</option>
 		
@@ -782,8 +790,8 @@ Check continuously for card events - dips or swipes.  Does not return NFC tap ev
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/cancelTransaction" title="cancelTransaction"></a>
-	<h3 class="method-title"><code><a href="#//api/name/cancelTransaction">&ndash;&nbsp;cancelTransaction</a></code>
+	<a name="//api/name/cancelTransaction:" title="cancelTransaction:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cancelTransaction:">&ndash;&nbsp;cancelTransaction:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -798,9 +806,21 @@ Check continuously for card events - dips or swipes.  Does not return NFC tap ev
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)cancelTransaction</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)cancelTransaction:(NSString *)<em>customMessage</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>customMessage</code></th>
+						<td><p>This will be displayed instead of default prompt (but message will be lost if request is pending)</p></td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -1450,6 +1470,173 @@ selected</p>
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/accountTypeForAID:" title="accountTypeForAID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/accountTypeForAID:">+&nbsp;accountTypeForAID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This function returns an account type of &lsquo;Credit&rsquo; &lsquo;Debit&rsquo; or &lsquo;CreditOrDebit&rsquo; based on the application selected</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (WPYCardAccountType)accountTypeForAID:(NSString *)<em>aid</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>aid</code></th>
+						<td><p>The AID that has been selected by the card holder / terminal</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An enumeration indacting what type of transactions can be run against that AID.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WPYSwiper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cardInserted" title="cardInserted"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cardInserted">&ndash;&nbsp;cardInserted</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called to determine card insertion status for prompt messages, must override</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)cardInserted</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>self-explanatory</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WPYSwiper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/defaultDevicePromptText:parameters:" title="defaultDevicePromptText:parameters:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/defaultDevicePromptText:parameters:">&ndash;&nbsp;defaultDevicePromptText:parameters:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called to determine default device prompt text</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)defaultDevicePromptText:(WPYDevicePrompt)<em>prompt</em> parameters:(NSArray&lt;NSString*&gt; *)<em>parameters</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>prompt</code></th>
+						<td><p>self-explanatory</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>An optional array of strings to be used in prompt construction</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>self-explanatory</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WPYSwiper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -1522,65 +1709,6 @@ after an online processing request has been completed.  It is is only used inter
 			
 		</div>
 	</div>
-</div><div class="section-method">
-	<a name="//api/name/accountTypeForAID:" title="accountTypeForAID:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/accountTypeForAID:">&ndash;&nbsp;accountTypeForAID:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>This function returns an account type of &lsquo;Credit&rsquo; &lsquo;Debit&rsquo; or &lsquo;CreditOrDebit&rsquo; based on the application selected
-This is used internally and should never actually be required to be called externally</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (WPYCardAccountType)accountTypeForAID:(NSString *)<em>aid</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>aid</code></th>
-						<td><p>The AID that has been selected by the card holder / terminal</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>An enumeration indacting what type of transactions can be run against that AID.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">WPYSwiperPrivate.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
 </div>
 						</div>
 						
@@ -1596,7 +1724,7 @@ This is used internally and should never actually be required to be called exter
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Worldpay. All rights reserved. Updated: 2017-01-09</p>
+						<p class="copyright">Copyright &copy; 2017 Worldpay. All rights reserved. Updated: 2017-01-12</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

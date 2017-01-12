@@ -51,6 +51,8 @@ typedef NS_ENUM(NSUInteger, WPYCardEvent)
     WPYCardEventRemoved,
     /// Card inserted backwards or a non-chip card was inserted
     WPYCardEventNonICCInserted,
+    /// Card inserted with empty Aid list
+    WPYCardEventEmptyAidList,
     /// Partial or no track data received
     WPYCardEventBadSwipe,
     /// self-explanatory
@@ -77,6 +79,10 @@ typedef NS_ENUM(uint8_t, WPYDevicePrompt)
     WPYDevicePromptConfirmAmount,
     /// self-explanatory
     WPYDevicePromptNonICCard,
+    /// self-explanatory
+    WPYDevicePromptEMVEmptyAidList,
+    /// self-explanatory
+    WPYDevicePromptEMVEmptyAidListNoFallback,
     /// self-explanatory
     WPYDevicePromptApproved,
     /// self-explanatory
@@ -388,6 +394,23 @@ typedef NS_ENUM(NSInteger, WPYEMVTransactionType)
  */
 + (WPYCardAccountType)accountTypeForAID:(NSString *)aid;
 
+/**
+ * This method is called to determine card insertion status for prompt messages, must override
+ *
+ * @return self-explanatory
+ */
+- (BOOL) cardInserted;
+
+/**
+ * This method is called to determine default device prompt text
+ *
+ * @param prompt self-explanatory
+ * @param parameters An optional array of strings to be used in prompt construction
+ *
+ * @return self-explanatory
+ */
+- (NSString *) defaultDevicePromptText: (WPYDevicePrompt) prompt parameters:(NSArray<NSString *> *)parameters;
+
 @end
 
 /**
@@ -510,9 +533,10 @@ typedef NS_ENUM(NSInteger, WPYEMVTransactionType)
  *
  * @param swiper A reference to the object making the request
  * @param prompt An enumeration representing the type of information that should be presented to the card holder
+ * @param defaultText The default text prompt the SDK will display
  * @param completion A completion handler to call if the terminal is capable of displaying text. If not supported, a nil handler will be sent
  */
-- (void) swiper:(WPYSwiper *)swiper didRequestDevicePromptText:(WPYDevicePrompt)prompt completion:(void(^)(NSString *))completion;
+- (void) swiper:(WPYSwiper *)swiper didRequestDevicePromptText:(WPYDevicePrompt)prompt defaultText:(NSString *) defaultText completion:(void(^)(NSString *))completion;
 
 
 /**

@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYEMVTransactionType.html">
+	<File path="Constants/WPYTransactionDuplicateCheckType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYEMVTransactionType</TokenIdentifier>
-			<Abstract type="html">Type of transaction that the merchant would like to perform.
-A transaction with type Goods is debit/credit only with no gratuity or cash back allowed
-A transaction with type Cashback is a sale w/ cash back allowed if supported by the card type
-A transaction with type Services is a sale w/ inline tip adjustment allowed</Abstract>
-			<DeclaredIn>WPYSwiper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYTransactionDuplicateCheckType</TokenIdentifier>
+			<Abstract type="html">Indicates how checks for duplicate transactions should behave. Duplicates are evaluated on the basis of
+amount, card number, and order ID; these evaluation criteria can be extended to also include customer ID,
+invoice number, or a user-defined field. Valid values for this parameter are:</Abstract>
+			<DeclaredIn>WPYDomainObject.h</DeclaredIn>
             
 			
 			<NodeRef refid="89"/>
@@ -17,41 +16,51 @@ A transaction with type Services is a sale w/ inline tip adjustment allowed</Abs
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYEMVTransactionTypeGoods</TokenIdentifier>
-            <Abstract type="html">Debit/credit only with no gratuity or cash back allowed</Abstract>
-            <Declaration>WPYEMVTransactionTypeGoods</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYTransactionDuplicateCheckTypeUnset</TokenIdentifier>
+            <Abstract type="html">Unset</Abstract>
+            <Declaration>WPYTransactionDuplicateCheckTypeUnset</Declaration>
             
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="89"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYEMVTransactionTypeCashback</TokenIdentifier>
-            <Abstract type="html">A sale w/ cash back allowed if supported by the card type</Abstract>
-            <Declaration>WPYEMVTransactionTypeCashback</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
+            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
             
             <NodeRef refid="89"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYEMVTransactionTypeServices</TokenIdentifier>
-            <Abstract type="html">A sale w/ inline tip adjustment allowed</Abstract>
-            <Declaration>WPYEMVTransactionTypeServices</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYTransactionDuplicateCheckTypeNone</TokenIdentifier>
+            <Abstract type="html">No duplicate check</Abstract>
+            <Declaration>WPYTransactionDuplicateCheckTypeNone</Declaration>
             
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
+            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
             
             <NodeRef refid="89"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYEMVTransactionTypeRefund</TokenIdentifier>
-            <Abstract type="html">A refund transaction</Abstract>
-            <Declaration>WPYEMVTransactionTypeRefund</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYTransactionDuplicateCheckTypeException</TokenIdentifier>
+            <Abstract type="html">Exception code is returned in case of duplicate</Abstract>
+            <Declaration>WPYTransactionDuplicateCheckTypeException</Declaration>
             
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
+            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
+            
+            <NodeRef refid="89"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYTransactionDuplicateCheckTypePreviousTransaction</TokenIdentifier>
+            <Abstract type="html">Previously existing transaction is returned in case of duplicate</Abstract>
+            <Declaration>WPYTransactionDuplicateCheckTypePreviousTransaction</Declaration>
+            
+            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
+            
+            <NodeRef refid="89"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYTransactionDuplicateCheckTypeExceptionNoOrderId</TokenIdentifier>
+            <Abstract type="html">Check is performed as above but without using order ID, and exception code is returned in case of duplicate</Abstract>
+            <Declaration>WPYTransactionDuplicateCheckTypeExceptionNoOrderId</Declaration>
+            
+            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
             
             <NodeRef refid="89"/>
         </Token>

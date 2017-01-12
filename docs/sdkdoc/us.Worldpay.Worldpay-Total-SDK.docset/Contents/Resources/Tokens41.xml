@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/WPYResponseObject.html">
+	<File path="Classes/WPYTenderServiceData.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/WPYResponseObject</TokenIdentifier>
-			<Abstract type="html">This is the objet that contains the results from any server transaction.</Abstract>
-			<DeclaredIn>WPYResponseObject.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/WPYTenderServiceData</TokenIdentifier>
+			<Abstract type="html">This optional object contains information pertaining to the service industry and a payment transaction</Abstract>
+			<DeclaredIn>WPYTenderServiceData.h</DeclaredIn>
             
 			
 			<NodeRef refid="41"/>
@@ -13,146 +13,77 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYResponseObject/setResponseCode:</TokenIdentifier>
-			<Abstract type="html">Gateway response code for the current request</Abstract>
-			<DeclaredIn>WPYResponseObject.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderServiceData/setGratuityAmount:</TokenIdentifier>
+			<Abstract type="html">An optional parameter is the gratiuty amount being added to the transaction. It does not modify data
+sent to the terminal in an EMV transaction</Abstract>
+			<DeclaredIn>WPYTenderServiceData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) WPYResponseCode responseCode</Declaration>
+			<Declaration>@property (nonatomic, strong) NSDecimalNumber *gratuityAmount</Declaration>
 			
 			
-			<Anchor>//api/name/responseCode</Anchor>
+			<Anchor>//api/name/gratuityAmount</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYResponseObject/responseCode</TokenIdentifier>
-			<Abstract type="html">Gateway response code for the current request</Abstract>
-			<DeclaredIn>WPYResponseObject.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderServiceData/gratuityAmount</TokenIdentifier>
+			<Abstract type="html">An optional parameter is the gratiuty amount being added to the transaction. It does not modify data
+sent to the terminal in an EMV transaction</Abstract>
+			<DeclaredIn>WPYTenderServiceData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) WPYResponseCode responseCode</Declaration>
+			<Declaration>@property (nonatomic, strong) NSDecimalNumber *gratuityAmount</Declaration>
 			
 			
-			<Anchor>//api/name/responseCode</Anchor>
+			<Anchor>//api/name/gratuityAmount</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYResponseObject/responseCode</TokenIdentifier>
-			<Abstract type="html">Gateway response code for the current request</Abstract>
-			<DeclaredIn>WPYResponseObject.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYTenderServiceData/gratuityAmount</TokenIdentifier>
+			<Abstract type="html">An optional parameter is the gratiuty amount being added to the transaction. It does not modify data
+sent to the terminal in an EMV transaction</Abstract>
+			<DeclaredIn>WPYTenderServiceData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) WPYResponseCode responseCode</Declaration>
+			<Declaration>@property (nonatomic, strong) NSDecimalNumber *gratuityAmount</Declaration>
 			
 			
-			<Anchor>//api/name/responseCode</Anchor>
+			<Anchor>//api/name/gratuityAmount</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYResponseObject/setResponseMessage:</TokenIdentifier>
-			<Abstract type="html">Response Message containing a detailed message for the merchant, such as why a transaction was declined</Abstract>
-			<DeclaredIn>WPYResponseObject.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderServiceData/setServer:</TokenIdentifier>
+			<Abstract type="html">An optional parameter specifying the server who is entitled to the gratuity</Abstract>
+			<DeclaredIn>WPYTenderServiceData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *responseMessage</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *server</Declaration>
 			
 			
-			<Anchor>//api/name/responseMessage</Anchor>
+			<Anchor>//api/name/server</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYResponseObject/responseMessage</TokenIdentifier>
-			<Abstract type="html">Response Message containing a detailed message for the merchant, such as why a transaction was declined</Abstract>
-			<DeclaredIn>WPYResponseObject.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTenderServiceData/server</TokenIdentifier>
+			<Abstract type="html">An optional parameter specifying the server who is entitled to the gratuity</Abstract>
+			<DeclaredIn>WPYTenderServiceData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *responseMessage</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *server</Declaration>
 			
 			
-			<Anchor>//api/name/responseMessage</Anchor>
+			<Anchor>//api/name/server</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYResponseObject/responseMessage</TokenIdentifier>
-			<Abstract type="html">Response Message containing a detailed message for the merchant, such as why a transaction was declined</Abstract>
-			<DeclaredIn>WPYResponseObject.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYTenderServiceData/server</TokenIdentifier>
+			<Abstract type="html">An optional parameter specifying the server who is entitled to the gratuity</Abstract>
+			<DeclaredIn>WPYTenderServiceData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *responseMessage</Declaration>
-			
-			
-			<Anchor>//api/name/responseMessage</Anchor>
-            <NodeRef refid="41"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYResponseObject/setSuccess:</TokenIdentifier>
-			<Abstract type="html">Indicates whether or not the current request was successfully processed</Abstract>
-			<DeclaredIn>WPYResponseObject.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL success</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *server</Declaration>
 			
 			
-			<Anchor>//api/name/success</Anchor>
-            <NodeRef refid="41"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYResponseObject/success</TokenIdentifier>
-			<Abstract type="html">Indicates whether or not the current request was successfully processed</Abstract>
-			<DeclaredIn>WPYResponseObject.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL success</Declaration>
-			
-			
-			<Anchor>//api/name/success</Anchor>
-            <NodeRef refid="41"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYResponseObject/success</TokenIdentifier>
-			<Abstract type="html">Indicates whether or not the current request was successfully processed</Abstract>
-			<DeclaredIn>WPYResponseObject.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL success</Declaration>
-			
-			
-			<Anchor>//api/name/success</Anchor>
-            <NodeRef refid="41"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYResponseObject/setResult:</TokenIdentifier>
-			<Abstract type="html">Short message indicating the result of processing. Suitable to display to the card holder</Abstract>
-			<DeclaredIn>WPYResponseObject.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *result</Declaration>
-			
-			
-			<Anchor>//api/name/result</Anchor>
-            <NodeRef refid="41"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYResponseObject/result</TokenIdentifier>
-			<Abstract type="html">Short message indicating the result of processing. Suitable to display to the card holder</Abstract>
-			<DeclaredIn>WPYResponseObject.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *result</Declaration>
-			
-			
-			<Anchor>//api/name/result</Anchor>
-            <NodeRef refid="41"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYResponseObject/result</TokenIdentifier>
-			<Abstract type="html">Short message indicating the result of processing. Suitable to display to the card holder</Abstract>
-			<DeclaredIn>WPYResponseObject.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *result</Declaration>
-			
-			
-			<Anchor>//api/name/result</Anchor>
+			<Anchor>//api/name/server</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		

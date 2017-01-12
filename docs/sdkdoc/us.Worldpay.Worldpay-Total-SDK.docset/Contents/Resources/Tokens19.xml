@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/WPYCustomerResponseData.html">
+	<File path="Classes/WPYLevelTwoData.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/WPYCustomerResponseData</TokenIdentifier>
-			<Abstract type="html">This object contains data pertaining to the Customer APIs</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/WPYLevelTwoData</TokenIdentifier>
+			<Abstract type="html">This optional data gets passed up to the payment gateway with a payment request</Abstract>
+			<DeclaredIn>WPYLevelTwoData.h</DeclaredIn>
             
 			
 			<NodeRef refid="19"/>
@@ -13,398 +13,254 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerResponseData/setFirstName:</TokenIdentifier>
-			<Abstract type="html">Customer First Name</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYLevelTwoData/setOrderDate:</TokenIdentifier>
+			<Abstract type="html">Date that the order was placed</Abstract>
+			<DeclaredIn>WPYLevelTwoData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *firstName</Declaration>
+			<Declaration>@property (nonatomic, strong) NSDate *orderDate</Declaration>
 			
 			
-			<Anchor>//api/name/firstName</Anchor>
+			<Anchor>//api/name/orderDate</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerResponseData/firstName</TokenIdentifier>
-			<Abstract type="html">Customer First Name</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYLevelTwoData/orderDate</TokenIdentifier>
+			<Abstract type="html">Date that the order was placed</Abstract>
+			<DeclaredIn>WPYLevelTwoData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *firstName</Declaration>
+			<Declaration>@property (nonatomic, strong) NSDate *orderDate</Declaration>
 			
 			
-			<Anchor>//api/name/firstName</Anchor>
+			<Anchor>//api/name/orderDate</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYCustomerResponseData/firstName</TokenIdentifier>
-			<Abstract type="html">Customer First Name</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYLevelTwoData/orderDate</TokenIdentifier>
+			<Abstract type="html">Date that the order was placed</Abstract>
+			<DeclaredIn>WPYLevelTwoData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *firstName</Declaration>
+			<Declaration>@property (nonatomic, strong) NSDate *orderDate</Declaration>
 			
 			
-			<Anchor>//api/name/firstName</Anchor>
+			<Anchor>//api/name/orderDate</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerResponseData/setLastName:</TokenIdentifier>
-			<Abstract type="html">Customer Last Name</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYLevelTwoData/setDutyAmount:</TokenIdentifier>
+			<Abstract type="html">Amount of duty to be charged with the order</Abstract>
+			<DeclaredIn>WPYLevelTwoData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *lastName</Declaration>
+			<Declaration>@property (nonatomic, strong) NSDecimalNumber *dutyAmount</Declaration>
 			
 			
-			<Anchor>//api/name/lastName</Anchor>
+			<Anchor>//api/name/dutyAmount</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerResponseData/lastName</TokenIdentifier>
-			<Abstract type="html">Customer Last Name</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYLevelTwoData/dutyAmount</TokenIdentifier>
+			<Abstract type="html">Amount of duty to be charged with the order</Abstract>
+			<DeclaredIn>WPYLevelTwoData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *lastName</Declaration>
+			<Declaration>@property (nonatomic, strong) NSDecimalNumber *dutyAmount</Declaration>
 			
 			
-			<Anchor>//api/name/lastName</Anchor>
+			<Anchor>//api/name/dutyAmount</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYCustomerResponseData/lastName</TokenIdentifier>
-			<Abstract type="html">Customer Last Name</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYLevelTwoData/dutyAmount</TokenIdentifier>
+			<Abstract type="html">Amount of duty to be charged with the order</Abstract>
+			<DeclaredIn>WPYLevelTwoData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *lastName</Declaration>
+			<Declaration>@property (nonatomic, strong) NSDecimalNumber *dutyAmount</Declaration>
 			
 			
-			<Anchor>//api/name/lastName</Anchor>
+			<Anchor>//api/name/dutyAmount</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerResponseData/setAddress:</TokenIdentifier>
-			<Abstract type="html">An object representing the customer address information</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYLevelTwoData/setFreightAmount:</TokenIdentifier>
+			<Abstract type="html">The cost of freight associated with the order</Abstract>
+			<DeclaredIn>WPYLevelTwoData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) WPYAddressInfo *address</Declaration>
+			<Declaration>@property (nonatomic, strong) NSDecimalNumber *freightAmount</Declaration>
 			
 			
-			<Anchor>//api/name/address</Anchor>
+			<Anchor>//api/name/freightAmount</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerResponseData/address</TokenIdentifier>
-			<Abstract type="html">An object representing the customer address information</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYLevelTwoData/freightAmount</TokenIdentifier>
+			<Abstract type="html">The cost of freight associated with the order</Abstract>
+			<DeclaredIn>WPYLevelTwoData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) WPYAddressInfo *address</Declaration>
+			<Declaration>@property (nonatomic, strong) NSDecimalNumber *freightAmount</Declaration>
 			
 			
-			<Anchor>//api/name/address</Anchor>
+			<Anchor>//api/name/freightAmount</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYCustomerResponseData/address</TokenIdentifier>
-			<Abstract type="html">An object representing the customer address information</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYLevelTwoData/freightAmount</TokenIdentifier>
+			<Abstract type="html">The cost of freight associated with the order</Abstract>
+			<DeclaredIn>WPYLevelTwoData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) WPYAddressInfo *address</Declaration>
+			<Declaration>@property (nonatomic, strong) NSDecimalNumber *freightAmount</Declaration>
 			
 			
-			<Anchor>//api/name/address</Anchor>
+			<Anchor>//api/name/freightAmount</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerResponseData/setEmail:</TokenIdentifier>
-			<Abstract type="html">Customer email address</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYLevelTwoData/setRetailLaneNumber:</TokenIdentifier>
+			<Abstract type="html">The retail lane or register associated with the transaction</Abstract>
+			<DeclaredIn>WPYLevelTwoData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *email</Declaration>
+			<Declaration>@property (nonatomic, strong) NSNumber *retailLaneNumber</Declaration>
 			
 			
-			<Anchor>//api/name/email</Anchor>
+			<Anchor>//api/name/retailLaneNumber</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerResponseData/email</TokenIdentifier>
-			<Abstract type="html">Customer email address</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYLevelTwoData/retailLaneNumber</TokenIdentifier>
+			<Abstract type="html">The retail lane or register associated with the transaction</Abstract>
+			<DeclaredIn>WPYLevelTwoData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *email</Declaration>
+			<Declaration>@property (nonatomic, strong) NSNumber *retailLaneNumber</Declaration>
 			
 			
-			<Anchor>//api/name/email</Anchor>
+			<Anchor>//api/name/retailLaneNumber</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYCustomerResponseData/email</TokenIdentifier>
-			<Abstract type="html">Customer email address</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYLevelTwoData/retailLaneNumber</TokenIdentifier>
+			<Abstract type="html">The retail lane or register associated with the transaction</Abstract>
+			<DeclaredIn>WPYLevelTwoData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *email</Declaration>
+			<Declaration>@property (nonatomic, strong) NSNumber *retailLaneNumber</Declaration>
 			
 			
-			<Anchor>//api/name/email</Anchor>
+			<Anchor>//api/name/retailLaneNumber</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerResponseData/setSendEmailReceipts:</TokenIdentifier>
-			<Abstract type="html">Indicator on whether to email receipts to the customer</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYLevelTwoData/setTaxAmount:</TokenIdentifier>
+			<Abstract type="html">The amount of tax charged on the order</Abstract>
+			<DeclaredIn>WPYLevelTwoData.h</DeclaredIn>
 			
-			<Declaration>@property BOOL sendEmailReceipts</Declaration>
+			<Declaration>@property (nonatomic, strong) NSDecimalNumber *taxAmount</Declaration>
 			
 			
-			<Anchor>//api/name/sendEmailReceipts</Anchor>
+			<Anchor>//api/name/taxAmount</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerResponseData/sendEmailReceipts</TokenIdentifier>
-			<Abstract type="html">Indicator on whether to email receipts to the customer</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYLevelTwoData/taxAmount</TokenIdentifier>
+			<Abstract type="html">The amount of tax charged on the order</Abstract>
+			<DeclaredIn>WPYLevelTwoData.h</DeclaredIn>
 			
-			<Declaration>@property BOOL sendEmailReceipts</Declaration>
+			<Declaration>@property (nonatomic, strong) NSDecimalNumber *taxAmount</Declaration>
 			
 			
-			<Anchor>//api/name/sendEmailReceipts</Anchor>
+			<Anchor>//api/name/taxAmount</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYCustomerResponseData/sendEmailReceipts</TokenIdentifier>
-			<Abstract type="html">Indicator on whether to email receipts to the customer</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYLevelTwoData/taxAmount</TokenIdentifier>
+			<Abstract type="html">The amount of tax charged on the order</Abstract>
+			<DeclaredIn>WPYLevelTwoData.h</DeclaredIn>
 			
-			<Declaration>@property BOOL sendEmailReceipts</Declaration>
+			<Declaration>@property (nonatomic, strong) NSDecimalNumber *taxAmount</Declaration>
 			
 			
-			<Anchor>//api/name/sendEmailReceipts</Anchor>
+			<Anchor>//api/name/taxAmount</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerResponseData/setPhoneNumber:</TokenIdentifier>
-			<Abstract type="html">Phone number associated with customer</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYLevelTwoData/setStatus:</TokenIdentifier>
+			<Abstract type="html">Tax Status of the order</Abstract>
+			<DeclaredIn>WPYLevelTwoData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *phoneNumber</Declaration>
+			<Declaration>@property (nonatomic, strong) NSNumber *status</Declaration>
 			
 			
-			<Anchor>//api/name/phoneNumber</Anchor>
+			<Anchor>//api/name/status</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerResponseData/phoneNumber</TokenIdentifier>
-			<Abstract type="html">Phone number associated with customer</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYLevelTwoData/status</TokenIdentifier>
+			<Abstract type="html">Tax Status of the order</Abstract>
+			<DeclaredIn>WPYLevelTwoData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *phoneNumber</Declaration>
+			<Declaration>@property (nonatomic, strong) NSNumber *status</Declaration>
 			
 			
-			<Anchor>//api/name/phoneNumber</Anchor>
+			<Anchor>//api/name/status</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYCustomerResponseData/phoneNumber</TokenIdentifier>
-			<Abstract type="html">Phone number associated with customer</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYLevelTwoData/status</TokenIdentifier>
+			<Abstract type="html">Tax Status of the order</Abstract>
+			<DeclaredIn>WPYLevelTwoData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *phoneNumber</Declaration>
+			<Declaration>@property (nonatomic, strong) NSNumber *status</Declaration>
 			
 			
-			<Anchor>//api/name/phoneNumber</Anchor>
+			<Anchor>//api/name/status</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerResponseData/setCompany:</TokenIdentifier>
-			<Abstract type="html">Name of the company the customer works for</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYLevelTwoData/setPurchaseOrder:</TokenIdentifier>
+			<Abstract type="html">THe purchase order number associated with the order</Abstract>
+			<DeclaredIn>WPYLevelTwoData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *company</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *purchaseOrder</Declaration>
 			
 			
-			<Anchor>//api/name/company</Anchor>
+			<Anchor>//api/name/purchaseOrder</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerResponseData/company</TokenIdentifier>
-			<Abstract type="html">Name of the company the customer works for</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYLevelTwoData/purchaseOrder</TokenIdentifier>
+			<Abstract type="html">THe purchase order number associated with the order</Abstract>
+			<DeclaredIn>WPYLevelTwoData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *company</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *purchaseOrder</Declaration>
 			
 			
-			<Anchor>//api/name/company</Anchor>
+			<Anchor>//api/name/purchaseOrder</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYCustomerResponseData/company</TokenIdentifier>
-			<Abstract type="html">Name of the company the customer works for</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYLevelTwoData/purchaseOrder</TokenIdentifier>
+			<Abstract type="html">THe purchase order number associated with the order</Abstract>
+			<DeclaredIn>WPYLevelTwoData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *company</Declaration>
-			
-			
-			<Anchor>//api/name/company</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerResponseData/setNotes:</TokenIdentifier>
-			<Abstract type="html">Notes associated with the customer</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *notes</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *purchaseOrder</Declaration>
 			
 			
-			<Anchor>//api/name/notes</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerResponseData/notes</TokenIdentifier>
-			<Abstract type="html">Notes associated with the customer</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *notes</Declaration>
-			
-			
-			<Anchor>//api/name/notes</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYCustomerResponseData/notes</TokenIdentifier>
-			<Abstract type="html">Notes associated with the customer</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *notes</Declaration>
-			
-			
-			<Anchor>//api/name/notes</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerResponseData/setUserDefinedFields:</TokenIdentifier>
-			<Abstract type="html">A dictionary of user defined key/value pairs of custom data provided about the customer</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSDictionary *userDefinedFields</Declaration>
-			
-			
-			<Anchor>//api/name/userDefinedFields</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerResponseData/userDefinedFields</TokenIdentifier>
-			<Abstract type="html">A dictionary of user defined key/value pairs of custom data provided about the customer</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSDictionary *userDefinedFields</Declaration>
-			
-			
-			<Anchor>//api/name/userDefinedFields</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYCustomerResponseData/userDefinedFields</TokenIdentifier>
-			<Abstract type="html">A dictionary of user defined key/value pairs of custom data provided about the customer</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSDictionary *userDefinedFields</Declaration>
-			
-			
-			<Anchor>//api/name/userDefinedFields</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerResponseData/setPrimaryPaymentMethodId:</TokenIdentifier>
-			<Abstract type="html">The ID of the primary payment method associated with the customer, if any</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *primaryPaymentMethodId</Declaration>
-			
-			
-			<Anchor>//api/name/primaryPaymentMethodId</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerResponseData/primaryPaymentMethodId</TokenIdentifier>
-			<Abstract type="html">The ID of the primary payment method associated with the customer, if any</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *primaryPaymentMethodId</Declaration>
-			
-			
-			<Anchor>//api/name/primaryPaymentMethodId</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYCustomerResponseData/primaryPaymentMethodId</TokenIdentifier>
-			<Abstract type="html">The ID of the primary payment method associated with the customer, if any</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *primaryPaymentMethodId</Declaration>
-			
-			
-			<Anchor>//api/name/primaryPaymentMethodId</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerResponseData/setPaymentMethods:</TokenIdentifier>
-			<Abstract type="html">A list of payment methods supported by the customer</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSArray&lt;WPYPaymentMethod*&gt; *paymentMethods</Declaration>
-			
-			
-			<Anchor>//api/name/paymentMethods</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerResponseData/paymentMethods</TokenIdentifier>
-			<Abstract type="html">A list of payment methods supported by the customer</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSArray&lt;WPYPaymentMethod*&gt; *paymentMethods</Declaration>
-			
-			
-			<Anchor>//api/name/paymentMethods</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WPYCustomerResponseData/paymentMethods</TokenIdentifier>
-			<Abstract type="html">A list of payment methods supported by the customer</Abstract>
-			<DeclaredIn>WPYCustomerResponseData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSArray&lt;WPYPaymentMethod*&gt; *paymentMethods</Declaration>
-			
-			
-			<Anchor>//api/name/paymentMethods</Anchor>
+			<Anchor>//api/name/purchaseOrder</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/NFCError.html">
+	<File path="Constants/WPYCVMethod.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/NFCError</TokenIdentifier>
-			<Abstract type="html">NFC error types</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYCVMethod</TokenIdentifier>
+			<Abstract type="html">This data indicates the type of cardholder verification that was performed on the transaction.
+The type of CVM that is used to help determine what information will be on the receipt</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
             
 			
 			<NodeRef refid="70"/>
@@ -14,81 +15,61 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/NFCErrorAborted</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodNoCVM</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>NFCErrorAborted</Declaration>
+            <Declaration>WPYCVMethodNoCVM</Declaration>
             
-            <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
             
             <NodeRef refid="70"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/NFCErrorTimeOut</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodPlaintextPIN</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>NFCErrorTimeOut</Declaration>
+            <Declaration>WPYCVMethodPlaintextPIN</Declaration>
             
-            <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
             
             <NodeRef refid="70"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/NFCErrorCardInserted</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodOnlinePIN</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>NFCErrorCardInserted</Declaration>
+            <Declaration>WPYCVMethodOnlinePIN</Declaration>
             
-            <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
             
             <NodeRef refid="70"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/NFCErrorCardSwiped</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodMobileConfirmCode</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>NFCErrorCardSwiped</Declaration>
+            <Declaration>WPYCVMethodMobileConfirmCode</Declaration>
             
-            <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
             
             <NodeRef refid="70"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/NFCErrorUseIccOrMsr</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodOfflineEncipheredPIN</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>NFCErrorUseIccOrMsr</Declaration>
+            <Declaration>WPYCVMethodOfflineEncipheredPIN</Declaration>
             
-            <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
             
             <NodeRef refid="70"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/NFCErrorUseIccMsrOrOtherCard</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodSignature</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>NFCErrorUseIccMsrOrOtherCard</Declaration>
+            <Declaration>WPYCVMethodSignature</Declaration>
             
-            <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
-            
-            <NodeRef refid="70"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/NFCErrorUseIcc</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>NFCErrorUseIcc</Declaration>
-            
-            <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
-            
-            <NodeRef refid="70"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/NFCErrorHardwareError</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>NFCErrorHardwareError</Declaration>
-            
-            <DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
             
             <NodeRef refid="70"/>
         </Token>
