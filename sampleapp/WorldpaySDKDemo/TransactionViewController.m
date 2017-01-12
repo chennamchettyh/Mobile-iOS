@@ -253,7 +253,11 @@
         return;
     }
     
-    if(!(self.amountTextField.text.doubleValue > 0))
+    NSMutableCharacterSet* notDigits = [[[NSCharacterSet decimalDigitCharacterSet] invertedSet] mutableCopy];
+    
+    [notDigits removeCharactersInString:@"."];
+    
+    if(!([self.amountTextField.text rangeOfCharacterFromSet:notDigits].location == NSNotFound))
     {
         UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Please enter a numeric amount greater than 0." preferredStyle:UIAlertControllerStyleAlert];
         
@@ -262,7 +266,7 @@
         return;
     }
     
-    if(self.extendedInfoView.gratuityAmount.text.length > 0 && !(self.extendedInfoView.gratuityAmount.text.doubleValue > 0))
+    if(self.extendedInfoView.gratuityAmount.text.length > 0 && !([self.extendedInfoView.gratuityAmount.text rangeOfCharacterFromSet:notDigits].location == NSNotFound))
     {
         UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Please enter a numeric gratuity amount greater than 0." preferredStyle:UIAlertControllerStyleAlert];
         

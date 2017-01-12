@@ -18,7 +18,6 @@
 
 typedef void (^PaymentCompletion)(WPYPaymentResponse *, NSError *);
 
-
 /**
  * This is an indication of the type of transactions that a specific card application can support
  * On devices where the terminal is capable of handling application support, it will automatically
@@ -277,8 +276,11 @@ typedef NS_ENUM(NSInteger, WPYEMVTransactionType)
 
 /**
  * Cancels the current transaction
+ *
+ * @param customMessage This will be displayed instead of default prompt (but message will be lost if request is pending)
+ *
  */
-- (void) cancelTransaction;
+- (void) cancelTransaction:(NSString *)customMessage;
 
 /**
  * Stat a transaction by requesting that the merchant manually enter the card data into the terminal.  This will only handle manual card events.  Any attempt
@@ -376,6 +378,16 @@ typedef NS_ENUM(NSInteger, WPYEMVTransactionType)
  * @return The software version of the terminal's OS
  */
 - (NSString *)getFirmwareVersion;
+
+/**
+ * This function returns an account type of 'Credit' 'Debit' or 'CreditOrDebit' based on the application selected
+ *
+ * @param aid The AID that has been selected by the card holder / terminal
+ *
+ * @return An enumeration indacting what type of transactions can be run against that AID.
+ */
++ (WPYCardAccountType)accountTypeForAID:(NSString *)aid;
+
 @end
 
 /**
@@ -539,4 +551,5 @@ typedef NS_ENUM(NSInteger, WPYEMVTransactionType)
  */
 
 - (void)swiperDidReceiveKeypadInput:(WPYSwiper *)swiper;
+
 @end
