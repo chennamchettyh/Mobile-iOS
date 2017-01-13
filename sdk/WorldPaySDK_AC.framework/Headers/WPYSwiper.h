@@ -51,8 +51,6 @@ typedef NS_ENUM(NSUInteger, WPYCardEvent)
     WPYCardEventRemoved,
     /// Card inserted backwards or a non-chip card was inserted
     WPYCardEventNonICCInserted,
-    /// Card inserted with empty Aid list
-    WPYCardEventEmptyAidList,
     /// Partial or no track data received
     WPYCardEventBadSwipe,
     /// self-explanatory
