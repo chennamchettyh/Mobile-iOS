@@ -992,12 +992,12 @@
     NSLog(@"%@: %@", @"Manual entry failed with error", error);
     
     // Delay necessary to ensure manual entry controller is off screen
-    [self performSelector:@selector(manualErrorAlert) withObject:nil afterDelay:.1];
+    [self performSelector:@selector(manualErrorAlert:) withObject:error.localizedDescription afterDelay:.1];
 }
 
-- (void) manualErrorAlert
+- (void) manualErrorAlert: (NSString *) errorMessage
 {
-    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Manual entry failed with an error" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:[NSString stringWithFormat:@"Manual entry failed with an error%@", (errorMessage.length > 0 ? [NSString stringWithFormat:@": %@", errorMessage] : @"")] preferredStyle:UIAlertControllerStyleAlert];
     
     [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
     {
