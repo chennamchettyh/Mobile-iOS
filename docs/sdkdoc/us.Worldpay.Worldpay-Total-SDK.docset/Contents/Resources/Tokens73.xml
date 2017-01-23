@@ -56,16 +56,6 @@ reader</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardEventEmptyAidList</TokenIdentifier>
-            <Abstract type="html">Card inserted with empty Aid list</Abstract>
-            <Declaration>WPYCardEventEmptyAidList</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="73"/>
-        </Token>
-        
-        <Token>
             <TokenIdentifier>//apple_ref/c/econst/WPYCardEventBadSwipe</TokenIdentifier>
             <Abstract type="html">Partial or no track data received</Abstract>
             <Declaration>WPYCardEventBadSwipe</Declaration>

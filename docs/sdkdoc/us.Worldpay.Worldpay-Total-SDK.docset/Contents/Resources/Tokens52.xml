@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intf/WPYDebugDelegate</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
+			<Abstract type="html">Delegate protocol for use with debugging request and response logs</Abstract>
 			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
             
 			
