@@ -40,7 +40,6 @@
     authTokenRequest.terminalId = @"445";
     authTokenRequest.terminalVendor = @"4554";
     
-    [WorldpayAPI instance].enableTestHost = YES;
     [WorldpayAPI instance].enableTestHostDebug = YES;
     [WorldpayAPI instance].debugDelegate = self;
     
