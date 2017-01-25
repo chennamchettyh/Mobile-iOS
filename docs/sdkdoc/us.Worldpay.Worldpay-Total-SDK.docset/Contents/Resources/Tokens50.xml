@@ -17,7 +17,7 @@
 			<Abstract type="html">Tells the WorldpayAPI object to send messages to the test host configured at compile time</Abstract>
 			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) BOOL enableTestHost</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL enableTestHost</Declaration>
 			
 			
 			<Anchor>//api/name/enableTestHost</Anchor>
@@ -29,7 +29,7 @@
 			<Abstract type="html">Tells the WorldpayAPI object to send messages to the test host configured at compile time</Abstract>
 			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) BOOL enableTestHost</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL enableTestHost</Declaration>
 			
 			
 			<Anchor>//api/name/enableTestHost</Anchor>
@@ -41,7 +41,7 @@
 			<Abstract type="html">Tells the WorldpayAPI object to send messages to the test host configured at compile time</Abstract>
 			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) BOOL enableTestHost</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL enableTestHost</Declaration>
 			
 			
 			<Anchor>//api/name/enableTestHost</Anchor>

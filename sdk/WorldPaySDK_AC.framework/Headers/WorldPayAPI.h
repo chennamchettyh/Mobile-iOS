@@ -58,7 +58,7 @@ typedef NS_ENUM(NSInteger, WorldpaySDKError)
 /**
  * Tells the WorldpayAPI object to send messages to the test host configured at compile time
  */
-@property (nonatomic) BOOL enableTestHost;
+@property (nonatomic, readonly) BOOL enableTestHost;
 
 /**
  * When enabled, and TestHost is enabled, the debugDelegate will be sent HTTP request and response bodies for logging purposes.
@@ -306,7 +306,7 @@ extern NSString *const WorldpayServerErrorDomain;
 @end
 
 /**
- * To Be Documented
+ * Delegate protocol for use with debugging request and response logs
 */
 @protocol WPYDebugDelegate <NSObject>
 
