@@ -41,6 +41,7 @@
                 <outletCollection property="gratuityConstraints" destination="4K8-uo-Nud" id="JIl-na-SqF"/>
                 <outletCollection property="gratuityConstraints" destination="Ijr-ZL-u2t" id="QQA-TQ-XnT"/>
                 <outletCollection property="gratuityConstraints" destination="k8P-aH-AbJ" id="MdJ-wK-YSG"/>
+                <outletCollection property="gratuityConstraints" destination="7Od-xd-qVF" id="dfj-0H-jfe"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -104,6 +105,9 @@
                 </textField>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qvn-pS-Zkp">
                     <rect key="frame" x="8" y="129" width="568" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="7Od-xd-qVF"/>
+                    </constraints>
                     <segments>
                         <segment title="No Gratuity"/>
                         <segment title="Enter On Terminal"/>
@@ -144,16 +148,15 @@
                 <constraint firstItem="gRT-YM-aRc" firstAttribute="leading" secondItem="9ie-GD-7Yq" secondAttribute="leading" id="OWO-cu-A3v"/>
                 <constraint firstItem="uo4-me-Jcn" firstAttribute="trailing" secondItem="gRT-YM-aRc" secondAttribute="trailing" id="P7B-a1-zh8"/>
                 <constraint firstItem="uo4-me-Jcn" firstAttribute="top" secondItem="gRT-YM-aRc" secondAttribute="bottom" id="Qn8-3c-IYg"/>
-                <constraint firstItem="qvn-pS-Zkp" firstAttribute="bottom" secondItem="uo4-me-Jcn" secondAttribute="bottom" id="RNV-Ez-PMx"/>
                 <constraint firstItem="ekD-EF-cxI" firstAttribute="leading" secondItem="Qfd-PH-lfD" secondAttribute="leading" id="S95-Xm-K9O"/>
                 <constraint firstItem="uo4-me-Jcn" firstAttribute="leading" secondItem="gRT-YM-aRc" secondAttribute="leading" id="UUP-iT-Cdl"/>
+                <constraint firstItem="qvn-pS-Zkp" firstAttribute="bottom" secondItem="uo4-me-Jcn" secondAttribute="bottom" id="Z4R-Q6-IGo"/>
                 <constraint firstItem="mDa-wd-qTZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="bcc-Dm-ChE"/>
                 <constraint firstItem="n1a-hp-Dpe" firstAttribute="top" secondItem="uo4-me-Jcn" secondAttribute="bottom" constant="8" id="bgc-2Q-ZEy"/>
                 <constraint firstItem="9ie-GD-7Yq" firstAttribute="leading" secondItem="ekD-EF-cxI" secondAttribute="leading" id="evK-Ne-a4J"/>
                 <constraint firstItem="gRT-YM-aRc" firstAttribute="top" secondItem="9ie-GD-7Yq" secondAttribute="bottom" constant="8" id="fcp-2i-y8W"/>
                 <constraint firstItem="qNz-TX-bwh" firstAttribute="leading" secondItem="LJu-i5-J0X" secondAttribute="leading" id="fjC-Ya-Wfb"/>
                 <constraint firstItem="4dk-vn-npB" firstAttribute="top" secondItem="qNz-TX-bwh" secondAttribute="bottom" id="gae-5S-pv2"/>
-                <constraint firstItem="qvn-pS-Zkp" firstAttribute="top" secondItem="uo4-me-Jcn" secondAttribute="top" id="guX-kV-nQl"/>
                 <constraint firstItem="Qfd-PH-lfD" firstAttribute="top" secondItem="mDa-wd-qTZ" secondAttribute="bottom" id="h4K-ez-84q"/>
                 <constraint firstItem="LJu-i5-J0X" firstAttribute="trailing" secondItem="n1a-hp-Dpe" secondAttribute="trailing" id="jbH-hX-umD"/>
                 <constraint firstItem="ekD-EF-cxI" firstAttribute="trailing" secondItem="Qfd-PH-lfD" secondAttribute="trailing" id="n2U-jG-dYz"/>
