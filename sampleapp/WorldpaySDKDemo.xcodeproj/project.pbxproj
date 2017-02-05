@@ -583,14 +583,10 @@
 				TargetAttributes = {
 					811A0D5B1BB2F20100B73C09 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = L9BL2S98Z6;
 					};
 					811A0D771BB2F20100B73C09 = {
 						CreatedOnToolsVersion = 6.4;
 						TestTargetID = 814EDBF41C69636E0010877C;
-					};
-					814EDBF41C69636E0010877C = {
-						DevelopmentTeam = L9BL2S98Z6;
 					};
 				};
 			};

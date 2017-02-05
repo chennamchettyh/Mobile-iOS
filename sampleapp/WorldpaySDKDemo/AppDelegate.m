@@ -21,12 +21,11 @@
 #define TABSIZE 10
 #define TEXTFIELDSIZE 14
 
-@interface AppDelegate () <UISplitViewControllerDelegate, WPYDebugDelegate>
+@interface AppDelegate () <UISplitViewControllerDelegate>
 
 @end
 
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -34,14 +33,11 @@
     
     WPYAuthTokenRequest *authTokenRequest = [[WPYAuthTokenRequest alloc] init];
     
-    authTokenRequest.secureNetId = @"1179577";
-    authTokenRequest.secureNetKey = @"WzJMwJ2cec0Y";
+    authTokenRequest.secureNetId = @""; // SET ME
+    authTokenRequest.secureNetKey = @""; // SET ME
     authTokenRequest.applicationId = @"applicationId";
     authTokenRequest.terminalId = @"445";
     authTokenRequest.terminalVendor = @"4554";
-    
-    [WorldpayAPI instance].enableTestHostDebug = YES;
-    [WorldpayAPI instance].debugDelegate = self;
     
     [[WorldpayAPI instance] generateAuthToken:authTokenRequest withCompletion:^(WPYAuthTokenResponse *result, NSError *error)
     {
@@ -149,16 +145,6 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
-- (void)didReceiveResponse:(NSString *)response
-{
-    NSLog(@"Response: %@", response);
-}
-
-- (void)willSendRequest:(NSString *)request
-{
-    NSLog(@"Request: %@", request);
 }
 
 @end
