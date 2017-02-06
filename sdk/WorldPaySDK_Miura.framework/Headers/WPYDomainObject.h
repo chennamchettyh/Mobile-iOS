@@ -9,6 +9,22 @@
 #import <objc/runtime.h>
 
 /**
+ * indicates how the method should behave if the Customer ID already exists. Default is 0.
+ *
+ * 0 - If Customer ID exists then return an Error.
+ * 1 - If Customer ID exists then do not add account but continue with transaction.
+ */
+typedef NS_ENUM(NSInteger, WPYCustomerDuplicateCheckType)
+{
+    /// Unset
+    WPYCustomerDuplicateCheckTypeUnset = -1,
+    /// If Customer ID exists then return an Error.
+    WPYCustomerDuplicateCheckTypeError = 0,
+    /// If Customer ID exists then do not add account but continue with transaction.
+    WPYCustomerDuplicateCheckTypeContinue = 1
+};
+
+/**
  * Indicates how (and whether) the method should check for duplicate accounts. Defaults to 1.
  *
  * 0 - Does not check for Duplicate Card Number for specified Customer ID
