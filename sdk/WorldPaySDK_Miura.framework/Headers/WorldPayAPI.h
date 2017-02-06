@@ -49,6 +49,21 @@ typedef NS_ENUM(NSInteger, WorldpaySDKError)
     WorldpaySDKErrorTerminalConnectionLost = 100003
 };
 
+/**
+ * Enum for environments
+ */
+typedef NS_ENUM(NSInteger, WPYEnvironment)
+{
+    /// self-explanatory
+    WPYEnvironmentDemo = 0,
+    /// self-explanatory
+    WPYEnvironmentProd = 1,
+    /// self-explanatory, remove these when building release version and generating docs
+    WPYEnvironmentQA = 67,
+    /// self-explanatory, remove these when building release version and generating docs
+    WPYEnvironmentDev = 93
+};
+
 
 /**
  * This is a singleton object that contains the base of the Worldpay Total calling methods.
@@ -111,9 +126,10 @@ extern NSString *const WorldpayServerErrorDomain;
  * can be removed by calling: - clearSDKKeychain
  *
  * @param authTokenRequest Auth Token Request object containing user credentials
+ * @param environment enumerated value for environment (e.g. demo, prod)
  * @param completion Completion handler used to notify the caller of any server results or errors
  */
-- (void)generateAuthToken:(WPYAuthTokenRequest *)authTokenRequest withCompletion:(void(^)(WPYAuthTokenResponse *, NSError *))completion;
+- (void)generateAuthToken:(WPYAuthTokenRequest *)authTokenRequest environment: (WPYEnvironment)environment withCompletion:(void(^)(WPYAuthTokenResponse *, NSError *))completion;
 
 /**
  * Clears the keychain data out of the application. Completely resets the auth token information

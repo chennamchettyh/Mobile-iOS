@@ -43,7 +43,7 @@
     [WorldpayAPI instance].enableTestHostDebug = YES;
     [WorldpayAPI instance].debugDelegate = self;
     
-    [[WorldpayAPI instance] generateAuthToken:authTokenRequest withCompletion:^(WPYAuthTokenResponse *result, NSError *error)
+    [[WorldpayAPI instance] generateAuthToken:authTokenRequest environment: WPYEnvironmentQA withCompletion:^(WPYAuthTokenResponse *result, NSError *error)
     {
         if(!result || !result.success || error)
         {
