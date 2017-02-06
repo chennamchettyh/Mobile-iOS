@@ -686,6 +686,19 @@
 - (void)didDisconnectSwiper:(WPYSwiper *)swiper
 {
     NSLog(@"%@", @"Swiper disconnected");
+    
+    if(self.transactionInProgress)
+    {
+        self.transactionInProgress = NO;
+        
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Swiper device disconnected, transaction canceled." preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self cleanAlertUserAction:YES];
+        }]];
+        
+        [self displayAlert:alert];
+    }
 }
 
 - (void)didFailToConnectSwiper:(WPYSwiper *)swiper
