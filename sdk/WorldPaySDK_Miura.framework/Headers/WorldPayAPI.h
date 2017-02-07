@@ -123,13 +123,21 @@ extern NSString *const WorldpayServerErrorDomain;
 /**
  * Authenticates user credentials against the World Pay server. The token
  * will automatically be saved in the application keychain by the SDK and
- * can be removed by calling: - clearSDKKeychain
+ * can be removed by calling: - clearSDKKeychain.
  *
  * @param authTokenRequest Auth Token Request object containing user credentials
- * @param environment enumerated value for environment (e.g. demo, prod)
  * @param completion Completion handler used to notify the caller of any server results or errors
  */
-- (void)generateAuthToken:(WPYAuthTokenRequest *)authTokenRequest environment: (WPYEnvironment)environment withCompletion:(void(^)(WPYAuthTokenResponse *, NSError *))completion;
+- (void)generateAuthToken:(WPYAuthTokenRequest *)authTokenRequest withCompletion:(void(^)(WPYAuthTokenResponse *, NSError *))completion;
+
+/**
+ * This will choose the environment to be used to run API calls in. It can only be called once
+ * per application run, subsequent calls attempting to change it will be ignored. This method must be called
+ * before running any API calls and ideally should be called in AppDelegate.
+ *
+ * @param environment enumerated value for environment (e.g. demo, prod)
+ */
+- (void)registerEnvironment: (WPYEnvironment)environment;
 
 /**
  * Clears the keychain data out of the application. Completely resets the auth token information

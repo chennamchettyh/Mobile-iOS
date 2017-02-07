@@ -43,7 +43,10 @@
     [WorldpayAPI instance].enableTestHostDebug = YES;
     [WorldpayAPI instance].debugDelegate = self;
     
-    [[WorldpayAPI instance] generateAuthToken:authTokenRequest environment: WPYEnvironmentQA withCompletion:^(WPYAuthTokenResponse *result, NSError *error)
+    // This must be called prior to any API calls being made or the SDK will assert and exit()
+    [[WorldpayAPI instance] registerEnvironment: WPYEnvironmentQA];
+    
+    [[WorldpayAPI instance] generateAuthToken:authTokenRequest withCompletion:^(WPYAuthTokenResponse *result, NSError *error)
     {
         if(!result || !result.success || error)
         {
