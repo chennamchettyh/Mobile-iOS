@@ -56,6 +56,7 @@
 @property (assign, atomic) BOOL transition;
 @property (strong, nonatomic) IBOutletCollection(NSLayoutConstraint) NSArray *addToVaultConstraints;
 @property (assign, atomic) BOOL transactionInProgress;
+@property (strong, nonatomic) WPYPaymentRequest * currRequest;
 
 @end
 
@@ -191,6 +192,7 @@
 
 - (void) stopTransactionProgress
 {
+    self.currRequest = nil;
     self.transactionInProgress = false;
 }
 
@@ -316,6 +318,8 @@
         default:
             request = [WPYPaymentAuthorize new];
     }
+    
+    self.currRequest = request;
     
     WPYEMVTransactionType transactionType = WPYEMVTransactionTypeCashback;
     
@@ -867,12 +871,12 @@
             break;
         case WPYDevicePromptConfirmAmount:
 #ifdef ANYWHERE_NOMAD
-            defaultPrompt = [NSString stringWithFormat:@"Confirm Total: %@", self.amountTextField.text];
+            defaultPrompt = [NSString stringWithFormat:@"Confirm Total: %@", self.currRequest.amount.stringValue];
 #else
         {
             NSNumberFormatter *currencyFormatter = [NSNumberFormatter new];
             currencyFormatter.numberStyle = NSNumberFormatterDecimalStyle;
-            NSNumber *number = [currencyFormatter numberFromString:self.amountTextField.text];
+            NSNumber *number = [currencyFormatter numberFromString:self.currRequest.amount.stringValue];
             currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
             defaultPrompt = [NSString stringWithFormat:@"Confirm Total: \n%@", [currencyFormatter stringFromNumber:number]];
         }

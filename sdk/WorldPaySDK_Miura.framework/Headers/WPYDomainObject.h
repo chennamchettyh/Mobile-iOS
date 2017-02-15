@@ -98,7 +98,7 @@ typedef NS_ENUM(NSInteger, WPYResponseCode)
  * The server returns object ID's as "id", which is a protected word in Objective-C.  This property 
  * contains the id returned by the server for any object returned by the server
  */
-@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, strong) NSString *identifier;
 
 /**
  * The json string used in interacting with the server
