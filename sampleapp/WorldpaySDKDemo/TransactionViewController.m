@@ -1001,7 +1001,7 @@
 
 - (void)manualTenderEntryControllerDidCancelRequest:(WPYManualTenderEntryViewController *)controller
 {
-    NSLog(@"%@", @"Manual entry cancelled");
+    NSLog(@"%@", @"Manual entry canceled");
 }
 
 - (void)manualTenderEntryController:(WPYManualTenderEntryViewController *)controller didFailWithError:(NSError *)error
