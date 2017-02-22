@@ -836,11 +836,6 @@
 
 - (void) swiper:(WPYSwiper *)swiper didRequestDevicePromptText:(WPYDevicePrompt)prompt defaultText:(NSString *) defaultText completion:(void (^)(NSString *))completion
 {
-    if(!self.transactionInProgress)
-    {
-        return;
-    }
-    
     BOOL force = NO;
     
     UIAlertController * alert;
@@ -894,7 +889,16 @@
         case WPYDevicePromptCanceled:
             [self stopTransactionProgress];
             force = YES;
-            defaultPrompt = @"Transaction Canceled\nPlease Remove Card";
+            
+            if([self.swiper cardInserted])
+            {
+                defaultPrompt = @"Transaction Canceled\nPlease Remove Card";
+            }
+            else
+            {
+                defaultPrompt = @"Transaction Canceled";
+            }
+            
             break;
         case WPYDevicePromptRetry:
 #ifdef ANYWHERE_NOMAD
@@ -986,14 +990,14 @@
     
     [alert addAction: action];
     
-    if(force || self.transactionInProgress)
-    {
-        [self displayAlert:alert];
-    }
-
     if(completion != nil)
     {
         completion(defaultPrompt);
+    }
+    
+    if(force || self.transactionInProgress)
+    {
+        [self displayAlert:alert];
     }
 }
 

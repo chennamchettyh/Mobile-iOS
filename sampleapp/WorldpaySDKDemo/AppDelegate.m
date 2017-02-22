@@ -106,12 +106,12 @@
     UINavigationController * settlementNav = [[UINavigationController alloc] initWithRootViewController: settlementViewController];
     settlementNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[settlementNav viewControllers] firstObject]) title] image:[self imageWithImage:[UIImage imageNamed:@"settlement"]] tag:[index current]];
     
-    // 5th tab for Vault
+    // 5th tab for Vault (Placeholder, not implemented yet)
     VaultViewController * vaultViewController = [[VaultViewController alloc] initWithNibName:nil bundle:nil];
     UINavigationController * vaultNav = [[UINavigationController alloc] initWithRootViewController: vaultViewController];
     vaultNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[vaultNav viewControllers] firstObject]) title] image:[self imageWithImage:[UIImage imageNamed:@"vault_icon"]] tag:[index current]];
     
-    tabController.viewControllers = @[homeNav, transactionNav, refundVoidNav, settlementNav, vaultNav];
+    tabController.viewControllers = @[homeNav, transactionNav, refundVoidNav, settlementNav];
     
     return YES;
 }
