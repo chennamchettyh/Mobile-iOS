@@ -367,7 +367,6 @@
         if(self.extendedInfoView.gratuityAmount.text.doubleValue > 0)
         {
             serviceData.gratuityAmount = [NSDecimalNumber decimalNumberWithString:self.extendedInfoView.gratuityAmount.text];
-            request.amount = [request.amount decimalNumberByAdding:serviceData.gratuityAmount];
         }
         
         serviceData.server = self.extendedInfoView.serverName.text;

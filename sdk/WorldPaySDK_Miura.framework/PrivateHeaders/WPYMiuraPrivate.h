@@ -20,6 +20,7 @@
 #import "WPYPaymentMethodRequest.h"
 #import "WPYMiuraPrivate.h"
 
+
 typedef enum : NSUInteger {
     InitialState,
     ApplicationSelectionState,
@@ -30,6 +31,8 @@ typedef enum : NSUInteger {
     PinState,
     FinalState
 } TransactionFlowState;
+
+
 
 @interface WPYMiura () <MiuraDeviceControllerDelegate>
 
@@ -56,10 +59,15 @@ typedef enum : NSUInteger {
 @property (nonatomic) BOOL allowDebit;
 @property (nonatomic) BOOL allowCredit;
 @property (nonatomic) BOOL allowCashback;
+@property (nonatomic) BOOL allowDebitOriginal;
+@property (nonatomic) BOOL allowCreditOriginal;
+@property (nonatomic) BOOL allowCashbackOriginal;
 @property (nonatomic, strong) NSMutableDictionary *manualCardDict;
 @property (nonatomic, weak) MiuraDeviceController * deviceController;
 @property (nonatomic, assign) TransactionFlowState transactionFlowState;
 
 - (void) promptGratuityIfNecessary;
+- (void) promptCashbackIfNecessary;
+- (void) handleCardPaymentEvent;
 
 @end
