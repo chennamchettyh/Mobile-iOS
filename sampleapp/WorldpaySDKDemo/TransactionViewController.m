@@ -396,7 +396,7 @@
         // Swiper transaction started
         [self startTransactionProgress];
         
-        [self.swiper beginEMVTransactionWithRequest:request transactionType:transactionType];
+        [self.swiper beginEMVTransactionWithRequest:request transactionType:transactionType terminalSelectsApplication: false commonDebitMode: USCommonDebitModePreferCommonDebit];
     }
     else if([self.cardPresentSegmented selectedSegmentIndex] == VAULTINDEX)
     {

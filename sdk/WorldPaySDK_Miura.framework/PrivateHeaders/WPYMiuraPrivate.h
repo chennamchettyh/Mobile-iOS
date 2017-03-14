@@ -65,6 +65,8 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) NSMutableDictionary *manualCardDict;
 @property (nonatomic, weak) MiuraDeviceController * deviceController;
 @property (nonatomic, assign) TransactionFlowState transactionFlowState;
+@property (nonatomic, assign) BOOL applicationSelectionRequired;
+@property (nonatomic, strong) NSArray * applications;
 
 - (void) promptGratuityIfNecessary;
 - (void) promptCashbackIfNecessary;
