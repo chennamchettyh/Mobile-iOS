@@ -518,8 +518,9 @@ typedef NS_ENUM(NSInteger, WPYEMVTransactionType)
  *
  * @param swiper A reference to the object making the request
  * @param applications A list of the Application dictionaries for each application in the candidate list
+ * @param accountTypes Indicates if credit, debit, or both are available based on application list
  */
-- (void) swiper:(WPYSwiper *)swiper didRequestSelectEMVApplication:(NSArray *)applications;
+- (void) swiper:(WPYSwiper *)swiper didRequestSelectEMVApplication:(NSArray *)applications accountTypes: (WPYCardAccountType) accountTypes;
 
 /**
  * This delegate method is called when the terminal is not configured to request final transaction amount confirmation from the card holder directly
