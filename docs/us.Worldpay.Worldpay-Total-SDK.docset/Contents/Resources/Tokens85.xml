@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYSwiperBatteryStatus.html">
+	<File path="Constants/WPYPaymentType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYSwiperBatteryStatus</TokenIdentifier>
-			<Abstract type="html">Indication of when the terminal is reporting low battery status</Abstract>
-			<DeclaredIn>WPYSwiper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYPaymentType</TokenIdentifier>
+			<Abstract type="html">The type of payment method associated with this payment type. Typically used with stored payment methods</Abstract>
+			<DeclaredIn>WPYTender.h</DeclaredIn>
             
 			
 			<NodeRef refid="85"/>
@@ -14,21 +14,51 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperBatteryStatusCriticallyLow</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYSwiperBatteryStatusCriticallyLow</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentTypeUnknown</TokenIdentifier>
+            <Abstract type="html">Unknown payment type</Abstract>
+            <Declaration>WPYPaymentTypeUnknown</Declaration>
             
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
+            <DeclaredIn>WPYTender.h</DeclaredIn>
             
             <NodeRef refid="85"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperBatteryStatusLow</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYSwiperBatteryStatusLow</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentTypeCheck</TokenIdentifier>
+            <Abstract type="html">Payment is a check</Abstract>
+            <Declaration>WPYPaymentTypeCheck</Declaration>
             
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
+            <DeclaredIn>WPYTender.h</DeclaredIn>
+            
+            <NodeRef refid="85"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentTypeDebitCard</TokenIdentifier>
+            <Abstract type="html">Payment is a debit card</Abstract>
+            <Declaration>WPYPaymentTypeDebitCard</Declaration>
+            
+            <DeclaredIn>WPYTender.h</DeclaredIn>
+            
+            <NodeRef refid="85"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentTypeCreditCard</TokenIdentifier>
+            <Abstract type="html">Payment is a credit card</Abstract>
+            <Declaration>WPYPaymentTypeCreditCard</Declaration>
+            
+            <DeclaredIn>WPYTender.h</DeclaredIn>
+            
+            <NodeRef refid="85"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentTypeStoredValue</TokenIdentifier>
+            <Abstract type="html">Payment is a prepaid card</Abstract>
+            <Declaration>WPYPaymentTypeStoredValue</Declaration>
+            
+            <DeclaredIn>WPYTender.h</DeclaredIn>
             
             <NodeRef refid="85"/>
         </Token>

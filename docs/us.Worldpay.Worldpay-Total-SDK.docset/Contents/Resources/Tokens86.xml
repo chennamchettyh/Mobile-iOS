@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYSwiperInputType.html">
+	<File path="Constants/WPYResponseCode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYSwiperInputType</TokenIdentifier>
-			<Abstract type="html">Hardware interface used to connect to the terminal.  You can query the WPYSwiper to see if it supports
-bluetooth or audio jack capabilities.  For instance, the Anywhere Commerce version of the SDK supports
-both types of connections.</Abstract>
-			<DeclaredIn>WPYSwiper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYResponseCode</TokenIdentifier>
+			<Abstract type="html">Gateway Response code indicating whether the request was approved, declined, or resulted in a server error.
+The response code is set on all parent response objects being returned from the gateway</Abstract>
+			<DeclaredIn>WPYDomainObject.h</DeclaredIn>
             
 			
 			<NodeRef refid="86"/>
@@ -16,31 +15,51 @@ both types of connections.</Abstract>
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperInputTypeUnknown</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYSwiperInputTypeUnknown</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYResponseCodeApproved</TokenIdentifier>
+            <Abstract type="html">Self-explanatory</Abstract>
+            <Declaration>WPYResponseCodeApproved</Declaration>
             
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="86"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperInputTypeAudio</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYSwiperInputTypeAudio</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
+            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
             
             <NodeRef refid="86"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperInputTypeBluetooth</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYSwiperInputTypeBluetooth</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYResponseCodeDeclined</TokenIdentifier>
+            <Abstract type="html">Self-explanatory</Abstract>
+            <Declaration>WPYResponseCodeDeclined</Declaration>
             
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
+            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
+            
+            <NodeRef refid="86"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYResponseCodeError</TokenIdentifier>
+            <Abstract type="html">Self-explanatory</Abstract>
+            <Declaration>WPYResponseCodeError</Declaration>
+            
+            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
+            
+            <NodeRef refid="86"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYResponseCodeTransactionTerminated</TokenIdentifier>
+            <Abstract type="html">Self-explanatory</Abstract>
+            <Declaration>WPYResponseCodeTransactionTerminated</Declaration>
+            
+            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
+            
+            <NodeRef refid="86"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYResponseCodeReversal</TokenIdentifier>
+            <Abstract type="html">Self-explanatory</Abstract>
+            <Declaration>WPYResponseCodeReversal</Declaration>
+            
+            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
             
             <NodeRef refid="86"/>
         </Token>

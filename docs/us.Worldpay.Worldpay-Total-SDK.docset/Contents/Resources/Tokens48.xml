@@ -84,6 +84,150 @@
             <NodeRef refid="48"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTransactionSearch/setTransactionId:</TokenIdentifier>
+			<Abstract type="html">Self-explanatory</Abstract>
+			<DeclaredIn>WPYTransactionSearch.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *transactionId</Declaration>
+			
+			
+			<Anchor>//api/name/transactionId</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTransactionSearch/transactionId</TokenIdentifier>
+			<Abstract type="html">Self-explanatory</Abstract>
+			<DeclaredIn>WPYTransactionSearch.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *transactionId</Declaration>
+			
+			
+			<Anchor>//api/name/transactionId</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYTransactionSearch/transactionId</TokenIdentifier>
+			<Abstract type="html">Self-explanatory</Abstract>
+			<DeclaredIn>WPYTransactionSearch.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *transactionId</Declaration>
+			
+			
+			<Anchor>//api/name/transactionId</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTransactionSearch/setOrderId:</TokenIdentifier>
+			<Abstract type="html">Self-explanatory</Abstract>
+			<DeclaredIn>WPYTransactionSearch.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *orderId</Declaration>
+			
+			
+			<Anchor>//api/name/orderId</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTransactionSearch/orderId</TokenIdentifier>
+			<Abstract type="html">Self-explanatory</Abstract>
+			<DeclaredIn>WPYTransactionSearch.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *orderId</Declaration>
+			
+			
+			<Anchor>//api/name/orderId</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYTransactionSearch/orderId</TokenIdentifier>
+			<Abstract type="html">Self-explanatory</Abstract>
+			<DeclaredIn>WPYTransactionSearch.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *orderId</Declaration>
+			
+			
+			<Anchor>//api/name/orderId</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTransactionSearch/setAmount:</TokenIdentifier>
+			<Abstract type="html">Self-explanatory</Abstract>
+			<DeclaredIn>WPYTransactionSearch.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSDecimalNumber *amount</Declaration>
+			
+			
+			<Anchor>//api/name/amount</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTransactionSearch/amount</TokenIdentifier>
+			<Abstract type="html">Self-explanatory</Abstract>
+			<DeclaredIn>WPYTransactionSearch.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSDecimalNumber *amount</Declaration>
+			
+			
+			<Anchor>//api/name/amount</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYTransactionSearch/amount</TokenIdentifier>
+			<Abstract type="html">Self-explanatory</Abstract>
+			<DeclaredIn>WPYTransactionSearch.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSDecimalNumber *amount</Declaration>
+			
+			
+			<Anchor>//api/name/amount</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTransactionSearch/setCustomerId:</TokenIdentifier>
+			<Abstract type="html">Self-explanatory</Abstract>
+			<DeclaredIn>WPYTransactionSearch.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *customerId</Declaration>
+			
+			
+			<Anchor>//api/name/customerId</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYTransactionSearch/customerId</TokenIdentifier>
+			<Abstract type="html">Self-explanatory</Abstract>
+			<DeclaredIn>WPYTransactionSearch.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *customerId</Declaration>
+			
+			
+			<Anchor>//api/name/customerId</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYTransactionSearch/customerId</TokenIdentifier>
+			<Abstract type="html">Self-explanatory</Abstract>
+			<DeclaredIn>WPYTransactionSearch.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *customerId</Declaration>
+			
+			
+			<Anchor>//api/name/customerId</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
         
         
 	</File>

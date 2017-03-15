@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYPaymentMethodDuplicateCheckType.html">
+	<File path="Constants/WPYEnvironment.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYPaymentMethodDuplicateCheckType</TokenIdentifier>
-			<Abstract type="html">Indicates how (and whether) the method should check for duplicate accounts. Defaults to 1.</Abstract>
-			<DeclaredIn>WPYDomainObject.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYEnvironment</TokenIdentifier>
+			<Abstract type="html">Enum for environments</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
             
 			
 			<NodeRef refid="82"/>
@@ -14,51 +14,41 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeUnset</TokenIdentifier>
-            <Abstract type="html">Unset</Abstract>
-            <Declaration>WPYPaymentMethodDuplicateCheckTypeUnset</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYEnvironmentDemo</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>WPYEnvironmentDemo</Declaration>
             
-            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
-            
-            <NodeRef refid="82"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeNone</TokenIdentifier>
-            <Abstract type="html">Does not check for Duplicate Card Number for specified Customer ID</Abstract>
-            <Declaration>WPYPaymentMethodDuplicateCheckTypeNone</Declaration>
-            
-            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
+            <DeclaredIn>WorldPayAPI.h</DeclaredIn>
             
             <NodeRef refid="82"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeCustomer</TokenIdentifier>
-            <Abstract type="html">Checks for Duplicate Card Number for specified Customer ID</Abstract>
-            <Declaration>WPYPaymentMethodDuplicateCheckTypeCustomer</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYEnvironmentProd</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>WPYEnvironmentProd</Declaration>
             
-            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
-            
-            <NodeRef refid="82"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderId</TokenIdentifier>
-            <Abstract type="html">Checks for Duplicate Card Number for All Customer IDs for specified SecureNet ID</Abstract>
-            <Declaration>WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderId</Declaration>
-            
-            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
+            <DeclaredIn>WorldPayAPI.h</DeclaredIn>
             
             <NodeRef refid="82"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderGroup</TokenIdentifier>
-            <Abstract type="html">Checks for Duplicate Card Number for All Customer IDs for specified Group ID</Abstract>
-            <Declaration>WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderGroup</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYEnvironmentQA</TokenIdentifier>
+            <Abstract type="html">self-explanatory, remove these when building release version and generating docs</Abstract>
+            <Declaration>WPYEnvironmentQA</Declaration>
             
-            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
+            <DeclaredIn>WorldPayAPI.h</DeclaredIn>
+            
+            <NodeRef refid="82"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYEnvironmentDev</TokenIdentifier>
+            <Abstract type="html">self-explanatory, remove these when building release version and generating docs</Abstract>
+            <Declaration>WPYEnvironmentDev</Declaration>
+            
+            <DeclaredIn>WorldPayAPI.h</DeclaredIn>
             
             <NodeRef refid="82"/>
         </Token>

@@ -232,23 +232,26 @@ This method is only called by certain devices that can display text and have a k
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/WPYSwiperDelegate/swiper:didRequestSelectEMVApplication:</TokenIdentifier>
-			<Abstract type="html">This delegate method is called when the terminal is not configured to present the application options to the card holder directly
+			<TokenIdentifier>//apple_ref/occ/intfm/WPYSwiperDelegate/swiper:didRequestSelectEMVApplication:accountTypes:</TokenIdentifier>
+			<Abstract type="html">This delegate method is called when the terminal is not configured to present the application options to the card holder directly, selectEMVCardApplication: on swiper must be called afterwards to continue.
 When the hardware supports it, the terminal will manage application selection automatically (Miura for instance)</Abstract>
 			<DeclaredIn>WPYSwiper.h</DeclaredIn>
 			
-			<Declaration>- (void)swiper:(WPYSwiper *)swiper didRequestSelectEMVApplication:(NSArray *)applications</Declaration>
+			<Declaration>- (void)swiper:(WPYSwiper *)swiper didRequestSelectEMVApplication:(NSArray *)applications accountTypes:(WPYCardAccountType)accountTypes</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>swiper</Name>
 					<Abstract type="html">A reference to the object making the request</Abstract>
 				</Parameter><Parameter>
 					<Name>applications</Name>
-					<Abstract type="html">A list of the Application Labels for each application in the candidate list</Abstract>
+					<Abstract type="html">A list of the Application dictionaries for each application in the candidate list</Abstract>
+				</Parameter><Parameter>
+					<Name>accountTypes</Name>
+					<Abstract type="html">Indicates if credit, debit, or both are available based on application list</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/swiper:didRequestSelectEMVApplication:</Anchor>
+			<Anchor>//api/name/swiper:didRequestSelectEMVApplication:accountTypes:</Anchor>
             <NodeRef refid="54"/>
 		</Token>
 		

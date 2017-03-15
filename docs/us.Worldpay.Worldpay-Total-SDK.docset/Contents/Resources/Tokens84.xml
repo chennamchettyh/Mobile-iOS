@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYResponseCode.html">
+	<File path="Constants/WPYPaymentMethodDuplicateCheckType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYResponseCode</TokenIdentifier>
-			<Abstract type="html">Gateway Response code indicating whether the request was approved, declined, or resulted in a server error.
-The response code is set on all parent response objects being returned from the gateway</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYPaymentMethodDuplicateCheckType</TokenIdentifier>
+			<Abstract type="html">Indicates how (and whether) the method should check for duplicate accounts. Defaults to 1.</Abstract>
 			<DeclaredIn>WPYDomainObject.h</DeclaredIn>
             
 			
@@ -15,9 +14,9 @@ The response code is set on all parent response objects being returned from the 
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYResponseCodeApproved</TokenIdentifier>
-            <Abstract type="html">Self-explanatory</Abstract>
-            <Declaration>WPYResponseCodeApproved</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeUnset</TokenIdentifier>
+            <Abstract type="html">Unset</Abstract>
+            <Declaration>WPYPaymentMethodDuplicateCheckTypeUnset</Declaration>
             
             <DeclaredIn>WPYDomainObject.h</DeclaredIn>
             
@@ -25,9 +24,9 @@ The response code is set on all parent response objects being returned from the 
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYResponseCodeDeclined</TokenIdentifier>
-            <Abstract type="html">Self-explanatory</Abstract>
-            <Declaration>WPYResponseCodeDeclined</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeNone</TokenIdentifier>
+            <Abstract type="html">Does not check for Duplicate Card Number for specified Customer ID</Abstract>
+            <Declaration>WPYPaymentMethodDuplicateCheckTypeNone</Declaration>
             
             <DeclaredIn>WPYDomainObject.h</DeclaredIn>
             
@@ -35,9 +34,9 @@ The response code is set on all parent response objects being returned from the 
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYResponseCodeError</TokenIdentifier>
-            <Abstract type="html">Self-explanatory</Abstract>
-            <Declaration>WPYResponseCodeError</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeCustomer</TokenIdentifier>
+            <Abstract type="html">Checks for Duplicate Card Number for specified Customer ID</Abstract>
+            <Declaration>WPYPaymentMethodDuplicateCheckTypeCustomer</Declaration>
             
             <DeclaredIn>WPYDomainObject.h</DeclaredIn>
             
@@ -45,9 +44,9 @@ The response code is set on all parent response objects being returned from the 
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYResponseCodeTransactionTerminated</TokenIdentifier>
-            <Abstract type="html">Self-explanatory</Abstract>
-            <Declaration>WPYResponseCodeTransactionTerminated</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderId</TokenIdentifier>
+            <Abstract type="html">Checks for Duplicate Card Number for All Customer IDs for specified SecureNet ID</Abstract>
+            <Declaration>WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderId</Declaration>
             
             <DeclaredIn>WPYDomainObject.h</DeclaredIn>
             
@@ -55,9 +54,9 @@ The response code is set on all parent response objects being returned from the 
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYResponseCodeReversal</TokenIdentifier>
-            <Abstract type="html">Self-explanatory</Abstract>
-            <Declaration>WPYResponseCodeReversal</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderGroup</TokenIdentifier>
+            <Abstract type="html">Checks for Duplicate Card Number for All Customer IDs for specified Group ID</Abstract>
+            <Declaration>WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderGroup</Declaration>
             
             <DeclaredIn>WPYDomainObject.h</DeclaredIn>
             

@@ -204,7 +204,7 @@ These bodies may contain PCI or PII data and may only be used with test cards on
 			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/generateAuthToken:withCompletion:</TokenIdentifier>
 			<Abstract type="html">Authenticates user credentials against the World Pay server. The token
 will automatically be saved in the application keychain by the SDK and
-can be removed by calling: - clearSDKKeychain</Abstract>
+can be removed by calling: - clearSDKKeychain.</Abstract>
 			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
 			
 			<Declaration>- (void)generateAuthToken:(WPYAuthTokenRequest *)authTokenRequest withCompletion:(void ( ^ ) ( WPYAuthTokenResponse *, NSError *))completion</Declaration>
@@ -219,6 +219,25 @@ can be removed by calling: - clearSDKKeychain</Abstract>
 			</Parameters>
 			
 			<Anchor>//api/name/generateAuthToken:withCompletion:</Anchor>
+            <NodeRef refid="50"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/registerEnvironment:</TokenIdentifier>
+			<Abstract type="html">This will choose the environment to be used to run API calls in. It can only be called once
+per application run, subsequent calls attempting to change it will be ignored. This method must be called
+before running any API calls and ideally should be called in AppDelegate.</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>- (void)registerEnvironment:(WPYEnvironment)environment</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>environment</Name>
+					<Abstract type="html">enumerated value for environment (e.g. demo, prod)</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/registerEnvironment:</Anchor>
             <NodeRef refid="50"/>
 		</Token>
 		

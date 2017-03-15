@@ -18,7 +18,7 @@
 contains the id returned by the server for any object returned by the server</Abstract>
 			<DeclaredIn>WPYDomainObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *identifier</Declaration>
 			
 			
 			<Anchor>//api/name/identifier</Anchor>
@@ -31,7 +31,7 @@ contains the id returned by the server for any object returned by the server</Ab
 contains the id returned by the server for any object returned by the server</Abstract>
 			<DeclaredIn>WPYDomainObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *identifier</Declaration>
 			
 			
 			<Anchor>//api/name/identifier</Anchor>
@@ -44,7 +44,7 @@ contains the id returned by the server for any object returned by the server</Ab
 contains the id returned by the server for any object returned by the server</Abstract>
 			<DeclaredIn>WPYDomainObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *identifier</Declaration>
 			
 			
 			<Anchor>//api/name/identifier</Anchor>

@@ -130,6 +130,8 @@
 						<NodeRef refid="90"/>
 						<NodeRef refid="91"/>
 						<NodeRef refid="92"/>
+						<NodeRef refid="93"/>
+						<NodeRef refid="94"/>
 						
 					</Subnodes>
 				</Node>
@@ -139,7 +141,7 @@
                     <Name>Blocks</Name>
                     <Path>index.html</Path>
                     <Subnodes>
-                        <NodeRef refid="93"/>
+                        <NodeRef refid="95"/>
                         
                     </Subnodes>
                 </Node>
@@ -1637,77 +1639,87 @@
             
         </Node>
 		<Node id="79" type="file" documentType="reference">
+            <Name>WPYCustomerDuplicateCheckType</Name>
+            <Path>Constants/WPYCustomerDuplicateCheckType.html</Path>
+            
+        </Node>
+		<Node id="80" type="file" documentType="reference">
             <Name>WPYDevicePrompt</Name>
             <Path>Constants/WPYDevicePrompt.html</Path>
             
         </Node>
-		<Node id="80" type="file" documentType="reference">
+		<Node id="81" type="file" documentType="reference">
             <Name>WPYEMVTransactionType</Name>
             <Path>Constants/WPYEMVTransactionType.html</Path>
             
         </Node>
-		<Node id="81" type="file" documentType="reference">
+		<Node id="82" type="file" documentType="reference">
+            <Name>WPYEnvironment</Name>
+            <Path>Constants/WPYEnvironment.html</Path>
+            
+        </Node>
+		<Node id="83" type="file" documentType="reference">
             <Name>WPYManualTenderType</Name>
             <Path>Constants/WPYManualTenderType.html</Path>
             
         </Node>
-		<Node id="82" type="file" documentType="reference">
+		<Node id="84" type="file" documentType="reference">
             <Name>WPYPaymentMethodDuplicateCheckType</Name>
             <Path>Constants/WPYPaymentMethodDuplicateCheckType.html</Path>
             
         </Node>
-		<Node id="83" type="file" documentType="reference">
+		<Node id="85" type="file" documentType="reference">
             <Name>WPYPaymentType</Name>
             <Path>Constants/WPYPaymentType.html</Path>
             
         </Node>
-		<Node id="84" type="file" documentType="reference">
+		<Node id="86" type="file" documentType="reference">
             <Name>WPYResponseCode</Name>
             <Path>Constants/WPYResponseCode.html</Path>
             
         </Node>
-		<Node id="85" type="file" documentType="reference">
+		<Node id="87" type="file" documentType="reference">
             <Name>WPYSwiperBatteryStatus</Name>
             <Path>Constants/WPYSwiperBatteryStatus.html</Path>
             
         </Node>
-		<Node id="86" type="file" documentType="reference">
+		<Node id="88" type="file" documentType="reference">
             <Name>WPYSwiperInputType</Name>
             <Path>Constants/WPYSwiperInputType.html</Path>
             
         </Node>
-		<Node id="87" type="file" documentType="reference">
+		<Node id="89" type="file" documentType="reference">
             <Name>WPYSwiperState</Name>
             <Path>Constants/WPYSwiperState.html</Path>
             
         </Node>
-		<Node id="88" type="file" documentType="reference">
+		<Node id="90" type="file" documentType="reference">
             <Name>WPYSwiperType</Name>
             <Path>Constants/WPYSwiperType.html</Path>
             
         </Node>
-		<Node id="89" type="file" documentType="reference">
+		<Node id="91" type="file" documentType="reference">
             <Name>WPYTransactionDuplicateCheckType</Name>
             <Path>Constants/WPYTransactionDuplicateCheckType.html</Path>
             
         </Node>
-		<Node id="90" type="file" documentType="reference">
+		<Node id="92" type="file" documentType="reference">
             <Name>WPYVerificationType</Name>
             <Path>Constants/WPYVerificationType.html</Path>
             
         </Node>
-		<Node id="91" type="file" documentType="reference">
+		<Node id="93" type="file" documentType="reference">
             <Name>WPYVoidType</Name>
             <Path>Constants/WPYVoidType.html</Path>
             
         </Node>
-		<Node id="92" type="file" documentType="reference">
+		<Node id="94" type="file" documentType="reference">
             <Name>WorldpaySDKError</Name>
             <Path>Constants/WorldpaySDKError.html</Path>
             
         </Node>
 		
-        <Node id="93" type="file" documentType="reference">
+        <Node id="95" type="file" documentType="reference">
             <Name>PaymentCompletion</Name>
             <Path>Blocks/PaymentCompletion.html</Path>
             

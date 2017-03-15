@@ -372,6 +372,42 @@
             <NodeRef refid="13"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerRequestData/setCustomerDuplicateCheckIndicator:</TokenIdentifier>
+			<Abstract type="html">If a check is presented, this is the duplicate check type to be used</Abstract>
+			<DeclaredIn>WPYCustomerRequestData.h</DeclaredIn>
+			
+			<Declaration>@property WPYCustomerDuplicateCheckType customerDuplicateCheckIndicator</Declaration>
+			
+			
+			<Anchor>//api/name/customerDuplicateCheckIndicator</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WPYCustomerRequestData/customerDuplicateCheckIndicator</TokenIdentifier>
+			<Abstract type="html">If a check is presented, this is the duplicate check type to be used</Abstract>
+			<DeclaredIn>WPYCustomerRequestData.h</DeclaredIn>
+			
+			<Declaration>@property WPYCustomerDuplicateCheckType customerDuplicateCheckIndicator</Declaration>
+			
+			
+			<Anchor>//api/name/customerDuplicateCheckIndicator</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WPYCustomerRequestData/customerDuplicateCheckIndicator</TokenIdentifier>
+			<Abstract type="html">If a check is presented, this is the duplicate check type to be used</Abstract>
+			<DeclaredIn>WPYCustomerRequestData.h</DeclaredIn>
+			
+			<Declaration>@property WPYCustomerDuplicateCheckType customerDuplicateCheckIndicator</Declaration>
+			
+			
+			<Anchor>//api/name/customerDuplicateCheckIndicator</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
         
         
 	</File>
