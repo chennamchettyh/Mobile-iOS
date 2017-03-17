@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "WPYSwiper.h"
+#import "WPYTransactionUpdate.h"
 
 @protocol WPYSwiperDelegate;
 @class WPYAuthTokenRequest;
@@ -321,12 +322,26 @@ extern NSString *const WorldpayServerErrorDomain;
 - (void)searchTransactions:(WPYTransactionSearch *)searchParams withCompletion:(void(^)(WPYTransactionSearchResponse *, NSError *))completion;
 
 /**
+ * Update transactions
+ *
+ * @param request request object which contains info of the transaction which needs to be updated
+ * @param completion Completion handler used to notify the caller of any server results or errors
+ */
+
+
+- (void)updateTransaction:(WPYTransactionUpdate *)request withCompletion:(void(^)(WPYTransactionResponse *, NSError *))completion;
+
+/**
  * Get transactions in the current batch
  *
  * @param batchId Batch identifier for transactions
  * @param completion Completion handler used to notify the caller of any server results or errors
  */
 - (void)getTransactionsInBatch:(NSString *)batchId withCompletion:(void(^)(WPYBatchResponse *, NSError *))completion;
+
+
+
+
 @end
 
 /**
