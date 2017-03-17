@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYPaymentType.html">
+	<File path="Constants/WPYPaymentMethodDuplicateCheckType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYPaymentType</TokenIdentifier>
-			<Abstract type="html">The type of payment method associated with this payment type. Typically used with stored payment methods</Abstract>
-			<DeclaredIn>WPYTender.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYPaymentMethodDuplicateCheckType</TokenIdentifier>
+			<Abstract type="html">Indicates how (and whether) the method should check for duplicate accounts. Defaults to 1.</Abstract>
+			<DeclaredIn>WPYDomainObject.h</DeclaredIn>
             
 			
 			<NodeRef refid="85"/>
@@ -14,51 +14,51 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentTypeUnknown</TokenIdentifier>
-            <Abstract type="html">Unknown payment type</Abstract>
-            <Declaration>WPYPaymentTypeUnknown</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeUnset</TokenIdentifier>
+            <Abstract type="html">Unset</Abstract>
+            <Declaration>WPYPaymentMethodDuplicateCheckTypeUnset</Declaration>
             
-            <DeclaredIn>WPYTender.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentTypeCheck</TokenIdentifier>
-            <Abstract type="html">Payment is a check</Abstract>
-            <Declaration>WPYPaymentTypeCheck</Declaration>
-            
-            <DeclaredIn>WPYTender.h</DeclaredIn>
+            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
             
             <NodeRef refid="85"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentTypeDebitCard</TokenIdentifier>
-            <Abstract type="html">Payment is a debit card</Abstract>
-            <Declaration>WPYPaymentTypeDebitCard</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeNone</TokenIdentifier>
+            <Abstract type="html">Does not check for Duplicate Card Number for specified Customer ID</Abstract>
+            <Declaration>WPYPaymentMethodDuplicateCheckTypeNone</Declaration>
             
-            <DeclaredIn>WPYTender.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentTypeCreditCard</TokenIdentifier>
-            <Abstract type="html">Payment is a credit card</Abstract>
-            <Declaration>WPYPaymentTypeCreditCard</Declaration>
-            
-            <DeclaredIn>WPYTender.h</DeclaredIn>
+            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
             
             <NodeRef refid="85"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentTypeStoredValue</TokenIdentifier>
-            <Abstract type="html">Payment is a prepaid card</Abstract>
-            <Declaration>WPYPaymentTypeStoredValue</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeCustomer</TokenIdentifier>
+            <Abstract type="html">Checks for Duplicate Card Number for specified Customer ID</Abstract>
+            <Declaration>WPYPaymentMethodDuplicateCheckTypeCustomer</Declaration>
             
-            <DeclaredIn>WPYTender.h</DeclaredIn>
+            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
+            
+            <NodeRef refid="85"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderId</TokenIdentifier>
+            <Abstract type="html">Checks for Duplicate Card Number for All Customer IDs for specified SecureNet ID</Abstract>
+            <Declaration>WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderId</Declaration>
+            
+            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
+            
+            <NodeRef refid="85"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderGroup</TokenIdentifier>
+            <Abstract type="html">Checks for Duplicate Card Number for All Customer IDs for specified Group ID</Abstract>
+            <Declaration>WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderGroup</Declaration>
+            
+            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
             
             <NodeRef refid="85"/>
         </Token>

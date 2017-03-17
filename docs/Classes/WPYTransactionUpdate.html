@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>WPYAuthTokenResponse Class Reference</title>
+	<title>WPYTransactionUpdate Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -56,7 +56,9 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/authToken">authToken</option>
+		<option value="//api/name/levelTwoData">levelTwoData</option>
+		
+		<option value="//api/name/transactionId">transactionId</option>
 		
 	</optgroup>
 	
@@ -79,16 +81,16 @@
 				<main role="main">
 					<img src="../img/worldpaylogo.png" alt="Worldpay Logo"  align="right" style="margin:20px 0px 0px 0px" >
 					<br/>
-					<h1 class="title">WPYAuthTokenResponse Class Reference</h1>
+					<h1 class="title">WPYTransactionUpdate Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td><a href="../Classes/WPYResponseObject.html">WPYResponseObject</a> : <a href="../Classes/WPYDomainObject.html">WPYDomainObject</a> : NSObject</td>
+	<td><a href="../Classes/WPYDomainObject.html">WPYDomainObject</a> : NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>WPYAuthTokenResponse.h</td>
+	<td>WPYTransactionUpdate.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -98,9 +100,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>This class defines the data fields returned back from a <a href="../Classes/WPYAuthTokenRequest.html">WPYAuthTokenRequest</a> transaction. You typically
-don&rsquo;t need to access the token as it is also kept in the device keychain, however you will likely need
-other data from the super calss <a href="../Classes/WPYResponseObject.html">WPYResponseObject</a></p>
+						<p>Request object used to update transaction</p>
 					</div>
 					
 					
@@ -116,8 +116,8 @@ other data from the super calss <a href="../Classes/WPYResponseObject.html">WPYR
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/authToken" title="authToken"></a>
-	<h3 class="method-title"><code><a href="#//api/name/authToken">&nbsp;&nbsp;authToken</a></code>
+	<a name="//api/name/transactionId" title="transactionId"></a>
+	<h3 class="method-title"><code><a href="#//api/name/transactionId">&nbsp;&nbsp;transactionId</a></code>
 </h3>
 
 	<div class="method-info">
@@ -127,12 +127,12 @@ other data from the super calss <a href="../Classes/WPYResponseObject.html">WPYR
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The authorization token issued by the server.</p>
+				<p>Self-explanatory</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=authToken) NSString *authToken</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *transactionId</code></div>
 
 		    
 			
@@ -150,7 +150,48 @@ other data from the super calss <a href="../Classes/WPYResponseObject.html">WPYR
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">WPYAuthTokenResponse.h</code></p>
+				<p><code class="declared-in-ref">WPYTransactionUpdate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/levelTwoData" title="levelTwoData"></a>
+	<h3 class="method-title"><code><a href="#//api/name/levelTwoData">&nbsp;&nbsp;levelTwoData</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This parameter contains data that the merchant wishes to pass up to the payment gateway for that specific transaction</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) WPYLevelTwoData *levelTwoData</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WPYTransactionUpdate.h</code></p>
 			</div>
 			
 			

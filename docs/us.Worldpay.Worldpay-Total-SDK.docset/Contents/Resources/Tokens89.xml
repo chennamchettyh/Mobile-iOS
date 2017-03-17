@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYSwiperState.html">
+	<File path="Constants/WPYSwiperInputType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYSwiperState</TokenIdentifier>
-			<Abstract type="html">The current connection state of the card terminal</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYSwiperInputType</TokenIdentifier>
+			<Abstract type="html">Hardware interface used to connect to the terminal.  You can query the WPYSwiper to see if it supports
+bluetooth or audio jack capabilities.  For instance, the Anywhere Commerce version of the SDK supports
+both types of connections.</Abstract>
 			<DeclaredIn>WPYSwiper.h</DeclaredIn>
             
 			
@@ -14,9 +16,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperDisconnected</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperInputTypeUnknown</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYSwiperDisconnected</Declaration>
+            <Declaration>WPYSwiperInputTypeUnknown</Declaration>
             
             <DeclaredIn>WPYSwiper.h</DeclaredIn>
             
@@ -24,9 +26,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperConnecting</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperInputTypeAudio</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYSwiperConnecting</Declaration>
+            <Declaration>WPYSwiperInputTypeAudio</Declaration>
             
             <DeclaredIn>WPYSwiper.h</DeclaredIn>
             
@@ -34,9 +36,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperConnected</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperInputTypeBluetooth</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYSwiperConnected</Declaration>
+            <Declaration>WPYSwiperInputTypeBluetooth</Declaration>
             
             <DeclaredIn>WPYSwiper.h</DeclaredIn>
             

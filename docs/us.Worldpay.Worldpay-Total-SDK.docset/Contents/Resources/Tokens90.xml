@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYSwiperType.html">
+	<File path="Constants/WPYSwiperState.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYSwiperType</TokenIdentifier>
-			<Abstract type="html">The type of encryption used to secure the SRED data for a card read from a terminal</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYSwiperState</TokenIdentifier>
+			<Abstract type="html">The current connection state of the card terminal</Abstract>
 			<DeclaredIn>WPYSwiper.h</DeclaredIn>
             
 			
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperTypeNotSet</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperDisconnected</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYSwiperTypeNotSet</Declaration>
+            <Declaration>WPYSwiperDisconnected</Declaration>
             
             <DeclaredIn>WPYSwiper.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperTypeNone</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperConnecting</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYSwiperTypeNone</Declaration>
+            <Declaration>WPYSwiperConnecting</Declaration>
             
             <DeclaredIn>WPYSwiper.h</DeclaredIn>
             
@@ -34,29 +34,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperTypeIDTech</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperConnected</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYSwiperTypeIDTech</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="90"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperTypeMagTek</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYSwiperTypeMagTek</Declaration>
-            
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
-            
-            <NodeRef refid="90"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYSwiperTypeMiura</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYSwiperTypeMiura</Declaration>
+            <Declaration>WPYSwiperConnected</Declaration>
             
             <DeclaredIn>WPYSwiper.h</DeclaredIn>
             

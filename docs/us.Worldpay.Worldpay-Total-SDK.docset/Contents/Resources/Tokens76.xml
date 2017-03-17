@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYCardType.html">
+	<File path="Constants/WPYCardSource.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYCardType</TokenIdentifier>
-			<Abstract type="html">The card brand associated with a card.  This is used internally when performing card number validation</Abstract>
-			<DeclaredIn>WPYTender.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYCardSource</TokenIdentifier>
+			<Abstract type="html">This indicates what interface was used for obtaining the card data.</Abstract>
+			<DeclaredIn>WPYTenderedCard.h</DeclaredIn>
             
 			
 			<NodeRef refid="76"/>
@@ -14,111 +14,111 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardTypeVisa</TokenIdentifier>
-            <Abstract type="html">Visa</Abstract>
-            <Declaration>WPYCardTypeVisa</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCardSourceNotSet</TokenIdentifier>
+            <Abstract type="html">There is an intermediate state indicating we have not yet received the source type</Abstract>
+            <Declaration>WPYCardSourceNotSet</Declaration>
             
-            <DeclaredIn>WPYTender.h</DeclaredIn>
-            
-            <NodeRef refid="76"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardTypeMaster</TokenIdentifier>
-            <Abstract type="html">MasterCard</Abstract>
-            <Declaration>WPYCardTypeMaster</Declaration>
-            
-            <DeclaredIn>WPYTender.h</DeclaredIn>
+            <DeclaredIn>WPYTenderedCard.h</DeclaredIn>
             
             <NodeRef refid="76"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardTypeAmex</TokenIdentifier>
-            <Abstract type="html">American Express</Abstract>
-            <Declaration>WPYCardTypeAmex</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCardSourceUnknown</TokenIdentifier>
+            <Abstract type="html">Cannot identify the card transaction type.</Abstract>
+            <Declaration>WPYCardSourceUnknown</Declaration>
             
-            <DeclaredIn>WPYTender.h</DeclaredIn>
-            
-            <NodeRef refid="76"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardTypeDiscover</TokenIdentifier>
-            <Abstract type="html">Discover Card</Abstract>
-            <Declaration>WPYCardTypeDiscover</Declaration>
-            
-            <DeclaredIn>WPYTender.h</DeclaredIn>
+            <DeclaredIn>WPYTenderedCard.h</DeclaredIn>
             
             <NodeRef refid="76"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardTypeDiners</TokenIdentifier>
-            <Abstract type="html">Diners Club</Abstract>
-            <Declaration>WPYCardTypeDiners</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCardSourceCreditMSR</TokenIdentifier>
+            <Abstract type="html">Magnetic Stripe Credit</Abstract>
+            <Declaration>WPYCardSourceCreditMSR</Declaration>
             
-            <DeclaredIn>WPYTender.h</DeclaredIn>
-            
-            <NodeRef refid="76"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardTypeJcb</TokenIdentifier>
-            <Abstract type="html">JCB (Japanese Credit Bureau)</Abstract>
-            <Declaration>WPYCardTypeJcb</Declaration>
-            
-            <DeclaredIn>WPYTender.h</DeclaredIn>
+            <DeclaredIn>WPYTenderedCard.h</DeclaredIn>
             
             <NodeRef refid="76"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardTypeBc</TokenIdentifier>
-            <Abstract type="html">Barclay Card</Abstract>
-            <Declaration>WPYCardTypeBc</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCardSourceCreditEMV</TokenIdentifier>
+            <Abstract type="html">EMV Credit</Abstract>
+            <Declaration>WPYCardSourceCreditEMV</Declaration>
             
-            <DeclaredIn>WPYTender.h</DeclaredIn>
-            
-            <NodeRef refid="76"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardTypeDina</TokenIdentifier>
-            <Abstract type="html">DinaCard (Serbian)</Abstract>
-            <Declaration>WPYCardTypeDina</Declaration>
-            
-            <DeclaredIn>WPYTender.h</DeclaredIn>
+            <DeclaredIn>WPYTenderedCard.h</DeclaredIn>
             
             <NodeRef refid="76"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardTypeMaestro</TokenIdentifier>
-            <Abstract type="html">Maestro (MasterCard debit)</Abstract>
-            <Declaration>WPYCardTypeMaestro</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCardSourceCreditEMVContactless</TokenIdentifier>
+            <Abstract type="html">Contactless EMV Credit</Abstract>
+            <Declaration>WPYCardSourceCreditEMVContactless</Declaration>
             
-            <DeclaredIn>WPYTender.h</DeclaredIn>
-            
-            <NodeRef refid="76"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardTypeUnionPay</TokenIdentifier>
-            <Abstract type="html">Union Pay</Abstract>
-            <Declaration>WPYCardTypeUnionPay</Declaration>
-            
-            <DeclaredIn>WPYTender.h</DeclaredIn>
+            <DeclaredIn>WPYTenderedCard.h</DeclaredIn>
             
             <NodeRef refid="76"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardTypeUnknown</TokenIdentifier>
-            <Abstract type="html">Unknown</Abstract>
-            <Declaration>WPYCardTypeUnknown</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCardSourceCreditManual</TokenIdentifier>
+            <Abstract type="html">Manually Entered Credit</Abstract>
+            <Declaration>WPYCardSourceCreditManual</Declaration>
             
-            <DeclaredIn>WPYTender.h</DeclaredIn>
+            <DeclaredIn>WPYTenderedCard.h</DeclaredIn>
+            
+            <NodeRef refid="76"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCardSourceDebitSwiped</TokenIdentifier>
+            <Abstract type="html">Magnetic Stripe Debit</Abstract>
+            <Declaration>WPYCardSourceDebitSwiped</Declaration>
+            
+            <DeclaredIn>WPYTenderedCard.h</DeclaredIn>
+            
+            <NodeRef refid="76"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCardSourceDebitEMV</TokenIdentifier>
+            <Abstract type="html">EMV Debit</Abstract>
+            <Declaration>WPYCardSourceDebitEMV</Declaration>
+            
+            <DeclaredIn>WPYTenderedCard.h</DeclaredIn>
+            
+            <NodeRef refid="76"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCardSourceDebitEMVContactless</TokenIdentifier>
+            <Abstract type="html">Contactless EMV Debit</Abstract>
+            <Declaration>WPYCardSourceDebitEMVContactless</Declaration>
+            
+            <DeclaredIn>WPYTenderedCard.h</DeclaredIn>
+            
+            <NodeRef refid="76"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCardSourceStoredValueSwiped</TokenIdentifier>
+            <Abstract type="html">Magnetic Striped Stored Value (Prepaid)</Abstract>
+            <Declaration>WPYCardSourceStoredValueSwiped</Declaration>
+            
+            <DeclaredIn>WPYTenderedCard.h</DeclaredIn>
+            
+            <NodeRef refid="76"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCardSourceStoredValueManual</TokenIdentifier>
+            <Abstract type="html">Manually Entered Stored Value (Prepaid)</Abstract>
+            <Declaration>WPYCardSourceStoredValueManual</Declaration>
+            
+            <DeclaredIn>WPYTenderedCard.h</DeclaredIn>
             
             <NodeRef refid="76"/>
         </Token>

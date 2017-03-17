@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYCardAccountType.html">
+	<File path="Constants/WPYCVMethod.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYCardAccountType</TokenIdentifier>
-			<Abstract type="html">This is an indication of the type of transactions that a specific card application can support
-On devices where the terminal is capable of handling application support, it will automatically
-prompt for credit or debit when appropriate.  On non-capable devices, the application will
-be notified when the user must choose credit or debit</Abstract>
-			<DeclaredIn>WPYSwiper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYCVMethod</TokenIdentifier>
+			<Abstract type="html">This data indicates the type of cardholder verification that was performed on the transaction.
+The type of CVM that is used to help determine what information will be on the receipt</Abstract>
+			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
             
 			
 			<NodeRef refid="71"/>
@@ -17,41 +15,61 @@ be notified when the user must choose credit or debit</Abstract>
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardAccountTypeCredit</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodNoCVM</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCardAccountTypeCredit</Declaration>
+            <Declaration>WPYCVMethodNoCVM</Declaration>
             
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
+            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
             
             <NodeRef refid="71"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardAccountTypeDebit</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodPlaintextPIN</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCardAccountTypeDebit</Declaration>
+            <Declaration>WPYCVMethodPlaintextPIN</Declaration>
             
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
+            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
             
             <NodeRef refid="71"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardAccountTypeCreditOrDebit</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodOnlinePIN</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCardAccountTypeCreditOrDebit</Declaration>
+            <Declaration>WPYCVMethodOnlinePIN</Declaration>
             
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
+            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
             
             <NodeRef refid="71"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardAccountTypeUnknown</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodMobileConfirmCode</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCardAccountTypeUnknown</Declaration>
+            <Declaration>WPYCVMethodMobileConfirmCode</Declaration>
             
-            <DeclaredIn>WPYSwiper.h</DeclaredIn>
+            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+            
+            <NodeRef refid="71"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodOfflineEncipheredPIN</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>WPYCVMethodOfflineEncipheredPIN</Declaration>
+            
+            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+            
+            <NodeRef refid="71"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodSignature</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>WPYCVMethodSignature</Declaration>
+            
+            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
             
             <NodeRef refid="71"/>
         </Token>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYCheckType.html">
+	<File path="Constants/WPYCheckAccountType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYCheckType</TokenIdentifier>
-			<Abstract type="html">This enumeration defines the types of checks that can be associated with a check.  Please note that any value
+			<TokenIdentifier>//apple_ref/c/tdef/WPYCheckAccountType</TokenIdentifier>
+			<Abstract type="html">This enumeration defines the types of checking accounts that can be associated with a check.  Please note that any value
 set to &quot;Unknown&quot; will NOT be sent to the server.</Abstract>
 			<DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
             
@@ -15,9 +15,9 @@ set to &quot;Unknown&quot; will NOT be sent to the server.</Abstract>
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCheckTypeUnknown</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCheckAccountTypeUnknown</TokenIdentifier>
             <Abstract type="html">If this is set, the transaction will not be sent to the servoer</Abstract>
-            <Declaration>WPYCheckTypeUnknown</Declaration>
+            <Declaration>WPYCheckAccountTypeUnknown</Declaration>
             
             <DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
             
@@ -25,9 +25,9 @@ set to &quot;Unknown&quot; will NOT be sent to the server.</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCheckTypeCorporateCashDispursement</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCheckAccountTypeChecking</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCheckTypeCorporateCashDispursement</Declaration>
+            <Declaration>WPYCheckAccountTypeChecking</Declaration>
             
             <DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
             
@@ -35,9 +35,9 @@ set to &quot;Unknown&quot; will NOT be sent to the server.</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCheckTypePointOfSale</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCheckAccountTypeSavings</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCheckTypePointOfSale</Declaration>
+            <Declaration>WPYCheckAccountTypeSavings</Declaration>
             
             <DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
             
@@ -45,9 +45,9 @@ set to &quot;Unknown&quot; will NOT be sent to the server.</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCheckTypePrearrangedPaymentOrDeposit</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCheckAccountTypeBusinessChecking</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCheckTypePrearrangedPaymentOrDeposit</Declaration>
+            <Declaration>WPYCheckAccountTypeBusinessChecking</Declaration>
             
             <DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
             
@@ -55,9 +55,9 @@ set to &quot;Unknown&quot; will NOT be sent to the server.</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCheckTypeTelephoneInitiated</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCheckAccountTypeBusinessSavings</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCheckTypeTelephoneInitiated</Declaration>
+            <Declaration>WPYCheckAccountTypeBusinessSavings</Declaration>
             
             <DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
             
@@ -65,69 +65,9 @@ set to &quot;Unknown&quot; will NOT be sent to the server.</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCheckTypeWebInitiated</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCheckTypeWebInitiated</Declaration>
-            
-            <DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
-            
-            <NodeRef refid="78"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCheckTypePOP</TokenIdentifier>
-            <Abstract type="html">Point-of-Purchase. Paper checks that are converted (scanned) into electronic format at the point of sale. The original paper check is voided and returned to the customer. Point of Sale is authorization.</Abstract>
-            <Declaration>WPYCheckTypePOP</Declaration>
-            
-            <DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
-            
-            <NodeRef refid="78"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCheckTypeARC</TokenIdentifier>
-            <Abstract type="html">Accounts Receivable Conversion. Used for payments being made against a bill such as a utility. Signed Authorization by Customer required.</Abstract>
-            <Declaration>WPYCheckTypeARC</Declaration>
-            
-            <DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
-            
-            <NodeRef refid="78"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCheckTypeICL</TokenIdentifier>
-            <Abstract type="html">Check-21 transaction</Abstract>
-            <Declaration>WPYCheckTypeICL</Declaration>
-            
-            <DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
-            
-            <NodeRef refid="78"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCheckTypeRCK</TokenIdentifier>
-            <Abstract type="html">Re-Presentation Check. After a check has been return for insufficient funds it may be attempted again using this format. RCK may only be retried once. Customer notification “Returned Checks are Electronically Re-Processed” required at Point of Sale.</Abstract>
-            <Declaration>WPYCheckTypeRCK</Declaration>
-            
-            <DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
-            
-            <NodeRef refid="78"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCheckTypeBOC</TokenIdentifier>
-            <Abstract type="html">Back Office Conversion. Paper checks that are collected in a retail environment and then scanned and batched electronically. Customer notification “Checks are Electronically Processed” required at Point of Sale.</Abstract>
-            <Declaration>WPYCheckTypeBOC</Declaration>
-            
-            <DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
-            
-            <NodeRef refid="78"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCheckTypeEND</TokenIdentifier>
-            <Abstract type="html">Used to determine the end of the check presentation option list</Abstract>
-            <Declaration>WPYCheckTypeEND</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCheckAccountTypeEND</TokenIdentifier>
+            <Abstract type="html">Used to determine end of presentation list</Abstract>
+            <Declaration>WPYCheckAccountTypeEND</Declaration>
             
             <DeclaredIn>WPYTenderedCheck.h</DeclaredIn>
             

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYPaymentMethodDuplicateCheckType.html">
+	<File path="Constants/WPYManualTenderType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYPaymentMethodDuplicateCheckType</TokenIdentifier>
-			<Abstract type="html">Indicates how (and whether) the method should check for duplicate accounts. Defaults to 1.</Abstract>
-			<DeclaredIn>WPYDomainObject.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYManualTenderType</TokenIdentifier>
+			<Abstract type="html">Types of manual entry payment methods accepted</Abstract>
+			<DeclaredIn>WPYManualTenderEntryViewController.h</DeclaredIn>
             
 			
 			<NodeRef refid="84"/>
@@ -14,51 +14,21 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeUnset</TokenIdentifier>
-            <Abstract type="html">Unset</Abstract>
-            <Declaration>WPYPaymentMethodDuplicateCheckTypeUnset</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYManualTenderTypeCredit</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>WPYManualTenderTypeCredit</Declaration>
             
-            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
-            
-            <NodeRef refid="84"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeNone</TokenIdentifier>
-            <Abstract type="html">Does not check for Duplicate Card Number for specified Customer ID</Abstract>
-            <Declaration>WPYPaymentMethodDuplicateCheckTypeNone</Declaration>
-            
-            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
+            <DeclaredIn>WPYManualTenderEntryViewController.h</DeclaredIn>
             
             <NodeRef refid="84"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeCustomer</TokenIdentifier>
-            <Abstract type="html">Checks for Duplicate Card Number for specified Customer ID</Abstract>
-            <Declaration>WPYPaymentMethodDuplicateCheckTypeCustomer</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYManualTenderTypeCheck</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>WPYManualTenderTypeCheck</Declaration>
             
-            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
-            
-            <NodeRef refid="84"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderId</TokenIdentifier>
-            <Abstract type="html">Checks for Duplicate Card Number for All Customer IDs for specified SecureNet ID</Abstract>
-            <Declaration>WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderId</Declaration>
-            
-            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
-            
-            <NodeRef refid="84"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderGroup</TokenIdentifier>
-            <Abstract type="html">Checks for Duplicate Card Number for All Customer IDs for specified Group ID</Abstract>
-            <Declaration>WPYPaymentMethodDuplicateCheckTypeAllCustomersUnderGroup</Declaration>
-            
-            <DeclaredIn>WPYDomainObject.h</DeclaredIn>
+            <DeclaredIn>WPYManualTenderEntryViewController.h</DeclaredIn>
             
             <NodeRef refid="84"/>
         </Token>

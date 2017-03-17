@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYCVMethod.html">
+	<File path="Constants/WPYAvsResultType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYCVMethod</TokenIdentifier>
-			<Abstract type="html">This data indicates the type of cardholder verification that was performed on the transaction.
-The type of CVM that is used to help determine what information will be on the receipt</Abstract>
-			<DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYAvsResultType</TokenIdentifier>
+			<Abstract type="html">The Address Verification Service result indicates whether or not the
+billing address was verified and, if so, what the result was</Abstract>
+			<DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
             
 			
 			<NodeRef refid="70"/>
@@ -15,61 +15,31 @@ The type of CVM that is used to help determine what information will be on the r
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodNoCVM</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYAvsResultTypeMatch</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCVMethodNoCVM</Declaration>
+            <Declaration>WPYAvsResultTypeMatch</Declaration>
             
-            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+            <DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
             
             <NodeRef refid="70"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodPlaintextPIN</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYAvsResultTypeNotMatched</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCVMethodPlaintextPIN</Declaration>
+            <Declaration>WPYAvsResultTypeNotMatched</Declaration>
             
-            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+            <DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
             
             <NodeRef refid="70"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodOnlinePIN</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYAvsResultTypeNotChecked</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCVMethodOnlinePIN</Declaration>
+            <Declaration>WPYAvsResultTypeNotChecked</Declaration>
             
-            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
-            
-            <NodeRef refid="70"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodMobileConfirmCode</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCVMethodMobileConfirmCode</Declaration>
-            
-            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
-            
-            <NodeRef refid="70"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodOfflineEncipheredPIN</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCVMethodOfflineEncipheredPIN</Declaration>
-            
-            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
-            
-            <NodeRef refid="70"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCVMethodSignature</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCVMethodSignature</Declaration>
-            
-            <DeclaredIn>WPYReceiptObject.h</DeclaredIn>
+            <DeclaredIn>WPYCardTransactionData.h</DeclaredIn>
             
             <NodeRef refid="70"/>
         </Token>

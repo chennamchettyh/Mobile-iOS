@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/MiuraDeviceControllerDelegate.html">
+	<File path="Classes/WorldpayAPI.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/MiuraDeviceControllerDelegate</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/WorldpayAPI</TokenIdentifier>
+			<Abstract type="html">This is a singleton object that contains the base of the Worldpay Total calling methods.</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
             
 			
 			<NodeRef refid="51"/>
@@ -13,431 +13,705 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onRequestDevicePromptText:</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/setEnableTestHost:</TokenIdentifier>
+			<Abstract type="html">Tells the WorldpayAPI object to send messages to the test host configured at compile time</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
 			
-			<Declaration>- (void)onRequestDevicePromptText:(DevicePrompt)prompt</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL enableTestHost</Declaration>
+			
+			
+			<Anchor>//api/name/enableTestHost</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/enableTestHost</TokenIdentifier>
+			<Abstract type="html">Tells the WorldpayAPI object to send messages to the test host configured at compile time</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL enableTestHost</Declaration>
+			
+			
+			<Anchor>//api/name/enableTestHost</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WorldpayAPI/enableTestHost</TokenIdentifier>
+			<Abstract type="html">Tells the WorldpayAPI object to send messages to the test host configured at compile time</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL enableTestHost</Declaration>
+			
+			
+			<Anchor>//api/name/enableTestHost</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/setEnableTestHostDebug:</TokenIdentifier>
+			<Abstract type="html">When enabled, and TestHost is enabled, the debugDelegate will be sent HTTP request and response bodies for logging purposes.
+These bodies may contain PCI or PII data and may only be used with test cards on a test environment</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL enableTestHostDebug</Declaration>
+			
+			
+			<Anchor>//api/name/enableTestHostDebug</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/enableTestHostDebug</TokenIdentifier>
+			<Abstract type="html">When enabled, and TestHost is enabled, the debugDelegate will be sent HTTP request and response bodies for logging purposes.
+These bodies may contain PCI or PII data and may only be used with test cards on a test environment</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL enableTestHostDebug</Declaration>
+			
+			
+			<Anchor>//api/name/enableTestHostDebug</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WorldpayAPI/enableTestHostDebug</TokenIdentifier>
+			<Abstract type="html">When enabled, and TestHost is enabled, the debugDelegate will be sent HTTP request and response bodies for logging purposes.
+These bodies may contain PCI or PII data and may only be used with test cards on a test environment</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL enableTestHostDebug</Declaration>
+			
+			
+			<Anchor>//api/name/enableTestHostDebug</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/setDebugDelegate:</TokenIdentifier>
+			<Abstract type="html">The delegate that would like to receive debug messages containing HTTP request and response bodies</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;WPYDebugDelegate&gt; debugDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/debugDelegate</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/debugDelegate</TokenIdentifier>
+			<Abstract type="html">The delegate that would like to receive debug messages containing HTTP request and response bodies</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;WPYDebugDelegate&gt; debugDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/debugDelegate</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WorldpayAPI/debugDelegate</TokenIdentifier>
+			<Abstract type="html">The delegate that would like to receive debug messages containing HTTP request and response bodies</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;WPYDebugDelegate&gt; debugDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/debugDelegate</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/setTerminalId:</TokenIdentifier>
+			<Abstract type="html">The terminal ID set when the auth token request was made</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *terminalId</Declaration>
+			
+			
+			<Anchor>//api/name/terminalId</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/terminalId</TokenIdentifier>
+			<Abstract type="html">The terminal ID set when the auth token request was made</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *terminalId</Declaration>
+			
+			
+			<Anchor>//api/name/terminalId</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WorldpayAPI/terminalId</TokenIdentifier>
+			<Abstract type="html">The terminal ID set when the auth token request was made</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *terminalId</Declaration>
+			
+			
+			<Anchor>//api/name/terminalId</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/WorldpayAPI/instance</TokenIdentifier>
+			<Abstract type="html">Returns shared instance pointer of the WorldpayAPI entry point</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>+ (WorldpayAPI *)instance</Declaration>
+			
+			<ReturnValue><Abstract type="html">instance pointer to singleton class</Abstract></ReturnValue>
+			<Anchor>//api/name/instance</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/init</TokenIdentifier>
+			<Abstract type="html">Class instance init unavailable.  Use WorldpayAPI instance to get class instance</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)init</Declaration>
+			
+			<ReturnValue><Abstract type="html">instance of class</Abstract></ReturnValue>
+			<Anchor>//api/name/init</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/swiperWithDelegate:</TokenIdentifier>
+			<Abstract type="html">Returns a pointer to a credit card swiper object</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>- (WPYSwiper *)swiperWithDelegate:(id&lt;WPYSwiperDelegate&gt;)delegate</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>prompt</Name>
-					<Abstract type="html">To Be Documented</Abstract>
+					<Name>delegate</Name>
+					<Abstract type="html">Delegate that will listen to swiper events</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/onRequestDevicePromptText:</Anchor>
+			<ReturnValue><Abstract type="html">WPYSwiper object</Abstract></ReturnValue>
+			<Anchor>//api/name/swiperWithDelegate:</Anchor>
             <NodeRef refid="51"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onDeviceConnect</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/generateAuthToken:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Authenticates user credentials against the World Pay server. The token
+will automatically be saved in the application keychain by the SDK and
+can be removed by calling: - clearSDKKeychain.</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
 			
-			<Declaration>- (void)onDeviceConnect</Declaration>
-			
-			
-			<Anchor>//api/name/onDeviceConnect</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onDeviceDisconnect</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
-			
-			<Declaration>- (void)onDeviceDisconnect</Declaration>
-			
-			
-			<Anchor>//api/name/onDeviceDisconnect</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onDeviceDidFailToConnect</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
-			
-			<Declaration>- (void)onDeviceDidFailToConnect</Declaration>
-			
-			
-			<Anchor>//api/name/onDeviceDidFailToConnect</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onReturnAvailableDevices:</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
-			
-			<Declaration>- (void)onReturnAvailableDevices:(NSArray&lt;NSString*&gt; *)devices</Declaration>
+			<Declaration>- (void)generateAuthToken:(WPYAuthTokenRequest *)authTokenRequest withCompletion:(void ( ^ ) ( WPYAuthTokenResponse *, NSError *))completion</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>devices</Name>
-					<Abstract type="html">To Be Documented</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/onReturnAvailableDevices:</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onRequestSelectApplication:</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
-			
-			<Declaration>- (void)onRequestSelectApplication:(NSArray&lt;NSString*&gt; *)applications</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>applications</Name>
-					<Abstract type="html">To Be Documented</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/onRequestSelectApplication:</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onRequestOnlineProcessing:</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
-			
-			<Declaration>- (void)onRequestOnlineProcessing:(TransactionData *)transactionData</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>transactionData</Name>
-					<Abstract type="html">To Be Documented</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/onRequestOnlineProcessing:</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onRequestReversal:</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
-			
-			<Declaration>- (void)onRequestReversal:(TransactionData *)transactionData</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>transactionData</Name>
-					<Abstract type="html">To Be Documented</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/onRequestReversal:</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onReturnTransactionResult:</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
-			
-			<Declaration>- (void)onReturnTransactionResult:(TransactionData *)transactionData</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>transactionData</Name>
-					<Abstract type="html">To Be Documented</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/onReturnTransactionResult:</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onCardEvent:</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
-			
-			<Declaration>- (void)onCardEvent:(CardEvent *)event</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>event</Name>
-					<Abstract type="html">To Be Documented</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/onCardEvent:</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onKeypadInput</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
-			
-			<Declaration>- (void)onKeypadInput</Declaration>
-			
-			
-			<Anchor>//api/name/onKeypadInput</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onReturnNumericInput:inputType:</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
-			
-			<Declaration>- (void)onReturnNumericInput:(NumericData *)input inputType:(NumericDataInput)inputType</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>input</Name>
-					<Abstract type="html">To Be Documented</Abstract>
+					<Name>authTokenRequest</Name>
+					<Abstract type="html">Auth Token Request object containing user credentials</Abstract>
 				</Parameter><Parameter>
-					<Name>inputType</Name>
-					<Abstract type="html">To Be Documented</Abstract>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/onReturnNumericInput:inputType:</Anchor>
+			<Anchor>//api/name/generateAuthToken:withCompletion:</Anchor>
             <NodeRef refid="51"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onReturnDeviceClock:</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/registerEnvironment:</TokenIdentifier>
+			<Abstract type="html">This will choose the environment to be used to run API calls in. It can only be called once
+per application run, subsequent calls attempting to change it will be ignored. This method must be called
+before running any API calls and ideally should be called in AppDelegate.</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
 			
-			<Declaration>- (void)onReturnDeviceClock:(NSDate *)date</Declaration>
+			<Declaration>- (void)registerEnvironment:(WPYEnvironment)environment</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>date</Name>
-					<Abstract type="html">To Be Documented</Abstract>
+					<Name>environment</Name>
+					<Abstract type="html">enumerated value for environment (e.g. demo, prod)</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/onReturnDeviceClock:</Anchor>
+			<Anchor>//api/name/registerEnvironment:</Anchor>
             <NodeRef refid="51"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onReturnDeviceError:</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/clearSDKKeychain</TokenIdentifier>
+			<Abstract type="html">Clears the keychain data out of the application. Completely resets the auth token information
+and removes it from the application keychain.  A new auth token must be generated in order
+to make calls to the web APIs after this is executed</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
 			
-			<Declaration>- (void)onReturnDeviceError:(DeviceError)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>error</Name>
-					<Abstract type="html">To Be Documented</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)clearSDKKeychain</Declaration>
 			
-			<Anchor>//api/name/onReturnDeviceError:</Anchor>
+			
+			<Anchor>//api/name/clearSDKKeychain</Anchor>
             <NodeRef refid="51"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onReturnICCError:</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/getCurrentBatchWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets the current batch identifier</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
 			
-			<Declaration>- (void)onReturnICCError:(ICCError)error</Declaration>
+			<Declaration>- (void)getCurrentBatchWithCompletion:(void ( ^ ) ( WPYBatchResponse *, NSError *))completion</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>error</Name>
-					<Abstract type="html">To Be Documented</Abstract>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/onReturnICCError:</Anchor>
+			<Anchor>//api/name/getCurrentBatchWithCompletion:</Anchor>
             <NodeRef refid="51"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onReturnNFCError:</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/closeCurrentBatchWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Closes the current batch</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
 			
-			<Declaration>- (void)onReturnNFCError:(NFCError)error</Declaration>
+			<Declaration>- (void)closeCurrentBatchWithCompletion:(void ( ^ ) ( WPYBatchResponse *, NSError *))completion</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>error</Name>
-					<Abstract type="html">To Be Documented</Abstract>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/onReturnNFCError:</Anchor>
+			<Anchor>//api/name/closeCurrentBatchWithCompletion:</Anchor>
             <NodeRef refid="51"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onReturnPinError:</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/getCustomerDataForCustomerId:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets customer data from the server</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
 			
-			<Declaration>- (void)onReturnPinError:(PinError)error</Declaration>
+			<Declaration>- (void)getCustomerDataForCustomerId:(NSString *)customerId withCompletion:(void ( ^ ) ( WPYCustomerResponseData *, NSError *))completion</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>error</Name>
-					<Abstract type="html">To Be Documented</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/onReturnPinError:</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onReturnPrinterError:</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
-			
-			<Declaration>- (void)onReturnPrinterError:(PrinterError)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>error</Name>
-					<Abstract type="html">To Be Documented</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/onReturnPrinterError:</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onReturnManualEntryError:</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
-			
-			<Declaration>- (void)onReturnManualEntryError:(ManualEntryError)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>error</Name>
-					<Abstract type="html">To Be Documented</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/onReturnManualEntryError:</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onReturnDeviceInfo:</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
-			
-			<Declaration>- (void)onReturnDeviceInfo:(NSDictionary *)deviceInfo</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>deviceInfo</Name>
-					<Abstract type="html">To Be Documented</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/onReturnDeviceInfo:</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onTerminalStatusChange:statusText:</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
-			
-			<Declaration>- (void)onTerminalStatusChange:(uint8_t)statusCode statusText:(NSString *)statusText</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>statusCode</Name>
-					<Abstract type="html">To Be Documented</Abstract>
+					<Name>customerId</Name>
+					<Abstract type="html">Customer ID that reqpresents the desired customer</Abstract>
 				</Parameter><Parameter>
-					<Name>statusText</Name>
-					<Abstract type="html">To Be Documented</Abstract>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/onTerminalStatusChange:statusText:</Anchor>
+			<Anchor>//api/name/getCustomerDataForCustomerId:withCompletion:</Anchor>
             <NodeRef refid="51"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onReturnBatteryPercent:chargeStatus:</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/createCustomer:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Creates a new customer object to be stored on the server</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
 			
-			<Declaration>- (void)onReturnBatteryPercent:(NSInteger)percentCharged chargeStatus:(BatteryStatus)status</Declaration>
+			<Declaration>- (void)createCustomer:(WPYCustomerRequestData *)customerData withCompletion:(void ( ^ ) ( WPYCustomerResponseData *, NSError *))completion</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>percentCharged</Name>
-					<Abstract type="html">To Be Documented</Abstract>
+					<Name>customerData</Name>
+					<Abstract type="html">The customer data that should be saved on the server</Abstract>
 				</Parameter><Parameter>
-					<Name>status</Name>
-					<Abstract type="html">To Be Documented</Abstract>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/onReturnBatteryPercent:chargeStatus:</Anchor>
+			<Anchor>//api/name/createCustomer:withCompletion:</Anchor>
             <NodeRef refid="51"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onReturnPINBlock:withKsn:</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/updateCustomer:withData:andCompletion:</TokenIdentifier>
+			<Abstract type="html">Updates an existing customer on the server</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
 			
-			<Declaration>- (void)onReturnPINBlock:(NSString *)pinBlock withKsn:(NSString *)pinKsn</Declaration>
+			<Declaration>- (void)updateCustomer:(NSString *)customerId withData:(WPYCustomerRequestData *)customerData andCompletion:(void ( ^ ) ( WPYCustomerResponseData *, NSError *))completion</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>pinBlock</Name>
-					<Abstract type="html">To Be Documented</Abstract>
+					<Name>customerId</Name>
+					<Abstract type="html">Customer id corresponding to the customer being updated</Abstract>
 				</Parameter><Parameter>
-					<Name>pinKsn</Name>
-					<Abstract type="html">To Be Documented</Abstract>
+					<Name>customerData</Name>
+					<Abstract type="html">The customer data that should be updated</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/onReturnPINBlock:withKsn:</Anchor>
+			<Anchor>//api/name/updateCustomer:withData:andCompletion:</Anchor>
             <NodeRef refid="51"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onRequestAccountTypeSelection:</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/getGiftCard:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Get Gift Card from server</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
 			
-			<Declaration>- (void)onRequestAccountTypeSelection:(TransactionData *)transactionData</Declaration>
+			<Declaration>- (void)getGiftCard:(NSString *)identifier withCompletion:(void ( ^ ) ( WPYGiftCardResponse *, NSError *))completion</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>transactionData</Name>
-					<Abstract type="html">To Be Documented</Abstract>
+					<Name>identifier</Name>
+					<Abstract type="html">Gift card id</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/onRequestAccountTypeSelection:</Anchor>
+			<Anchor>//api/name/getGiftCard:withCompletion:</Anchor>
             <NodeRef refid="51"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onDevicePromptCanceled</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/updateGiftCard:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Update gift card stored on the server</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
 			
-			<Declaration>- (void)onDevicePromptCanceled</Declaration>
-			
-			
-			<Anchor>//api/name/onDevicePromptCanceled</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MiuraDeviceControllerDelegate/onReturnDeviceConfig:</TokenIdentifier>
-			<Abstract type="html">To Be Documented</Abstract>
-			<DeclaredIn>MiuraDeviceController.h</DeclaredIn>
-			
-			<Declaration>- (void)onReturnDeviceConfig:(NSDictionary *)configDict</Declaration>
+			<Declaration>- (void)updateGiftCard:(NSString *)identifier withCompletion:(void ( ^ ) ( WPYGiftCardResponse *, NSError *))completion</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>configDict</Name>
-					<Abstract type="html">To Be Documented</Abstract>
+					<Name>identifier</Name>
+					<Abstract type="html">Identifier for the card to be updated</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/onReturnDeviceConfig:</Anchor>
+			<Anchor>//api/name/updateGiftCard:withCompletion:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/createGiftCard:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Create a new gift card to be stored on the serfver</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>- (void)createGiftCard:(NSString *)identifier withCompletion:(void ( ^ ) ( WPYGiftCardResponse *, NSError *))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>identifier</Name>
+					<Abstract type="html">Identifier of the card to be stored on the server</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/createGiftCard:withCompletion:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/deletePaymentMethod:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Delete a payment method being stored on the server</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>- (void)deletePaymentMethod:(WPYPaymentMethod *)paymentMethod withCompletion:(void ( ^ ) ( NSError *))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>paymentMethod</Name>
+					<Abstract type="html">Payment method to be deleted on the server</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/deletePaymentMethod:withCompletion:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/getPaymentMethod:withCustomerId:completion:</TokenIdentifier>
+			<Abstract type="html">Get payment method from the server</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>- (void)getPaymentMethod:(NSString *)methodId withCustomerId:(NSString *)customerId completion:(void ( ^ ) ( WPYPaymentMethod *, NSError *))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>methodId</Name>
+					<Abstract type="html">Identifier of the payment method stored on the server</Abstract>
+				</Parameter><Parameter>
+					<Name>customerId</Name>
+					<Abstract type="html">Identifier of the customer associated with the payment method</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getPaymentMethod:withCustomerId:completion:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/updatePaymentMethod:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Update an existing payment method on the server</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>- (void)updatePaymentMethod:(WPYPaymentMethod *)paymentMethod withCompletion:(void ( ^ ) ( WPYPaymentMethod *, NSError *))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>paymentMethod</Name>
+					<Abstract type="html">The updated payment method</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updatePaymentMethod:withCompletion:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/createPaymentMethod:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Create a new payment method on the server</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>- (void)createPaymentMethod:(WPYPaymentMethodRequest *)request withCompletion:(void ( ^ ) ( WPYPaymentMethod *, NSError *))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">Request object containing the payment method information</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/createPaymentMethod:withCompletion:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/paymentAuthorize:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Request Authorization of a payment</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>- (void)paymentAuthorize:(WPYPaymentAuthorize *)request withCompletion:(void ( ^ ) ( WPYPaymentResponse *, NSError *))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">Payment authorize request object with the appropriate payment information</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/paymentAuthorize:withCompletion:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/paymentCapture:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Capture an authorized payment</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>- (void)paymentCapture:(WPYPaymentCapture *)request withCompletion:(void ( ^ ) ( WPYPaymentResponse *, NSError *))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">Payment capture request object with the information about the authorized request</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/paymentCapture:withCompletion:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/paymentCharge:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Immediately charge payment using the requested payment type</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>- (void)paymentCharge:(WPYPaymentCharge *)request withCompletion:(void ( ^ ) ( WPYPaymentResponse *, NSError *))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">Payment charge request object containing all of the information needed to charge a payment</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/paymentCharge:withCompletion:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/paymentVerify:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Card verification allows merchants to verify the cardholder account number, address, or security code.</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>- (void)paymentVerify:(WPYPaymentVerify *)request withCompletion:(void ( ^ ) ( WPYPaymentResponse *, NSError *))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">Payment verify request object containing all of the information needed to verify the payment card</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/paymentVerify:withCompletion:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/paymentVoid:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Void an authorized payment</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>- (void)paymentVoid:(WPYPaymentVoid *)request withCompletion:(void ( ^ ) ( WPYPaymentResponse *, NSError *))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">Payment Void request object that contains the needed information to void an authorized transaction</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/paymentVoid:withCompletion:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/paymentRefund:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Refund a payment that has been captured</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>- (void)paymentRefund:(WPYPaymentRefund *)request withCompletion:(void ( ^ ) ( WPYPaymentResponse *, NSError *))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">PaymentRefund request object needed to refund a captured payment</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/paymentRefund:withCompletion:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/paymentCredit:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Request a credit to the tender in the request object</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>- (void)paymentCredit:(WPYPaymentCredit *)request withCompletion:(void ( ^ ) ( WPYPaymentResponse *, NSError *))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">Payment Credit request object containing the tender info needed to apply a credit</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/paymentCredit:withCompletion:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/getTransactionDetails:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Get details for a transaction by identifier</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>- (void)getTransactionDetails:(NSString *)transactionId withCompletion:(void ( ^ ) ( WPYTransactionResponse *, NSError *))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>transactionId</Name>
+					<Abstract type="html">transaction identifier</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getTransactionDetails:withCompletion:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/searchTransactions:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Search transactions</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>- (void)searchTransactions:(WPYTransactionSearch *)searchParams withCompletion:(void ( ^ ) ( WPYTransactionSearchResponse *, NSError *))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>searchParams</Name>
+					<Abstract type="html">Search parameters include the start and end date for the search</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/searchTransactions:withCompletion:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/updateTransaction:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Update transactions</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>- (void)updateTransaction:(WPYTransactionUpdate *)request withCompletion:(void ( ^ ) ( WPYTransactionResponse *, NSError *))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">request object which contains info of the transaction which needs to be updated</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateTransaction:withCompletion:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WorldpayAPI/getTransactionsInBatch:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Get transactions in the current batch</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+			
+			<Declaration>- (void)getTransactionsInBatch:(NSString *)batchId withCompletion:(void ( ^ ) ( WPYBatchResponse *, NSError *))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>batchId</Name>
+					<Abstract type="html">Batch identifier for transactions</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler used to notify the caller of any server results or errors</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getTransactionsInBatch:withCompletion:</Anchor>
             <NodeRef refid="51"/>
 		</Token>
 		

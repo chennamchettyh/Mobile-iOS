@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/WPYCardInputType.html">
+	<File path="Constants/WPYCardEvent.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/WPYCardInputType</TokenIdentifier>
-			<Abstract type="html">Type of card interactions allowed</Abstract>
-			<DeclaredIn>WPYSwiperPrivate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYCardEvent</TokenIdentifier>
+			<Abstract type="html">This notifies the application developer when certain types of events have occurred.  Some of the events may not be
+supported on all hardware.  For instance, not all terminals notify the SDK when a card has been remved from the chip
+reader</Abstract>
+			<DeclaredIn>WPYSwiper.h</DeclaredIn>
             
 			
 			<NodeRef refid="74"/>
@@ -14,41 +16,61 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardInputTypeSwipeOrInsert</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCardEventSwiped</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCardInputTypeSwipeOrInsert</Declaration>
+            <Declaration>WPYCardEventSwiped</Declaration>
             
-            <DeclaredIn>WPYSwiperPrivate.h</DeclaredIn>
+            <DeclaredIn>WPYSwiper.h</DeclaredIn>
             
             <NodeRef refid="74"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardInputTypeNFC</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCardEventInserted</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCardInputTypeNFC</Declaration>
+            <Declaration>WPYCardEventInserted</Declaration>
             
-            <DeclaredIn>WPYSwiperPrivate.h</DeclaredIn>
+            <DeclaredIn>WPYSwiper.h</DeclaredIn>
             
             <NodeRef refid="74"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardInputTypeSwipeOnly</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCardEventRemoved</TokenIdentifier>
             <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCardInputTypeSwipeOnly</Declaration>
+            <Declaration>WPYCardEventRemoved</Declaration>
             
-            <DeclaredIn>WPYSwiperPrivate.h</DeclaredIn>
+            <DeclaredIn>WPYSwiper.h</DeclaredIn>
             
             <NodeRef refid="74"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/WPYCardInputTypeInsertOnly</TokenIdentifier>
-            <Abstract type="html">self-explanatory</Abstract>
-            <Declaration>WPYCardInputTypeInsertOnly</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCardEventNonICCInserted</TokenIdentifier>
+            <Abstract type="html">Card inserted backwards or a non-chip card was inserted</Abstract>
+            <Declaration>WPYCardEventNonICCInserted</Declaration>
             
-            <DeclaredIn>WPYSwiperPrivate.h</DeclaredIn>
+            <DeclaredIn>WPYSwiper.h</DeclaredIn>
+            
+            <NodeRef refid="74"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCardEventBadSwipe</TokenIdentifier>
+            <Abstract type="html">Partial or no track data received</Abstract>
+            <Declaration>WPYCardEventBadSwipe</Declaration>
+            
+            <DeclaredIn>WPYSwiper.h</DeclaredIn>
+            
+            <NodeRef refid="74"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYCardEventIccCardSwiped</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>WPYCardEventIccCardSwiped</Declaration>
+            
+            <DeclaredIn>WPYSwiper.h</DeclaredIn>
             
             <NodeRef refid="74"/>
         </Token>
