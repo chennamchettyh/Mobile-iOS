@@ -10,7 +10,9 @@
 #import "WPYDomainObject.h"
 #import "WPYLevelTwoData.h"
 
-// Request object used to update transaction
+/**
+ * Request object used to update transaction
+ */
 @interface WPYTransactionUpdate : WPYDomainObject
 
 /**
@@ -19,7 +21,7 @@
 @property (nonatomic, strong) NSString *transactionId;
 
 /**
- * This optional parameter contains data that the merchant wishes to pass up to the payment gateway for that specific transaction
+ * This parameter contains data that the merchant wishes to pass up to the payment gateway for that specific transaction
  */
 @property (nonatomic, strong) WPYLevelTwoData *levelTwoData;
 
