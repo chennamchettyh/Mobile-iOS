@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/WPYEnvironment.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/WPYEnvironment</TokenIdentifier>
+			<Abstract type="html">Enum for environments</Abstract>
+			<DeclaredIn>WorldPayAPI.h</DeclaredIn>
+            
+			
+			<NodeRef refid="83"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYEnvironmentDemo</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>WPYEnvironmentDemo</Declaration>
+            
+            <DeclaredIn>WorldPayAPI.h</DeclaredIn>
+            
+            <NodeRef refid="83"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYEnvironmentProd</TokenIdentifier>
+            <Abstract type="html">self-explanatory</Abstract>
+            <Declaration>WPYEnvironmentProd</Declaration>
+            
+            <DeclaredIn>WorldPayAPI.h</DeclaredIn>
+            
+            <NodeRef refid="83"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYEnvironmentQA</TokenIdentifier>
+            <Abstract type="html">self-explanatory, remove these when building release version and generating docs</Abstract>
+            <Declaration>WPYEnvironmentQA</Declaration>
+            
+            <DeclaredIn>WorldPayAPI.h</DeclaredIn>
+            
+            <NodeRef refid="83"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/WPYEnvironmentDev</TokenIdentifier>
+            <Abstract type="html">self-explanatory, remove these when building release version and generating docs</Abstract>
+            <Declaration>WPYEnvironmentDev</Declaration>
+            
+            <DeclaredIn>WorldPayAPI.h</DeclaredIn>
+            
+            <NodeRef refid="83"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>
