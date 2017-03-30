@@ -89,7 +89,7 @@
 			<Abstract type="html">identifier for the batch that the transaction belongs to.</Abstract>
 			<DeclaredIn>SettlementData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSInteger *batchId</Declaration>
+			<Declaration>@property (nonatomic, assign) NSInteger batchId</Declaration>
 			
 			
 			<Anchor>//api/name/batchId</Anchor>
@@ -101,7 +101,7 @@
 			<Abstract type="html">identifier for the batch that the transaction belongs to.</Abstract>
 			<DeclaredIn>SettlementData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSInteger *batchId</Declaration>
+			<Declaration>@property (nonatomic, assign) NSInteger batchId</Declaration>
 			
 			
 			<Anchor>//api/name/batchId</Anchor>
@@ -113,7 +113,7 @@
 			<Abstract type="html">identifier for the batch that the transaction belongs to.</Abstract>
 			<DeclaredIn>SettlementData.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSInteger *batchId</Declaration>
+			<Declaration>@property (nonatomic, assign) NSInteger batchId</Declaration>
 			
 			
 			<Anchor>//api/name/batchId</Anchor>
