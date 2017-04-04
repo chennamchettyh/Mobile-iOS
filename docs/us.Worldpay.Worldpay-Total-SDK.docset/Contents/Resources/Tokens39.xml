@@ -445,7 +445,7 @@ only if this is set to type Cashback but will process as a sale if the user decl
 					<Abstract type="html">This is recommended to be set to false, for better user experience. If this is set to true, then application selection will immediately happen if necessary after reading the card, handled by the terminal. If set to false, application selection will be handled by the SDK defaulting to US Common Debit if needed, which can optionally be overridden with a delegate method didRequestSelectEMVApplication in WPYSwiperDelegate.</Abstract>
 				</Parameter><Parameter>
 					<Name>commonDebitMode</Name>
-					<Abstract type="html">This uses the USCommonDebitMode enum, which allows values for default multi-application identifier selection, prefer US Common Debit application identifiers, or prefer Global Debit application identifiers. This value is ignored if terminalSelectsApplication is false.</Abstract>
+					<Abstract type="html">This uses the USCommonDebitMode enum, which allows values for default multi-application identifier selection, prefer US Common Debit application identifiers, or prefer Global Debit application identifiers.</Abstract>
 				</Parameter>
 			</Parameters>
 			
