@@ -12,7 +12,7 @@
  */
 typedef NS_ENUM(uint8_t, USCommonDebitMode)
 {
-    /// Default behavior - cardholder selects application
+    /// Default behavior - cardholder or SDK selects application
     USCommonDebitModeDefault = 0x00,
     /// No Application Selection - Use US Common Debit
     USCommonDebitModePreferCommonDebit = 0x01,
