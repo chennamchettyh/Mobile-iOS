@@ -238,6 +238,7 @@
     }];
 }
 
+//  Update transaction does not currently return updated response data, but data will update successfully. It is only necessary to provide data for fields you wish to change. These updates can be viewed in Virtual Terminal.
 
 - (void) handleResponse: (WPYTransactionResponse *) response withError: (NSError *) error
 {
