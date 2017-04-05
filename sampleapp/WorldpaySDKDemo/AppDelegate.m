@@ -11,6 +11,7 @@
 #import "SettlementViewController.h"
 #import "VaultViewController.h"
 #import "HomeViewController.h"
+#import "TransactionManagementViewController.h"
 
 #ifdef ANYWHERE_NOMAD
 #import <WorldPaySDK_AC/WorldPaySDK.h>
@@ -111,7 +112,12 @@
     UINavigationController * vaultNav = [[UINavigationController alloc] initWithRootViewController: vaultViewController];
     vaultNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[vaultNav viewControllers] firstObject]) title] image:[self imageWithImage:[UIImage imageNamed:@"vault_icon"]] tag:[index current]];
     
-    tabController.viewControllers = @[homeNav, transactionNav, refundVoidNav, settlementNav];
+    // 6th tab for Transaction Management
+    TransactionManagementViewController * transactionMgmtViewController = [[TransactionManagementViewController alloc] initWithNibName:nil bundle:nil];
+    UINavigationController * transactionMgmtNav = [[UINavigationController alloc] initWithRootViewController: transactionMgmtViewController];
+    transactionMgmtNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[transactionMgmtNav viewControllers] firstObject]) title] image:[self imageWithImage:[UIImage imageNamed:@"vault_icon"]] tag:[index current]];
+    
+    tabController.viewControllers = @[homeNav, transactionNav, refundVoidNav, settlementNav, transactionMgmtNav];
     
     return YES;
 }
