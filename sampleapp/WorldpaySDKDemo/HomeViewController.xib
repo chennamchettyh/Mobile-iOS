@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="NO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <development version="7000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="AdelleSans_Regular.otf">
+        <mutableArray key="AdelleSans_Regular.otf">
             <string>AdelleSans-Regular</string>
-        </array>
+            <string>AdelleSans-Regular</string>
+            <string>AdelleSans-Regular</string>
+            <string>AdelleSans-Regular</string>
+        </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
@@ -27,8 +30,8 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXS-Cr-EBS">
-                    <rect key="frame" x="96" y="194" width="576" height="50"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXS-Cr-EBS">
+                    <rect key="frame" x="75" y="194" width="450" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="OBN-Lk-4DO"/>
                     </constraints>
@@ -38,68 +41,68 @@
                         <action selector="creditDebit:" destination="-1" eventType="touchUpInside" id="5X8-Vh-7j1"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="credit_card_icon" translatesAutoresizingMaskIntoConstraints="NO" id="bAs-Fp-UR8">
-                    <rect key="frame" x="121" y="199" width="40" height="40"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit_card_icon" translatesAutoresizingMaskIntoConstraints="NO" id="bAs-Fp-UR8">
+                    <rect key="frame" x="99" y="199" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="bAs-Fp-UR8" secondAttribute="height" multiplier="1:1" id="3ph-z3-PbB"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJ2-TG-uyF">
-                    <rect key="frame" x="96" y="288" width="576" height="50"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJ2-TG-uyF">
+                    <rect key="frame" x="75" y="288" width="450" height="50"/>
                     <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="15"/>
                     <state key="normal" title="Refund/Void"/>
                     <connections>
                         <action selector="refundVoid:" destination="-1" eventType="touchUpInside" id="Vpc-nZ-Taq"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRU-Io-ego">
-                    <rect key="frame" x="96" y="382" width="576" height="50"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRU-Io-ego">
+                    <rect key="frame" x="75" y="382" width="450" height="50"/>
                     <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="15"/>
                     <state key="normal" title="Settlement"/>
                     <connections>
                         <action selector="settlement:" destination="-1" eventType="touchUpInside" id="MWJ-It-c9L"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w6O-69-Zlw" userLabel="Spacer 1">
-                    <rect key="frame" x="384" y="244" width="0.0" height="44"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w6O-69-Zlw" userLabel="Spacer 1">
+                    <rect key="frame" x="300" y="244" width="0.0" height="44"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" id="3rK-NP-7zM"/>
                         <constraint firstAttribute="height" constant="44" id="9Yk-eT-P90"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O3X-uT-oGX" userLabel="Spacer 2">
-                    <rect key="frame" x="384" y="338" width="0.0" height="44"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O3X-uT-oGX" userLabel="Spacer 2">
+                    <rect key="frame" x="300" y="338" width="0.0" height="44"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="worldpay_logo" translatesAutoresizingMaskIntoConstraints="NO" id="tCy-Ic-cov">
-                    <rect key="frame" x="259" y="100" width="250" height="50"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="worldpay_logo" translatesAutoresizingMaskIntoConstraints="NO" id="tCy-Ic-cov">
+                    <rect key="frame" x="175" y="100" width="250" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="tCy-Ic-cov" secondAttribute="height" multiplier="55:11" id="Gfo-rR-5DE"/>
                         <constraint firstAttribute="height" constant="50" id="nP4-EJ-heo"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="refund_void_icon" translatesAutoresizingMaskIntoConstraints="NO" id="kHC-0b-tsK">
-                    <rect key="frame" x="121" y="293" width="40" height="40"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refund_void_icon" translatesAutoresizingMaskIntoConstraints="NO" id="kHC-0b-tsK">
+                    <rect key="frame" x="99" y="293" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="kHC-0b-tsK" secondAttribute="height" multiplier="1:1" id="4iu-c9-Sjm"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="settlement" translatesAutoresizingMaskIntoConstraints="NO" id="11n-XZ-1Na">
-                    <rect key="frame" x="121" y="387" width="40" height="40"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settlement" translatesAutoresizingMaskIntoConstraints="NO" id="11n-XZ-1Na">
+                    <rect key="frame" x="99" y="387" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="11n-XZ-1Na" secondAttribute="height" multiplier="1:1" id="rPv-rI-56U"/>
                     </constraints>
                 </imageView>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cra-U3-C5g" userLabel="Spacer 3">
-                    <rect key="frame" x="384" y="432" width="0.0" height="44"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cra-U3-C5g" userLabel="Spacer 3">
+                    <rect key="frame" x="300" y="432" width="0.0" height="44"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" id="HbH-Xh-iqU"/>
                     </constraints>
                 </view>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNn-Fk-IJO">
-                    <rect key="frame" x="96" y="476" width="576" height="50"/>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNn-Fk-IJO">
+                    <rect key="frame" x="75" y="476" width="450" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="sOj-Jt-MzV"/>
                     </constraints>
@@ -109,8 +112,8 @@
                         <action selector="vault:" destination="-1" eventType="touchUpInside" id="myB-FF-y1y"/>
                     </connections>
                 </button>
-                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="vault_icon" translatesAutoresizingMaskIntoConstraints="NO" id="NqV-Fi-9Jx">
-                    <rect key="frame" x="121" y="481" width="40" height="40"/>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault_icon" translatesAutoresizingMaskIntoConstraints="NO" id="NqV-Fi-9Jx">
+                    <rect key="frame" x="99" y="481" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="NqV-Fi-9Jx" secondAttribute="height" multiplier="1:1" id="zjL-pg-Hmx"/>
                     </constraints>
