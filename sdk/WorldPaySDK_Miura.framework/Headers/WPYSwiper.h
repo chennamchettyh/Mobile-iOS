@@ -562,6 +562,21 @@ typedef NS_ENUM(NSInteger, WPYEMVTransactionType)
 - (void) swiper:(WPYSwiper *)swiper didReceivePaymentMethod:(WPYPaymentMethod *)method withError:(NSError *)error;
 
 /**
+ * This delegate method is called when the user has successfully input card number, exp date, and cvv into terminal for manual card entry. The WPYManualTenderEntryViewController can be invoked with type WPYManualTenderTypeCreditCardOverTerminal to allow name and address entry before completing the payment.
+ *
+ * @param swiper A reference to the object that handled the request
+ * @param
+ */
+- (void) swiper:(WPYSwiper *)swiper didFinishManualEntryWithRequest:(WPYPaymentRequest *)request;
+
+/**
+ * This delegate method is called when the user has cancelled manual card entry.
+ *
+ * @param swiper A reference to the object that handled the request
+ */
+- (void) swiperDidCancelManualCardEntry:(WPYSwiper *)swiper;
+
+/**
  * This method is called when a bluetooth connection attempt is made and there may be one or more devices that are available to be paired with
  * For Anywhere Commerce bluetooth devices this may return all devices within range
  *

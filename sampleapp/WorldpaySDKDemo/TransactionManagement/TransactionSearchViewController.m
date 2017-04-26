@@ -15,6 +15,7 @@
 
 
 @interface TransactionSearchViewController () <UITextFieldDelegate>
+
 @property (weak,nonatomic) IBOutlet LabeledTextField *startDateTextField;
 @property (weak,nonatomic) IBOutlet LabeledTextField *endDateTextField;
 @property (weak,nonatomic) IBOutlet LabeledTextField *transactionIdTextField;
@@ -114,6 +115,7 @@
 {
     [self.view endEditing:YES];
 }
+
 - (void)onDatePickerStartValueChanged:(UIDatePicker *)datePicker
 {
     self.startDate = datePicker.date;
