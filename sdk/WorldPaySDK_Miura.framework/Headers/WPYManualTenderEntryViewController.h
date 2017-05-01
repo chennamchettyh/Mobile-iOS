@@ -18,8 +18,6 @@ typedef NS_ENUM(NSInteger, WPYManualTenderType)
 {
     /// self-explanatory
     WPYManualTenderTypeCredit,
-    /// Like Credit, but card number/exp date/cvv was entered on terminal
-    WPYManualTenderTypeCreditCardOverTerminal,
     /// self-explanatory
     WPYManualTenderTypeCheck
 };

@@ -1015,30 +1015,6 @@
     }
 }
 
-- (void)swiperDidCancelManualCardEntry:(WPYSwiper *)swiper
-{
-    [self stopTransactionProgress];
-    
-    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"" message:@"Enter card details on terminal" preferredStyle:UIAlertControllerStyleAlert];
-    
-    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
-    
-    [self displayAlert:alert];
-}
-
-- (void)swiper:(WPYSwiper *)swiper didFinishManualEntryWithRequest:(WPYPaymentRequest *)request
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
-    WPYManualTenderEntryViewController *tenderViewController = [[WPYManualTenderEntryViewController alloc] initWithDelegate:self tenderType:WPYManualTenderTypeCreditCardOverTerminal request:request];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tenderViewController];
-    
-    navigationController.modalPresentationStyle = tenderViewController.modalPresentationStyle;
-    navigationController.navigationBar.translucent = NO;
-    navigationController.navigationBar.barStyle = UIBarStyleDefault;
-    [self presentViewController:navigationController animated:YES completion:nil];
-}
-
 #pragma mark - WPYManualTenderEntryDelegate
 
 - (void)manualTenderEntryControllerDidCancelRequest:(WPYManualTenderEntryViewController *)controller
