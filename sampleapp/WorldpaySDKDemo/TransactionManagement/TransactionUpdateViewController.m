@@ -345,7 +345,10 @@
     {
     [self onDatePickerValueChanged:self.datePicker];
     }
-
+    if (textField == _taxStatusTextField.textField)
+    {
+        self.taxStatusTextField.textField.text = @"NOT_INCLUDED";
+    }
 
     if(![_nonScrollableTextFields containsObject:textField])
     {
