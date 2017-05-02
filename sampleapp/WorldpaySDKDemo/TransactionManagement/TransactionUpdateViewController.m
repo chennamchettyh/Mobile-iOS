@@ -328,6 +328,24 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     self.activeTextField = textField;
+    if([textField.text isEqualToString:@"NOT_INCLUDED"])
+    {
+        _taxStatusValue = @(0);
+    }
+    else if([textField.text isEqualToString:@"INCLUDED"])
+    {
+        _taxStatusValue = @(1);
+    }
+    else if([textField.text isEqualToString:@"EXEMPT"])
+    {
+        _taxStatusValue = @(2);
+    }
+    
+    if (textField == _orderDateTextField.textField)
+    {
+    [self onDatePickerValueChanged:self.datePicker];
+    }
+
 
     if(![_nonScrollableTextFields containsObject:textField])
     {
@@ -360,7 +378,8 @@
     
     if(![_nonScrollableTextFields containsObject:textField])
     {
-        [_scrollView setContentOffset:CGPointZero animated:YES];
+        [self.scrollView setContentOffset:
+         CGPointMake(0, -self.scrollView.contentInset.top) animated:YES];
     }
 
 [self removeFocusFromTextField:textField];

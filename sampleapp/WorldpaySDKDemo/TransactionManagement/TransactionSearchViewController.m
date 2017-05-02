@@ -252,6 +252,17 @@
 {
     self.activeTextField = textField;
     
+    if(textField == self.startDateTextField.textField)
+    {
+        [self onDatePickerStartValueChanged:self.startDatePicker];
+    }
+    else if(textField == self.endDateTextField.textField)
+    {
+        [self onDatePickerEndValueChanged:self.endDatePicker];
+    }
+
+    
+    
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
