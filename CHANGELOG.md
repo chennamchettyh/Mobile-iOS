@@ -1,8 +1,6 @@
 ## [1.0.32] – 2017 – 05 -05
 ### Added
 -	iOS SDK Documentation Update
-### Fixed
--	Android SDK Miura Naming bug
 
 ## [1.0.32] – 2017 – 04 -24
 ### Added 
