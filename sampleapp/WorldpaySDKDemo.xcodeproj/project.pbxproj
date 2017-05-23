@@ -629,9 +629,6 @@
 						CreatedOnToolsVersion = 6.4;
 						TestTargetID = 814EDBF41C69636E0010877C;
 					};
-					814EDBF41C69636E0010877C = {
-						DevelopmentTeam = L9BL2S98Z6;
-					};
 				};
 			};
 			buildConfigurationList = 811A0D571BB2F20100B73C09 /* Build configuration list for PBXProject "WorldpaySDKDemo" */;
