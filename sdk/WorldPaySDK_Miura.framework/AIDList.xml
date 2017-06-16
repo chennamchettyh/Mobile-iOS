@@ -3,6 +3,8 @@
   <Applications>
       <!-- Visa Credit/Debit -->
       <add key="A0000000031010" value="CreditDebit"/>
+      <add key="A000000003101008" value="Credit"/>
+      <add key="A000000003101009" value="Debit"/>
       <!-- Visa Credit/Debit -->
       <!--<add key="A000000003101002" value="CreditDebit"/>-->
       <!-- Visa Electron -->
@@ -17,8 +19,8 @@
       <add key="A0000000041010" value="CreditDebit"/>
       <!-- MasterCard Maestro -->
       <add key="A0000000043060" value="Debit"/>
-      <!-- Cirrus -->
-      <add key="A0000000046000" value="Debit"/>
+      <!-- Cirrus
+      <add key="A0000000046000" value="Debit"/> -->
       <!-- U.S. Maestro AID -->
       <add key="A0000000042203" value="CreditDebit"/>
       <!-- American Express -->
