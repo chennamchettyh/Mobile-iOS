@@ -1,3 +1,8 @@
+## [1.0.34] - 2017-06-21
+
+### Fixed 
+-   EMV certification bugs
+
 ## [1.0.33] - 2017-05-17
 
 ### Added 
