@@ -11,6 +11,7 @@
 #import "SettlementViewController.h"
 #import "VaultViewController.h"
 #import "HomeViewController.h"
+#import "TransactionManagementViewController.h"
 
 #ifdef ANYWHERE_NOMAD
 #import <WorldPaySDK_AC/WorldPaySDK.h>
@@ -34,8 +35,8 @@
     
     WPYAuthTokenRequest *authTokenRequest = [[WPYAuthTokenRequest alloc] init];
     
-    authTokenRequest.secureNetId = @"1179577";
-    authTokenRequest.secureNetKey = @"WzJMwJ2cec0Y";
+    authTokenRequest.secureNetId = @"1088400";
+    authTokenRequest.secureNetKey = @"xal2cMfPxl4k";
     authTokenRequest.applicationId = @"applicationId";
     authTokenRequest.terminalId = @"445";
     authTokenRequest.terminalVendor = @"4554";
@@ -44,7 +45,7 @@
     [WorldpayAPI instance].debugDelegate = self;
     
     // This must be called prior to any API calls being made or the SDK will assert and exit()
-    [[WorldpayAPI instance] registerEnvironment: WPYEnvironmentQA];
+    [[WorldpayAPI instance] registerEnvironment: WPYEnvironmentProd];
     
     [[WorldpayAPI instance] generateAuthToken:authTokenRequest withCompletion:^(WPYAuthTokenResponse *result, NSError *error)
     {
@@ -111,7 +112,12 @@
     UINavigationController * vaultNav = [[UINavigationController alloc] initWithRootViewController: vaultViewController];
     vaultNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[vaultNav viewControllers] firstObject]) title] image:[self imageWithImage:[UIImage imageNamed:@"vault_icon"]] tag:[index current]];
     
-    tabController.viewControllers = @[homeNav, transactionNav, refundVoidNav, settlementNav];
+    // 6th tab for Transaction Management
+    TransactionManagementViewController * transactionMgmtViewController = [[TransactionManagementViewController alloc] initWithNibName:nil bundle:nil];
+    UINavigationController * transactionMgmtNav = [[UINavigationController alloc] initWithRootViewController: transactionMgmtViewController];
+    transactionMgmtNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[((UIViewController *)[[transactionMgmtNav viewControllers] firstObject]) title] image:[self imageWithImage:[UIImage imageNamed:@"vault_icon"]] tag:[index current]];
+    
+    tabController.viewControllers = @[homeNav, transactionNav, refundVoidNav, settlementNav, transactionMgmtNav];
     
     return YES;
 }
