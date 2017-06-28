@@ -41,13 +41,13 @@
     authTokenRequest.terminalId = @"445";
     authTokenRequest.terminalVendor = @"4554";
     
-    [WorldpayAPI instance].enableTestHostDebug = YES;
-    [WorldpayAPI instance].debugDelegate = self;
+    [WorldPayAPI instance].enableTestHostDebug = YES;
+    [WorldPayAPI instance].debugDelegate = self;
     
     // This must be called prior to any API calls being made or the SDK will assert and exit()
-    [[WorldpayAPI instance] registerEnvironment: WPYEnvironmentProd];
+    [[WorldPayAPI instance] registerEnvironment: WPYEnvironmentProd];
     
-    [[WorldpayAPI instance] generateAuthToken:authTokenRequest withCompletion:^(WPYAuthTokenResponse *result, NSError *error)
+    [[WorldPayAPI instance] generateAuthToken:authTokenRequest withCompletion:^(WPYAuthTokenResponse *result, NSError *error)
     {
         if(!result || !result.success || error)
         {
