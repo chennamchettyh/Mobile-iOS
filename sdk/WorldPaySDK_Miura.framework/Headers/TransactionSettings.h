@@ -26,7 +26,7 @@ typedef NS_ENUM(uint8_t, TransactionType)
     /// Standard charge transaction
     TransactionTypeSale = 0x00,
     /// Cash back transaction
-    TransactionTypeCashBack = 0x09,
+    TransactionTypeCashBack = 0x10,
     /// Refund transaction
     TransactionTypeRefund = 0x20
 };

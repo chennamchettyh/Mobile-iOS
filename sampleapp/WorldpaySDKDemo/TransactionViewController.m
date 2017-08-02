@@ -16,6 +16,7 @@
 #import "LabeledTextField.h"
 #import "LabeledDropDownTextField.h"
 
+
 #define YESINDEX 0
 #define NOINDEX 1
 #define VAULTINDEX 2
@@ -49,6 +50,7 @@
 @property (weak, nonatomic) IBOutlet UIView * vaultView;
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *formLabels;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
+@property (weak, nonatomic) IBOutlet UIButton *clearCardDataButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, atomic) UIAlertController * swiperAlert;
 @property (weak, nonatomic) UITextField * activeTextField;
@@ -159,6 +161,7 @@
     }];
     
     [Helper styleButtonPrimary:self.startButton];
+    [Helper styleButtonPrimary:self.clearCardDataButton];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -236,6 +239,11 @@
         [self toggleVaultInfo:false];
         [self.extendedInfoView setTerminalGratuity];
     }
+}
+- (IBAction)clearCardDataButtonPressed:(id)sender {
+
+    [self.swiper clearQuickChipTransaction];
+
 }
 
 - (IBAction) startTransaction

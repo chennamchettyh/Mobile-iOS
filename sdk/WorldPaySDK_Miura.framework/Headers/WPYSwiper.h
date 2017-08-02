@@ -131,7 +131,9 @@ typedef NS_ENUM(uint8_t, WPYDevicePrompt)
     /// self-explanatory
     WPYDevicePromptOnlinePinError,
     /// self-explanatory
-    WPYDevicePromptOnlinePinCounterExceeded
+    WPYDevicePromptOnlinePinCounterExceeded,
+    /// self-explanatory
+    WPYDevicePromptWaitingForCashier,
 };
 
 /**
@@ -356,10 +358,16 @@ typedef NS_ENUM(NSInteger, WPYEMVTransactionType)
  * @return A boolean indicating whether or not the swiper's display can show custom text
  */
 - (BOOL) swiperCanDisplayText;
+/**
+ * This function will clear the card data from the SDK 
+ *
+ */
+-(void) clearQuickChipTransaction;
 
 /**
  * This function will clear the display on terminals that allow you to display custom text
  */
+
 - (void) swiperClearDisplay;
 /**
  * If supported by the terminal hardware, this will request that the custom text be displayed on the screen.  The text should be line formatted
