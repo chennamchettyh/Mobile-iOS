@@ -16,6 +16,7 @@
 @interface HomeViewController ()
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *buttons;
+@property (weak, nonatomic) IBOutlet UILabel *appVersionLabel;
 
 @end
 
@@ -27,38 +28,37 @@
     
     self.title = @"Home";
     
-    for(UIButton * button in self.buttons)
-    {
+    for(UIButton * button in self.buttons) {
         [Helper styleButtonPrimary:button];
     }
+    
+    self.appVersionLabel.text = [Helper getAppVersionInfo];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)creditDebit:(id)sender
-{
+
+- (IBAction)creditDebit:(id)sender {
     [self.tabBarController setSelectedIndex:CREDITDEBITINDEX];
 }
 
-- (IBAction)refundVoid:(id)sender
-{
+
+- (IBAction)refundVoid:(id)sender {
     [self.tabBarController setSelectedIndex:REFUNDVOIDINDEX];
 }
 
-- (IBAction)settlement:(id)sender
-{
+
+- (IBAction)settlement:(id)sender {
     [self.tabBarController setSelectedIndex:SETTLEMENTINDEX];
 }
 
-- (IBAction)vault:(id)sender
-{
+
+- (IBAction)vault:(id)sender {
     [self.tabBarController setSelectedIndex:VAULTINDEX];
 }
-
-
-
 
 @end
