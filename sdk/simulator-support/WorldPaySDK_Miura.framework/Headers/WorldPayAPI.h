@@ -60,7 +60,8 @@ typedef NS_ENUM(NSInteger, WPYEnvironment)
     /// self-explanatory
     WPYEnvironmentDemo = 0,
     /// self-explanatory
-    WPYEnvironmentProd = 1
+    WPYEnvironmentProd = 1,
+   
 };
 
 
@@ -144,6 +145,12 @@ extern NSString *const WorldpayServerErrorDomain;
  * to make calls to the web APIs after this is executed
  */
 - (void)clearSDKKeychain;
+/**
+ * Gets the SDK version that is integrated.
+ */
+
+- (NSString *)getSdkVersion;
+
 #pragma mark batch handling
 
 /**
