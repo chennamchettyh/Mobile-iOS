@@ -40,10 +40,6 @@ typedef enum : NSUInteger {
 } TransactionFlowState;
 
 
-
-
-
-
 @interface WPYMiura () <MiuraDeviceControllerDelegate>
 
 @property (strong, nonatomic) NSDateFormatter * _Nullable expirationDateFormatter;

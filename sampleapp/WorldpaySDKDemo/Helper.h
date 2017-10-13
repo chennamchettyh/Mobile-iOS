@@ -38,6 +38,7 @@ typedef NS_ENUM(NSUInteger, RESTMode) {
 + (void) constrainView: (UIView *) view toSecondView: (UIView *) secondView;
 + (void) styleButtonPrimary: (UIButton *) button;
 + (NSString *)getAppVersionInfo;
++ (NSString *)getSDKVersionInfo;
 
 @end
 

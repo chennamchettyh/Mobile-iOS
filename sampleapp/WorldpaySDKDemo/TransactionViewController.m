@@ -418,8 +418,7 @@
     {
         // Swiper transaction started
         [self startTransactionProgress];
-        
-        [self.swiper beginEMVTransactionWithRequest:request transactionType:transactionType terminalSelectsApplication: false commonDebitMode: USCommonDebitModeDefault];
+        [self.swiper beginEMVTransactionWithRequest:request transactionType:transactionType enableGratuityOnPed:YES commonDebitMode:USCommonDebitModeDefault];
     }
     else if([self.cardPresentSegmented selectedSegmentIndex] == VAULTINDEX)
     {

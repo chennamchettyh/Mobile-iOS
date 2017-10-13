@@ -17,6 +17,7 @@
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *buttons;
 @property (weak, nonatomic) IBOutlet UILabel *appVersionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *sdkVersionLabel;
 
 @end
 
@@ -33,6 +34,8 @@
     }
     
     self.appVersionLabel.text = [Helper getAppVersionInfo];
+    self.sdkVersionLabel.text = [Helper getSDKVersionInfo];
+
 }
 
 

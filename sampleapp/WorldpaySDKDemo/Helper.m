@@ -59,7 +59,11 @@
 
 
 + (NSString *)getAppVersionInfo {
-    return [NSString stringWithFormat:@"Version %@.%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"], [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
+    return [NSString stringWithFormat:@"App Version %@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
+}
+
++ (NSString *)getSDKVersionInfo {
+    return [NSString stringWithFormat:@"SDK Version %@", [[WorldPayAPI instance] getSdkVersion]];
 }
 
 @end

@@ -26,7 +26,7 @@ typedef NS_ENUM(uint8_t, TransactionType)
     /// Standard charge transaction
     TransactionTypeSale = 0x00,
     /// Cash back transaction
-    TransactionTypeCashBack = 0x10,
+    TransactionTypeCashBack = 0x09,
     /// Refund transaction
     TransactionTypeRefund = 0x20
 };
@@ -153,4 +153,6 @@ typedef NS_ENUM(uint8_t, TransactionType)
  * a decision is required by the card holder or the online processor.
  */
 @property (nonatomic) USCommonDebitMode commonDebitMode;
+
+
 @end
