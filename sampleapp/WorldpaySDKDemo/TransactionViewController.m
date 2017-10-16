@@ -423,7 +423,7 @@
     {
         // Swiper transaction started
         [self startTransactionProgress];
-        [self.swiper beginEMVTransactionWithRequest:request transactionType:transactionType enableGratuityOnPed:self.gratuityOnPed commonDebitMode:USCommonDebitModeDefault];
+        [self.swiper beginEMVTransactionWithRequest:request transactionType:transactionType enableGratuityOnPed:self.gratuityOnPed commonDebitMode:USCommonDebitModePreferCommonDebit];
     }
     else if([self.cardPresentSegmented selectedSegmentIndex] == VAULTINDEX)
     {
