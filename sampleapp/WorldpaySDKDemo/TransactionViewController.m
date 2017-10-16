@@ -58,6 +58,7 @@
 @property (assign, atomic) BOOL transition;
 @property (strong, nonatomic) IBOutletCollection(NSLayoutConstraint) NSArray *addToVaultConstraints;
 @property (assign, atomic) BOOL transactionInProgress;
+@property (assign, atomic) BOOL gratuityOnPed;
 @property (strong, nonatomic) WPYPaymentRequest * currRequest;
 
 @end
@@ -386,9 +387,13 @@
     
     if(self.extendedInfoView.terminalGratuity.selectedSegmentIndex != 0)
     {
-        transactionType = WPYEMVTransactionTypeServices;
+        self.gratuityOnPed = YES;
     }
-    
+    else
+    {
+        self.gratuityOnPed = NO;
+    }
+    transactionType = WPYEMVTransactionTypeServices;
     request.extendedInformation = extendedData;
     
     if([self.cardPresentSegmented selectedSegmentIndex] == NOINDEX)
@@ -418,7 +423,7 @@
     {
         // Swiper transaction started
         [self startTransactionProgress];
-        [self.swiper beginEMVTransactionWithRequest:request transactionType:transactionType enableGratuityOnPed:YES commonDebitMode:USCommonDebitModeDefault];
+        [self.swiper beginEMVTransactionWithRequest:request transactionType:transactionType enableGratuityOnPed:self.gratuityOnPed commonDebitMode:USCommonDebitModeDefault];
     }
     else if([self.cardPresentSegmented selectedSegmentIndex] == VAULTINDEX)
     {
