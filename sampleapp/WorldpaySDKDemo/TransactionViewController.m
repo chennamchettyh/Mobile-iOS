@@ -895,11 +895,12 @@
             defaultPrompt = [NSString stringWithFormat:@"Confirm Total: %@", self.currRequest.amount.stringValue];
 #else
         {
-            NSNumberFormatter *currencyFormatter = [NSNumberFormatter new];
-            currencyFormatter.numberStyle = NSNumberFormatterDecimalStyle;
-            NSNumber *number = [currencyFormatter numberFromString:self.currRequest.amount.stringValue];
-            currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
-            defaultPrompt = [NSString stringWithFormat:@"Confirm Total: \n%@", [currencyFormatter stringFromNumber:number]];
+//            NSNumberFormatter *currencyFormatter = [NSNumberFormatter new];
+//            currencyFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+//            NSNumber *number = [currencyFormatter numberFromString:self.currRequest.amount.stringValue];
+//            currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+//            defaultPrompt = [NSString stringWithFormat:@"Confirm Total: \n%@", [currencyFormatter stringFromNumber:number]];
+            defaultPrompt = nil;
         }
 #endif
             break;
