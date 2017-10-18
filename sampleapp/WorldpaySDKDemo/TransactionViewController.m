@@ -137,6 +137,12 @@
                 textField.text = @"";
             }
         }
+        else
+        {
+        
+            self.extendedInfoView.gratuityAmount.text = @"0.00";
+        
+        }
     }];
     
     UITapGestureRecognizer *recognizer1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeFocusFromTextField:)];
@@ -223,7 +229,7 @@
 - (IBAction)segmentedTouched:(id)sender
 {
     [self removeFocusFromTextField:nil];
-    
+
     if([self.cardPresentSegmented selectedSegmentIndex] == VAULTINDEX)
     {
         [self toggleVaultInfo:true];
@@ -332,7 +338,15 @@
     
     self.currRequest = request;
     
-    WPYEMVTransactionType transactionType = WPYEMVTransactionTypeCashback;
+    WPYEMVTransactionType transactionType;
+    if ([self.extendedInfoView.cashbackSegmentedControl selectedSegmentIndex] == 0)
+    {
+        transactionType = WPYEMVTransactionTypeServices;
+    }
+    else
+    {
+        transactionType = WPYEMVTransactionTypeCashback;
+    }
     
     request.amount = [NSDecimalNumber decimalNumberWithString:self.amountTextField.text];
     
@@ -385,15 +399,16 @@
         extendedData.serviceData = serviceData;
     }
     
-    if(self.extendedInfoView.terminalGratuity.selectedSegmentIndex != 0)
+    if(self.extendedInfoView.terminalGratuity.selectedSegmentIndex == 0)
     {
-        self.gratuityOnPed = YES;
+        self.gratuityOnPed = NO;
+        request.extendedInformation.serviceData.gratuityAmount = [NSDecimalNumber decimalNumberWithString:self.extendedInfoView.gratuityAmount.text];
     }
     else
     {
-        self.gratuityOnPed = NO;
+        self.gratuityOnPed = YES;
     }
-    transactionType = WPYEMVTransactionTypeServices;
+    
     request.extendedInformation = extendedData;
     
     if([self.cardPresentSegmented selectedSegmentIndex] == NOINDEX)
