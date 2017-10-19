@@ -33,8 +33,8 @@
     
     WPYAuthTokenRequest *authTokenRequest = [[WPYAuthTokenRequest alloc] init];
     
-    authTokenRequest.secureNetId = @"8005812";
-    authTokenRequest.secureNetKey = @"tcfOg/GvPNm8";
+    authTokenRequest.secureNetId = @"";
+    authTokenRequest.secureNetKey = @"";
     authTokenRequest.applicationId = @"applicationId";
     authTokenRequest.terminalId = @"445";
     authTokenRequest.terminalVendor = @"4554";
@@ -43,7 +43,7 @@
     [WorldPayAPI instance].debugDelegate = self;
     
     // This must be called prior to any API calls being made or the SDK will assert and exit() 
-    [[WorldPayAPI instance] registerEnvironment: WPYEnvironmentDemo];
+    [[WorldPayAPI instance] registerEnvironment: WPYEnvironmentProd];
     
     [[WorldPayAPI instance] generateAuthToken:authTokenRequest withCompletion:^(WPYAuthTokenResponse *result, NSError *error) {
         if (!result || !result.success || error) {
