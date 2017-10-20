@@ -61,6 +61,13 @@ typedef NS_ENUM(NSInteger, WPYEnvironment)
     WPYEnvironmentDemo = 0,
     /// self-explanatory
     WPYEnvironmentProd = 1,
+    /// self-explanatory, remove these when building release version and generating docs
+    WPYEnvironmentQA = 67,
+    /// self-explanatory, remove these when building release version and generating docs
+    WPYEnvironmentDev = 93,
+    /// self-explanatory, remove these when building release version and generating docs
+    WPYEnvironmentQARun = 68,
+
 };
 
 
