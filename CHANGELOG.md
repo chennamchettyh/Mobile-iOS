@@ -4,6 +4,10 @@
 -   Resolved a minor issue where the terminal connection sequence was not occuring in the correct order. This should yield minimal improvements to terminal connection times. 
 -   Resolved an issue where transactions were not getting voided correctly when the card chip was unable to verify ARPC response from the issuer.
 
+## [1.0.38] - 2017-11-11
+
+### Fixed  
+-   Resolved an issue where transactions were not getting voided correctly when the card chip was unable to verify ARPC response from the issuer.
 
 ## [2.0.0] - 2017-10-19
 
