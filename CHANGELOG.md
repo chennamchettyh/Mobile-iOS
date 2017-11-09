@@ -13,7 +13,7 @@
 
 ### ADDED 
 -   Implemented Quick Chip Features into the new SDK (Version 2.0 only).
--   PED on ready state and perform Quick chip and Regular EMV trasnactions.
+-   PED on ready state and perform Quick chip and Regular EMV transactions.
 -   Broke the confirm amount dispaly on the PED to reflect the Base, Gratuity(if applicable), Cashback(if applicable) and Total amounts.
 -   Added a new flag to enable and disable grautuity prompt on PED.
 -   Added Gratuity on POS support. Below are the three cases.                                                                                      
