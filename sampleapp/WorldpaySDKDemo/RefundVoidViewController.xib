@@ -8,12 +8,14 @@
     <customFonts key="customFonts">
         <mutableArray key="AdelleSans_Regular.otf">
             <string>AdelleSans-Regular</string>
+            <string>AdelleSans-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RefundVoidViewController">
             <connections>
                 <outlet property="amountTextField" destination="S9e-Nq-FAh" id="Hdw-Xk-zS8"/>
+                <outlet property="recentTransactionsButton" destination="Jmp-Ub-3Qc" id="ZHI-PD-k5g"/>
                 <outlet property="startButton" destination="XbT-Op-vSo" id="eET-1y-Fwy"/>
                 <outlet property="transactionIdTextField" destination="6ve-fC-TKt" id="5Lo-T5-pHJ"/>
                 <outlet property="transactionTypeDropDown" destination="d5A-Aw-0N6" id="jru-IO-DgJ"/>
@@ -26,7 +28,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbT-Op-vSo">
-                    <rect key="frame" x="234" y="285" width="133" height="35"/>
+                    <rect key="frame" x="223" y="285" width="154" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="154" id="GkM-p1-Hha"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="15"/>
                     <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                     <state key="normal" title="Start Transaction"/>
@@ -55,15 +60,27 @@
                         <constraint firstAttribute="height" constant="45" id="d2M-fM-T3y"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jmp-Ub-3Qc">
+                    <rect key="frame" x="223" y="340" width="154" height="35"/>
+                    <fontDescription key="fontDescription" name="AdelleSans-Regular" family="Adelle Sans" pointSize="15"/>
+                    <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                    <state key="normal" title="Recent Transactions"/>
+                    <connections>
+                        <action selector="recentTransactions:" destination="-1" eventType="touchUpInside" id="QdS-cO-634"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="XbT-Op-vSo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0PF-dO-TBS"/>
+                <constraint firstItem="Jmp-Ub-3Qc" firstAttribute="top" secondItem="XbT-Op-vSo" secondAttribute="bottom" constant="20" id="19T-wv-05K"/>
                 <constraint firstItem="S9e-Nq-FAh" firstAttribute="top" secondItem="6ve-fC-TKt" secondAttribute="bottom" constant="20" id="6KQ-Z1-dH9"/>
+                <constraint firstItem="XbT-Op-vSo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7vA-XT-HxZ"/>
                 <constraint firstAttribute="trailing" secondItem="6ve-fC-TKt" secondAttribute="trailing" constant="20" id="CAw-B1-IdB"/>
                 <constraint firstItem="S9e-Nq-FAh" firstAttribute="trailing" secondItem="6ve-fC-TKt" secondAttribute="trailing" id="G72-TK-ehl"/>
                 <constraint firstItem="d5A-Aw-0N6" firstAttribute="top" secondItem="S9e-Nq-FAh" secondAttribute="bottom" constant="20" id="KbN-Mp-R7u"/>
                 <constraint firstItem="XbT-Op-vSo" firstAttribute="top" secondItem="d5A-Aw-0N6" secondAttribute="bottom" constant="33" id="Pvh-QD-Ev1"/>
+                <constraint firstItem="Jmp-Ub-3Qc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="S2j-Gh-GDK"/>
                 <constraint firstItem="6ve-fC-TKt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="SWu-xA-Gzy"/>
                 <constraint firstItem="6ve-fC-TKt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="77" id="Y2C-ww-qRv"/>
                 <constraint firstItem="d5A-Aw-0N6" firstAttribute="trailing" secondItem="S9e-Nq-FAh" secondAttribute="trailing" id="fse-rq-Lft"/>
@@ -71,6 +88,11 @@
                 <constraint firstItem="d5A-Aw-0N6" firstAttribute="leading" secondItem="S9e-Nq-FAh" secondAttribute="leading" id="lPN-3d-lTi"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="0PF-dO-TBS"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

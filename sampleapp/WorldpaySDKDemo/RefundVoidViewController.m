@@ -11,6 +11,7 @@
 #import "TransactionDetailViewController.h"
 #import "LabeledDropDownTextField.h"
 #import "LabeledTextField.h"
+#import "BatchDetailTableViewController.h"
 
 #define REFUNDINDEX 0
 #define VOIDINDEX 1
@@ -22,8 +23,10 @@
 @property (weak, nonatomic) IBOutlet LabeledTextField *transactionIdTextField;
 @property (weak, nonatomic) IBOutlet LabeledTextField *amountTextField;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
+@property (weak, nonatomic) IBOutlet UIButton *recentTransactionsButton;
 @property (weak, nonatomic) UITextField *activeTextField;
-
+@property (strong, nonatomic) NSDate *startDate;
+@property (strong, nonatomic) NSDate *endDate;
 @end
 
 @implementation RefundVoidViewController
@@ -67,12 +70,115 @@
     }];
     
     [Helper styleButtonPrimary:self.startButton];
+    [Helper styleButtonPrimary:self.recentTransactionsButton];
+    
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDateComponents *components = [cal components:NSCalendarUnitWeekday | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:[[NSDate alloc] init]];
+    
+    [components setDay:([components day] - 14)];
+    NSDate *last2Weeks  = [cal dateFromComponents:components];
+    
+    self.startDate = last2Weeks;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)recentTransactions:(id)sender {
+    
+    WPYTransactionSearch *search = [[WPYTransactionSearch alloc] init];
+    
+    search.startDate = self.startDate;
+    search.endDate = [NSDate date];
+    
+    [[WorldPayAPI instance] searchTransactions:search withCompletion:^(WPYTransactionSearchResponse *transactionResponse, NSError *error) {
+        
+        
+        if(error)
+        {
+            NSLog(@"%@",error);
+        }
+        
+        [self handleSearchResponse:transactionResponse withError:error];
+        
+    }];
+    
+}
+
+- (void) handleSearchResponse: (WPYTransactionSearchResponse *) response withError: (NSError *) error
+{
+    if(response.responseCode == WPYResponseCodeError || error != nil)
+    {
+        NSLog(@"%@", error);
+        
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:[NSString stringWithFormat:@"An error occurred.%@", (response.responseMessage.length > 0? [NSString stringWithFormat:@"\n\nMessage: %@", response.responseMessage]: @"")] preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        
+        [self presentViewController:alert animated:true completion:nil];
+    }
+    else
+    {
+        NSString *transactionStatus;
+        NSString * responseMessage;
+        UIAlertAction * secondaryAction;
+        
+        NSLog(@"Response: %@", [response jsonDictionary]);
+        
+        switch (response.responseCode)
+        {
+            case WPYResponseCodeApproved:
+                transactionStatus = @"Approved";
+                break;
+            case WPYResponseCodeDeclined:
+                transactionStatus = @"Declined";
+                break;
+            case WPYResponseCodeError:
+                transactionStatus = @"Error";
+                break;
+            case WPYResponseCodeTransactionTerminated:
+                transactionStatus = @"Terminated";
+                break;
+            case WPYResponseCodeReversal:
+                transactionStatus = @"Decline - Reversal";
+                break;
+            default:
+                transactionStatus = @"Other - see logs";
+        }
+        
+        if(response != nil)
+        {
+            secondaryAction = [UIAlertAction actionWithTitle:@"View Details" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+                               {
+                                   [self showTransactionList:response];
+                               }];
+            
+            responseMessage = response.responseMessage;
+        }
+        
+        
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Response" message:[NSString stringWithFormat:@"Result: %@\r\n Response Code: %@\r\n Message:%@\r\n",response.result, transactionStatus, responseMessage ?: @"No Message"] preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        
+        if(secondaryAction)
+        {
+            [alert addAction:secondaryAction];
+        }
+        
+        [self presentViewController:alert animated:true completion:nil];
+    }
+}
+
+- (void) showTransactionList:(WPYTransactionSearchResponse *) response
+{
+    
+    BatchDetailTableViewController * batchDetailTableVC = [[BatchDetailTableViewController alloc] initWithTransactions:response.transactions batchId:nil];
+    
+    [self.navigationController pushViewController:batchDetailTableVC animated:true];
+    
 }
 
 - (IBAction)startTransaction:(id)sender
